@@ -1,0 +1,15 @@
+engines:
+  eslint:
+    enabled: true
+    version: 2
+    config:
+      config: .eslintrc
+  fixme:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+  nodesecurity:
+    enabled: true
