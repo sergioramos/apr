@@ -119,3 +119,4 @@ tmtags
 Session.vim
 .netrwhist
 *~
+.nyc_output

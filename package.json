@@ -11,13 +11,16 @@
     "lib": "src"
   },
   "scripts": {
-    "test": "NODE_ENV=test nyc ava --fail-fast -v -t | tap-mocha-reporter spect",
+    "test": "NODE_ENV=test nyc --reporter=html ava --fail-fast -v -t | tap-mocha-reporter spec",
     "lint": "eslint .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter"
   },
   "repository": "ramitos/ycatch",
   "dependencies": {
-    "is-number": "^2.1.0"
+    "lodash.defaults": "^4.0.1",
+    "lodash.isarraylike": "^4.0.3",
+    "lodash.keys": "^4.0.6",
+    "onetime": "^1.1.0"
   },
   "devDependencies": {
     "ava": "^0.14.0",
@@ -27,7 +30,7 @@
     "eslint": "^2.9.0",
     "nyc": "^6.4.4",
     "random-decimal": "^1.0.2",
-    "random-integral": "^1.0.3",
+    "tap-mocha-reporter": "0.0.24",
     "timeout-then": "^1.0.0"
   },
   "ava": {
