@@ -1,59 +1,80 @@
+const buildArray = require('build-array');
+const isFinite = require('lodash.isfinite');
 const isArrayLike = require('lodash.isarraylike');
 const keys = require('lodash.keys');
 
-const arr = function(arr) {
-  let len = arr.length;
-  let i = -1;
+const until = require('./until');
 
-  return {
-    next: function() {
-      i += 1;
+const wrap = function(fn) {
+  let done = false;
+  let i = 0;
 
+  const group = function(size) {
+    if (isFinite(size)) {
+      return buildArray(size).map(next);
+    }
+
+    return until(function() {
+      return next();
+    });
+  };
+
+  const next = function(size) {
+    if (done) {
       return {
-        value: arr[i],
-        done: arr.length === i,
-        key: i
+        done
       };
     }
+
+    if (size) {
+      return group(size);
+    }
+
+    const item = fn(i++);
+    done = item.done;
+
+    return item;
   };
+
+  return {
+    next
+  };
+};
+
+const arr = function(arr) {
+  return wrap(function(i) {
+    return {
+      value: arr[i],
+      done: arr.length === i,
+      key: i
+    };
+  });
 };
 
 const ittr = function(ittr) {
-  let i = -1;
+  return wrap(function(i) {
+    const item = ittr.next();
 
-  return {
-    next: function() {
-      i += 1;
-
-      const curr = ittr.next();
-
-      return {
-        done: curr.done,
-        value: curr.value,
-        key: i
-      };
-    }
-  };
+    return {
+      done: item.done,
+      value: item.value,
+      key: i
+    };
+  });
 };
 
 const obj = function(obj) {
-  let okeys = keys(obj);
-  let len = okeys.length;
-  let i = -1;
+  const okeys = keys(obj);
 
-  return {
-    next: function() {
-      i += 1;
+  return wrap(function(i) {
+    const key = okeys[i];
 
-      const key = okeys[i];
-
-      return {
-        value: obj[key],
-        done: okeys.length === i,
-        key: key
-      };
-    }
-  };
+    return {
+      value: obj[key],
+      done: okeys.length === i,
+      key
+    };
+  });
 };
 
 module.exports = function(coll) {
