@@ -5,5 +5,7 @@ module.exports = function(input) {
   return reduce(input, async function(sum, fn, key) {
     sum[key] = await fn();
     return sum;
-  }, Sum(input));
+  }, Sum(input), {
+    limit: Infinity
+  });
 };
