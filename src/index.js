@@ -29,6 +29,12 @@ module.exports = {
   filterOf: require('./filter'),
   filterOfSeries: require('./filter').series,
   filterOfLimit: require('./filter').limit,
+  reject: require('./reject'),
+  rejectSeries: require('./reject').series,
+  rejectLimit: require('./reject').limit,
+  rejectOf: require('./reject'),
+  rejectOfSeries: require('./reject').series,
+  rejectOfLimit: require('./reject').limit,
   parallel: require('./parallel'),
   concurrent: require('./parallel')
 };

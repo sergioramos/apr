@@ -6,7 +6,7 @@ const wrap = function(input, p) {
     p,
     input,
     fn: function(r) {
-      return Boolean(r.value);
+      return !r.value && !r.done;
     }
   });
 };
