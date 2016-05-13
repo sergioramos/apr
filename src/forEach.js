@@ -7,16 +7,16 @@ const forEach = function(input, fn, opts) {
   }));
 };
 
-forEach.series = function(input, fn) {
-  return forEach(input, fn, {
+forEach.series = function(input, fn, opts) {
+  return forEach(input, fn, defaults({
     limit: 1
-  });
+  }, opts));
 };
 
-forEach.limit = function(input, fn, limit) {
-  return forEach(input, fn, {
+forEach.limit = function(input, fn, limit, opts) {
+  return forEach(input, fn, defaults({
     limit
-  });
+  }, opts));
 };
 
 module.exports = forEach;

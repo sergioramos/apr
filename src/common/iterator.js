@@ -41,19 +41,19 @@ const wrap = function(fn) {
   };
 };
 
-const arr = function(arr) {
+const arr = function(input) {
   return wrap(function(i) {
     return {
-      value: arr[i],
-      done: arr.length === i,
+      value: input[i],
+      done: input.length === i,
       key: i
     };
   });
 };
 
-const ittr = function(ittr) {
+const ittr = function(input) {
   return wrap(function(i) {
-    const item = ittr.next();
+    const item = input.next();
 
     return {
       done: item.done,
@@ -63,28 +63,28 @@ const ittr = function(ittr) {
   });
 };
 
-const obj = function(obj) {
-  const okeys = keys(obj);
+const obj = function(input) {
+  const okeys = keys(input);
 
   return wrap(function(i) {
     const key = okeys[i];
 
     return {
-      value: obj[key],
+      value: input[key],
       done: okeys.length === i,
       key
     };
   });
 };
 
-module.exports = function(coll) {
-  if (isArrayLike(coll)) {
-    return arr(coll);
+module.exports = function(input) {
+  if (isArrayLike(input)) {
+    return arr(input);
   }
 
-  if (coll[Symbol.iterator]) {
-    return ittr(coll[Symbol.iterator]());
+  if (input[Symbol.iterator]) {
+    return ittr(input[Symbol.iterator]());
   }
 
-  return obj(coll);
+  return obj(input);
 };

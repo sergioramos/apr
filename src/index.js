@@ -10,5 +10,11 @@ module.exports = {
   forEachOfLimit: require('./forEachOf').limit,
   eachOf: require('./forEachOf'),
   eachOfSeries: require('./forEachOf').series,
-  eachOflimit: require('./forEachOf').limit
+  eachOflimit: require('./forEachOf').limit,
+  map: require('./map'),
+  mapSeries: require('./map').series,
+  mapLimit: require('./map').limit,
+  mapOf: require('./map'),
+  mapOfSeries: require('./map').series,
+  mapOfLimit: require('./map').limit
 };
