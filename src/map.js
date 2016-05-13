@@ -1,37 +1,44 @@
-const isArrayLike = require('lodash.isarraylike');
 const defaults = require('lodash.defaults');
 
-const forEach = require('./forEach');
+const each = require('./engine/each');
+const Sum = require('./engine/sum');
 
-const Sum = function(input) {
-  if (isArrayLike(input) || input[Symbol.iterator]) {
-    return [];
-  }
+const map = function(ctx) {
+  const sum = Sum(ctx.input);
 
-  return {};
-};
-
-const map = function(forEach, input, fn, opts, limit) {
-  const sum = Sum(input);
-
-  return forEach(input, fn, defaults(opts, {
-    limit,
+  return each(defaults({
     after: function(value, item) {
       sum[item.key] = value;
     }
-  })).then(function() {
+  }, ctx)).then(function() {
     return sum;
   });
 };
 
-module.exports = function() {
-  return map(forEach, ...arguments);
+module.exports = function(input, fn, opts) {
+  return map({
+    input,
+    fn,
+    opts
+  });
 };
 
-module.exports.series = function() {
-  return map(forEach.series, ...arguments);
+module.exports.series = function(input, fn, opts) {
+  return map({
+    input,
+    fn,
+    opts: defaults({
+      limit: 1
+    }, opts)
+  });
 };
 
-module.exports.limit = function(input, fn, limit, opts) {
-  return map(forEach.limit, input, fn, opts, limit);
+module.exports.limit = function(input, limit, fn, opts) {
+  return map({
+    input,
+    fn,
+    opts: defaults({
+      limit
+    }, opts)
+  });
 };

@@ -73,7 +73,7 @@ test('fulfill {} map', async function(t) {
     return res;
   });
 
-  t.notDeepEqual(order, [0, 1, 2, 3]);
+  t.notDeepEqual(order, ['a', 'b', 'c', 'd']);
   t.deepEqual(output, {
     a: 2,
     b: 4,

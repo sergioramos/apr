@@ -24,9 +24,11 @@ module.exports = function(input, fn, opts) {
       return !item.done;
     });
 
-    Promise.all(items.map(function(item) {
+    const call = opts.call || function(item) {
       return fn(item.value, item.key, input);
-    })).then(after(items, end), end);
+    };
+
+    Promise.all(items.map(call)).then(after(items, end), end);
   };
 
   return new Promise(function(resolve, reject) {

@@ -21,7 +21,7 @@
     "lodash.defaults": "^4.0.1",
     "lodash.isarraylike": "^4.0.3",
     "lodash.isfinite": "^3.3.1",
-    "lodash.keys": "^4.0.6"
+    "lodash.keys": "^4.0.7"
   },
   "devDependencies": {
     "ava": "^0.14.0",
