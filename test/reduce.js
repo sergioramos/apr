@@ -1,36 +1,8 @@
 const test = require('ava');
-const random = require('random-decimal');
-const timeout = require('timeout-then');
 const apr = require('../')
 
-const p = async function(v) {
-  return timeout(random({
-    min: 0,
-    max: 1000
-  })).then(function() {
-    return v;
-  });
-};
-
-const getIttr = function() {
-  const items = ['a', 'b', 'c', 'd'];
-
-  return {
-    [Symbol.iterator]: function() {
-      return {
-        i: -1,
-        next: function() {
-          this.i += 1;
-
-          return {
-            value: items[this.i],
-            done: items.length === this.i
-          };
-        }
-      };
-    }
-  };
-};
+const getIttr = require('./common/get-ittr');
+const p = require('./common/p');
 
 test('fulfill [] reduce', async function(t) {
   const input = [1, 2, 3, 4];

@@ -1,6 +1,6 @@
 const buildArray = require('build-array');
+const isArray = require('lodash.isarraylike');
 const isFinite = require('lodash.isfinite');
-const isArrayLike = require('lodash.isarraylike');
 const keys = require('lodash.keys');
 
 const until = require('./until');
@@ -78,7 +78,7 @@ const obj = function(input) {
 };
 
 module.exports = function(input) {
-  if (isArrayLike(input)) {
+  if (isArray(input)) {
     return arr(input);
   }
 

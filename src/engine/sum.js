@@ -1,7 +1,7 @@
-const isArrayLike = require('lodash.isarraylike');
+const isArray = require('lodash.isarraylike');
 
 module.exports = function(input) {
-  if (isArrayLike(input) || input[Symbol.iterator]) {
+  if (isArray(input) || input[Symbol.iterator]) {
     return [];
   }
 

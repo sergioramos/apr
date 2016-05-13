@@ -23,6 +23,12 @@ module.exports = {
   reduceOf: require('./reduce'),
   reduceOfSeries: require('./reduce').series,
   reduceOfLimit: require('./reduce').limit,
+  filter: require('./filter'),
+  filterSeries: require('./filter').series,
+  filterLimit: require('./filter').limit,
+  filterOf: require('./filter'),
+  filterOfSeries: require('./filter').series,
+  filterOfLimit: require('./filter').limit,
   parallel: require('./parallel'),
   concurrent: require('./parallel')
 };

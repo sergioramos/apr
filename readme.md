@@ -169,7 +169,7 @@ const files = await apr.concat([
 
 ```js
 const res = await apr.series([
-  async function(){
+  async function() {
     return await myAsyncFn1();
   },
   async function() {
@@ -191,7 +191,7 @@ const res = await apr.series({
 
 ```js
 const res = await apr.parallel([
-  async function(){
+  async function() {
     return await myAsyncFn1();
   },
   async function() {
