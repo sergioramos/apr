@@ -35,6 +35,12 @@ module.exports = {
   rejectOf: require('./reject'),
   rejectOfSeries: require('./reject').series,
   rejectOfLimit: require('./reject').limit,
+  find: require('./find'),
+  findSeries: require('./find').series,
+  findLimit: require('./find').limit,
+  findOf: require('./find'),
+  findOfSeries: require('./find').series,
+  findOfLimit: require('./find').limit,
   parallel: require('./parallel'),
   concurrent: require('./parallel')
 };

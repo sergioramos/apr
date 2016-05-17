@@ -2,14 +2,15 @@ const test = require('ava');
 const apr = require('../')
 
 const getIttr = require('./common/get-ittr');
-const p = require('./common/p');
+const timeout = require('./common/timeout');
 
 test('fulfill [] forEach', async function(t) {
+  const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
   await apr.forEach(input.map(Number), async function(v, i) {
-    input[i] = await p(v * 2);
+    input[i] = await then(v * 2);
     order.push(i);
   });
 
@@ -18,11 +19,12 @@ test('fulfill [] forEach', async function(t) {
 });
 
 test('fulfill @@Iterator forEach', async function(t) {
+  const then = timeout(4);
   const output = [];
   const order = [];
 
   await apr.forEach(getIttr(), async function(v, i) {
-    output[i] = await p(`${v}${v}`);
+    output[i] = await then(`${v}${v}`);
     order.push(i);
   });
 
@@ -31,6 +33,7 @@ test('fulfill @@Iterator forEach', async function(t) {
 });
 
 test('fulfill {} forEach', async function(t) {
+  const then = timeout(4);
   const output = {};
   const order = [];
 
@@ -40,7 +43,7 @@ test('fulfill {} forEach', async function(t) {
     c: 3,
     d: 4
   }, async function(v, i) {
-    output[i] = await p(v * 2);
+    output[i] = await then(v * 2);
     order.push(i);
   });
 
@@ -54,26 +57,32 @@ test('fulfill {} forEach', async function(t) {
 });
 
 test('fail [] forEach', async function(t) {
+  const then = timeout(4);
+
   t.throws(apr.forEach([1, 2, 3, 4], async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
     }
 
-    return await p(v * 2);
+    return await then(v * 2);
   }));
 });
 
 test('fail @@Iterator forEach', async function(t) {
+  const then = timeout(4);
+
   t.throws(apr.forEach(getIttr(), async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
     }
 
-    return await p(`${v}${v}`);
+    return await then(`${v}${v}`);
   }));
 });
 
 test('fail {} forEach', async function(t) {
+  const then = timeout(4);
+
   t.throws(apr.forEach({
     a: 1,
     b: 2,
@@ -84,16 +93,17 @@ test('fail {} forEach', async function(t) {
       throw new Error('expected error');
     }
 
-    return await p(v * 2);
+    return await then(v * 2);
   }));
 });
 
 test('fulfill [] forEachSeries', async function(t) {
+  const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
   await apr.forEachSeries(input.map(Number), async function(v, i) {
-    input[i] = await p(v * 2);
+    input[i] = await then(v * 2);
     order.push(i);
   });
 
@@ -102,11 +112,12 @@ test('fulfill [] forEachSeries', async function(t) {
 });
 
 test('fulfill @@Iterator forEachSeries', async function(t) {
+  const then = timeout(4);
   const output = [];
   const order = [];
 
   await apr.forEachSeries(getIttr(), async function(v, i) {
-    output[i] = await p(`${v}${v}`);
+    output[i] = await then(`${v}${v}`);
     order.push(i);
   });
 
@@ -115,6 +126,7 @@ test('fulfill @@Iterator forEachSeries', async function(t) {
 });
 
 test('fulfill {} forEachSeries', async function(t) {
+  const then = timeout(4);
   const output = {};
   const order = [];
 
@@ -124,7 +136,7 @@ test('fulfill {} forEachSeries', async function(t) {
     c: 3,
     d: 4
   }, async function(v, i) {
-    output[i] = await p(v * 2);
+    output[i] = await then(v * 2);
     order.push(i);
   });
 
@@ -138,26 +150,32 @@ test('fulfill {} forEachSeries', async function(t) {
 });
 
 test('fail [] forEachSeries', async function(t) {
+  const then = timeout(4);
+
   t.throws(apr.forEachSeries([1, 2, 3, 4], async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
     }
 
-    return await p(v * 2);
+    return await then(v * 2);
   }));
 });
 
 test('fail @@Iterator forEachSeries', async function(t) {
+  const then = timeout(4);
+
   t.throws(apr.forEachSeries(getIttr(), async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
     }
 
-    return await p(`${v}${v}`);
+    return await then(`${v}${v}`);
   }));
 });
 
 test('fail {} forEachSeries', async function(t) {
+  const then = timeout(4);
+
   t.throws(apr.forEachSeries({
     a: 1,
     b: 2,
@@ -168,90 +186,6 @@ test('fail {} forEachSeries', async function(t) {
       throw new Error('expected error');
     }
 
-    return await p(v * 2);
+    return await then(v * 2);
   }));
 });
-
-// test('fulfill [] forEachLimit', async function(t) {
-//   const input = [1, 2, 3, 4];
-//   const order = [];
-//
-//   await apr.forEachLimit(input.map(Number), async function(v, i) {
-//     input[i] = await p(v * 2);
-//     order.push(i);
-//   });
-//
-//   t.deepEqual(input, [2, 4, 6, 8]);
-//   t.deepEqual(order, [0, 1, 2, 3]);
-// });
-//
-// test('fulfill @@Iterator forEachLimit', async function(t) {
-//   const output = [];
-//   const order = [];
-//
-//   await apr.forEachLimit(getIttr(), async function(v, i) {
-//     output[i] = await p(`${v}${v}`);
-//     order.push(i);
-//   });
-//
-//   t.deepEqual(output, ['aa', 'bb', 'cc', 'dd']);
-//   t.deepEqual(order, [0, 1, 2, 3]);
-// });
-//
-// test('fulfill {} forEachLimit', async function(t) {
-//   const output = {};
-//   const order = [];
-//
-//   await apr.forEachLimit({
-//     a: 1,
-//     b: 2,
-//     c: 3,
-//     d: 4
-//   }, async function(v, i) {
-//     output[i] = await p(v * 2);
-//     order.push(i);
-//   });
-//
-//   t.deepEqual(order, ['a', 'b', 'c', 'd']);
-//   t.deepEqual(output, {
-//     a: 2,
-//     b: 4,
-//     c: 6,
-//     d: 8
-//   });
-// });
-//
-// test('fail [] forEachLimit', async function(t) {
-//   t.throws(apr.forEachLimit([1, 2, 3, 4], async function(v, i) {
-//     if (i > 2) {
-//       throw new Error('expected error');
-//     }
-//
-//     return await p(v * 2);
-//   }));
-// });
-//
-// test('fail @@Iterator forEachLimit', async function(t) {
-//   t.throws(apr.forEachLimit(getIttr(), async function(v, i) {
-//     if (i > 2) {
-//       throw new Error('expected error');
-//     }
-//
-//     return await p(`${v}${v}`);
-//   }));
-// });
-//
-// test('fail {} forEachLimit', async function(t) {
-//   t.throws(apr.forEachLimit({
-//     a: 1,
-//     b: 2,
-//     c: 3,
-//     d: 4
-//   }, async function(v, i) {
-//     if (i === 'c') {
-//       throw new Error('expected error');
-//     }
-//
-//     return await p(v * 2);
-//   }));
-// });
