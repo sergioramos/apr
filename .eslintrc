@@ -1,8 +1,5 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 7,
-    "sourceType": "module",
-  },
+  "parser": "babel-eslint",
   "extends": "semistandard",
   "rules": {
     "space-before-function-paren": [2, "never"]
