@@ -66,5 +66,6 @@ module.exports = {
   concatOfSeries: require('./concat').series,
   concatOfLimit: require('./concat').limit,
   parallel: require('./parallel'),
-  concurrent: require('./parallel')
+  concurrent: require('./parallel'),
+  series: require('./series')
 };
