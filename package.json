@@ -16,7 +16,7 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "prepublish": "npm run build",
-    "test": "NODE_ENV=test nyc --reporter=html ava --fail-fast -v -t | tap-mocha-reporter spec",
+    "test": "NODE_ENV=test nyc --reporter=html ava test/*.js --fail-fast -v -t | tap-mocha-reporter spec",
     "lint": "eslint .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter"
   },

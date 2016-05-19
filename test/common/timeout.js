@@ -2,7 +2,7 @@ const buildArray = require('build-array');
 const timeout = require('timeout-then');
 const shuffle = require('array-shuffle');
 
-const max = 1000;
+const max = 2000;
 
 module.exports = function(size) {
   const interval = max / size;
