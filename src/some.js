@@ -9,7 +9,7 @@ module.exports = function(input, fn, opts) {
 };
 
 module.exports.series = function(input, fn, opts) {
-  return find.series(...arguments).then(some);
+  return module.exports.limit(input, 1, fn, opts);
 };
 
 module.exports.limit = function(input, limit, fn, opts) {

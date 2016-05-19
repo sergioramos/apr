@@ -24,7 +24,7 @@ module.exports = function(input, fn, opts) {
 };
 
 module.exports.series = function(input, fn, opts) {
-  return wrap(input, map.series(input, fn, opts));
+  return module.exports.limit(input, 1, fn, opts);
 };
 
 module.exports.limit = function(input, limit, fn, opts) {

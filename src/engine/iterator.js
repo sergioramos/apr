@@ -20,12 +20,6 @@ const wrap = function(fn) {
   };
 
   const next = function(size) {
-    if (done) {
-      return {
-        done
-      };
-    }
-
     if (size) {
       return group(size);
     }
