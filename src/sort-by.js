@@ -1,16 +1,24 @@
+const isArray = require('lodash.isarraylike');
+const sortBy = require('lodash.sortby')
+
 const Sum = require('./engine/sum');
 const back = require('./engine/back');
 const map = require('./map');
 
 const wrap = function(input, p) {
+  const isObj = !isArray(Sum(input));
+
   const after = function(items) {
-    return items.filter(function(item) {
-      return !item.result.value && !item.result.done;
-    }).reduce(function(sum, item, i) {
-      const key = item.isObj ? item.key : i;
-      sum[key] = item.input.value;
-      return sum;
-    }, Sum(input));
+    return sortBy(items.filter(function(item) {
+      return !item.result.done;
+    }), function(item) {
+      return item.result.value;
+    }).map(function(item) {
+      return !isObj ? item.input.value : {
+        key: item.key,
+        value: item.input.value
+      };
+    });
   };
 
   return back({

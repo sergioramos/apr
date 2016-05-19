@@ -5,11 +5,12 @@ module.exports = function(input, fn, opts) {
 
   let done = false;
   let brk = false;
+  let i = 0;
 
   const after = function(items, end) {
     return function(v) {
-      brk = brk || items.some(function(item, i) {
-        return opts.after && opts.after(v[i], item);
+      brk = brk || items.some(function(item, y) {
+        return opts.after && opts.after(v[y], item, i++);
       });
 
       done = done || brk;

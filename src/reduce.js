@@ -1,4 +1,3 @@
-const isArrayLike = require('lodash.isarraylike');
 const defaults = require('lodash.defaults');
 
 const each = require('./engine/each');

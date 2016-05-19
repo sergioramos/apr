@@ -1,27 +1,22 @@
 const defaults = require('lodash.defaults');
-const isArray = require('lodash.isarraylike');
 
 const each = require('./engine/each');
-const Sum = require('./engine/sum');
 
-const find = function(ctx) {
-  let first = null;
+const every = function(ctx) {
+  let found = true;
 
   return each(defaults({
     after: function(value, item) {
-      first = Boolean(value) && item;
-      return first;
+      found = Boolean(value);
+      return !found;
     }
   }, ctx)).then(function() {
-    return first && (isArray(Sum(ctx.input)) ? first.value : {
-      key: first.key,
-      value: first.value
-    });
+    return found;
   });
 };
 
 module.exports = function(input, fn, opts) {
-  return find({
+  return every({
     input,
     fn,
     opts
@@ -29,7 +24,7 @@ module.exports = function(input, fn, opts) {
 };
 
 module.exports.series = function(input, fn, opts) {
-  return find({
+  return every({
     input,
     fn,
     opts: defaults({
@@ -39,7 +34,7 @@ module.exports.series = function(input, fn, opts) {
 };
 
 module.exports.limit = function(input, limit, fn, opts) {
-  return find({
+  return every({
     input,
     fn,
     opts: defaults({

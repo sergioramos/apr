@@ -1,14 +1,22 @@
-const filter = require('./engine/filter');
+const Sum = require('./engine/sum');
+const back = require('./engine/back');
 const map = require('./map');
 
 const wrap = function(input, p) {
-  return filter({
+  const after = function(items) {
+    return items.filter(function(item) {
+      return Boolean(item.result.value) && !item.result.done;
+    }).reduce(function(sum, item, i) {
+      const key = item.isObj ? item.key : i;
+      sum[key] = item.input.value;
+      return sum;
+    }, Sum(input));
+  };
+
+  return back({
     p,
-    input,
-    fn: function(r) {
-      return Boolean(r.value);
-    }
-  });
+    input
+  }).then(after);
 };
 
 module.exports = function(input, fn, opts) {

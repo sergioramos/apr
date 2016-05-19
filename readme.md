@@ -1,7 +1,3 @@
-// idea: aceitar iterables.
-// isto significa que podemos ter uma api lazy para iterar em serie sobre objectos
-// e arrays sem necessitar de usar forof. Mais, aceitar callbacks que nao sejam async
-
 // adicionar race
 
 # apr - async promise resolve
