@@ -1,5 +1,5 @@
 const test = require('ava');
-const apr = require('../')
+const apr = require('../');
 
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
@@ -10,7 +10,7 @@ test('fulfill [] sortBy', async function(t) {
   const order = [];
 
   const output = await apr.sortBy(input.map(Number), async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(i);
     return -i;
   });
@@ -24,7 +24,7 @@ test('fulfill @@Iterator sortBy', async function(t) {
   const order = [];
 
   const output = await apr.sortBy(getIttr(), async function(v, i) {
-    const res = await then(`${v}${v}`);
+    await then(`${v}${v}`);
     order.push(i);
     return -i;
   });
@@ -43,7 +43,7 @@ test('fulfill {} sortBy', async function(t) {
     c: 3,
     d: 4
   }, async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(i);
     return -i;
   });
@@ -111,7 +111,7 @@ test('fulfill [] sortBySeries', async function(t) {
   const order = [];
 
   const output = await apr.sortBySeries(input.map(Number), async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(i);
     return -i;
   });
@@ -125,7 +125,7 @@ test('fulfill @@Iterator mapSeries', async function(t) {
   const order = [];
 
   const output = await apr.sortBySeries(getIttr(), async function(v, i) {
-    const res = await then(`${v}${v}`);
+    await then(`${v}${v}`);
     order.push(i);
     return -i;
   });
@@ -144,7 +144,7 @@ test('fulfill {} sortBySeries', async function(t) {
     c: 3,
     d: 4
   }, async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(i);
     return -i;
   });

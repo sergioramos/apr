@@ -1,5 +1,5 @@
 const test = require('ava');
-const apr = require('../')
+const apr = require('../');
 
 const timeout = require('./common/timeout');
 

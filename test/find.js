@@ -1,6 +1,6 @@
 const buildArray = require('build-array');
 const test = require('ava');
-const apr = require('../')
+const apr = require('../');
 
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
@@ -11,7 +11,7 @@ test('fulfill [] find', async function(t) {
   const order = [];
 
   const output = await apr.find(input.map(Number), async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(i);
     return v === 2;
   });
@@ -25,7 +25,7 @@ test('fulfill @@Iterator find', async function(t) {
   const order = [];
 
   const output = await apr.find(getIttr(), async function(v, i) {
-    const res = await then(`${v}${v}`);
+    await then(`${v}${v}`);
     order.push(i);
     return i === 2;
   });
@@ -44,7 +44,7 @@ test('fulfill {} find', async function(t) {
     c: 3,
     d: 4
   }, async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(v);
     return v === 2;
   });
@@ -57,8 +57,6 @@ test('fulfill {} find', async function(t) {
 });
 
 test('fail [] find', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.find([1, 2, 3, 4], async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -69,8 +67,6 @@ test('fail [] find', async function(t) {
 });
 
 test('fail @@Iterator find', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.find(getIttr(), async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -81,8 +77,6 @@ test('fail @@Iterator find', async function(t) {
 });
 
 test('fail {} find', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.find({
     a: 1,
     b: 2,
@@ -103,7 +97,7 @@ test('fulfill [] findSeries', async function(t) {
   const order = [];
 
   const output = await apr.findSeries(input.map(Number), async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(i);
     return v === 2;
   });
@@ -117,7 +111,7 @@ test('fulfill @@Iterator findSeries', async function(t) {
   const order = [];
 
   const output = await apr.findSeries(getIttr(), async function(v, i) {
-    const res = await then(`${v}${v}`);
+    await then(`${v}${v}`);
     order.push(i);
     return i === 2;
   });
@@ -136,7 +130,7 @@ test('fulfill {} findSeries', async function(t) {
     c: 3,
     d: 4
   }, async function(v, i) {
-    const res = await then(v);
+    await then(v);
     order.push(v);
     return v === 2;
   });
@@ -149,8 +143,6 @@ test('fulfill {} findSeries', async function(t) {
 });
 
 test('fail [] findSeries', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.findSeries([1, 2, 3, 4], async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -161,8 +153,6 @@ test('fail [] findSeries', async function(t) {
 });
 
 test('fail @@Iterator findSeries', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.findSeries(getIttr(), async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -173,8 +163,6 @@ test('fail @@Iterator findSeries', async function(t) {
 });
 
 test('fail {} findSeries', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.findSeries({
     a: 1,
     b: 2,

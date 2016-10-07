@@ -5,7 +5,7 @@ const some = function(first) {
 };
 
 module.exports = function(input, fn, opts) {
-  return find(...arguments).then(some);;
+  return find(...arguments).then(some);
 };
 
 module.exports.series = function(input, fn, opts) {

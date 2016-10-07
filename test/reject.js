@@ -1,5 +1,5 @@
 const test = require('ava');
-const apr = require('../')
+const apr = require('../');
 
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
@@ -12,7 +12,7 @@ test('fulfill [] reject', async function(t) {
   const output = await apr.reject(input.map(Number), async function(v, i) {
     const res = await then(v);
     order.push(i);
-    return res%2;
+    return res % 2;
   });
 
   t.deepEqual(output, [2, 4]);
@@ -24,9 +24,9 @@ test('fulfill @@Iterator reject', async function(t) {
   const order = [];
 
   const output = await apr.reject(getIttr(), async function(v, i) {
-    const res = await then(`${v}${v}`);
+    await then(`${v}${v}`);
     order.push(i);
-    return i%2;
+    return i % 2;
   });
 
   t.deepEqual(output, ['a', 'c']);
@@ -45,7 +45,7 @@ test('fulfill {} reject', async function(t) {
   }, async function(v, i) {
     const res = await then(v);
     order.push(i);
-    return res%2;
+    return res % 2;
   });
 
   t.notDeepEqual(order, ['a', 'b', 'c', 'd']);
@@ -104,7 +104,7 @@ test('fulfill [] rejectSeries', async function(t) {
   const output = await apr.rejectSeries(input.map(Number), async function(v, i) {
     const res = await then(v);
     order.push(i);
-    return res%2;
+    return res % 2;
   });
 
   t.deepEqual(output, [2, 4]);
@@ -116,9 +116,9 @@ test('fulfill @@Iterator mapSeries', async function(t) {
   const order = [];
 
   const output = await apr.rejectSeries(getIttr(), async function(v, i) {
-    const res = await then(`${v}${v}`);
+    await then(`${v}${v}`);
     order.push(i);
-    return i%2;
+    return i % 2;
   });
 
   t.deepEqual(output, ['a', 'c']);
@@ -137,7 +137,7 @@ test('fulfill {} rejectSeries', async function(t) {
   }, async function(v, i) {
     const res = await then(v);
     order.push(i);
-    return res%2;
+    return res % 2;
   });
 
   t.notDeepEqual(order, ['a', 'b', 'c', 'd']);

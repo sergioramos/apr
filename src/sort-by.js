@@ -1,5 +1,5 @@
 const isArray = require('lodash.isarraylike');
-const sortBy = require('lodash.sortby')
+const sortBy = require('lodash.sortby');
 
 const Sum = require('./engine/sum');
 const back = require('./engine/back');

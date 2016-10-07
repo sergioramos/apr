@@ -1,6 +1,6 @@
 const buildArray = require('build-array');
 const test = require('ava');
-const apr = require('../')
+const apr = require('../');
 
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
@@ -12,7 +12,7 @@ test('fulfill [] every', async function(t) {
 
   const fn = function(cnd, order) {
     return async function(v, i) {
-      const res = await then(v);
+      await then(v);
       (order || []).push(i);
       return cnd(v, i);
     };
@@ -34,12 +34,11 @@ test('fulfill [] every', async function(t) {
 
 test('fulfill @@Iterator every', async function(t) {
   const then = timeout(4);
-  const input = [1, 2, 3, 4];
   const order = [];
 
   const fn = function(cnd, order) {
     return async function(v, i) {
-      const res = await then(`${v}${v}`);
+      await then(`${v}${v}`);
       (order || []).push(i);
       return cnd(v, i);
     };
@@ -72,7 +71,7 @@ test('fulfill {} every', async function(t) {
 
   const fn = function(cnd, order) {
     return async function(v, i) {
-      const res = await then(v);
+      await then(v);
       (order || []).push(v);
       return cnd(v, i);
     };
@@ -93,8 +92,6 @@ test('fulfill {} every', async function(t) {
 });
 
 test('fail [] every', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.every([1, 2, 3, 4], async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -105,8 +102,6 @@ test('fail [] every', async function(t) {
 });
 
 test('fail @@Iterator every', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.every(getIttr(), async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -117,8 +112,6 @@ test('fail @@Iterator every', async function(t) {
 });
 
 test('fail {} every', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.every({
     a: 1,
     b: 2,
@@ -140,7 +133,7 @@ test('fulfill [] everySeries', async function(t) {
 
   const fn = function(cnd, order) {
     return async function(v, i) {
-      const res = await then(v);
+      await then(v);
       (order || []).push(i);
       return cnd(v, i);
     };
@@ -162,12 +155,11 @@ test('fulfill [] everySeries', async function(t) {
 
 test('fulfill @@Iterator everySeries', async function(t) {
   const then = timeout(4);
-  const input = [1, 2, 3, 4];
   const order = [];
 
   const fn = function(cnd, order) {
     return async function(v, i) {
-      const res = await then(`${v}${v}`);
+      await then(`${v}${v}`);
       (order || []).push(i);
       return cnd(v, i);
     };
@@ -200,7 +192,7 @@ test('fulfill {} everySeries', async function(t) {
 
   const fn = function(cnd, order) {
     return async function(v, i) {
-      const res = await then(v);
+      await then(v);
       (order || []).push(v);
       return cnd(v, i);
     };
@@ -221,8 +213,6 @@ test('fulfill {} everySeries', async function(t) {
 });
 
 test('fail [] everySeries', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.everySeries([1, 2, 3, 4], async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -233,8 +223,6 @@ test('fail [] everySeries', async function(t) {
 });
 
 test('fail @@Iterator everySeries', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.everySeries(getIttr(), async function(v, i) {
     if (i > 2) {
       throw new Error('expected error');
@@ -245,8 +233,6 @@ test('fail @@Iterator everySeries', async function(t) {
 });
 
 test('fail {} everySeries', async function(t) {
-  const then = timeout(4);
-
   t.throws(apr.everySeries({
     a: 1,
     b: 2,

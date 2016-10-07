@@ -6,7 +6,6 @@ const keys = require('lodash.keys');
 const until = require('./until');
 
 const wrap = function(fn) {
-  let done = false;
   let i = 0;
 
   const group = function(size) {
@@ -24,10 +23,7 @@ const wrap = function(fn) {
       return group(size);
     }
 
-    const item = fn(i++);
-    done = item.done;
-
-    return item;
+    return fn(i++);
   };
 
   return {
