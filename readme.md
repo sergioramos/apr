@@ -1,27 +1,77 @@
-// adicionar race
-
 # apr - async promise resolve
 
-### Utils
+Collection of tools to manage control flow of/with Promises - inspired by [caolan/async](https://github.com/caolan/async).
 
-* [`apply`](#apply) // ou curry
-* [`nextTick`](#nextTick)
-* [`memoize`](#memoize)
-* [`unmemoize`](#unmemoize)
-* [`ensureAsync`](#ensureAsync)
-* [`constant`](#constant)
-* [`asyncify`](#asyncify)
-* [`wrapSync`](#wrapSync)
-* [`log`](#log)
-* [`dir`](#dir)
-* [`noConflict`](#noConflict)
-* [`timeout`](#timeout)
-* [`reflect`](#reflect)
-* [`reflectAll`](#reflectAll)
+Works with and without async/await. The lib itself only uses promises.
 
-## Collections
+<a id="contents"></a>
+## contents
 
-### each(arr, iteratee)
+* [contents](#contents)
+* [api](#api)
+  * [collections](#collections)
+    * [concat](#concat)
+    * [concatSeries](#concat-series)
+    * [detect](#detect)
+    * [detectLimit](#detect-limit)
+    * [detectSeries](#detect-series)
+    * [each](#each)
+    * [eachLimit](#each-limit)
+    * [eachOf](#each-of)
+    * [eachOfLimit](#each-of-limit)
+    * [eachOfSeries](#each-of-series)
+    * [eachSeries](#each-series)
+    * [every](#every)
+    * [everyLimit](#every-limit)
+    * [everySeries](#every-series)
+    * [filter](#filter)
+    * [filterLimit](#filter-limit)
+    * [filterSeries](#filter-series)
+    * [map](#map)
+    * [mapLimit](#map-limit)
+    * [mapSeries](#map-series)
+    * [mapValues](#map-salues)
+    * [mapValuesLimit](#map-values-limit)
+    * [mapValuesSeries](#map-values-series)
+    * [reduce](#reduce)
+    * [reduceRight](#reduce-right)
+    * [reject](#reject)
+    * [rejectLimit](#reject-limit)
+    * [rejectSeries](#reject-series)
+    * [some](#some)
+    * [someLimit](#some-limit)
+    * [someSeries](#some-series)
+    * [sortBy](#sort-by)
+    * [transform](#transform)
+  * [control flow](#control-flow)
+    * [compose](#compose)
+    * [parallel](#parallel)
+    * [parallelLimit](#parallel-limit)
+    * [seq](#seq)
+    * [series](#series)
+    * [times](#times)
+    * [timesLimit](#times-limit)
+    * [timesSeries](#times-series)
+    * [until](#until)
+    * [waterfall](#waterfall)
+    * [whilst](#whilst)
+  * [utils](#utils)
+    * [apply](#apply)
+    * [asyncify](#asyncify)
+    * [constant](#constant)
+    * [dir](#dir)
+    * [reflect](#reflect)
+* [caolan/async parity](#async-parity)
+* [license](#license)
+
+<a id="api"></a>
+## api
+
+<a id="collections"></a>
+### collections
+
+<a id="each"></a>
+#### each(arr, iteratee) / forEach(arr, iteratee)
 
 
 ```js
@@ -35,24 +85,8 @@ await apr.each([
 });
 ```
 
-### forEachOf(obj, iteratee)
-
-```js
-const obj = {
-  dev: '/dev.json',
-  test: '/test.json',
-  prod: '/prod.json'
-};
-
-const configs = {};
-
-await apr.forEachOf(obj, async function(k, v) {
-  const src = await readFile(__dirname + v, 'utf8');
-  configs[k] = JSON.parse(src);
-});
-```
-
-### map(arr, iteratee)
+<a id="map"></a>
+#### map(arr, iteratee)
 
 ```js
 const stats = await apr.map([
@@ -64,7 +98,8 @@ const stats = await apr.map([
 });
 ```
 
-### filter(arr, iteratee)
+<a id="filter"></a>
+#### filter(arr, iteratee)
 
 ```js
 var existent = await apr.filter([
@@ -76,7 +111,8 @@ var existent = await apr.filter([
 });
 ```
 
-### reject(arr, iteratee)
+<a id="reject"></a>
+#### reject(arr, iteratee)
 
 ```js
 var missing = await apr.reject([
@@ -88,7 +124,8 @@ var missing = await apr.reject([
 });
 ```
 
-### reduce(arr, iteratee, initialValue)
+<a id="reduce"></a>
+#### reduce(arr, iteratee, initialValue)
 
 ```js
 const sum = await apr.reduce([1, 2, 3], async function(sum, item) {
@@ -98,7 +135,8 @@ const sum = await apr.reduce([1, 2, 3], async function(sum, item) {
 });
 ```
 
-### find(arr, iteratee)
+<a id="find"></a>
+#### find(arr, iteratee) / detect(arr, iteratee)
 
 ```js
 const first = await apr.find([
@@ -110,7 +148,8 @@ const first = await apr.find([
 });
 ```
 
-### sortBy(arr, iteratee)
+<a id="sort-by"></a>
+#### sortBy(arr, iteratee)
 
 ```js
 const sorted = await apr.sortBy([
@@ -123,7 +162,8 @@ const sorted = await apr.sortBy([
 });
 ```
 
-### some(arr, iteratee)
+<a id="some"></a>
+#### some(arr, iteratee)
 
 ```js
 const oneExist = await apr.some([
@@ -135,7 +175,8 @@ const oneExist = await apr.some([
 });
 ```
 
-### every(coll, iteratee)
+<a id="every"></a>
+#### every(coll, iteratee)
 
 ```js
 const allExist = await apr.every([
@@ -147,7 +188,8 @@ const allExist = await apr.every([
 });
 ```
 
-### concat(arr, iteratee)
+<a id="concat"></a>
+#### concat(arr, iteratee)
 
 ```js
 const files = await apr.concat([
@@ -159,9 +201,11 @@ const files = await apr.concat([
 });
 ```
 
-## Control Flow
+<a id="control-flow"></a>
+### control flow
 
-### series(tasks)
+<a id="series"></a>
+#### series(tasks)
 
 ```js
 const res = await apr.series([
@@ -172,7 +216,9 @@ const res = await apr.series([
     return await myAsyncFn2();
   }
 ]);
+```
 
+```js
 const res = await apr.series({
   one: async function() {
     return await myAsyncFn1();
@@ -183,7 +229,8 @@ const res = await apr.series({
 });
 ```
 
-### parallel(tasks) // ou concurrent
+<a id="parallel"></a>
+#### parallel(tasks) / concurrent(tasks)
 
 ```js
 const res = await apr.parallel([
@@ -194,7 +241,8 @@ const res = await apr.parallel([
     return await myAsyncFn2();
   }
 ]);
-
+```
+```js
 const res = await apr.parallel({
   one: async function() {
     return await myAsyncFn1();
@@ -204,3 +252,96 @@ const res = await apr.parallel({
   }
 });
 ```
+
+<a id="utils"></a>
+#### utils
+
+<a id="async-parity"></a>
+### implemented [caolan/async](https://github.com/caolan/async) methods
+
+Eventually it should have feature parity with it.
+
+##### [collections](#collections) 
+ - [x] concat
+ - [x] concatSeries
+ - [x] detect
+ - [x] detectLimit
+ - [x] detectSeries
+ - [x] each
+ - [x] eachLimit
+ - [x] eachOf
+ - [x] eachOfLimit
+ - [x] eachOfSeries
+ - [x] eachSeries
+ - [x] every
+ - [x] everyLimit
+ - [x] everySeries
+ - [x] filter
+ - [x] filterLimit
+ - [x] filterSeries
+ - [x] map
+ - [x] mapLimit
+ - [x] mapSeries
+ - [x] mapValues
+ - [x] mapValuesLimit
+ - [x] mapValuesSeries
+ - [x] reduce
+ - [ ] reduceRight
+ - [x] reject
+ - [x] rejectLimit
+ - [x] rejectSeries
+ - [x] some
+ - [x] someLimit
+ - [x] someSeries
+ - [x] sortBy
+ - [ ] transform
+
+##### control flow
+
+ - [ ] applyEach
+ - [ ] applyEachSeries
+ - [ ] auto
+ - [ ] autoInject
+ - [ ] cargo
+ - [x] compose
+ - [ ] doDuring
+ - [ ] doUntil
+ - [ ] doWhilst
+ - [ ] during
+ - [ ] forever
+ - [x] parallel
+ - [x] parallelLimit
+ - [ ] priorityQueue
+ - [ ] queue
+ - [ ] race
+ - [ ] retry
+ - [ ] retryable
+ - [x] seq
+ - [x] series
+ - [x] times
+ - [x] timesLimit
+ - [x] timesSeries
+ - [x] until
+ - [x] waterfall
+ - [x] whilst
+
+##### utils
+
+ - [x] apply
+ - [x] asyncify
+ - [x] constant
+ - [x] dir
+ - [ ] ensureAsync
+ - [ ] log
+ - [ ] memoize
+ - [ ] nextTick
+ - [x] reflect
+ - [ ] reflectAll
+ - [ ] setImmediate
+ - [ ] timeout
+ - [ ] unmemoize
+
+<a id="license"></a>
+## license
+
+MIT
