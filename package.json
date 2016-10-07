@@ -22,7 +22,6 @@
   },
   "dependencies": {
     "build-array": "^1.0.0",
-    "eslint-plugin-babel": "^3.3.0",
     "lodash.defaults": "^4.2.0",
     "lodash.find": "^4.6.0",
     "lodash.isarraylike": "^4.2.0",
@@ -42,6 +41,7 @@
     "eslint": "^3.7.1",
     "eslint-config-semistandard": "^7.0.0",
     "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-babel": "^3.3.0",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.1",
     "npm-check-updates": "^2.8.3",
