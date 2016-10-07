@@ -4,7 +4,7 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill async whilst', async function(t) {
+test('fulfill async whilst', async (t) => {
   const maxCalls = random({
     min: 3,
     max: 10
@@ -13,10 +13,10 @@ test('fulfill async whilst', async function(t) {
   const then = timeout(maxCalls * 2);
   let calls = 0;
 
-  const output = await apr.whilst(async function() {
+  const output = await apr.whilst(async () => {
     await then();
     return (calls += 1) < maxCalls;
-  }, async function() {
+  }, async () => {
     return await then(maxCalls);
   });
 
@@ -25,7 +25,7 @@ test('fulfill async whilst', async function(t) {
   t.deepEqual(output, calls);
 });
 
-test('fulfill whilst', async function(t) {
+test('fulfill whilst', async (t) => {
   const maxCalls = random({
     min: 3,
     max: 10
@@ -34,9 +34,9 @@ test('fulfill whilst', async function(t) {
   const then = timeout(maxCalls);
   let calls = 0;
 
-  const output = await apr.whilst(function() {
+  const output = await apr.whilst(() => {
     return (calls += 1) < maxCalls;
-  }, async function() {
+  }, async () => {
     return await then(maxCalls);
   });
 
@@ -45,41 +45,41 @@ test('fulfill whilst', async function(t) {
   t.deepEqual(output, calls);
 });
 
-test('fail async whilst test', async function(t) {
+test('fail async whilst test', async (t) => {
   const then = timeout(1);
 
-  t.throws(apr.whilst(async function() {
+  t.throws(apr.whilst(async () => {
     throw new Error('Unexpected Error');
-  }, async function() {
+  }, async () => {
     await then();
   }));
 });
 
-test('fail async whilst fn', async function(t) {
+test('fail async whilst fn', async (t) => {
   const then = timeout(1);
 
-  t.throws(apr.whilst(async function() {
+  t.throws(apr.whilst(async () => {
     await then();
     return true;
-  }, async function() {
+  }, async () => {
     throw new Error('Unexpected Error');
   }));
 });
 
-test('fail whilst test', async function(t) {
+test('fail whilst test', async (t) => {
   const then = timeout(1);
 
-  t.throws(apr.whilst(function() {
+  t.throws(apr.whilst(() => {
     throw new Error('Unexpected Error');
-  }, async function() {
+  }, async () => {
     await then();
   }));
 });
 
-test('fail whilst fn', async function(t) {
-  t.throws(apr.whilst(function() {
+test('fail whilst fn', async (t) => {
+  t.throws(apr.whilst(() => {
     return true;
-  }, async function() {
+  }, async () => {
     throw new Error('Unexpected Error');
   }));
 });

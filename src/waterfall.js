@@ -1,6 +1,6 @@
 const each = require('./engine/each');
 
-module.exports = function(input, initial) {
+module.exports = (input, initial) => {
   let last = initial;
 
   return each({
@@ -8,13 +8,13 @@ module.exports = function(input, initial) {
     opts: {
       limit: 1
     },
-    after: function(value, item) {
+    after: (value, item) => {
       last = value;
     },
-    call: function(item) {
+    call: (item) => {
       return item.value(last);
     }
-  }).then(function() {
+  }).then(() => {
     return last;
   });
 };

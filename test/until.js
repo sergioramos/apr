@@ -4,7 +4,7 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill async until', async function(t) {
+test('fulfill async until', async (t) => {
   const maxCalls = random({
     min: 3,
     max: 10
@@ -13,10 +13,10 @@ test('fulfill async until', async function(t) {
   const then = timeout(maxCalls * 2);
   let calls = 0;
 
-  const output = await apr.until(async function() {
+  const output = await apr.until(async () => {
     await then();
     return (calls += 1) >= maxCalls;
-  }, async function() {
+  }, async () => {
     return await then(maxCalls);
   });
 
@@ -25,7 +25,7 @@ test('fulfill async until', async function(t) {
   t.deepEqual(output, calls);
 });
 
-test('fulfill until', async function(t) {
+test('fulfill until', async (t) => {
   const maxCalls = random({
     min: 3,
     max: 10
@@ -34,9 +34,9 @@ test('fulfill until', async function(t) {
   const then = timeout(maxCalls);
   let calls = 0;
 
-  const output = await apr.until(function() {
+  const output = await apr.until(() => {
     return (calls += 1) >= maxCalls;
-  }, async function() {
+  }, async () => {
     return await then(maxCalls);
   });
 
@@ -45,41 +45,41 @@ test('fulfill until', async function(t) {
   t.deepEqual(output, calls);
 });
 
-test('fail async until test', async function(t) {
+test('fail async until test', async (t) => {
   const then = timeout(1);
 
-  t.throws(apr.until(async function() {
+  t.throws(apr.until(async () => {
     throw new Error('Unexpected Error');
-  }, async function() {
+  }, async () => {
     await then();
   }));
 });
 
-test('fail async until fn', async function(t) {
+test('fail async until fn', async (t) => {
   const then = timeout(1);
 
-  t.throws(apr.until(async function() {
+  t.throws(apr.until(async () => {
     await then();
     return true;
-  }, async function() {
+  }, async () => {
     throw new Error('Unexpected Error');
   }));
 });
 
-test('fail until test', async function(t) {
+test('fail until test', async (t) => {
   const then = timeout(1);
 
-  t.throws(apr.until(function() {
+  t.throws(apr.until(() => {
     throw new Error('Unexpected Error');
-  }, async function() {
+  }, async () => {
     await then();
   }));
 });
 
-test('fail until fn', async function(t) {
-  t.throws(apr.until(function() {
+test('fail until fn', async (t) => {
+  t.throws(apr.until(() => {
     return true;
-  }, async function() {
+  }, async () => {
     throw new Error('Unexpected Error');
   }));
 });

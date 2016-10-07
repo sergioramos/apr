@@ -3,30 +3,30 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill []  parallel', async function(t) {
+test('fulfill []  parallel', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.parallel([
-    async function() {
+    async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     },
-    async function() {
+    async () => {
       order.push('before');
       const res = await then(2 * 2);
       order.push('after');
       return res;
     },
-    async function() {
+    async () => {
       order.push('before');
       const res = await then(3 * 2);
       order.push('after');
       return res;
     },
-    async function() {
+    async () => {
       order.push('before');
       const res = await then(4 * 2);
       order.push('after');
@@ -48,30 +48,30 @@ test('fulfill []  parallel', async function(t) {
   t.deepEqual(output, [2, 4, 6, 8]);
 });
 
-test('fulfill {} parallel', async function(t) {
+test('fulfill {} parallel', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.parallel({
-    a: async function() {
+    a: async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     },
-    b: async function() {
+    b: async () => {
       order.push('before');
       const res = await then(2 * 2);
       order.push('after');
       return res;
     },
-    c: async function() {
+    c: async () => {
       order.push('before');
       const res = await then(3 * 2);
       order.push('after');
       return res;
     },
-    d: async function() {
+    d: async () => {
       order.push('before');
       const res = await then(4 * 2);
       order.push('after');
@@ -98,39 +98,39 @@ test('fulfill {} parallel', async function(t) {
   });
 });
 
-test('fail [] parallel', async function(t) {
+test('fail [] parallel', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.parallel([
-    async function() {
+    async () => {
       return await then(1 * 2);
     },
-    async function() {
+    async () => {
       return await then(2 * 2);
     },
-    async function() {
+    async () => {
       throw new Error('expected error');
     },
-    async function() {
+    async () => {
       return await then(4 * 2);
     }
   ]));
 });
 
-test('fail {} parallel', async function(t) {
+test('fail {} parallel', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.parallel({
-    a: async function() {
+    a: async () => {
       return await then(1 * 2);
     },
-    b: async function() {
+    b: async () => {
       return await then(2 * 2);
     },
-    c: async function() {
+    c: async () => {
       throw new Error('expected error');
     },
-    d: async function() {
+    d: async () => {
       return await then(4 * 2);
     }
   }));

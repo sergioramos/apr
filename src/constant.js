@@ -1,6 +1,6 @@
-module.exports = function(...args) {
-  return function() {
-    return new Promise(function(resolve) {
+module.exports = (...args) => {
+  return () => {
+    return new Promise((resolve) => {
       resolve(...args);
     });
   };

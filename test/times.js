@@ -3,11 +3,11 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill times', async function(t) {
+test('fulfill times', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const output = await apr.times(5, async function(i) {
+  const output = await apr.times(5, async (i) => {
     const res = await then(i * 2);
     order.push(i);
     return res;
@@ -17,10 +17,10 @@ test('fulfill times', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3, 4]);
 });
 
-test('fail times', async function(t) {
+test('fail times', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.times(5, async function(v, i) {
+  t.throws(apr.times(5, async (v, i) => {
     if (i === 3) {
       throw new Error('expected error');
     }
@@ -29,11 +29,11 @@ test('fail times', async function(t) {
   }));
 });
 
-test('fulfill timesSeries', async function(t) {
+test('fulfill timesSeries', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const output = await apr.timesSeries(5, async function(i) {
+  const output = await apr.timesSeries(5, async (i) => {
     const res = await then(i * 2);
     order.push(i);
     return res;
@@ -43,10 +43,10 @@ test('fulfill timesSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3, 4]);
 });
 
-test('fail timesSeries', async function(t) {
+test('fail timesSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.timesSeries(5, async function(i) {
+  t.throws(apr.timesSeries(5, async (i) => {
     if (i > 2) {
       throw new Error('expected error');
     }

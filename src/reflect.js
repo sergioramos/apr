@@ -1,11 +1,11 @@
-module.exports = function(fn) {
-  return function(...args) {
-    return fn(...args).then(function(value) {
+module.exports = (fn) => {
+  return (...args) => {
+    return fn(...args).then((value) => {
       return {
         value,
         error: null
       };
-    }).catch(function(err) {
+    }).catch((err) => {
       return {
         value: null,
         error: err

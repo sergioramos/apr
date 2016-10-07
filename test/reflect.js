@@ -3,30 +3,30 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill []  parallel', async function(t) {
+test('fulfill []  parallel', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.parallel([
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     }),
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(2 * 2);
       order.push('after');
       return res;
     }),
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(3 * 2);
       order.push('after');
       return res;
     }),
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(4 * 2);
       order.push('after');
@@ -60,30 +60,30 @@ test('fulfill []  parallel', async function(t) {
   }]);
 });
 
-test('fulfill {} parallel', async function(t) {
+test('fulfill {} parallel', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.parallel({
-    a: apr.reflect(async function() {
+    a: apr.reflect(async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     }),
-    b: apr.reflect(async function() {
+    b: apr.reflect(async () => {
       order.push('before');
       const res = await then(2 * 2);
       order.push('after');
       return res;
     }),
-    c: apr.reflect(async function() {
+    c: apr.reflect(async () => {
       order.push('before');
       const res = await then(3 * 2);
       order.push('after');
       return res;
     }),
-    d: apr.reflect(async function() {
+    d: apr.reflect(async () => {
       order.push('before');
       const res = await then(4 * 2);
       order.push('after');
@@ -122,27 +122,27 @@ test('fulfill {} parallel', async function(t) {
   });
 });
 
-test('fail [] parallel', async function(t) {
+test('fail [] parallel', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.parallel([
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     }),
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(2 * 2);
       order.push('after');
       return res;
     }),
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       throw new Error('expected error');
     }),
-    apr.reflect(async function() {
+    apr.reflect(async () => {
       order.push('before');
       const res = await then(4 * 2);
       order.push('after');
@@ -180,27 +180,27 @@ test('fail [] parallel', async function(t) {
   t.falsy(output[2].value);
 });
 
-test('fail {} parallel', async function(t) {
+test('fail {} parallel', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.parallel({
-    a: apr.reflect(async function() {
+    a: apr.reflect(async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     }),
-    b: apr.reflect(async function() {
+    b: apr.reflect(async () => {
       order.push('before');
       const res = await then(2 * 2);
       order.push('after');
       return res;
     }),
-    c: apr.reflect(async function() {
+    c: apr.reflect(async () => {
       throw new Error('expected error');
     }),
-    d: apr.reflect(async function() {
+    d: apr.reflect(async () => {
       order.push('before');
       const res = await then(4 * 2);
       order.push('after');

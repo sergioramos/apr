@@ -3,30 +3,30 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill []  waterfall', async function(t) {
+test('fulfill []  waterfall', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.waterfall([
-    async function() {
+    async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     },
-    async function(prev) {
+    async (prev) => {
       order.push('before');
       const res = await then(prev * 2);
       order.push('after');
       return res;
     },
-    async function(prev) {
+    async (prev) => {
       order.push('before');
       const res = await then(prev * 2);
       order.push('after');
       return res;
     },
-    async function(prev) {
+    async (prev) => {
       order.push('before');
       const res = await then(prev * 2);
       order.push('after');
@@ -48,30 +48,30 @@ test('fulfill []  waterfall', async function(t) {
   t.deepEqual(output, 16);
 });
 
-test('fulfill {} waterfall', async function(t) {
+test('fulfill {} waterfall', async (t) => {
   const then = timeout(4);
   const order = [];
 
   const output = await apr.waterfall({
-    a: async function() {
+    a: async () => {
       order.push('before');
       const res = await then(1 * 2);
       order.push('after');
       return res;
     },
-    b: async function(prev) {
+    b: async (prev) => {
       order.push('before');
       const res = await then(prev * 2);
       order.push('after');
       return res;
     },
-    c: async function(prev) {
+    c: async (prev) => {
       order.push('before');
       const res = await then(prev * 2);
       order.push('after');
       return res;
     },
-    d: async function(prev) {
+    d: async (prev) => {
       order.push('before');
       const res = await then(prev * 2);
       order.push('after');
@@ -93,39 +93,39 @@ test('fulfill {} waterfall', async function(t) {
   t.deepEqual(output, 16);
 });
 
-test('fail [] waterfall', async function(t) {
+test('fail [] waterfall', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.waterfall([
-    async function() {
+    async () => {
       return await then(1 * 2);
     },
-    async function(prev) {
+    async (prev) => {
       return await then(prev * 2);
     },
-    async function(prev) {
+    async (prev) => {
       throw new Error('expected error');
     },
-    async function(prev) {
+    async (prev) => {
       return await then(prev * 2);
     }
   ]));
 });
 
-test('fail {} waterfall', async function(t) {
+test('fail {} waterfall', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.waterfall({
-    a: async function() {
+    a: async () => {
       return await then(1 * 2);
     },
-    b: async function(prev) {
+    b: async (prev) => {
       return await then(prev * 2);
     },
-    c: async function(prev) {
+    c: async (prev) => {
       throw new Error('expected error');
     },
-    d: async function(prev) {
+    d: async (prev) => {
       return await then(prev * 2);
     }
   }));

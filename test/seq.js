@@ -3,26 +3,26 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill seq', async function(t) {
+test('fulfill seq', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const seqd = apr.seq(async function(v) {
+  const seqd = apr.seq(async (v) => {
     order.push('before');
     const res = await then(v + 1);
     order.push('after');
     return res;
-  }, async function(v) {
+  }, async (v) => {
     order.push('before');
     const res = await then(v * 2);
     order.push('after');
     return res;
-  }, async function(v) {
+  }, async (v) => {
     order.push('before');
     const res = await then(v * 2);
     order.push('after');
     return res;
-  }, async function(v) {
+  }, async (v) => {
     order.push('before');
     const res = await then(v * 2);
     order.push('after');
@@ -45,16 +45,16 @@ test('fulfill seq', async function(t) {
   t.deepEqual(output, 16);
 });
 
-test('fail seq', async function(t) {
+test('fail seq', async (t) => {
   const then = timeout(4);
 
-  const seqd = apr.seq(async function(v) {
+  const seqd = apr.seq(async (v) => {
     return await then(v * 2);
-  }, async function(v) {
+  }, async (v) => {
     throw new Error('Unexpected Error');
-  }, async function(v) {
+  }, async (v) => {
     return await then(v * 2);
-  }, async function(v) {
+  }, async (v) => {
     return await then(v * 2);
   });
 

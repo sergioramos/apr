@@ -1,11 +1,11 @@
-module.exports = function() {
+module.exports = () => {
   const items = ['a', 'b', 'c', 'd'];
 
   return {
-    [Symbol.iterator]: function() {
+    [Symbol.iterator]: () => {
       return {
         i: -1,
-        next: function() {
+        next: () => {
           this.i += 1;
 
           return {

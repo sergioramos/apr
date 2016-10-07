@@ -1,8 +1,8 @@
-module.exports = function(type, fn, ...args) {
-  return fn(...args).then(function(...args) {
+module.exports = (type, fn, ...args) => {
+  return fn(...args).then((...args) => {
     console[type](...args);
 
-    return new Promise(function(resolve) {
+    return new Promise((resolve) => {
       resolve(...args);
     });
   });

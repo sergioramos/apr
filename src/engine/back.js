@@ -4,13 +4,13 @@ const find = require('lodash.find');
 const Iterator = require('./iterator');
 const Sum = require('./sum');
 
-module.exports = function(ctx) {
-  const after = function(res) {
+module.exports = (ctx) => {
+  const after = (res) => {
     const rItems = Iterator(res).next(Infinity);
     const iItems = Iterator(ctx.input).next(Infinity);
     const isObj = !isArray(Sum(ctx.input));
 
-    return rItems.map(function(result, y) {
+    return rItems.map((result, y) => {
       const input = !isObj ? iItems[result.key] : find(iItems, {
         key: result.key
       });

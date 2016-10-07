@@ -1,11 +1,11 @@
 const defaults = require('lodash.defaults');
 const each = require('./each');
 
-const Iterator = function() {
+const Iterator = () => {
   return {
-    [Symbol.iterator]: function() {
+    [Symbol.iterator]: () => {
       return {
-        next: function() {
+        next: () => {
           return {
             done: false
           };
@@ -15,7 +15,7 @@ const Iterator = function() {
   };
 };
 
-module.exports = function(ctx) {
+module.exports = (ctx) => {
   let last;
 
   return each({
@@ -24,13 +24,13 @@ module.exports = function(ctx) {
     opts: defaults(ctx.opts, {
       limit: 1
     }),
-    call: ctx.call || function() {
-      return ctx.fn().then(function(value) {
+    call: ctx.call || (() => {
+      return ctx.fn().then((value) => {
         last = value;
         return ctx.test ? ctx.test() : value;
       });
-    }
-  }).then(function() {
+    })
+  }).then(() => {
     return last;
   });
 };

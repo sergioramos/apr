@@ -1,10 +1,10 @@
 const repeat = require('./engine/repeat');
 
-module.exports = function(test, fn) {
+module.exports = (test, fn) => {
   return repeat({
     test,
     fn,
-    after: function(tested) {
+    after: (tested) => {
       return !tested;
     }
   });

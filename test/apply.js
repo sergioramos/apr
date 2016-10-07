@@ -3,12 +3,12 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('does apply', async function(t) {
+test('does apply', async (t) => {
   const then = timeout(1);
 
   let called = false;
 
-  const fn = async function(v, y) {
+  const fn = async (v, y) => {
     t.deepEqual(v, 2);
     t.deepEqual(y, '2');
 

@@ -5,20 +5,20 @@ const keys = require('lodash.keys');
 
 const until = require('./until');
 
-const wrap = function(fn) {
+const wrap = (fn) => {
   let i = 0;
 
-  const group = function(size) {
+  const group = (size) => {
     if (isFinite(size)) {
       return buildArray(size).map(next);
     }
 
-    return until(function() {
+    return until(() => {
       return next();
     });
   };
 
-  const next = function(size) {
+  const next = (size) => {
     if (size) {
       return group(size);
     }
@@ -31,8 +31,8 @@ const wrap = function(fn) {
   };
 };
 
-const arr = function(input) {
-  return wrap(function(i) {
+const arr = (input) => {
+  return wrap((i) => {
     return {
       value: input[i],
       done: input.length === i,
@@ -41,8 +41,8 @@ const arr = function(input) {
   });
 };
 
-const ittr = function(input) {
-  return wrap(function(i) {
+const ittr = (input) => {
+  return wrap((i) => {
     const item = input.next();
 
     return {
@@ -53,10 +53,10 @@ const ittr = function(input) {
   });
 };
 
-const obj = function(input) {
+const obj = (input) => {
   const okeys = keys(input);
 
-  return wrap(function(i) {
+  return wrap((i) => {
     const key = okeys[i];
 
     return {
@@ -67,7 +67,7 @@ const obj = function(input) {
   });
 };
 
-module.exports = function(input) {
+module.exports = (input) => {
   if (isArray(input)) {
     return arr(input);
   }

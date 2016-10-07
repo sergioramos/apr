@@ -4,12 +4,12 @@ const apr = require('../');
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
 
-test('fulfill [] filter', async function(t) {
+test('fulfill [] filter', async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
-  const output = await apr.filter(input.map(Number), async function(v, i) {
+  const output = await apr.filter(input.map(Number), async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -19,11 +19,11 @@ test('fulfill [] filter', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill @@Iterator filter', async function(t) {
+test('fulfill @@Iterator filter', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const output = await apr.filter(getIttr(), async function(v, i) {
+  const output = await apr.filter(getIttr(), async (v, i) => {
     await then(`${v}${v}`);
     order.push(i);
     return i % 2;
@@ -33,7 +33,7 @@ test('fulfill @@Iterator filter', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill {} filter', async function(t) {
+test('fulfill {} filter', async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -42,7 +42,7 @@ test('fulfill {} filter', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -55,10 +55,10 @@ test('fulfill {} filter', async function(t) {
   });
 });
 
-test('fail [] filter', async function(t) {
+test('fail [] filter', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.filter([1, 2, 3, 4], async function(v, i) {
+  t.throws(apr.filter([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -67,10 +67,10 @@ test('fail [] filter', async function(t) {
   }));
 });
 
-test('fail @@Iterator filter', async function(t) {
+test('fail @@Iterator filter', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.filter(getIttr(), async function(v, i) {
+  t.throws(apr.filter(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -79,7 +79,7 @@ test('fail @@Iterator filter', async function(t) {
   }));
 });
 
-test('fail {} filter', async function(t) {
+test('fail {} filter', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.filter({
@@ -87,7 +87,7 @@ test('fail {} filter', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     if (i === 'c') {
       throw new Error('expected error');
     }
@@ -96,12 +96,12 @@ test('fail {} filter', async function(t) {
   }));
 });
 
-test('fulfill [] filterSeries', async function(t) {
+test('fulfill [] filterSeries', async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
-  const output = await apr.filterSeries(input.map(Number), async function(v, i) {
+  const output = await apr.filterSeries(input.map(Number), async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -111,11 +111,11 @@ test('fulfill [] filterSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill @@Iterator mapSeries', async function(t) {
+test('fulfill @@Iterator mapSeries', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const output = await apr.filterSeries(getIttr(), async function(v, i) {
+  const output = await apr.filterSeries(getIttr(), async (v, i) => {
     await then(`${v}${v}`);
     order.push(i);
     return i % 2;
@@ -125,7 +125,7 @@ test('fulfill @@Iterator mapSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill {} filterSeries', async function(t) {
+test('fulfill {} filterSeries', async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -134,7 +134,7 @@ test('fulfill {} filterSeries', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -147,10 +147,10 @@ test('fulfill {} filterSeries', async function(t) {
   });
 });
 
-test('fail [] filterSeries', async function(t) {
+test('fail [] filterSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.filterSeries([1, 2, 3, 4], async function(v, i) {
+  t.throws(apr.filterSeries([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -159,10 +159,10 @@ test('fail [] filterSeries', async function(t) {
   }));
 });
 
-test('fail @@Iterator filterSeries', async function(t) {
+test('fail @@Iterator filterSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.filterSeries(getIttr(), async function(v, i) {
+  t.throws(apr.filterSeries(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -171,7 +171,7 @@ test('fail @@Iterator filterSeries', async function(t) {
   }));
 });
 
-test('fail {} filterSeries', async function(t) {
+test('fail {} filterSeries', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.filterSeries({
@@ -179,7 +179,7 @@ test('fail {} filterSeries', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     if (i === 'c') {
       throw new Error('expected error');
     }

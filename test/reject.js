@@ -4,12 +4,12 @@ const apr = require('../');
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
 
-test('fulfill [] reject', async function(t) {
+test('fulfill [] reject', async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
-  const output = await apr.reject(input.map(Number), async function(v, i) {
+  const output = await apr.reject(input.map(Number), async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -19,11 +19,11 @@ test('fulfill [] reject', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill @@Iterator reject', async function(t) {
+test('fulfill @@Iterator reject', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const output = await apr.reject(getIttr(), async function(v, i) {
+  const output = await apr.reject(getIttr(), async (v, i) => {
     await then(`${v}${v}`);
     order.push(i);
     return i % 2;
@@ -33,7 +33,7 @@ test('fulfill @@Iterator reject', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill {} reject', async function(t) {
+test('fulfill {} reject', async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -42,7 +42,7 @@ test('fulfill {} reject', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -55,10 +55,10 @@ test('fulfill {} reject', async function(t) {
   });
 });
 
-test('fail [] reject', async function(t) {
+test('fail [] reject', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.reject([1, 2, 3, 4], async function(v, i) {
+  t.throws(apr.reject([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -67,10 +67,10 @@ test('fail [] reject', async function(t) {
   }));
 });
 
-test('fail @@Iterator reject', async function(t) {
+test('fail @@Iterator reject', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.reject(getIttr(), async function(v, i) {
+  t.throws(apr.reject(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -79,7 +79,7 @@ test('fail @@Iterator reject', async function(t) {
   }));
 });
 
-test('fail {} reject', async function(t) {
+test('fail {} reject', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.reject({
@@ -87,7 +87,7 @@ test('fail {} reject', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     if (i === 'c') {
       throw new Error('expected error');
     }
@@ -96,12 +96,12 @@ test('fail {} reject', async function(t) {
   }));
 });
 
-test('fulfill [] rejectSeries', async function(t) {
+test('fulfill [] rejectSeries', async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
-  const output = await apr.rejectSeries(input.map(Number), async function(v, i) {
+  const output = await apr.rejectSeries(input.map(Number), async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -111,11 +111,11 @@ test('fulfill [] rejectSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill @@Iterator mapSeries', async function(t) {
+test('fulfill @@Iterator mapSeries', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const output = await apr.rejectSeries(getIttr(), async function(v, i) {
+  const output = await apr.rejectSeries(getIttr(), async (v, i) => {
     await then(`${v}${v}`);
     order.push(i);
     return i % 2;
@@ -125,7 +125,7 @@ test('fulfill @@Iterator mapSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill {} rejectSeries', async function(t) {
+test('fulfill {} rejectSeries', async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -134,7 +134,7 @@ test('fulfill {} rejectSeries', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     const res = await then(v);
     order.push(i);
     return res % 2;
@@ -147,10 +147,10 @@ test('fulfill {} rejectSeries', async function(t) {
   });
 });
 
-test('fail [] rejectSeries', async function(t) {
+test('fail [] rejectSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.rejectSeries([1, 2, 3, 4], async function(v, i) {
+  t.throws(apr.rejectSeries([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -159,10 +159,10 @@ test('fail [] rejectSeries', async function(t) {
   }));
 });
 
-test('fail @@Iterator rejectSeries', async function(t) {
+test('fail @@Iterator rejectSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.rejectSeries(getIttr(), async function(v, i) {
+  t.throws(apr.rejectSeries(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -171,7 +171,7 @@ test('fail @@Iterator rejectSeries', async function(t) {
   }));
 });
 
-test('fail {} rejectSeries', async function(t) {
+test('fail {} rejectSeries', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.rejectSeries({
@@ -179,7 +179,7 @@ test('fail {} rejectSeries', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     if (i === 'c') {
       throw new Error('expected error');
     }

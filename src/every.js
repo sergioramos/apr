@@ -2,20 +2,20 @@ const defaults = require('lodash.defaults');
 
 const each = require('./engine/each');
 
-const every = function(ctx) {
+const every = (ctx) => {
   let found = true;
 
   return each(defaults({
-    after: function(value, item) {
+    after: (value, item) => {
       found = Boolean(value);
       return !found;
     }
-  }, ctx)).then(function() {
+  }, ctx)).then(() => {
     return found;
   });
 };
 
-module.exports = function(input, fn, opts) {
+module.exports = (input, fn, opts) => {
   return every({
     input,
     fn,
@@ -23,11 +23,11 @@ module.exports = function(input, fn, opts) {
   });
 };
 
-module.exports.series = function(input, fn, opts) {
+module.exports.series = (input, fn, opts) => {
   return module.exports.limit(input, 1, fn, opts);
 };
 
-module.exports.limit = function(input, limit, fn, opts) {
+module.exports.limit = (input, limit, fn, opts) => {
   return every({
     input,
     fn,

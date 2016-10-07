@@ -4,12 +4,12 @@ const apr = require('../');
 const getIttr = require('./common/get-ittr');
 const timeout = require('./common/timeout');
 
-test('fulfill [] forEach', async function(t) {
+test('fulfill [] forEach', async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
-  await apr.forEach(input.map(Number), async function(v, i) {
+  await apr.forEach(input.map(Number), async (v, i) => {
     input[i] = await then(v * 2);
     order.push(i);
   });
@@ -18,12 +18,12 @@ test('fulfill [] forEach', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill @@Iterator forEach', async function(t) {
+test('fulfill @@Iterator forEach', async (t) => {
   const then = timeout(4);
   const output = [];
   const order = [];
 
-  await apr.forEach(getIttr(), async function(v, i) {
+  await apr.forEach(getIttr(), async (v, i) => {
     output[i] = await then(`${v}${v}`);
     order.push(i);
   });
@@ -32,7 +32,7 @@ test('fulfill @@Iterator forEach', async function(t) {
   t.notDeepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill {} forEach', async function(t) {
+test('fulfill {} forEach', async (t) => {
   const then = timeout(4);
   const output = {};
   const order = [];
@@ -42,7 +42,7 @@ test('fulfill {} forEach', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     output[i] = await then(v * 2);
     order.push(i);
   });
@@ -56,10 +56,10 @@ test('fulfill {} forEach', async function(t) {
   });
 });
 
-test('fail [] forEach', async function(t) {
+test('fail [] forEach', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.forEach([1, 2, 3, 4], async function(v, i) {
+  t.throws(apr.forEach([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -68,10 +68,10 @@ test('fail [] forEach', async function(t) {
   }));
 });
 
-test('fail @@Iterator forEach', async function(t) {
+test('fail @@Iterator forEach', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.forEach(getIttr(), async function(v, i) {
+  t.throws(apr.forEach(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -80,7 +80,7 @@ test('fail @@Iterator forEach', async function(t) {
   }));
 });
 
-test('fail {} forEach', async function(t) {
+test('fail {} forEach', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.forEach({
@@ -88,7 +88,7 @@ test('fail {} forEach', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     if (i === 'c') {
       throw new Error('expected error');
     }
@@ -97,12 +97,12 @@ test('fail {} forEach', async function(t) {
   }));
 });
 
-test('fulfill [] forEachSeries', async function(t) {
+test('fulfill [] forEachSeries', async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
 
-  await apr.forEachSeries(input.map(Number), async function(v, i) {
+  await apr.forEachSeries(input.map(Number), async (v, i) => {
     input[i] = await then(v * 2);
     order.push(i);
   });
@@ -111,12 +111,12 @@ test('fulfill [] forEachSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill @@Iterator forEachSeries', async function(t) {
+test('fulfill @@Iterator forEachSeries', async (t) => {
   const then = timeout(4);
   const output = [];
   const order = [];
 
-  await apr.forEachSeries(getIttr(), async function(v, i) {
+  await apr.forEachSeries(getIttr(), async (v, i) => {
     output[i] = await then(`${v}${v}`);
     order.push(i);
   });
@@ -125,7 +125,7 @@ test('fulfill @@Iterator forEachSeries', async function(t) {
   t.deepEqual(order, [0, 1, 2, 3]);
 });
 
-test('fulfill {} forEachSeries', async function(t) {
+test('fulfill {} forEachSeries', async (t) => {
   const then = timeout(4);
   const output = {};
   const order = [];
@@ -135,7 +135,7 @@ test('fulfill {} forEachSeries', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     output[i] = await then(v * 2);
     order.push(i);
   });
@@ -149,10 +149,10 @@ test('fulfill {} forEachSeries', async function(t) {
   });
 });
 
-test('fail [] forEachSeries', async function(t) {
+test('fail [] forEachSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.forEachSeries([1, 2, 3, 4], async function(v, i) {
+  t.throws(apr.forEachSeries([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -161,10 +161,10 @@ test('fail [] forEachSeries', async function(t) {
   }));
 });
 
-test('fail @@Iterator forEachSeries', async function(t) {
+test('fail @@Iterator forEachSeries', async (t) => {
   const then = timeout(4);
 
-  t.throws(apr.forEachSeries(getIttr(), async function(v, i) {
+  t.throws(apr.forEachSeries(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
     }
@@ -173,7 +173,7 @@ test('fail @@Iterator forEachSeries', async function(t) {
   }));
 });
 
-test('fail {} forEachSeries', async function(t) {
+test('fail {} forEachSeries', async (t) => {
   const then = timeout(4);
 
   t.throws(apr.forEachSeries({
@@ -181,7 +181,7 @@ test('fail {} forEachSeries', async function(t) {
     b: 2,
     c: 3,
     d: 4
-  }, async function(v, i) {
+  }, async (v, i) => {
     if (i === 'c') {
       throw new Error('expected error');
     }

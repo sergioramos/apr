@@ -1,6 +1,6 @@
-module.exports = function(fn) {
-  return function(...args) {
-    return new Promise(function(resolve, reject) {
+module.exports = (fn) => {
+  return (...args) => {
+    return new Promise((resolve, reject) => {
       try {
         resolve(fn(...args));
       } catch (err) {

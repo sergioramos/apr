@@ -80,7 +80,7 @@ const writeFile = thenify(fs.writeFile);
 await apr.each([
   '/home/.vimrc',
   '/home/.zshrc'
-], async function(file) {
+], async (file) => {
   return await writeFile(file, 'boom');
 });
 ```
@@ -93,7 +93,7 @@ const stats = await apr.map([
   'file1',
   'file2',
   'file3'
-], async function(file) {
+], async (file) => {
   return await stat(file);
 });
 ```
@@ -106,7 +106,7 @@ var existent = await apr.filter([
   'file1',
   'file2',
   'file3'
-], async function(file) {
+], async (file) => {
   return await access(file);
 });
 ```
@@ -119,7 +119,7 @@ var missing = await apr.reject([
   'file1',
   'file2',
   'file3'
-], async function(file) {
+], async (file) => {
   return await access(file);
 });
 ```
@@ -128,8 +128,8 @@ var missing = await apr.reject([
 #### reduce(arr, iteratee, initialValue)
 
 ```js
-const sum = await apr.reduce([1, 2, 3], async function(sum, item) {
-  return new Promise(function(resolve) {
+const sum = await apr.reduce([1, 2, 3], async (sum, item) => {
+  return new Promise((resolve) => {
     resolve(sum + item);
   });
 });
@@ -143,7 +143,7 @@ const first = await apr.find([
   'file1',
   'file2',
   'file3'
-], async function(file) {
+], async (file) => {
   return await access(file);
 });
 ```
@@ -156,7 +156,7 @@ const sorted = await apr.sortBy([
   'file1',
   'file2',
   'file3'
-], await function(file){
+], await (file){
   const fstat = await stat(file);
   return fstat.mtime;
 });
@@ -170,7 +170,7 @@ const oneExist = await apr.some([
   'file1',
   'file2',
   'file3'
-], async function(file) {
+], async (file) => {
   return await access(file);
 });
 ```
@@ -183,7 +183,7 @@ const allExist = await apr.every([
   'file1',
   'file2',
   'file3'
-], async function(file) {
+], async (file) => {
   return await access(file);
 });
 ```
@@ -196,7 +196,7 @@ const files = await apr.concat([
   'dir1',
   'dir2',
   'dir3'
-], async function(dir) {
+], async (dir) => {
   return await readdir(dir);
 });
 ```
@@ -209,10 +209,10 @@ const files = await apr.concat([
 
 ```js
 const res = await apr.series([
-  async function() {
+  async () => {
     return await myAsyncFn1();
   },
-  async function() {
+  async () => {
     return await myAsyncFn2();
   }
 ]);
@@ -220,10 +220,10 @@ const res = await apr.series([
 
 ```js
 const res = await apr.series({
-  one: async function() {
+  one: async () => {
     return await myAsyncFn1();
   },
-  two: async function() {
+  two: async () => {
     return await myAsyncFn2();
   }
 });
@@ -234,20 +234,20 @@ const res = await apr.series({
 
 ```js
 const res = await apr.parallel([
-  async function() {
+  async () => {
     return await myAsyncFn1();
   },
-  async function() {
+  async () => {
     return await myAsyncFn2();
   }
 ]);
 ```
 ```js
 const res = await apr.parallel({
-  one: async function() {
+  one: async () => {
     return await myAsyncFn1();
   },
-  two: async function() {
+  two: async () => {
     return await myAsyncFn2();
   }
 });

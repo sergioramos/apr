@@ -1,4 +1,4 @@
-const until = function(sum, next) {
+const until = (sum, next) => {
   const curr = next();
   const items = sum.concat([curr]);
 
@@ -9,6 +9,6 @@ const until = function(sum, next) {
   return until(items, next);
 };
 
-module.exports = function(next) {
+module.exports = (next) => {
   return until([], next);
 };

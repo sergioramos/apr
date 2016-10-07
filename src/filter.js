@@ -2,11 +2,11 @@ const Sum = require('./engine/sum');
 const back = require('./engine/back');
 const map = require('./map');
 
-const wrap = function(input, p) {
-  const after = function(items) {
-    return items.filter(function(item) {
+const wrap = (input, p) => {
+  const after = (items) => {
+    return items.filter((item) => {
       return Boolean(item.result.value) && !item.result.done;
-    }).reduce(function(sum, item, i) {
+    }).reduce((sum, item, i) => {
       const key = item.isObj ? item.key : i;
       sum[key] = item.input.value;
       return sum;
@@ -19,14 +19,14 @@ const wrap = function(input, p) {
   }).then(after);
 };
 
-module.exports = function(input, fn, opts) {
+module.exports = (input, fn, opts) => {
   return wrap(input, map(input, fn, opts));
 };
 
-module.exports.series = function(input, fn, opts) {
+module.exports.series = (input, fn, opts) => {
   return module.exports.limit(input, 1, fn, opts);
 };
 
-module.exports.limit = function(input, limit, fn, opts) {
+module.exports.limit = (input, limit, fn, opts) => {
   return wrap(input, map.limit(input, limit, fn, opts));
 };

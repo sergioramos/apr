@@ -5,15 +5,15 @@ const Sum = require('./engine/sum');
 const back = require('./engine/back');
 const map = require('./map');
 
-const wrap = function(input, p) {
+const wrap = (input, p) => {
   const isObj = !isArray(Sum(input));
 
-  const after = function(items) {
-    return sortBy(items.filter(function(item) {
+  const after = (items) => {
+    return sortBy(items.filter((item) => {
       return !item.result.done;
-    }), function(item) {
+    }), (item) => {
       return item.result.value;
-    }).map(function(item) {
+    }).map((item) => {
       return !isObj ? item.input.value : {
         key: item.key,
         value: item.input.value
@@ -27,14 +27,14 @@ const wrap = function(input, p) {
   }).then(after);
 };
 
-module.exports = function(input, fn, opts) {
+module.exports = (input, fn, opts) => {
   return wrap(input, map(input, fn, opts));
 };
 
-module.exports.series = function(input, fn, opts) {
+module.exports.series = (input, fn, opts) => {
   return module.exports.limit(input, 1, fn, opts);
 };
 
-module.exports.limit = function(input, limit, fn, opts) {
+module.exports.limit = (input, limit, fn, opts) => {
   return wrap(input, map.limit(input, limit, fn, opts));
 };

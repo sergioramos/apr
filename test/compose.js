@@ -3,26 +3,26 @@ const apr = require('../');
 
 const timeout = require('./common/timeout');
 
-test('fulfill compose', async function(t) {
+test('fulfill compose', async (t) => {
   const then = timeout(4);
   const order = [];
 
-  const composed = apr.compose(async function(v) {
+  const composed = apr.compose(async (v) => {
     order.push('before');
     const res = await then(v + 1);
     order.push('after');
     return res;
-  }, async function(v) {
+  }, async (v) => {
     order.push('before');
     const res = await then(v * 2);
     order.push('after');
     return res;
-  }, async function(v) {
+  }, async (v) => {
     order.push('before');
     const res = await then(v * 2);
     order.push('after');
     return res;
-  }, async function(v) {
+  }, async (v) => {
     order.push('before');
     const res = await then(v * 2);
     order.push('after');
@@ -45,16 +45,16 @@ test('fulfill compose', async function(t) {
   t.deepEqual(output, 9);
 });
 
-test('fail compose', async function(t) {
+test('fail compose', async (t) => {
   const then = timeout(4);
 
-  const composed = apr.compose(async function(v) {
+  const composed = apr.compose(async (v) => {
     return await then(v * 2);
-  }, async function(v) {
+  }, async (v) => {
     throw new Error('Unexpected Error');
-  }, async function(v) {
+  }, async (v) => {
     return await then(v * 2);
-  }, async function(v) {
+  }, async (v) => {
     return await then(v * 2);
   });
 
