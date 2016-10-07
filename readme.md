@@ -257,9 +257,9 @@ const res = await apr.parallel({
 #### utils
 
 <a id="async-parity"></a>
-### implemented [caolan/async](https://github.com/caolan/async) methods
+### [caolan/async](https://github.com/caolan/async) feature parity
 
-Eventually it should have feature parity with it.
+Eventually it should have feature parity with [caolan/async](https://github.com/caolan/async).
 
 ##### [collections](#collections) 
  - [x] concat
