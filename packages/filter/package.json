@@ -1,0 +1,21 @@
+{
+  "name": "apr-filter",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/filter",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/filter.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-engine-back": "^1.0.0",
+    "apr-engine-sum": "^1.0.0",
+    "apr-map": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}

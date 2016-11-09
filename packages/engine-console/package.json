@@ -1,0 +1,16 @@
+{
+  "name": "apr-engine-console",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-console",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/engine-console.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}

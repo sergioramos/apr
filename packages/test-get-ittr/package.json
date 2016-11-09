@@ -1,0 +1,10 @@
+{
+  "name": "apr-test-get-ittr",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-get-ittr",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/get-ittr.js",
+  "repository": "ramitos/apr"
+}

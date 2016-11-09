@@ -1,0 +1,20 @@
+{
+  "name": "apr-series",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/series",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/series.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-reduce": "^1.0.0",
+    "apr-engine-sum": "^1.0.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}

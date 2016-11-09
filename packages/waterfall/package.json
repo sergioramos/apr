@@ -1,0 +1,20 @@
+{
+  "name": "apr-waterfall",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/waterfall",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/waterfall.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-engine-each": "^1.0.0"
+  },
+  "devDependencies": {
+    "apr-test-timeout": "^1.0.0",
+    "ava": "^0.16.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "apr-concat",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/concat",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/concat.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-engine-each": "^1.0.0",
+    "lodash.defaults": "^4.2.0"
+  }
+}

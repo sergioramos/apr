@@ -1,0 +1,20 @@
+{
+  "name": "apr-every",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/every",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/every.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-engine-each": "^1.0.0",
+    "lodash.defaults": "^4.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}

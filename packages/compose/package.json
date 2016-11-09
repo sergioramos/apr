@@ -1,0 +1,21 @@
+{
+  "name": "apr-compose",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/compose",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/compose.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-waterfall": "^1.0.0",
+    "lodash.reverse": "^4.0.1"
+  },
+  "devDependencies": {
+    "apr-test-timeout": "^1.0.0",
+    "ava": "^0.16.0"
+  }
+}

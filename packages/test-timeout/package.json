@@ -1,0 +1,15 @@
+{
+  "name": "apr-test-timeout",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-timeout",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/timeout.js",
+  "repository": "ramitos/apr",
+  "dependencies": {
+    "array-shuffle": "^1.0.1",
+    "build-array": "^1.0.0",
+    "timeout-then": "^1.1.0"
+  }
+}

@@ -4,6 +4,10 @@ Collection of tools to manage control flow of/with Promises - inspired by [caola
 
 Works with and without async/await. The lib itself only uses promises.
 
+As someone beautifully put it:
+
+> this is like [caolan/async](https://github.com/caolan/async) which is like [lodash](https://github.com/lodash/lodash) but async, but awaitful
+
 <a id="contents"></a>
 ## contents
 
@@ -61,6 +65,7 @@ Works with and without async/await. The lib itself only uses promises.
     * [constant](#constant)
     * [dir](#dir)
     * [reflect](#reflect)
+* [todo](#todo)
 * [caolan/async parity](#async-parity)
 * [license](#license)
 
@@ -69,6 +74,8 @@ Works with and without async/await. The lib itself only uses promises.
 
 <a id="collections"></a>
 ### collections
+
+You can use `arrays, `objects` and `[iterables](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Iteration_protocols)` as the input for all the collection functions. 
 
 <a id="each"></a>
 #### each(arr, iteratee) / forEach(arr, iteratee)
@@ -255,6 +262,12 @@ const res = await apr.parallel({
 
 <a id="utils"></a>
 #### utils
+
+<a id="todo"></a>
+### todo
+
+ - [ ] finish [caolan/async feature parity](#async-parity)
+ - [ ] make each package completely independent (including readme)
 
 <a id="async-parity"></a>
 ### [caolan/async](https://github.com/caolan/async) feature parity

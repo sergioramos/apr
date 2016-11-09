@@ -1,0 +1,23 @@
+{
+  "name": "apr-engine-iterator",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-iterator",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "contributors": [],
+  "main": "src/engine-iterator.js",
+  "repository": "ramitos/apr",
+  "scripts": {
+    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+  },
+  "dependencies": {
+    "apr-engine-until": "^1.0.0",
+    "build-array": "^1.0.0",
+    "lodash.isarraylike": "^4.2.0",
+    "lodash.isfinite": "^3.3.2",
+    "lodash.keys": "^4.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0"
+  }
+}
