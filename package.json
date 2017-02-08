@@ -5,7 +5,12 @@
   "scripts": {
     "test": "NODE_ENV=test nyc --reporter=html ava test/*.js --fail-fast -v",
     "lint": "eslint .",
-    "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter"
+    "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
+    "commit": "git-cz",
+    "release": "standard-version",
+    "publish": "lerna publish",
+    "clean": "lerna clean",
+    "bootstrap": "lerna bootstrap"
   },
   "devDependencies": {
     "array-shuffle": "^1.0.1",
@@ -18,6 +23,8 @@
     "babel-preset-es2015": "^6.22.0",
     "build-array": "^1.0.0",
     "codeclimate-test-reporter": "^0.4.0",
+    "commitizen": "^2.9.5",
+    "cz-emoji": "^0.1.0",
     "delay": "^1.3.1",
     "eslint": "^3.15.0",
     "eslint-config-semistandard": "^7.0.0",
@@ -25,10 +32,13 @@
     "eslint-plugin-babel": "^4.0.1",
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
+    "husky": "^0.13.1",
     "lerna": "2.0.0-beta.36",
+    "lerna-changelog": "^0.3.0",
     "lodash.flatten": "^4.4.0",
     "nyc": "^10.1.2",
     "random-natural": "^1.0.3",
+    "standard-version": "^4.0.0",
     "tap-mocha-reporter": "3.0.3",
     "thenify": "^3.2.1",
     "timeout-then": "^1.1.0"
@@ -38,5 +48,10 @@
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji"
+    }
   }
 }
