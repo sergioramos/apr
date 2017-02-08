@@ -1,5 +1,5 @@
 {
-  "lerna": "2.0.0-beta.30",
+  "lerna": "2.0.0-beta.36",
   "changelog": {
     "repo": "ramitos/apr",
     "labels": {
@@ -12,5 +12,8 @@
       "tag: internal": ":house: Internal"
     }
   },
-  "version": "independent"
+  "version": "independent",
+  "packages": [
+    "packages/*"
+  ]
 }

@@ -1,0 +1,57 @@
+const test = require('ava');
+
+const times = require('../packages/times');
+const timesSeries = require('../packages/times/series');
+const timeout = require('../packages/test-timeout');
+
+test('fulfill times', async (t) => {
+  const then = timeout(4);
+  const order = [];
+
+  const output = await times(5, async (i) => {
+    const res = await then(i * 2);
+    order.push(i);
+    return res;
+  });
+
+  t.deepEqual(output, [0, 2, 4, 6, 8]);
+  t.notDeepEqual(order, [0, 1, 2, 3, 4]);
+});
+
+test('fail times', async (t) => {
+  const then = timeout(4);
+
+  t.throws(times(5, async (v, i) => {
+    if (i === 3) {
+      throw new Error('expected error');
+    }
+
+    return await then(i * 2);
+  }));
+});
+
+test('fulfill timesSeries', async (t) => {
+  const then = timeout(4);
+  const order = [];
+
+  const output = await times.series(5, async (i) => {
+    const res = await then(i * 2);
+    order.push(i);
+    return res;
+  });
+
+  t.deepEqual(output, [0, 2, 4, 6, 8]);
+  t.deepEqual(order, [0, 1, 2, 3, 4]);
+});
+
+test('fail timesSeries', async (t) => {
+  const then = timeout(4);
+
+  t.throws(times.series(5, async (i) => {
+    if (i > 2) {
+      throw new Error('expected error');
+    }
+
+    return await then(i * 2);
+  }));
+});
