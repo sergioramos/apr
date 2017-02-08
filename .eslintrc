@@ -10,7 +10,6 @@
   ],
   "rules": {
     "generator-star-spacing": 0,
-    "babel/generator-star-spacing": 1,
     "space-before-function-paren": [2, "never"],
     "object-curly-newline": ["error", {
       "minProperties": 1
