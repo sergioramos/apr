@@ -649,7 +649,7 @@ Eventually it should have feature parity with [caolan/async](https://github.com/
  - [x] sortBy
  - [ ] transform
 
-##### control flow
+##### [control flow](#control-flow)
 
  - [ ] applyEach
  - [ ] applyEachSeries
@@ -678,7 +678,7 @@ Eventually it should have feature parity with [caolan/async](https://github.com/
  - [x] waterfall
  - [x] whilst
 
-##### utils
+##### [utils](#utils)
 
  - [x] apply
  - [x] asyncify
