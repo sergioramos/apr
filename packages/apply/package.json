@@ -1,6 +1,6 @@
 {
   "name": "apr-apply",
-  "version": "1.0.0",
+  "version": "1.0.0-beta",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/apply",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
