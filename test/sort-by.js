@@ -1,6 +1,5 @@
 const test = require('ava');
 
-const sortBySeries = require('../packages/sort-by/series');
 const sortBy = require('../packages/sort-by');
 const getIttr = require('../packages/test-get-ittr');
 const timeout = require('../packages/test-timeout');

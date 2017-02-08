@@ -1,5 +1,4 @@
 const buildArray = require('build-array');
-const defaults = require('lodash.defaults');
 const map = require('apr-map');
 
 module.exports = (count, fn, opts) => {

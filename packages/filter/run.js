@@ -17,11 +17,3 @@ module.exports = (input, p) => {
     input
   }).then(after);
 };
-
-module.exports.series = (input, fn, opts) => {
-  return module.exports.limit(input, 1, fn, opts);
-};
-
-module.exports.limit = (input, limit, fn, opts) => {
-  return wrap(input, map.limit(input, limit, fn, opts));
-};

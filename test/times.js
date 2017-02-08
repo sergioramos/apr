@@ -1,7 +1,6 @@
 const test = require('ava');
 
 const times = require('../packages/times');
-const timesSeries = require('../packages/times/series');
 const timeout = require('../packages/test-timeout');
 
 test('fulfill times', async (t) => {
