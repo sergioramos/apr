@@ -1,6 +1,6 @@
 {
   "name": "apr-filter",
-  "version": "1.0.0-beta",
+  "version": "1.0.0",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/filter",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
