@@ -7,7 +7,7 @@ const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
 test('fulfill [] some', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(8);
   const input = [1, 2, 3, 4];
   const order = [];
 
@@ -34,7 +34,7 @@ test('fulfill [] some', schedule(async (t) => {
 }));
 
 test('fulfill @@Iterator some', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(8);
   const order = [];
 
   const fn = (cnd, order) => {
@@ -60,7 +60,7 @@ test('fulfill @@Iterator some', schedule(async (t) => {
 }));
 
 test('fulfill {} some', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(8);
   const order = [];
 
   const input = {
@@ -128,7 +128,7 @@ test('fail {} some', schedule(async (t) => {
 }));
 
 test('fulfill [] someSeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(6);
   const input = [1, 2, 3, 4];
   const order = [];
 
@@ -155,7 +155,7 @@ test('fulfill [] someSeries', schedule(async (t) => {
 }));
 
 test('fulfill @@Iterator someSeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(7);
   const order = [];
 
   const fn = (cnd, order) => {
@@ -181,7 +181,7 @@ test('fulfill @@Iterator someSeries', schedule(async (t) => {
 }));
 
 test('fulfill {} someSeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(6);
   const order = [];
 
   const input = {

@@ -7,7 +7,7 @@ const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
 test('fulfill [] every', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(8);
   const input = [1, 2, 3, 4];
   const order = [];
 
@@ -34,7 +34,7 @@ test('fulfill [] every', schedule(async (t) => {
 }));
 
 test('fulfill @@Iterator every', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(8);
   const order = [];
 
   const fn = (cnd, order) => {
@@ -60,7 +60,7 @@ test('fulfill @@Iterator every', schedule(async (t) => {
 }));
 
 test('fulfill {} every', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(8);
   const order = [];
 
   const input = {
@@ -128,7 +128,7 @@ test('fail {} every', schedule(async (t) => {
 }));
 
 test('fulfill [] everySeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(5);
   const input = [1, 2, 3, 4];
   const order = [];
 
@@ -146,7 +146,7 @@ test('fulfill [] everySeries', schedule(async (t) => {
 
   t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 
-  const notAlways = await every(input.map(Number), fn((v, i) => {
+  const notAlways = await every.series(input.map(Number), fn((v, i) => {
     return v > 1;
   }));
 
@@ -155,7 +155,7 @@ test('fulfill [] everySeries', schedule(async (t) => {
 }));
 
 test('fulfill @@Iterator everySeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(5);
   const order = [];
 
   const fn = (cnd, order) => {
@@ -172,7 +172,7 @@ test('fulfill @@Iterator everySeries', schedule(async (t) => {
 
   t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 
-  const notAlways = await every(getIttr(), fn((v, i) => {
+  const notAlways = await every.series(getIttr(), fn((v, i) => {
     return i > 0;
   }));
 
@@ -181,7 +181,7 @@ test('fulfill @@Iterator everySeries', schedule(async (t) => {
 }));
 
 test('fulfill {} everySeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(5);
   const order = [];
 
   const input = {
@@ -205,7 +205,7 @@ test('fulfill {} everySeries', schedule(async (t) => {
 
   t.deepEqual(order, buildArray(order.length).map((v, i) => (i + 1)));
 
-  const notAlways = await every(input, fn((v, i) => {
+  const notAlways = await every.series(input, fn((v, i) => {
     return v > 1;
   }));
 

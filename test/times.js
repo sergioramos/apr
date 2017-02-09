@@ -5,7 +5,7 @@ const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
 test('fulfill times', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(5);
   const order = [];
 
   const output = await times(5, async (i) => {
@@ -31,7 +31,7 @@ test('fail times', schedule(async (t) => {
 }));
 
 test('fulfill timesSeries', schedule(async (t) => {
-  const then = timeout(4);
+  const then = timeout(5);
   const order = [];
 
   const output = await times.series(5, async (i) => {
