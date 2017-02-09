@@ -11,13 +11,13 @@
   "rules": {
     "generator-star-spacing": 0,
     "space-before-function-paren": [2, "never"],
-    "object-curly-newline": ["error", {
+    "object-curly-newline": [2, {
       "minProperties": 1
     }],
-    "sort-imports": ["error", {
+    "sort-imports": [2, {
       "ignoreCase": false
     }],
-    "sort-vars": ["error", {
+    "sort-vars": [2, {
       "ignoreCase": true
     }]
   }
