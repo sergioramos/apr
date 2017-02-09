@@ -7,7 +7,6 @@
     "lint": "eslint .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "commit": "git-cz",
-    "release": "standard-version",
     "publish": "lerna publish",
     "clean": "lerna clean",
     "bootstrap": "lerna bootstrap"
@@ -38,7 +37,6 @@
     "lodash.flatten": "^4.4.0",
     "nyc": "^10.1.2",
     "random-natural": "^1.0.3",
-    "standard-version": "^4.0.0",
     "tap-mocha-reporter": "3.0.3",
     "thenify": "^3.2.1",
     "timeout-then": "^1.1.0"
