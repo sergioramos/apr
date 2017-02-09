@@ -1,1 +1,1 @@
-echo "[![](https://img.shields.io/npm/v/$1.svg)](https://www.npmjs.com/package/$1) [![](https://img.shields.io/npm/l/$1.svg)](https://www.npmjs.com/package/$1) [![](https://img.shields.io/librariesio/release/npm/$1/latest.svg)](https://libraries.io/npm/$1)"
+echo "[![](https://img.shields.io/npm/v/$1.svg)](https://www.npmjs.com/package/$1) [![](https://img.shields.io/npm/l/$1.svg)](https://www.npmjs.com/package/$1)"
