@@ -92,7 +92,7 @@ import concatLimit from 'apr-concat/limit'
 Returns the first value in `coll` that passes an async truth test.
 
 ```js
-import concat from 'apr-concat'
+import find from 'apr-find'
 
 const access = thenify(fs.access);
 const files = [
