@@ -136,7 +136,7 @@ const files = [
   '/home/.zshrc'
 ];
 
-await each(files, async (file) => 
+await forEach(files, async (file) => 
   await writeFile(file, 'boom')
 );
 ```
