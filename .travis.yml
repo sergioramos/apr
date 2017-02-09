@@ -8,5 +8,4 @@ script:
 addons:
   code_climate:
     repo_token:
-before_script: npm run bootstrap
 after_success: npm run coverage

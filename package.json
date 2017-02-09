@@ -9,7 +9,8 @@
     "commit": "git-cz",
     "publish": "lerna publish",
     "clean": "lerna clean",
-    "bootstrap": "lerna bootstrap"
+    "bootstrap": "lerna bootstrap",
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "array-shuffle": "^1.0.1",
