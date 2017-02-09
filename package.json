@@ -5,6 +5,7 @@
   "scripts": {
     "test": "NODE_ENV=test nyc --reporter=html ava test/*.js --fail-fast -v",
     "lint": "eslint .",
+    "lint-fix": "eslint --fix .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "commit": "git-cz",
     "publish": "lerna publish",
