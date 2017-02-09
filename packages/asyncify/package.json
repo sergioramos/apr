@@ -6,14 +6,5 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "contributors": [],
   "main": "src/asyncify.js",
-  "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
-  "devDependencies": {
-    "apr-apply": "^1.0.0",
-    "apr-waterfall": "^1.0.0",
-    "ava": "^0.16.0",
-    "thenify": "^3.2.1"
-  }
+  "repository": "ramitos/apr"
 }

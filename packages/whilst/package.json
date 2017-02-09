@@ -7,15 +7,7 @@
   "contributors": [],
   "main": "src/whilst.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-engine-repeat": "^1.0.0"
-  },
-  "devDependencies": {
-    "apr-test-timeout": "^1.0.0",
-    "ava": "^0.16.0",
-    "random-natural": "^1.0.3"
   }
 }

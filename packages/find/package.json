@@ -15,8 +15,5 @@
     "apr-engine-sum": "^1.0.0",
     "lodash.defaults": "^4.2.0",
     "lodash.isarraylike": "^4.2.0"
-  },
-  "devDependencies": {
-    "ava": "^0.16.0"
   }
 }

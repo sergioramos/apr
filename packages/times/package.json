@@ -7,16 +7,9 @@
   "contributors": [],
   "main": "src/times.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-map": "^1.0.0",
     "build-array": "^1.0.0",
     "lodash.defaults": "^4.2.0"
-  },
-  "devDependencies": {
-    "apr-test-timeout": "^1.0.0",
-    "ava": "^0.16.0"
   }
 }

@@ -12,8 +12,5 @@
   },
   "dependencies": {
     "apr-engine-console": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "^0.16.0"
   }
 }

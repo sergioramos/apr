@@ -7,13 +7,7 @@
   "contributors": [],
   "main": "src/engine-run.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-engine-iterator": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "^0.16.0"
   }
 }

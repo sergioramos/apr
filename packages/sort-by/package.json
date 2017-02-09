@@ -7,19 +7,11 @@
   "contributors": [],
   "main": "src/sort-by.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-engine-back": "^1.0.0",
     "apr-engine-sum": "^1.0.0",
     "apr-map": "^1.0.0",
     "lodash.isarraylike": "^4.2.0",
     "lodash.sortby": "^4.7.0"
-  },
-  "devDependencies": {
-    "apr-test-get-ittr": "^1.0.0",
-    "apr-test-timeout": "^1.0.0",
-    "ava": "^0.16.0"
   }
 }

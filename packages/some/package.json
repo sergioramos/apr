@@ -7,13 +7,7 @@
   "contributors": [],
   "main": "src/some.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-find": "^1.0.0"
-  },
-  "devDependencies": {
-    "ava": "^0.16.0"
   }
 }

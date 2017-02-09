@@ -6,13 +6,5 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "contributors": [],
   "main": "src/apply.js",
-  "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
-  "devDependencies": {
-    "apr-test-timeout": "^1.0.0",
-    "apr-parallel": "^1.0.0",
-    "ava": "^0.16.0"
-  }
+  "repository": "ramitos/apr"
 }

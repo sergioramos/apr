@@ -7,14 +7,8 @@
   "contributors": [],
   "main": "src/engine-each.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-engine-run": "^1.0.0",
     "lodash.defaults": "^4.2.0"
-  },
-  "devDependencies": {
-    "ava": "^0.16.0"
   }
 }
