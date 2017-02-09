@@ -5,11 +5,8 @@
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "contributors": [],
-  "main": "src/log.js",
+  "main": "src/index.js",
   "repository": "ramitos/apr",
-  "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
-  },
   "dependencies": {
     "apr-engine-console": "^1.0.0"
   }

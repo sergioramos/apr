@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "contributors": [],
-  "main": "src/filter.js",
+  "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
     "apr-engine-back": "^1.0.0",
