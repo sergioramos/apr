@@ -6,8 +6,5 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "contributors": [],
   "main": "src/index.js",
-  "repository": "ramitos/apr",
-  "dependencies": {
-    "p-queue": "^1.0.0"
-  }
+  "repository": "ramitos/apr"
 }

@@ -1,9 +1,42 @@
-const PQueue = require('p-queue');
+module.exports = () => {
+  const queue = [];
+  let running = null;
 
-module.exports = (concurrency) => {
-  const queue = new PQueue({
-    concurrency: concurrency || 1
-  });
+  const run = () => {
+    if (running || !queue.length) {
+      return;
+    }
 
-  return (task) => (t) => queue.add(() => task(t))
+    const task = queue.pop();
+
+    running = task.id;
+
+    const resolve = (err, val) => {
+      running = null;
+      run();
+
+      return err
+        ? task.reject(err)
+        : task.resolve(val);
+    };
+
+    task.fn(...task.args).then(
+      (val) => resolve(null, val),
+      (err) => resolve(err)
+    );
+  };
+
+  const add = (fn, args) => (resolve, reject) => {
+    queue.push({
+      id: new Date().getTime(),
+      args,
+      fn,
+      resolve,
+      reject
+    });
+
+    run();
+  };
+
+  return (fn) => (...args) => new Promise(add(fn, args));
 };
