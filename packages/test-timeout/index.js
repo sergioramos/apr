@@ -3,9 +3,9 @@ const timeout = require('timeout-then');
 const shuffle = require('array-shuffle');
 
 const getTimes = (size, interval) =>
-  shuffle(buildArray(size).map((v, i) => interval * (i + 1)))
+  shuffle(buildArray(size).map((v, i) => interval * (i + 1)));
 
-const _checkTimes = (times)  => times.map((time, i) => {
+const _checkTimes = (times) => times.map((time, i) => {
   const a = times[i - 1] || 0;
   const b = times[i + 1] || Infinity;
 
@@ -13,11 +13,11 @@ const _checkTimes = (times)  => times.map((time, i) => {
   const max = Math.max(a, b);
 
   return !(time > min && time < max);
-}).every(Boolean)
+}).every(Boolean);
 
 const checkTimes = (times) => times.length > 1
   ? _checkTimes(times)
-  : false
+  : false;
 
 module.exports = (size) => {
   const interval = size * 25;
@@ -25,7 +25,7 @@ module.exports = (size) => {
 
   do {
     times = getTimes(size, interval);
-  } while (checkTimes(times))
+  } while (checkTimes(times));
 
   let i = 0;
 
