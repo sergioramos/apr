@@ -1,6 +1,6 @@
 {
   "name": "apr-waterfall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/waterfall",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -8,6 +8,6 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-each": "^1.0.0"
+    "apr-engine-each": "^1.0.1"
   }
 }

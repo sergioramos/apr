@@ -1,6 +1,6 @@
 {
   "name": "apr-parallel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/parallel",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-sum": "^1.0.0",
-    "apr-reduce": "^1.0.0"
+    "apr-engine-sum": "^1.0.1",
+    "apr-reduce": "^1.0.1"
   }
 }

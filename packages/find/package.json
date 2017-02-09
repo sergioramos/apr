@@ -1,6 +1,6 @@
 {
   "name": "apr-find",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/find",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -11,8 +11,8 @@
     "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
   },
   "dependencies": {
-    "apr-engine-each": "^1.0.0",
-    "apr-engine-sum": "^1.0.0",
+    "apr-engine-each": "^1.0.1",
+    "apr-engine-sum": "^1.0.1",
     "lodash.defaults": "^4.2.0",
     "lodash.isarraylike": "^4.2.0"
   }

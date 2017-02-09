@@ -1,6 +1,6 @@
 {
   "name": "apr-map",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "keywords": [],
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/map",
@@ -10,8 +10,8 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-each": "^1.0.0",
-    "apr-engine-sum": "^1.0.0",
+    "apr-engine-each": "^1.0.1",
+    "apr-engine-sum": "^1.0.1",
     "lodash.defaults": "^4.2.0"
   }
 }
