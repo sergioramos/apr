@@ -6,8 +6,8 @@ const timeout = require('../packages/test-timeout');
 
 test('fulfill async until', async (t) => {
   const maxCalls = random({
-    min: 3,
-    max: 10
+    min: 2,
+    max: 5
   });
 
   const then = timeout(maxCalls * 2);
@@ -28,7 +28,7 @@ test('fulfill async until', async (t) => {
 test('fulfill until', async (t) => {
   const maxCalls = random({
     min: 3,
-    max: 10
+    max: 5
   });
 
   const then = timeout(maxCalls);

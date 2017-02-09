@@ -7,7 +7,7 @@ const whilst = require('../packages/whilst');
 test('fulfill async whilst', async (t) => {
   const maxCalls = random({
     min: 3,
-    max: 10
+    max: 5
   });
 
   const then = timeout(maxCalls * 2);
@@ -28,7 +28,7 @@ test('fulfill async whilst', async (t) => {
 test('fulfill whilst', async (t) => {
   const maxCalls = random({
     min: 3,
-    max: 10
+    max: 5
   });
 
   const then = timeout(maxCalls);
