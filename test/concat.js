@@ -2,9 +2,10 @@ const test = require('ava');
 
 const concat = require('../packages/concat');
 const getIttr = require('../packages/test-get-ittr');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] concat', async (t) => {
+test('fulfill [] concat', schedule(async (t) => {
   const then = timeout(4);
 
   const input = [1, 2, 3, 4];
@@ -18,9 +19,9 @@ test('fulfill [] concat', async (t) => {
 
   t.deepEqual(output, 20);
   t.notDeepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator concat', async (t) => {
+test('fulfill @@Iterator concat', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -32,9 +33,9 @@ test('fulfill @@Iterator concat', async (t) => {
 
   t.deepEqual(output, 'aabbccdd');
   t.notDeepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} concat', async (t) => {
+test('fulfill {} concat', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -51,9 +52,9 @@ test('fulfill {} concat', async (t) => {
 
   t.notDeepEqual(order, ['a', 'b', 'c', 'd']);
   t.deepEqual(output, 20);
-});
+}));
 
-test('fail [] concat', async (t) => {
+test('fail [] concat', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(concat([1, 2, 3, 4], async (v, i) => {
@@ -63,9 +64,9 @@ test('fail [] concat', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator concat', async (t) => {
+test('fail @@Iterator concat', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(concat(getIttr(), async (v, i) => {
@@ -75,9 +76,9 @@ test('fail @@Iterator concat', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} concat', async (t) => {
+test('fail {} concat', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(concat({
@@ -92,9 +93,9 @@ test('fail {} concat', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fulfill [] concatSeries', async (t) => {
+test('fulfill [] concatSeries', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -107,9 +108,9 @@ test('fulfill [] concatSeries', async (t) => {
 
   t.deepEqual(output, 20);
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator concatSeries', async (t) => {
+test('fulfill @@Iterator concatSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -121,9 +122,9 @@ test('fulfill @@Iterator concatSeries', async (t) => {
 
   t.deepEqual(output, 'aabbccdd');
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} concatSeries', async (t) => {
+test('fulfill {} concatSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -140,9 +141,9 @@ test('fulfill {} concatSeries', async (t) => {
 
   t.deepEqual(order, ['a', 'b', 'c', 'd']);
   t.deepEqual(output, 20);
-});
+}));
 
-test('fail [] concatSeries', async (t) => {
+test('fail [] concatSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(concat.series([1, 2, 3, 4], async (v, i) => {
@@ -152,9 +153,9 @@ test('fail [] concatSeries', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator concatSeries', async (t) => {
+test('fail @@Iterator concatSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(concat.series(getIttr(), async (v, i) => {
@@ -164,9 +165,9 @@ test('fail @@Iterator concatSeries', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} concatSeries', async (t) => {
+test('fail {} concatSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(concat.series({
@@ -181,4 +182,4 @@ test('fail {} concatSeries', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));

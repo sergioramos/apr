@@ -3,9 +3,10 @@ const test = require('ava');
 
 const some = require('../packages/some');
 const getIttr = require('../packages/test-get-ittr');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] some', async (t) => {
+test('fulfill [] some', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -30,9 +31,9 @@ test('fulfill [] some', async (t) => {
 
   t.deepEqual(notFound, false);
   t.deepEqual(found, true);
-});
+}));
 
-test('fulfill @@Iterator some', async (t) => {
+test('fulfill @@Iterator some', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -56,9 +57,9 @@ test('fulfill @@Iterator some', async (t) => {
 
   t.deepEqual(notFound, false);
   t.deepEqual(found, true);
-});
+}));
 
-test('fulfill {} some', async (t) => {
+test('fulfill {} some', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -89,9 +90,9 @@ test('fulfill {} some', async (t) => {
 
   t.deepEqual(notFound, false);
   t.deepEqual(found, true);
-});
+}));
 
-test('fail [] some', async (t) => {
+test('fail [] some', schedule(async (t) => {
   t.throws(some([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -99,9 +100,9 @@ test('fail [] some', async (t) => {
 
     return false;
   }));
-});
+}));
 
-test('fail @@Iterator some', async (t) => {
+test('fail @@Iterator some', schedule(async (t) => {
   t.throws(some(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -109,9 +110,9 @@ test('fail @@Iterator some', async (t) => {
 
     return false;
   }));
-});
+}));
 
-test('fail {} some', async (t) => {
+test('fail {} some', schedule(async (t) => {
   t.throws(some({
     a: 1,
     b: 2,
@@ -124,9 +125,9 @@ test('fail {} some', async (t) => {
 
     return false;
   }));
-});
+}));
 
-test('fulfill [] someSeries', async (t) => {
+test('fulfill [] someSeries', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -151,9 +152,9 @@ test('fulfill [] someSeries', async (t) => {
 
   t.deepEqual(notFound, false);
   t.deepEqual(found, true);
-});
+}));
 
-test('fulfill @@Iterator someSeries', async (t) => {
+test('fulfill @@Iterator someSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -177,9 +178,9 @@ test('fulfill @@Iterator someSeries', async (t) => {
 
   t.deepEqual(notFound, false);
   t.deepEqual(found, true);
-});
+}));
 
-test('fulfill {} someSeries', async (t) => {
+test('fulfill {} someSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -210,9 +211,9 @@ test('fulfill {} someSeries', async (t) => {
 
   t.deepEqual(notFound, false);
   t.deepEqual(found, true);
-});
+}));
 
-test('fail [] someSeries', async (t) => {
+test('fail [] someSeries', schedule(async (t) => {
   t.throws(some.series([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -220,9 +221,9 @@ test('fail [] someSeries', async (t) => {
 
     return false;
   }));
-});
+}));
 
-test('fail @@Iterator someSeries', async (t) => {
+test('fail @@Iterator someSeries', schedule(async (t) => {
   t.throws(some.series(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -230,9 +231,9 @@ test('fail @@Iterator someSeries', async (t) => {
 
     return false;
   }));
-});
+}));
 
-test('fail {} someSeries', async (t) => {
+test('fail {} someSeries', schedule(async (t) => {
   t.throws(some.series({
     a: 1,
     b: 2,
@@ -245,4 +246,4 @@ test('fail {} someSeries', async (t) => {
 
     return false;
   }));
-});
+}));

@@ -1,10 +1,11 @@
 const test = require('ava');
 
 const parallel = require('../packages/parallel');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 const apply = require('../packages/apply');
 
-test('does apply', async (t) => {
+test('does apply', schedule(async (t) => {
   const then = timeout(1);
 
   let called = false;
@@ -23,4 +24,4 @@ test('does apply', async (t) => {
 
   t.deepEqual(called, true);
   t.deepEqual(output, [2]);
-});
+}));

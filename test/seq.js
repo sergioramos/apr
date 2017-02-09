@@ -1,9 +1,10 @@
 const test = require('ava');
 
 const seq = require('../packages/seq');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill seq', async (t) => {
+test('fulfill seq', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -43,9 +44,9 @@ test('fulfill seq', async (t) => {
   ]);
 
   t.deepEqual(output, 16);
-});
+}));
 
-test('fail seq', async (t) => {
+test('fail seq', schedule(async (t) => {
   const then = timeout(4);
 
   const seqd = seq(async (v) => {
@@ -59,4 +60,4 @@ test('fail seq', async (t) => {
   });
 
   t.throws(seqd(1));
-});
+}));

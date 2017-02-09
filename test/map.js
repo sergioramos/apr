@@ -2,9 +2,10 @@ const test = require('ava');
 
 const map = require('../packages/map');
 const getIttr = require('../packages/test-get-ittr');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] map', async (t) => {
+test('fulfill [] map', schedule(async (t) => {
   const then = timeout(4);
 
   const input = [1, 2, 3, 4];
@@ -18,9 +19,9 @@ test('fulfill [] map', async (t) => {
 
   t.deepEqual(output, [2, 4, 6, 8]);
   t.notDeepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator map', async (t) => {
+test('fulfill @@Iterator map', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -32,9 +33,9 @@ test('fulfill @@Iterator map', async (t) => {
 
   t.deepEqual(output, ['aa', 'bb', 'cc', 'dd']);
   t.notDeepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} map', async (t) => {
+test('fulfill {} map', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -56,9 +57,9 @@ test('fulfill {} map', async (t) => {
     c: 6,
     d: 8
   });
-});
+}));
 
-test('fail [] map', async (t) => {
+test('fail [] map', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(map([1, 2, 3, 4], async (v, i) => {
@@ -68,9 +69,9 @@ test('fail [] map', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator map', async (t) => {
+test('fail @@Iterator map', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(map(getIttr(), async (v, i) => {
@@ -80,9 +81,9 @@ test('fail @@Iterator map', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} map', async (t) => {
+test('fail {} map', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(map({
@@ -97,9 +98,9 @@ test('fail {} map', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fulfill [] mapSeries', async (t) => {
+test('fulfill [] mapSeries', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -112,9 +113,9 @@ test('fulfill [] mapSeries', async (t) => {
 
   t.deepEqual(output, [2, 4, 6, 8]);
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator mapSeries', async (t) => {
+test('fulfill @@Iterator mapSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -126,9 +127,9 @@ test('fulfill @@Iterator mapSeries', async (t) => {
 
   t.deepEqual(output, ['aa', 'bb', 'cc', 'dd']);
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} mapSeries', async (t) => {
+test('fulfill {} mapSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -150,9 +151,9 @@ test('fulfill {} mapSeries', async (t) => {
     c: 6,
     d: 8
   });
-});
+}));
 
-test('fail [] mapSeries', async (t) => {
+test('fail [] mapSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(map.series([1, 2, 3, 4], async (v, i) => {
@@ -162,9 +163,9 @@ test('fail [] mapSeries', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator mapSeries', async (t) => {
+test('fail @@Iterator mapSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(map.series(getIttr(), async (v, i) => {
@@ -174,9 +175,9 @@ test('fail @@Iterator mapSeries', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} mapSeries', async (t) => {
+test('fail {} mapSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(map.series({
@@ -191,4 +192,4 @@ test('fail {} mapSeries', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));

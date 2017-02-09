@@ -2,9 +2,10 @@ const test = require('ava');
 
 const reduce = require('../packages/reduce');
 const getIttr = require('../packages/test-get-ittr');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] reduce', async (t) => {
+test('fulfill [] reduce', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -17,9 +18,9 @@ test('fulfill [] reduce', async (t) => {
 
   t.deepEqual(output, 20);
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator reduce', async (t) => {
+test('fulfill @@Iterator reduce', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -31,9 +32,9 @@ test('fulfill @@Iterator reduce', async (t) => {
 
   t.deepEqual(output, 'aabbccdd');
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} reduce', async (t) => {
+test('fulfill {} reduce', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -52,9 +53,9 @@ test('fulfill {} reduce', async (t) => {
   t.deepEqual(output, {
     a: 8
   });
-});
+}));
 
-test('fail [] reduce', async (t) => {
+test('fail [] reduce', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reduce([1, 2, 3, 4], async (sum, v, i) => {
@@ -64,9 +65,9 @@ test('fail [] reduce', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator reduce', async (t) => {
+test('fail @@Iterator reduce', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reduce(getIttr(), async (sum, v, i) => {
@@ -76,9 +77,9 @@ test('fail @@Iterator reduce', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} reduce', async (t) => {
+test('fail {} reduce', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reduce({
@@ -93,4 +94,4 @@ test('fail {} reduce', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));

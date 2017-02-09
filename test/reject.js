@@ -2,9 +2,10 @@ const test = require('ava');
 
 const reject = require('../packages/reject');
 const getIttr = require('../packages/test-get-ittr');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] reject', async (t) => {
+test('fulfill [] reject', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -17,9 +18,9 @@ test('fulfill [] reject', async (t) => {
 
   t.deepEqual(output, [2, 4]);
   t.notDeepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator reject', async (t) => {
+test('fulfill @@Iterator reject', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -31,9 +32,9 @@ test('fulfill @@Iterator reject', async (t) => {
 
   t.deepEqual(output, ['a', 'c']);
   t.notDeepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} reject', async (t) => {
+test('fulfill {} reject', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -53,9 +54,9 @@ test('fulfill {} reject', async (t) => {
     b: 2,
     d: 4
   });
-});
+}));
 
-test('fail [] reject', async (t) => {
+test('fail [] reject', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reject([1, 2, 3, 4], async (v, i) => {
@@ -65,9 +66,9 @@ test('fail [] reject', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator reject', async (t) => {
+test('fail @@Iterator reject', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reject(getIttr(), async (v, i) => {
@@ -77,9 +78,9 @@ test('fail @@Iterator reject', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} reject', async (t) => {
+test('fail {} reject', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reject({
@@ -94,9 +95,9 @@ test('fail {} reject', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fulfill [] rejectSeries', async (t) => {
+test('fulfill [] rejectSeries', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -109,9 +110,9 @@ test('fulfill [] rejectSeries', async (t) => {
 
   t.deepEqual(output, [2, 4]);
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill @@Iterator rejectSeries', async (t) => {
+test('fulfill @@Iterator rejectSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -123,9 +124,9 @@ test('fulfill @@Iterator rejectSeries', async (t) => {
 
   t.deepEqual(output, ['a', 'c']);
   t.deepEqual(order, [0, 1, 2, 3]);
-});
+}));
 
-test('fulfill {} rejectSeries', async (t) => {
+test('fulfill {} rejectSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -145,9 +146,9 @@ test('fulfill {} rejectSeries', async (t) => {
     b: 2,
     d: 4
   });
-});
+}));
 
-test('fail [] rejectSeries', async (t) => {
+test('fail [] rejectSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reject.series([1, 2, 3, 4], async (v, i) => {
@@ -157,9 +158,9 @@ test('fail [] rejectSeries', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));
 
-test('fail @@Iterator rejectSeries', async (t) => {
+test('fail @@Iterator rejectSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reject.series(getIttr(), async (v, i) => {
@@ -169,9 +170,9 @@ test('fail @@Iterator rejectSeries', async (t) => {
 
     return await then(`${v}${v}`);
   }));
-});
+}));
 
-test('fail {} rejectSeries', async (t) => {
+test('fail {} rejectSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(reject.series({
@@ -186,4 +187,4 @@ test('fail {} rejectSeries', async (t) => {
 
     return await then(v * 2);
   }));
-});
+}));

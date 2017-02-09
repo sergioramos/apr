@@ -1,9 +1,10 @@
 const test = require('ava');
 
 const series = require('../packages/series');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] series', async (t) => {
+test('fulfill [] series', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -46,9 +47,9 @@ test('fulfill [] series', async (t) => {
   ]);
 
   t.deepEqual(output, [2, 4, 6, 8]);
-});
+}));
 
-test('fulfill {} series', async (t) => {
+test('fulfill {} series', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -96,9 +97,9 @@ test('fulfill {} series', async (t) => {
     c: 6,
     d: 8
   });
-});
+}));
 
-test('fail [] series', async (t) => {
+test('fail [] series', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(series([
@@ -115,9 +116,9 @@ test('fail [] series', async (t) => {
       return await then(4 * 2);
     }
   ]));
-});
+}));
 
-test('fail {} series', async (t) => {
+test('fail {} series', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(series({
@@ -134,4 +135,4 @@ test('fail {} series', async (t) => {
       return await then(4 * 2);
     }
   }));
-});
+}));

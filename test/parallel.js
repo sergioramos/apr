@@ -1,9 +1,10 @@
 const test = require('ava');
 
 const parallel = require('../packages/parallel');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill []  parallel', async (t) => {
+test('fulfill []  parallel', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -46,9 +47,9 @@ test('fulfill []  parallel', async (t) => {
   ]);
 
   t.deepEqual(output, [2, 4, 6, 8]);
-});
+}));
 
-test('fulfill {} parallel', async (t) => {
+test('fulfill {} parallel', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -96,9 +97,9 @@ test('fulfill {} parallel', async (t) => {
     c: 6,
     d: 8
   });
-});
+}));
 
-test('fail [] parallel', async (t) => {
+test('fail [] parallel', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(parallel([
@@ -115,9 +116,9 @@ test('fail [] parallel', async (t) => {
       return await then(4 * 2);
     }
   ]));
-});
+}));
 
-test('fail {} parallel', async (t) => {
+test('fail {} parallel', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(parallel({
@@ -134,4 +135,4 @@ test('fail {} parallel', async (t) => {
       return await then(4 * 2);
     }
   }));
-});
+}));

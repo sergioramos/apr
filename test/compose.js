@@ -1,9 +1,10 @@
 const test = require('ava');
 
 const compose = require('../packages/compose');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill compose', async (t) => {
+test('fulfill compose', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -43,9 +44,9 @@ test('fulfill compose', async (t) => {
   ]);
 
   t.deepEqual(output, 9);
-});
+}));
 
-test('fail compose', async (t) => {
+test('fail compose', schedule(async (t) => {
   const then = timeout(4);
 
   const composed = compose(async (v) => {
@@ -59,4 +60,4 @@ test('fail compose', async (t) => {
   });
 
   t.throws(composed(1));
-});
+}));

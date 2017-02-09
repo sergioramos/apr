@@ -1,9 +1,10 @@
 const test = require('ava');
 
 const waterfall = require('../packages/waterfall');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill []  waterfall', async (t) => {
+test('fulfill []  waterfall', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -46,9 +47,9 @@ test('fulfill []  waterfall', async (t) => {
   ]);
 
   t.deepEqual(output, 16);
-});
+}));
 
-test('fulfill {} waterfall', async (t) => {
+test('fulfill {} waterfall', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -91,9 +92,9 @@ test('fulfill {} waterfall', async (t) => {
   ]);
 
   t.deepEqual(output, 16);
-});
+}));
 
-test('fail [] waterfall', async (t) => {
+test('fail [] waterfall', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(waterfall([
@@ -110,9 +111,9 @@ test('fail [] waterfall', async (t) => {
       return await then(prev * 2);
     }
   ]));
-});
+}));
 
-test('fail {} waterfall', async (t) => {
+test('fail {} waterfall', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(waterfall({
@@ -129,4 +130,4 @@ test('fail {} waterfall', async (t) => {
       return await then(prev * 2);
     }
   }));
-});
+}));

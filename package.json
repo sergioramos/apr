@@ -3,7 +3,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "NODE_ENV=test nyc --reporter=html ava test/*.js --fail-fast -v",
+    "test": "NODE_ENV=test nyc --reporter=html ava test/*.js -c 2 --fail-fast -v",
     "lint": "eslint .",
     "lint-fix": "eslint --fix .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",

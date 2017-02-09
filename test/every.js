@@ -3,9 +3,10 @@ const test = require('ava');
 
 const every = require('../packages/every');
 const getIttr = require('../packages/test-get-ittr');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill [] every', async (t) => {
+test('fulfill [] every', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -30,9 +31,9 @@ test('fulfill [] every', async (t) => {
 
   t.deepEqual(notAlways, false);
   t.deepEqual(always, true);
-});
+}));
 
-test('fulfill @@Iterator every', async (t) => {
+test('fulfill @@Iterator every', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -56,9 +57,9 @@ test('fulfill @@Iterator every', async (t) => {
 
   t.deepEqual(notAlways, false);
   t.deepEqual(always, true);
-});
+}));
 
-test('fulfill {} every', async (t) => {
+test('fulfill {} every', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -89,9 +90,9 @@ test('fulfill {} every', async (t) => {
 
   t.deepEqual(notAlways, false);
   t.deepEqual(always, true);
-});
+}));
 
-test('fail [] every', async (t) => {
+test('fail [] every', schedule(async (t) => {
   t.throws(every([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -99,9 +100,9 @@ test('fail [] every', async (t) => {
 
     return true;
   }));
-});
+}));
 
-test('fail @@Iterator every', async (t) => {
+test('fail @@Iterator every', schedule(async (t) => {
   t.throws(every(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -109,9 +110,9 @@ test('fail @@Iterator every', async (t) => {
 
     return true;
   }));
-});
+}));
 
-test('fail {} every', async (t) => {
+test('fail {} every', schedule(async (t) => {
   t.throws(every({
     a: 1,
     b: 2,
@@ -124,9 +125,9 @@ test('fail {} every', async (t) => {
 
     return true;
   }));
-});
+}));
 
-test('fulfill [] everySeries', async (t) => {
+test('fulfill [] everySeries', schedule(async (t) => {
   const then = timeout(4);
   const input = [1, 2, 3, 4];
   const order = [];
@@ -151,9 +152,9 @@ test('fulfill [] everySeries', async (t) => {
 
   t.deepEqual(notAlways, false);
   t.deepEqual(always, true);
-});
+}));
 
-test('fulfill @@Iterator everySeries', async (t) => {
+test('fulfill @@Iterator everySeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -177,9 +178,9 @@ test('fulfill @@Iterator everySeries', async (t) => {
 
   t.deepEqual(notAlways, false);
   t.deepEqual(always, true);
-});
+}));
 
-test('fulfill {} everySeries', async (t) => {
+test('fulfill {} everySeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -210,9 +211,9 @@ test('fulfill {} everySeries', async (t) => {
 
   t.deepEqual(notAlways, false);
   t.deepEqual(always, true);
-});
+}));
 
-test('fail [] everySeries', async (t) => {
+test('fail [] everySeries', schedule(async (t) => {
   t.throws(every.series([1, 2, 3, 4], async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -220,9 +221,9 @@ test('fail [] everySeries', async (t) => {
 
     return true;
   }));
-});
+}));
 
-test('fail @@Iterator everySeries', async (t) => {
+test('fail @@Iterator everySeries', schedule(async (t) => {
   t.throws(every.series(getIttr(), async (v, i) => {
     if (i > 2) {
       throw new Error('expected error');
@@ -230,9 +231,9 @@ test('fail @@Iterator everySeries', async (t) => {
 
     return true;
   }));
-});
+}));
 
-test('fail {} everySeries', async (t) => {
+test('fail {} everySeries', schedule(async (t) => {
   t.throws(every.series({
     a: 1,
     b: 2,
@@ -245,4 +246,4 @@ test('fail {} everySeries', async (t) => {
 
     return true;
   }));
-});
+}));

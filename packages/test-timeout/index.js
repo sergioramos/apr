@@ -29,9 +29,5 @@ module.exports = (size) => {
 
   let i = 0;
 
-  return (v) => {
-    return timeout(times[i++]).then(() => {
-      return v;
-    });
-  };
+  return (v) => timeout(times[i++]).then(() => v);
 };

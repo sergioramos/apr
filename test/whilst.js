@@ -2,9 +2,10 @@ const random = require('random-natural');
 const test = require('ava');
 
 const timeout = require('../packages/test-timeout');
+const schedule = require('../packages/test-scheduler')();
 const whilst = require('../packages/whilst');
 
-test('fulfill async whilst', async (t) => {
+test('fulfill async whilst', schedule(async (t) => {
   const maxCalls = random({
     min: 3,
     max: 5
@@ -23,9 +24,9 @@ test('fulfill async whilst', async (t) => {
   t.deepEqual(calls, maxCalls);
   t.deepEqual(output, maxCalls);
   t.deepEqual(output, calls);
-});
+}));
 
-test('fulfill whilst', async (t) => {
+test('fulfill whilst', schedule(async (t) => {
   const maxCalls = random({
     min: 3,
     max: 5
@@ -43,9 +44,9 @@ test('fulfill whilst', async (t) => {
   t.deepEqual(calls, maxCalls);
   t.deepEqual(output, maxCalls);
   t.deepEqual(output, calls);
-});
+}));
 
-test('fail async whilst test', async (t) => {
+test('fail async whilst test', schedule(async (t) => {
   const then = timeout(1);
 
   t.throws(whilst(async () => {
@@ -53,9 +54,9 @@ test('fail async whilst test', async (t) => {
   }, async () => {
     await then();
   }));
-});
+}));
 
-test('fail async whilst fn', async (t) => {
+test('fail async whilst fn', schedule(async (t) => {
   const then = timeout(1);
 
   t.throws(whilst(async () => {
@@ -64,9 +65,9 @@ test('fail async whilst fn', async (t) => {
   }, async () => {
     throw new Error('Unexpected Error');
   }));
-});
+}));
 
-test('fail whilst test', async (t) => {
+test('fail whilst test', schedule(async (t) => {
   const then = timeout(1);
 
   t.throws(whilst(() => {
@@ -74,12 +75,12 @@ test('fail whilst test', async (t) => {
   }, async () => {
     await then();
   }));
-});
+}));
 
-test('fail whilst fn', async (t) => {
+test('fail whilst fn', schedule(async (t) => {
   t.throws(whilst(() => {
     return true;
   }, async () => {
     throw new Error('Unexpected Error');
   }));
-});
+}));

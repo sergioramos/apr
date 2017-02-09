@@ -1,9 +1,10 @@
 const test = require('ava');
 
 const times = require('../packages/times');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill times', async (t) => {
+test('fulfill times', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -15,9 +16,9 @@ test('fulfill times', async (t) => {
 
   t.deepEqual(output, [0, 2, 4, 6, 8]);
   t.notDeepEqual(order, [0, 1, 2, 3, 4]);
-});
+}));
 
-test('fail times', async (t) => {
+test('fail times', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(times(5, async (v, i) => {
@@ -27,9 +28,9 @@ test('fail times', async (t) => {
 
     return await then(i * 2);
   }));
-});
+}));
 
-test('fulfill timesSeries', async (t) => {
+test('fulfill timesSeries', schedule(async (t) => {
   const then = timeout(4);
   const order = [];
 
@@ -41,9 +42,9 @@ test('fulfill timesSeries', async (t) => {
 
   t.deepEqual(output, [0, 2, 4, 6, 8]);
   t.deepEqual(order, [0, 1, 2, 3, 4]);
-});
+}));
 
-test('fail timesSeries', async (t) => {
+test('fail timesSeries', schedule(async (t) => {
   const then = timeout(4);
 
   t.throws(times.series(5, async (i) => {
@@ -53,4 +54,4 @@ test('fail timesSeries', async (t) => {
 
     return await then(i * 2);
   }));
-});
+}));

@@ -2,9 +2,10 @@ const random = require('random-natural');
 const test = require('ava');
 
 const until = require('../packages/until');
+const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill async until', async (t) => {
+test('fulfill async until', schedule(async (t) => {
   const maxCalls = random({
     min: 2,
     max: 5
@@ -23,9 +24,9 @@ test('fulfill async until', async (t) => {
   t.deepEqual(calls, maxCalls);
   t.deepEqual(output, maxCalls);
   t.deepEqual(output, calls);
-});
+}));
 
-test('fulfill until', async (t) => {
+test('fulfill until', schedule(async (t) => {
   const maxCalls = random({
     min: 3,
     max: 5
@@ -43,9 +44,9 @@ test('fulfill until', async (t) => {
   t.deepEqual(calls, maxCalls);
   t.deepEqual(output, maxCalls);
   t.deepEqual(output, calls);
-});
+}));
 
-test('fail async until test', async (t) => {
+test('fail async until test', schedule(async (t) => {
   const then = timeout(1);
 
   t.throws(until(async () => {
@@ -53,9 +54,9 @@ test('fail async until test', async (t) => {
   }, async () => {
     await then();
   }));
-});
+}));
 
-test('fail async until fn', async (t) => {
+test('fail async until fn', schedule(async (t) => {
   const then = timeout(1);
 
   t.throws(until(async () => {
@@ -64,9 +65,9 @@ test('fail async until fn', async (t) => {
   }, async () => {
     throw new Error('Unexpected Error');
   }));
-});
+}));
 
-test('fail until test', async (t) => {
+test('fail until test', schedule(async (t) => {
   const then = timeout(1);
 
   t.throws(until(() => {
@@ -74,12 +75,12 @@ test('fail until test', async (t) => {
   }, async () => {
     await then();
   }));
-});
+}));
 
-test('fail until fn', async (t) => {
+test('fail until fn', schedule(async (t) => {
   t.throws(until(() => {
     return true;
   }, async () => {
     throw new Error('Unexpected Error');
   }));
-});
+}));
