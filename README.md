@@ -1,5 +1,8 @@
 # apr - async promise resolve
 
+[![](https://snyk.io/test/github/ramitos/apr/badge.svg)](https://snyk.io/test/github/ramitos/apr)
+
+
 Collection of tools to manage control flow of/with Promises - inspired by [caolan/async](https://github.com/caolan/async).
 
 Works with and without async/await. The lib itself only uses promises.
