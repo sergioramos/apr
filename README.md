@@ -1,8 +1,5 @@
 # apr - async promise resolve
 
-[![](https://snyk.io/test/github/ramitos/apr/badge.svg)](https://snyk.io/test/github/ramitos/apr)
-
-
 Collection of tools to manage control flow of/with Promises - inspired by [caolan/async](https://github.com/caolan/async).
 
 Works with and without async/await. The lib itself only uses promises.
@@ -55,6 +52,7 @@ You can use `arrays`, `objects` and [`iterables`](https://developer.mozilla.org/
 
 <a id="concat"></a>
 #### concat(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-concat.svg)](https://www.npmjs.com/package/apr-concat) [![](https://img.shields.io/npm/l/apr-concat.svg)](https://www.npmjs.com/package/apr-concat) [![](https://img.shields.io/librariesio/release/npm/apr-concat/latest.svg)](https://libraries.io/npm/apr-concat)
 
 Applies `iteratee` to each item in `coll`, concatenating the results. Returns the concatenated list.
 
@@ -91,6 +89,7 @@ import concatLimit from 'apr-concat/limit'
 
 <a id="find"></a>
 #### find(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-find.svg)](https://www.npmjs.com/package/apr-find) [![](https://img.shields.io/npm/l/apr-find.svg)](https://www.npmjs.com/package/apr-find) [![](https://img.shields.io/librariesio/release/npm/apr-find/latest.svg)](https://libraries.io/npm/apr-find)
 
 Returns the first value in `coll` that passes an async truth test.
 
@@ -127,6 +126,7 @@ import findLimit from 'apr-find/limit'
 
 <a id="each"></a>
 #### forEach(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-for-each.svg)](https://www.npmjs.com/package/apr-for-each) [![](https://img.shields.io/npm/l/apr-for-each.svg)](https://www.npmjs.com/package/apr-for-each) [![](https://img.shields.io/librariesio/release/npm/apr-for-each/latest.svg)](https://libraries.io/npm/apr-for-each)
 
 Applies the function `iteratee` to each item in `coll`, in parallel.
 
@@ -162,6 +162,7 @@ import forEachLimit from 'apr-for-each/limit'
 
 <a id="every"></a>
 #### every(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-every.svg)](https://www.npmjs.com/package/apr-every) [![](https://img.shields.io/npm/l/apr-every.svg)](https://www.npmjs.com/package/apr-every) [![](https://img.shields.io/librariesio/release/npm/apr-every/latest.svg)](https://libraries.io/npm/apr-every)
 
 Returns true if every element in `coll` satisfies an async test. 
 
@@ -198,6 +199,7 @@ import everyLimit from 'apr-every/limit'
 
 <a id="filter"></a>
 #### filter(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-filter.svg)](https://www.npmjs.com/package/apr-filter) [![](https://img.shields.io/npm/l/apr-filter.svg)](https://www.npmjs.com/package/apr-filter) [![](https://img.shields.io/librariesio/release/npm/apr-filter/latest.svg)](https://libraries.io/npm/apr-filter)
 
 Returns a new array of all the values in `coll` which pass an async truth test.
 
@@ -234,6 +236,7 @@ import filterLimit from 'apr-filter/limit'
 
 <a id="map"></a>
 #### map(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-map.svg)](https://www.npmjs.com/package/apr-map) [![](https://img.shields.io/npm/l/apr-map.svg)](https://www.npmjs.com/package/apr-map) [![](https://img.shields.io/librariesio/release/npm/apr-map/latest.svg)](https://libraries.io/npm/apr-map)
 
 Produces a new collection of values by mapping each value in `coll` through the `iteratee` function.
 
@@ -270,6 +273,7 @@ import mapLimit from 'apr-map/limit'
 
 <a id="reduce"></a>
 #### reduce(coll: array | Iterable<any> | Object, iteratee: Promise, initialValue: any): Promise
+[![](https://img.shields.io/npm/v/apr-reduce.svg)](https://www.npmjs.com/package/apr-reduce) [![](https://img.shields.io/npm/l/apr-reduce.svg)](https://www.npmjs.com/package/apr-reduce) [![](https://img.shields.io/librariesio/release/npm/apr-reduce/latest.svg)](https://libraries.io/npm/apr-reduce)
 
 Reduces `coll` into a single value using an async `iteratee` to return each successive step.
 
@@ -283,6 +287,7 @@ const sum = await reduce([1, 2, 3], async (sum, item) =>
 
 <a id="reject"></a>
 #### reject(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-reject.svg)](https://www.npmjs.com/package/apr-reject) [![](https://img.shields.io/npm/l/apr-reject.svg)](https://www.npmjs.com/package/apr-reject) [![](https://img.shields.io/librariesio/release/npm/apr-reject/latest.svg)](https://libraries.io/npm/apr-reject)
 
 The opposite of [`filter`](#filter). Removes values that pass an async truth test.
 
@@ -319,6 +324,7 @@ import rejectLimit from 'apr-reject/limit'
 
 <a id="some"></a>
 #### some(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-some.svg)](https://www.npmjs.com/package/apr-some) [![](https://img.shields.io/npm/l/apr-some.svg)](https://www.npmjs.com/package/apr-some) [![](https://img.shields.io/librariesio/release/npm/apr-some/latest.svg)](https://libraries.io/npm/apr-some)
 
 Returns true if at least one element in the `coll` satisfies an async test.
 
@@ -355,6 +361,7 @@ import someLimit from 'apr-some/limit'
 
 <a id="sort-by"></a>
 #### sortBy(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-sort-by.svg)](https://www.npmjs.com/package/apr-sort-by) [![](https://img.shields.io/npm/l/apr-sort-by.svg)](https://www.npmjs.com/package/apr-sort-by) [![](https://img.shields.io/librariesio/release/npm/apr-sort-by/latest.svg)](https://libraries.io/npm/apr-sort-by)
 
 Sorts a list by the results of running each `coll` value through an async `iteratee`.
 
@@ -395,6 +402,7 @@ import sortByLimit from 'apr-sort-by/limit'
 
 <a id="sompose"></a>
 #### compose(...tasks: Array<Promise>): (input: any): Promise
+[![](https://img.shields.io/npm/v/apr-compose.svg)](https://www.npmjs.com/package/apr-compose) [![](https://img.shields.io/npm/l/apr-compose.svg)](https://www.npmjs.com/package/apr-compose) [![](https://img.shields.io/librariesio/release/npm/apr-compose/latest.svg)](https://libraries.io/npm/apr-compose)
 
 Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).
 
@@ -439,6 +447,7 @@ const withObject = await parallel({
 
 <a id="seq"></a>
 #### seq(tasks: Array<Promise>): (input: any): Promise
+[![](https://img.shields.io/npm/v/apr-seq.svg)](https://www.npmjs.com/package/apr-seq) [![](https://img.shields.io/npm/l/apr-seq.svg)](https://www.npmjs.com/package/apr-seq) [![](https://img.shields.io/librariesio/release/npm/apr-seq/latest.svg)](https://libraries.io/npm/apr-seq)
 
 Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.
 
@@ -458,6 +467,7 @@ const output = await seq(1); // 7
 
 <a id="series"></a>
 #### series(tasks: Array<Promise> | Object): Promise
+[![](https://img.shields.io/npm/v/apr-series.svg)](https://www.npmjs.com/package/apr-series) [![](https://img.shields.io/npm/l/apr-series.svg)](https://www.npmjs.com/package/apr-series) [![](https://img.shields.io/librariesio/release/npm/apr-series/latest.svg)](https://libraries.io/npm/apr-series)
 
 Run the functions in the `tasks` in series, each one running once the previous function has completed.
 
@@ -483,6 +493,7 @@ const withObject = await series({
 
 <a id="until"></a>
 #### until(test: Promise, fn: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-until.svg)](https://www.npmjs.com/package/apr-until) [![](https://img.shields.io/npm/l/apr-until.svg)](https://www.npmjs.com/package/apr-until) [![](https://img.shields.io/librariesio/release/npm/apr-until/latest.svg)](https://libraries.io/npm/apr-until)
 
 Repeatedly call `fn` until `test` returns `true`.
 
@@ -507,6 +518,7 @@ const output = await until(async () => {
 
 <a id="waterfall"></a>
 #### waterfall(tasks: Array<Promise> | Object): Promise
+[![](https://img.shields.io/npm/v/apr-waterfall.svg)](https://www.npmjs.com/package/apr-waterfall) [![](https://img.shields.io/npm/l/apr-waterfall.svg)](https://www.npmjs.com/package/apr-waterfall) [![](https://img.shields.io/librariesio/release/npm/apr-waterfall/latest.svg)](https://libraries.io/npm/apr-waterfall)
 
 Runs the `tasks` array of functions in series, each passing their results to the next in the array. 
 
@@ -526,6 +538,7 @@ const output = await waterfall([
 
 <a id="whilst"></a>
 #### whilst(test: Promise, fn: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-whilst.svg)](https://www.npmjs.com/package/apr-whilst) [![](https://img.shields.io/npm/l/apr-whilst.svg)](https://www.npmjs.com/package/apr-whilst) [![](https://img.shields.io/librariesio/release/npm/apr-whilst/latest.svg)](https://libraries.io/npm/apr-whilst)
 
 Repeatedly call `fn`, while `test` returns true.
 
@@ -552,6 +565,7 @@ const output = await until(async () => {
 
 <a id="apply"></a>
 #### apply(fn: Function): Promise
+[![](https://img.shields.io/npm/v/apr-apply.svg)](https://www.npmjs.com/package/apr-apply) [![](https://img.shields.io/npm/l/apr-apply.svg)](https://www.npmjs.com/package/apr-apply) [![](https://img.shields.io/librariesio/release/npm/apr-apply/latest.svg)](https://libraries.io/npm/apr-apply)
 
 Creates a continuation function with some arguments already applied.
 
@@ -572,6 +586,7 @@ const output = await parallel([
 
 <a id="asyncify"></a>
 #### asyncify(fn: Function)
+[![](https://img.shields.io/npm/v/apr-asyncify.svg)](https://www.npmjs.com/package/apr-asyncify) [![](https://img.shields.io/npm/l/apr-asyncify.svg)](https://www.npmjs.com/package/apr-asyncify) [![](https://img.shields.io/librariesio/release/npm/apr-asyncify/latest.svg)](https://libraries.io/npm/apr-asyncify)
 
 Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series), or other async functions.
 
@@ -591,6 +606,7 @@ const pkg = await waterfall([
 
 <a id="constant"></a>
 #### constant(...args: any): Promise
+[![](https://img.shields.io/npm/v/apr-constant.svg)](https://www.npmjs.com/package/apr-constant) [![](https://img.shields.io/npm/l/apr-constant.svg)](https://www.npmjs.com/package/apr-constant) [![](https://img.shields.io/librariesio/release/npm/apr-constant/latest.svg)](https://libraries.io/npm/apr-constant)
 
 Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`](#waterfall).
 
