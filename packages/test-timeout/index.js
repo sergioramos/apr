@@ -32,5 +32,5 @@ module.exports = (size, label) => {
 
   let i = 0;
 
-  return (v) => timeout(times[i++]).then(() => v)
+  return (v) => timeout(times[i++]).then(() => v);
 };
