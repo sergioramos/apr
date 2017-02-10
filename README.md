@@ -1,5 +1,7 @@
 # apr - async promise resolve
 
+[![Travis](https://img.shields.io/travis/ramitos/apr.svg)](https://travis-ci.org/ramitos/apr) [![](https://img.shields.io/codeclimate/coverage/github/ramitos/apr.svg)](https://codeclimate.com/github/ramitos/apr/coverage)
+
 Collection of tools to manage control flow of/with Promises - inspired by [caolan/async](https://github.com/caolan/async).
 
 Works with and without async/await. The lib itself only uses promises.
