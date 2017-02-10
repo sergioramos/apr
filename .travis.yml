@@ -8,5 +8,5 @@ script:
     - npm run lint
 addons:
   code_climate:
-    repo_token:
+    repo_token: afde2ff0d8ac5bc92d7fb27c5c5d6a691095a0f3b1346c67c4f536c83cc345d3
 after_success: npm run coverage
