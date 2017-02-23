@@ -39,6 +39,7 @@ As someone beautifully put it:
     * [apply](#apply)
     * [asyncify](#asyncify)
     * [constant](#constant)
+    * [intercept](#intercept)
 * [todo](#todo)
 * [caolan/async parity](#async-parity)
 * [credits](#credits)
@@ -621,6 +622,20 @@ const pkg = await waterfall([
   constant('{"name": "apr"}'),
   asyncify(JSON.parse)
 ]);
+```
+
+<a id="intercept"></a>
+#### intercept(fn: Promise): Promise
+[![](https://img.shields.io/npm/v/apr-intercept.svg)](https://www.npmjs.com/package/apr-intercept) [![](https://img.shields.io/npm/l/apr-intercept.svg)](https://www.npmjs.com/package/apr-intercept)
+
+Intercepts errors, the Go way: 
+
+```js
+import ctch from 'apr-intercept'
+
+const [err1, res1] = await ctch(fn(1));
+const [err2, res2] = await ctch(fn(1));
+const [, res3] = await ctch(fn(3));
 ```
 
 <a id="todo"></a>
