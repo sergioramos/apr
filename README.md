@@ -38,6 +38,7 @@ As someone beautifully put it:
   * [utils](#utils)
     * [apply](#apply)
     * [asyncify](#asyncify)
+    * [awaitify](#awaitify)
     * [constant](#constant)
     * [intercept](#intercept)
 * [todo](#todo)
@@ -60,9 +61,10 @@ You can use `arrays`, `objects` and [`iterables`](https://developer.mozilla.org/
 Applies `iteratee` to each item in `coll`, concatenating the results. Returns the concatenated list.
 
 ```js
-import concat from 'apr-concat'
+import awaitify from 'apr-awaitify';
+import concat from 'apr-concat';
 
-const readdir = thenify(fs.readdir);
+const readdir = awaitify(fs.readdir);
 const dirs = [
   'dir1',
   'dir2',
@@ -78,16 +80,16 @@ const files = await concat(dirs, async (dir) =>
 ##### concatSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import concatSeries from 'apr-concat/series'
-// import { series as concatSeries } from 'apr-concat/series'
+import concatSeries from 'apr-concat/series';
+// import { series as concatSeries } from 'apr-concat/series';
 ```
 
 <a id="concat-limit"></a>
 ##### concatLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import concatLimit from 'apr-concat/limit'
-// import { limit as concatLimit } from 'apr-concat/limit'
+import concatLimit from 'apr-concat/limit';
+// import { limit as concatLimit } from 'apr-concat/limit';
 ```
 
 <a id="find"></a>
@@ -97,9 +99,10 @@ import concatLimit from 'apr-concat/limit'
 Returns the first value in `coll` that passes an async truth test.
 
 ```js
-import find from 'apr-find'
+import awaitify from 'apr-awaitify';
+import find from 'apr-find';
 
-const access = thenify(fs.access);
+const access = awaitify(fs.access);
 const files = [
   'file1',
   'file2',
@@ -115,16 +118,16 @@ const first = await find(files, async (file) =>
 ##### findSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import findSeries from 'apr-find/series'
-// import { series as findSeries } from 'apr-find/series'
+import findSeries from 'apr-find/series';
+// import { series as findSeries } from 'apr-find/series';
 ```
 
 <a id="find-limit"></a>
 ##### findLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import findLimit from 'apr-find/limit'
-// import { limit as findLimit } from 'apr-find/limit'
+import findLimit from 'apr-find/limit';
+// import { limit as findLimit } from 'apr-find/limit';
 ```
 
 <a id="each"></a>
@@ -134,9 +137,10 @@ import findLimit from 'apr-find/limit'
 Applies the function `iteratee` to each item in `coll`, in parallel.
 
 ```js
-import forEach from 'apr-for-each'
+import awaitify from 'apr-awaitify';
+import forEach from 'apr-for-each';
 
-const writeFile = thenify(fs.writeFile);
+const writeFile = awaitify(fs.writeFile);
 const files = [
   '/home/.vimrc',
   '/home/.zshrc'
@@ -151,16 +155,16 @@ await forEach(files, async (file) =>
 ##### forEachSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import forEachSeries from 'apr-for-each/series'
-// import { series as forEachSeries } from 'apr-for-each/series'
+import forEachSeries from 'apr-for-each/series';
+// import { series as forEachSeries } from 'apr-for-each/series';
 ```
 
 <a id="each-limit"></a>
 ##### forEachLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import forEachLimit from 'apr-for-each/limit'
-// import { limit as forEachLimit } from 'apr-for-each/limit'
+import forEachLimit from 'apr-for-each/limit';
+// import { limit as forEachLimit } from 'apr-for-each/limit';
 ```
 
 <a id="every"></a>
@@ -170,9 +174,10 @@ import forEachLimit from 'apr-for-each/limit'
 Returns true if every element in `coll` satisfies an async test. 
 
 ```js
-import every from 'apr-every'
+import awaitify from 'apr-awaitify';
+import every from 'apr-every';
 
-const access = thenify(fs.access);
+const access = awaitify(fs.access);
 const files = [
   'file1',
   'file2',
@@ -188,16 +193,16 @@ const allExist = await every(files, async (file) =>
 ##### everySeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import everySeries from 'apr-every/series'
-// import { series as everySeries } from 'apr-every/series'
+import everySeries from 'apr-every/series';
+// import { series as everySeries } from 'apr-every/series';
 ```
 
 <a id="every-limit"></a>
 ##### everyLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import everyLimit from 'apr-every/limit'
-// import { limit as everyLimit } from 'apr-every/limit'
+import everyLimit from 'apr-every/limit';
+// import { limit as everyLimit } from 'apr-every/limit';
 ```
 
 <a id="filter"></a>
@@ -207,9 +212,10 @@ import everyLimit from 'apr-every/limit'
 Returns a new array of all the values in `coll` which pass an async truth test.
 
 ```js
-import filter from 'apr-filter'
+import awaitify from 'apr-awaitify';
+import filter from 'apr-filter';
 
-const access = thenify(fs.access);
+const access = awaitify(fs.access);
 const files = [
   'file1',
   'file2',
@@ -225,8 +231,8 @@ var existent = await filter(files, async (file) =>
 ##### filterSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import filterSeries from 'apr-filter/series'
-// import { series as filterSeries } from 'apr-filter/series'
+import filterSeries from 'apr-filter/series';
+// import { series as filterSeries } from 'apr-filter/series';
 ```
 
 <a id="filter-limit"></a>
@@ -244,9 +250,10 @@ import filterLimit from 'apr-filter/limit'
 Produces a new collection of values by mapping each value in `coll` through the `iteratee` function.
 
 ```js
-import map from 'apr-map'
+import awaitify from 'apr-awaitify';
+import map from 'apr-map';
 
-const stat = thenify(fs.stat);
+const stat = awaitify(fs.stat);
 const files = [
   'file1',
   'file2',
@@ -262,16 +269,16 @@ const stats = await map(files, async (file) =>
 ##### mapSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import mapSeries from 'apr-map/series'
-// import { series as mapSeries } from 'apr-map/series'
+import mapSeries from 'apr-map/series';
+// import { series as mapSeries } from 'apr-map/series';
 ```
 
 <a id="map-limit"></a>
 ##### mapLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import mapLimit from 'apr-map/limit'
-// import { limit as mapLimit } from 'apr-map/limit'
+import mapLimit from 'apr-map/limit';
+// import { limit as mapLimit } from 'apr-map/limit';
 ```
 
 <a id="reduce"></a>
@@ -281,7 +288,7 @@ import mapLimit from 'apr-map/limit'
 Reduces `coll` into a single value using an async `iteratee` to return each successive step.
 
 ```js
-import reduce from 'apr-reduce'
+import reduce from 'apr-reduce';
 
 const sum = await reduce([1, 2, 3], async (sum, item) => 
   new Promise((resolve) => resolve(sum + item))
@@ -295,9 +302,10 @@ const sum = await reduce([1, 2, 3], async (sum, item) =>
 The opposite of [`filter`](#filter). Removes values that pass an async truth test.
 
 ```js
-import reject from 'apr-reject'
+import awaitify from 'apr-awaitify';
+import reject from 'apr-reject';
 
-const access = thenify(fs.access);
+const access = awaitify(fs.access);
 const files = [
   'file1',
   'file2',
@@ -313,16 +321,16 @@ var missing = await reject(files, async (file) =>
 ##### rejectSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import rejectSeries from 'apr-reject/series'
-// import { series as rejectSeries } from 'apr-reject/series'
+import rejectSeries from 'apr-reject/series';
+// import { series as rejectSeries } from 'apr-reject/series';
 ```
 
 <a id="reject-limit"></a>
 ##### rejectLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import rejectLimit from 'apr-reject/limit'
-// import { limit as rejectLimit } from 'apr-reject/limit'
+import rejectLimit from 'apr-reject/limit';
+// import { limit as rejectLimit } from 'apr-reject/limit';
 ```
 
 <a id="some"></a>
@@ -332,9 +340,10 @@ import rejectLimit from 'apr-reject/limit'
 Returns true if at least one element in the `coll` satisfies an async test.
 
 ```js
-import some from 'apr-some'
+import awaitify from 'apr-awaitify';
+import some from 'apr-some';
 
-const access = thenify(fs.access);
+const access = awaitify(fs.access);
 const files = [
   'file1',
   'file2',
@@ -350,16 +359,16 @@ const oneExist = await some(files, async (file) =>
 ##### someSeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import someSeries from 'apr-some/series'
-// import { series as someSeries } from 'apr-some/series'
+import someSeries from 'apr-some/series';
+// import { series as someSeries } from 'apr-some/series';
 ```
 
 <a id="some-limit"></a>
 ##### someLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import someLimit from 'apr-some/limit'
-// import { limit as someLimit } from 'apr-some/limit'
+import someLimit from 'apr-some/limit';
+// import { limit as someLimit } from 'apr-some/limit';
 ```
 
 <a id="sort-by"></a>
@@ -369,9 +378,10 @@ import someLimit from 'apr-some/limit'
 Sorts a list by the results of running each `coll` value through an async `iteratee`.
 
 ```js
-import sortBy from 'apr-sort-by'
+import awaitify from 'apr-awaitify';
+import sortBy from 'apr-sort-by';
 
-const stat = thenify(fs.stat);
+const stat = awaitify(fs.stat);
 const files = [
   'file1',
   'file2',
@@ -388,16 +398,16 @@ const sorted = await sortBy(files, await (file) => {
 ##### sortBySeries(coll: array | Iterable<any> | Object, iteratee: Promise): Promise
 
 ```js
-import sortBySeries from 'apr-sort-by/series'
-// import { series as sortBySeries } from 'apr-sort-by/series'
+import sortBySeries from 'apr-sort-by/series';
+// import { series as sortBySeries } from 'apr-sort-by/series';
 ```
 
 <a id="sort-by-limit"></a>
 ##### sortByLimit(coll: array | Iterable<any> | Object, limit: number, iteratee: Promise): Promise
 
 ```js
-import sortByLimit from 'apr-sort-by/limit'
-// import { limit as sortByLimit } from 'apr-sort-by/limit'
+import sortByLimit from 'apr-sort-by/limit';
+// import { limit as sortByLimit } from 'apr-sort-by/limit';
 ```
 
 <a id="control-flow"></a>
@@ -410,9 +420,9 @@ import sortByLimit from 'apr-sort-by/limit'
 Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).
 
 ```js
-import compose from 'apr-compose'
+import compose from 'apr-compose';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const composed = compose(
   async (v) => await then(v + 1),
@@ -429,9 +439,9 @@ const output = await composed(1); // 7
 Run the tasks collection of functions in parallel, without waiting until the previous function has completed. 
 
 ```js
-import parallel from 'apr-parallel'
+import parallel from 'apr-parallel';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const withArray = await parallel([
   async () => await then(1),
@@ -455,9 +465,9 @@ const withObject = await parallel({
 Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.
 
 ```js
-import seq from 'apr-seq'
+import seq from 'apr-seq';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const seq = seq([
   async (v) => await then(v + 1),
@@ -475,9 +485,9 @@ const output = await seq(1); // 7
 Run the functions in the `tasks` in series, each one running once the previous function has completed.
 
 ```js
-import series from 'apr-series'
+import series from 'apr-series';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const withArray = await series([
   async () => await then(1),
@@ -501,9 +511,9 @@ const withObject = await series({
 Repeatedly call `fn` until `test` returns `true`.
 
 ```js
-import until from 'apr-until'
+import until from 'apr-until';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const maxCalls = 10;
 let calls = 0;
@@ -526,9 +536,9 @@ const output = await until(async () => {
 Runs the `tasks` array of functions in series, each passing their results to the next in the array. 
 
 ```js
-import waterfall from 'apr-waterfall'
+import waterfall from 'apr-waterfall';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const output = await waterfall([
   async () => await then(1),
@@ -546,9 +556,9 @@ const output = await waterfall([
 Repeatedly call `fn`, while `test` returns true.
 
 ```js
-import until from 'apr-until'
+import until from 'apr-until';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const maxCalls = 10;
 let calls = 0;
@@ -573,10 +583,10 @@ const output = await until(async () => {
 Creates a continuation function with some arguments already applied.
 
 ```js
-import parallel from 'apr-parallel'
-import apply from 'apr-apply'
+import parallel from 'apr-parallel';
+import apply from 'apr-apply';
 
-const then = (v) => new Promise((resolve) => resolve(v))
+const then = (v) => new Promise((resolve) => resolve(v));
 
 const output = await parallel([
   apply(then, 1)
@@ -594,17 +604,35 @@ const output = await parallel([
 Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series), or other async functions.
 
 ```js
-import asyncify from 'apr-asyncify'
-import waterfall from 'apr-waterfall'
-import apply from 'apr-apply'
+import awaitify from 'apr-awaitify';
+import asyncify from 'apr-asyncify';
+import waterfall from 'apr-waterfall';
+import apply from 'apr-apply';
 
-const readFile = thenify(require('fs').readFile);
+const readFile = awaitify(require('fs').readFile);
 const pkgPath = path.join(__dirname, './package.json');
 
 const pkg = await waterfall([
   apply(readFile, pkgPath, 'utf8'),
   asyncify(JSON.parse)
 ]);
+```
+
+<a id="awaitify"></a>
+#### awaitify(fn: Function): Function: Promise
+[![](https://img.shields.io/npm/v/apr-awaitify.svg)](https://www.npmjs.com/package/apr-awaitify) [![](https://img.shields.io/npm/l/apr-awaitify.svg)](https://www.npmjs.com/package/apr-awaitify)
+
+Transform a callback-based function into a promise-based one.
+
+```js
+import { readFile as readFileCb } from 'fs';
+import awaitify from 'apr-awaitify';
+import path from 'path';
+
+const readFile = awaitify(readFileCb);
+const pkgPath = path.join(__dirname, './package.json');
+
+const pkg = await readFile(pkgPath, 'utf-8');
 ```
 
 <a id="constant"></a>
@@ -614,9 +642,9 @@ const pkg = await waterfall([
 Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`](#waterfall).
 
 ```js
-import asyncify from 'apr-asyncify'
-import waterfall from 'apr-waterfall'
-import constant from 'apr-constant'
+import asyncify from 'apr-asyncify';
+import waterfall from 'apr-waterfall';
+import constant from 'apr-constant';
 
 const pkg = await waterfall([
   constant('{"name": "apr"}'),
@@ -631,7 +659,7 @@ const pkg = await waterfall([
 Intercepts errors, the Go way: 
 
 ```js
-import ctch from 'apr-intercept'
+import ctch from 'apr-intercept';
 
 const [err1, res1] = await ctch(fn(1));
 const [err2, res2] = await ctch(fn(1));

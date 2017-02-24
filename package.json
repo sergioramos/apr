@@ -40,7 +40,6 @@
     "nyc": "^10.1.2",
     "random-natural": "^1.0.3",
     "tap-mocha-reporter": "3.0.3",
-    "thenify": "^3.2.1",
     "timeout-then": "^1.1.0"
   },
   "ava": {

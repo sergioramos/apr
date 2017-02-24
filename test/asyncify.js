@@ -1,12 +1,12 @@
 const test = require('ava');
-const thenify = require('thenify');
 const path = require('path');
 
+const awaitify = require('../packages/awaitify');
 const waterfall = require('../packages/waterfall');
 const apply = require('../packages/apply');
 const asyncify = require('../packages/asyncify');
 
-const readFile = thenify(require('fs').readFile);
+const readFile = awaitify(require('fs').readFile);
 const pkgPath = path.join(__dirname, '../packages/asyncify/package.json');
 
 test('does asyncify', async (t) => {
