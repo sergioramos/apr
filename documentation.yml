@@ -1,0 +1,37 @@
+toc:
+  - name: apr
+    file: docs/intro.md
+  - name: Collections
+    description: Functions for manipulating collections, such as arrays and objects.
+  - for-each
+  - concat
+  - find
+  - every
+  - filter
+  - map
+  - reduce
+  - reject
+  - some
+  - sort-by
+  - name: Control Flow
+    description: A collection of async functions for controlling the flow through a script.
+  - compose
+  - parallel
+  - seq
+  - series
+  - until
+  - waterfall
+  - whilst
+  - name: Utilities
+    description: A collection of awaitable utility functions.
+  - apply
+  - asyncify
+  - awaitify
+  - constant
+  - intercept
+  - reflect
+  - times
+  - name: credits
+    file: docs/credits.md
+  - name: license
+    description: MIT

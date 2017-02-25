@@ -1,0 +1,1 @@
+- both the method signatures and descriptions are copied from [caolan/async](https://github.com/caolan/async/blob/master/LICENSE)
