@@ -1,6 +1,6 @@
 {
   "name": "apr-series",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/series",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-reduce": "^1.0.1",
+    "apr-reduce": "^1.0.2",
     "apr-engine-sum": "^1.0.1"
   }
 }

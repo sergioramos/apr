@@ -1,6 +1,6 @@
 {
   "name": "apr-times",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/times",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-map": "^1.0.1",
+    "apr-map": "^1.0.2",
     "build-array": "^1.0.0",
     "lodash.defaults": "^4.2.0"
   }

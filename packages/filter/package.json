@@ -1,6 +1,6 @@
 {
   "name": "apr-filter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/filter",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -10,6 +10,6 @@
   "dependencies": {
     "apr-engine-back": "^1.0.1",
     "apr-engine-sum": "^1.0.1",
-    "apr-map": "^1.0.1"
+    "apr-map": "^1.0.2"
   }
 }
