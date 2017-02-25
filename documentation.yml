@@ -3,11 +3,11 @@ toc:
     file: docs/intro.md
   - name: Collections
     description: Functions for manipulating collections, such as arrays and objects.
-  - for-each
   - concat
-  - find
   - every
   - filter
+  - find
+  - for-each
   - map
   - reduce
   - reject
