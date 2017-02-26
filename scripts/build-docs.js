@@ -6,7 +6,10 @@ const isString = require('lodash.isString');
 const documentation = require('documentation');
 const readYaml = require('read-yaml');
 const streamArray = require('stream-array');
+const removeMd = require('remove-markdown');
 const vfs = require('vinyl-fs');
+const remark = require('remark');
+const union = require('lodash.union');
 const pump = require('pump');
 const path = require('path');
 const fs = require('fs');
@@ -26,36 +29,57 @@ const options = {
   github: true
 };
 
-// const hljs = require('highlight.js');
-// const Remarkable = require('remarkable');
-// const Markdown = new Remarkable({
-//   html: true,
-//   breaks: true,
-//   highlight: (str, lang) => {
-//     if (lang && hljs.getLanguage(lang)) {
-//       try {
-//         return hljs.highlight(lang, str).value;
-//       } catch (err) {}
-//     }
-//
-//     try {
-//       return hljs.highlightAuto(str).value;
-//     } catch (err) {}
-//
-//     return '';
-//   }
-// });
-
 const individual = async () => {
-  return await forEach(packages, async (pkg) => {
-    const dir = path.join(__dirname, `../packages/${pkg}`);
+  return await forEach(packages, async (name) => {
+    const dir = path.join(__dirname, `../packages/${name}`);
+    const pkg = require(path.join(dir, 'package.json'));
 
     const ast = await build([
       path.join(dir, 'index.js')
     ], {});
 
-    const source = await md(ast, {});
-    await writeFile(path.join(dir, 'readme.md'), source, {
+    const dsc = removeMd(remark().stringify(ast[0].description).split(/\n/)[1]);
+    const readme = await md(ast, {});
+
+    const pjson = JSON.stringify({
+      name: `apr-${name}`,
+      version: pkg.version,
+      description: dsc,
+      keywords: union(
+        (pkg.keywords || [])
+        .concat(name)
+        .concat(apr.keywords)
+      ),
+      homepage: `https://ramitos.github.io/apr#${name}`,
+      bugs: apr.bugs,
+      license: apr.license,
+      people: pkg.people,
+      author: apr.author,
+      contributors: apr.contributors,
+      files: pkg.files,
+      main: 'src/index.js',
+      bin: pkg.bin,
+      man: pkg.man,
+      directories: pkg.directories,
+      repository: 'ramitos/apr',
+      scripts: pkg.scripts,
+      config: pkg.config,
+      dependencies: pkg.dependencies,
+      devDependencies: pkg.devDependencies,
+      peerDependencies: pkg.peerDependencies,
+      bundleDdependencies: pkg.bundleDdependencies,
+      optionalDependencies: pkg.optionalDependencies,
+      engines: pkg.engines,
+      preferGlobal: pkg.preferGlobal,
+      'private': pkg['private'],
+      publishConfig: pkg.publishConfig
+    }, null, 2);
+
+    await writeFile(path.join(dir, 'readme.md'), readme, {
+      encoding: 'utf-8'
+    });
+
+    await writeFile(path.join(dir, 'package.json'), pjson, {
       encoding: 'utf-8'
     });
   });
@@ -130,9 +154,9 @@ const website = async () => {
 };
 
 parallel({
-  website,
-  individual,
-  all
+  // website,
+  individual
+  // all
 }).then(
   () => console.log('Done'),
   (err) => { throw err; }

@@ -1,10 +1,21 @@
 {
   "name": "apr-reject",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/reject",
+  "description": "The opposite of filter. Removes values that pass an async truth test.",
+  "keywords": [
+    "reject",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#reject",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {

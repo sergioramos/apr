@@ -1,10 +1,21 @@
 {
   "name": "apr-compose",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/compose",
+  "description": "Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).",
+  "keywords": [
+    "compose",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#compose",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {

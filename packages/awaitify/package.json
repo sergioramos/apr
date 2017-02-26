@@ -1,10 +1,21 @@
 {
   "name": "apr-awaitify",
   "version": "1.0.1",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/awaitify",
+  "description": "Transform a callback-based function into a promise-based one.",
+  "keywords": [
+    "awaitify",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#awaitify",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr"
 }

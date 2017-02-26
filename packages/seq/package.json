@@ -1,10 +1,21 @@
 {
   "name": "apr-seq",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/seq",
+  "description": "Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.",
+  "keywords": [
+    "seq",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#seq",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {

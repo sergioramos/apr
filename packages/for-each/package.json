@@ -1,10 +1,21 @@
 {
   "name": "apr-for-each",
   "version": "1.0.3",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/for-each",
+  "description": "Applies the function iteratee to each item in coll, in parallel.",
+  "keywords": [
+    "for-each",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#for-each",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "scripts": {

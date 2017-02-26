@@ -1,10 +1,21 @@
 {
   "name": "apr-sort-by",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/sort-by",
+  "description": "Sorts a list by the results of running each coll value through an async iteratee.",
+  "keywords": [
+    "sort-by",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#sort-by",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {

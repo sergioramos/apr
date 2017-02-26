@@ -1,10 +1,21 @@
 {
   "name": "apr-intercept",
   "version": "1.0.1",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/intercept",
+  "description": "Intercepts errors, the Go way!",
+  "keywords": [
+    "intercept",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#intercept",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr"
 }

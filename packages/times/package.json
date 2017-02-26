@@ -1,10 +1,21 @@
 {
   "name": "apr-times",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/times",
+  "description": "Calls the iteratee function n times, and accumulates results in the same manner you would use with map.",
+  "keywords": [
+    "times",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#times",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {

@@ -1,10 +1,21 @@
 {
   "name": "apr-constant",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/constant",
+  "description": "Returns a promise that when called, then's with the values provided. Useful as the first function in a waterfall.",
+  "keywords": [
+    "constant",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#constant",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr"
 }

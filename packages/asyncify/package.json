@@ -1,10 +1,21 @@
 {
   "name": "apr-asyncify",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/asyncify",
+  "description": "Take a sync function and make it async. This is useful for plugging sync functions into a waterfall, series, or other async functions.",
+  "keywords": [
+    "asyncify",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#asyncify",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr"
 }

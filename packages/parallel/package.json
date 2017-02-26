@@ -1,10 +1,21 @@
 {
   "name": "apr-parallel",
   "version": "1.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/parallel",
+  "description": "Run the tasks collection of functions in parallel, without waiting until the previous function has completed.",
+  "keywords": [
+    "parallel",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#parallel",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {

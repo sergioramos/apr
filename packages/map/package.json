@@ -1,12 +1,21 @@
 {
   "name": "apr-map",
   "version": "1.0.2",
-  "description": "",
-  "keywords": [],
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/map",
+  "description": "Produces a new collection of values by mapping each value in coll through the iteratee function.",
+  "keywords": [
+    "map",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful"
+  ],
+  "homepage": "https://ramitos.github.io/apr#map",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
