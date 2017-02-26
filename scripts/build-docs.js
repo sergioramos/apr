@@ -154,9 +154,9 @@ const website = async () => {
 };
 
 parallel({
-  // website,
-  individual
-  // all
+  website,
+  individual,
+  all
 }).then(
   () => console.log('Done'),
   (err) => { throw err; }
