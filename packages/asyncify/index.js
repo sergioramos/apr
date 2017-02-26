@@ -14,10 +14,10 @@
  * import asyncify from 'apr-asyncify';
  * import waterfall from 'apr-waterfall';
  * import apply from 'apr-apply';
- * 
+ *
  * const readFile = awaitify(require('fs').readFile);
  * const pkgPath = path.join(__dirname, './package.json');
- * 
+ *
  * const pkg = await waterfall([
  *   apply(readFile, pkgPath, 'utf8'),
  *   asyncify(JSON.parse)

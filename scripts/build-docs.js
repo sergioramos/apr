@@ -107,7 +107,7 @@ const all = async () => {
   const toc = await _toc();
 
   source = source.replace(/^## apr/, '# apr');
-  source = source.replace(/<\!-- \{\{TOC\}\} -->/, toc);
+  source = source.replace(/<!-- \{\{TOC\}\} -->/, toc);
 
   await writeFile(path.join(__dirname, '../readme.md'), source, {
     encoding: 'utf-8'
