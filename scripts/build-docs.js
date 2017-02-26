@@ -119,7 +119,10 @@ const website = async () => {
     config: tocPath
   }));
 
-  const source = await html(ast, {});
+  const source = await html(ast, {
+    name: apr.name
+  });
+
   const _files = streamArray(source);
   const _dest = vfs.dest(path.join(__dirname, '../docs'));
 
