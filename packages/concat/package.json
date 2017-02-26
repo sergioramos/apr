@@ -1,6 +1,6 @@
 {
   "name": "apr-concat",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Applies iteratee to each item in coll, concatenating the results. Returns the concatenated list.",
   "keywords": [
     "concat",

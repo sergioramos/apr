@@ -1,6 +1,6 @@
 {
   "name": "apr-series",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Run the functions in the tasks in series, each one running once the previous function has completed.",
   "keywords": [
     "series",
@@ -19,7 +19,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-reduce": "^1.0.2",
+    "apr-reduce": "^1.0.3",
     "apr-engine-sum": "^1.0.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "apr-filter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns a new array of all the values in coll which pass an async truth test.",
   "keywords": [
     "filter",
@@ -21,6 +21,6 @@
   "dependencies": {
     "apr-engine-back": "^1.0.1",
     "apr-engine-sum": "^1.0.1",
-    "apr-map": "^1.0.2"
+    "apr-map": "^1.0.3"
   }
 }

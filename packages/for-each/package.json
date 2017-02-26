@@ -1,6 +1,6 @@
 {
   "name": "apr-for-each",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Applies the function iteratee to each item in coll, in parallel.",
   "keywords": [
     "for-each",

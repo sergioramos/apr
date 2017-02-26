@@ -1,6 +1,6 @@
 {
   "name": "apr-waterfall",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Runs the tasks array of functions in series, each passing their results to the next in the array.",
   "keywords": [
     "waterfall",

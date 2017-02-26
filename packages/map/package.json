@@ -1,6 +1,6 @@
 {
   "name": "apr-map",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Produces a new collection of values by mapping each value in coll through the iteratee function.",
   "keywords": [
     "map",

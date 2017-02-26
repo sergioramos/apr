@@ -1,6 +1,6 @@
 {
   "name": "apr-constant",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Returns a promise that when called, then's with the values provided. Useful as the first function in a waterfall.",
   "keywords": [
     "constant",

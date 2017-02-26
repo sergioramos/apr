@@ -1,6 +1,6 @@
 {
   "name": "apr-reduce",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Reduces coll into a single value using an async iteratee to return each successive step.",
   "keywords": [
     "reduce",

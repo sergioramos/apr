@@ -1,6 +1,6 @@
 {
   "name": "apr-sort-by",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sorts a list by the results of running each coll value through an async iteratee.",
   "keywords": [
     "sort-by",
@@ -21,7 +21,7 @@
   "dependencies": {
     "apr-engine-back": "^1.0.1",
     "apr-engine-sum": "^1.0.1",
-    "apr-map": "^1.0.2",
+    "apr-map": "^1.0.3",
     "lodash.isarraylike": "^4.2.0",
     "lodash.sortby": "^4.7.0"
   }

@@ -1,6 +1,6 @@
 {
   "name": "apr-whilst",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Repeatedly call fn, while test returns true.",
   "keywords": [
     "whilst",
