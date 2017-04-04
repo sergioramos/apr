@@ -1,11 +1,14 @@
 {
   "name": "apr",
-  "private": true,
+  "description": "this is like caolan/async which is like lodash but async, but awaitful",
   "homepage": "https://ramitos.github.io/apr",
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "repository": "ramitos/apr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ramitos/apr"
+  },
   "keywords": [
     "async",
     "await",
