@@ -42,7 +42,6 @@
     "babel-cli": "^6.23.0",
     "babel-core": "^6.23.1",
     "babel-eslint": "^7.2.3",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.4.0",
     "build-array": "^1.0.0",
     "bulk-require": "^1.0.0",
