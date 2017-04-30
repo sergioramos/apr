@@ -6,18 +6,19 @@ const back = require('apr-engine-back');
 module.exports = (input, p) => {
   const isObj = !isArray(Sum(input));
 
-  const after = (items) => {
-    return sortBy(items.filter((item) => {
-      return !item.result.done;
-    }), (item) => {
-      return item.result.value;
-    }).map((item) => {
-      return !isObj ? item.input.value : {
-        key: item.key,
-        value: item.input.value
-      };
-    });
-  };
+  const after = items =>
+    sortBy(
+      items.filter(item => !item.result.done),
+      item => item.result.value
+    ).map(
+      item =>
+        (!isObj
+          ? item.input.value
+          : {
+              key: item.key,
+              value: item.input.value
+            })
+    );
 
   return back({
     p,

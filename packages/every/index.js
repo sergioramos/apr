@@ -27,13 +27,12 @@ const run = require('./run');
  *   await access(file)
  * );
  */
-module.exports = (input, fn, opts) => {
-  return run({
+module.exports = (input, fn, opts) =>
+  run({
     input,
     fn,
     opts
   });
-};
 
 module.exports.series = require('./series');
 module.exports.limit = require('./limit');

@@ -29,12 +29,9 @@ const repeat = require('apr-engine-repeat');
  *
  * // output = 10
  */
-module.exports = (test, fn) => {
-  return repeat({
+module.exports = (test, fn) =>
+  repeat({
     test,
     fn,
-    after: (tested) => {
-      return !tested;
-    }
+    after: tested => !tested
   });
-};

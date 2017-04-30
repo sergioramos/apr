@@ -9,6 +9,4 @@ const until = (sum, next) => {
   return until(items, next);
 };
 
-module.exports = (next) => {
-  return until([], next);
-};
+module.exports = next => until([], next);

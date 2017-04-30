@@ -1,3 +1,1 @@
-module.exports = (first) => {
-  return Boolean(first);
-};
+module.exports = first => Boolean(first);

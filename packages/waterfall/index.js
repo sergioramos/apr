@@ -36,10 +36,6 @@ module.exports = (input, initial) => {
     after: (value, item) => {
       last = value;
     },
-    call: (item) => {
-      return item.value(last);
-    }
-  }).then(() => {
-    return last;
-  });
+    call: item => item.value(last)
+  }).then(() => last);
 };

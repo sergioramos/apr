@@ -23,14 +23,11 @@
  *   asyncify(JSON.parse)
  * ]);
  */
-module.exports = (fn) => {
-  return (...args) => {
-    return new Promise((resolve, reject) => {
-      try {
-        resolve(fn(...args));
-      } catch (err) {
-        reject(err);
-      }
-    });
-  };
-};
+module.exports = fn => (...args) =>
+  new Promise((resolve, reject) => {
+    try {
+      resolve(fn(...args));
+    } catch (err) {
+      reject(err);
+    }
+  });

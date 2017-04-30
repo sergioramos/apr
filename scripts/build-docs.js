@@ -23,57 +23,57 @@ const writeFile = awaitify(fs.writeFile);
 const tocPath = path.join(__dirname, '../documentation.yml');
 const toc = readYaml.sync(tocPath);
 const packages = toc.toc.filter(isString);
-const files = packages.map((pkg) => path.join(__dirname, `../packages/${pkg}/index.js`));
+const files = packages.map(pkg =>
+  path.join(__dirname, `../packages/${pkg}/index.js`)
+);
 
 const options = {
   github: true
 };
 
-const individual = async () => {
-  return await forEach(packages, async (name) => {
+const individual = async () =>
+  await forEach(packages, async name => {
     const dir = path.join(__dirname, `../packages/${name}`);
     const pkg = require(path.join(dir, 'package.json'));
 
-    const ast = await build([
-      path.join(dir, 'index.js')
-    ], {});
+    const ast = await build([path.join(dir, 'index.js')], {});
 
     const dsc = removeMd(remark().stringify(ast[0].description).split(/\n/)[1]);
     const readme = await md(ast, {});
 
-    const pjson = JSON.stringify({
-      name: `apr-${name}`,
-      version: pkg.version,
-      description: dsc,
-      keywords: union(
-        (pkg.keywords || [])
-        .concat(name)
-        .concat(apr.keywords)
-      ),
-      homepage: `https://ramitos.github.io/apr#${name}`,
-      bugs: apr.bugs,
-      license: apr.license,
-      people: pkg.people,
-      author: apr.author,
-      contributors: apr.contributors,
-      files: pkg.files,
-      main: 'src/index.js',
-      bin: pkg.bin,
-      man: pkg.man,
-      directories: pkg.directories,
-      repository: 'ramitos/apr',
-      scripts: pkg.scripts,
-      config: pkg.config,
-      dependencies: pkg.dependencies,
-      devDependencies: pkg.devDependencies,
-      peerDependencies: pkg.peerDependencies,
-      bundleDdependencies: pkg.bundleDdependencies,
-      optionalDependencies: pkg.optionalDependencies,
-      engines: pkg.engines,
-      preferGlobal: pkg.preferGlobal,
-      'private': pkg['private'],
-      publishConfig: pkg.publishConfig
-    }, null, 2);
+    const pjson = JSON.stringify(
+      {
+        name: `apr-${name}`,
+        version: pkg.version,
+        description: dsc,
+        keywords: union((pkg.keywords || []).concat(name).concat(apr.keywords)),
+        homepage: `https://ramitos.github.io/apr#${name}`,
+        bugs: apr.bugs,
+        license: apr.license,
+        people: pkg.people,
+        author: apr.author,
+        contributors: apr.contributors,
+        files: pkg.files,
+        main: 'src/index.js',
+        bin: pkg.bin,
+        man: pkg.man,
+        directories: pkg.directories,
+        repository: 'ramitos/apr',
+        scripts: pkg.scripts,
+        config: pkg.config,
+        dependencies: pkg.dependencies,
+        devDependencies: pkg.devDependencies,
+        peerDependencies: pkg.peerDependencies,
+        bundleDdependencies: pkg.bundleDdependencies,
+        optionalDependencies: pkg.optionalDependencies,
+        engines: pkg.engines,
+        preferGlobal: pkg.preferGlobal,
+        private: pkg['private'],
+        publishConfig: pkg.publishConfig
+      },
+      null,
+      2
+    );
 
     await writeFile(path.join(dir, 'readme.md'), readme, {
       encoding: 'utf-8'
@@ -83,7 +83,6 @@ const individual = async () => {
       encoding: 'utf-8'
     });
   });
-};
 
 const _toc = async () => {
   let last = '';
@@ -106,26 +105,35 @@ const _toc = async () => {
     });
   }, {});
 
-  return Object.keys(tree).reduce((toc, name) => {
-    const parts = tree[name].map((name) => `* [${name}](#${name})`).join('\n  ').trim();
+  return Object.keys(tree).reduce(
+    (toc, name) => {
+      const parts = tree[name]
+        .map(name => `* [${name}](#${name})`)
+        .join('\n  ')
+        .trim();
 
-    toc += `
+      toc += `
 * [${name}](#${name})
   ${parts}
     `;
 
-    return toc;
-  }, `
+      return toc;
+    },
+    `
 <a id="contents"></a>
 ## contents
 
-`);
+`
+  );
 };
 
 const all = async () => {
-  const ast = await build(files, Object.assign(options, {
-    config: tocPath
-  }));
+  const ast = await build(
+    files,
+    Object.assign(options, {
+      config: tocPath
+    })
+  );
 
   let source = await md(ast, {});
   const toc = await _toc();
@@ -139,9 +147,12 @@ const all = async () => {
 };
 
 const website = async () => {
-  const ast = await build(files, Object.assign(options, {
-    config: tocPath
-  }));
+  const ast = await build(
+    files,
+    Object.assign(options, {
+      config: tocPath
+    })
+  );
 
   const source = await html(ast, {
     name: apr.name
@@ -159,5 +170,7 @@ parallel({
   all
 }).then(
   () => console.log('Done'),
-  (err) => { throw err; }
+  err => {
+    throw err;
+  }
 );

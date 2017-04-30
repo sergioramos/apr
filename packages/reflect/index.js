@@ -25,18 +25,13 @@
  *
  * // res = [{ error: Error('heyo'), value: null }, { error: null, value: 2 }]
  */
-module.exports = (fn) => {
-  return (...args) => {
-    return fn(...args).then((value) => {
-      return {
-        value,
-        error: null
-      };
-    }).catch((err) => {
-      return {
-        value: null,
-        error: err
-      };
-    });
-  };
-};
+module.exports = fn => (...args) =>
+  fn(...args)
+    .then(value => ({
+      value,
+      error: null
+    }))
+    .catch(err => ({
+      value: null,
+      error: err
+    }));

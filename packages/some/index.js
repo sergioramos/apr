@@ -28,9 +28,7 @@ const then = require('./then');
  *   await access(file)
  * );
  */
-module.exports = (...args) => {
-  return find(...args).then(then);
-};
+module.exports = (...args) => find(...args).then(then);
 
 module.exports.series = require('./series');
 module.exports.limit = require('./limit');

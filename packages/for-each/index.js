@@ -26,13 +26,12 @@ const each = require('apr-engine-each');
  *   await writeFile(file, 'boom')
  * );
  */
-module.exports = (input, fn, opts) => {
-  return each({
+module.exports = (input, fn, opts) =>
+  each({
     input,
     fn,
     opts
   });
-};
 
 module.exports.series = require('./series');
 module.exports.limit = require('./limit');

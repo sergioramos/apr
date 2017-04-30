@@ -20,8 +20,8 @@ const each = require('apr-engine-each');
  *   new Promise((resolve) => resolve(sum + item))
  * );
  */
-module.exports = (input, fn, sum, opts) => {
-  return each({
+module.exports = (input, fn, sum, opts) =>
+  each({
     input,
     opts: defaults(opts, {
       limit: 1
@@ -29,10 +29,5 @@ module.exports = (input, fn, sum, opts) => {
     after: (value, item) => {
       sum = value;
     },
-    call: (item) => {
-      return fn(sum, item.value, item.key, input);
-    }
-  }).then(() => {
-    return sum;
-  });
-};
+    call: item => fn(sum, item.value, item.key, input)
+  }).then(() => sum);

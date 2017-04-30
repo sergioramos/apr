@@ -24,8 +24,4 @@
  *
  * // output = [1, 2, 3]
  */
-module.exports = (fn, ...args) => {
-  return () => {
-    return fn(...args);
-  };
-};
+module.exports = (fn, ...args) => () => fn(...args);

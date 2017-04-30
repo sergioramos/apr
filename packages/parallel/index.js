@@ -31,13 +31,16 @@ const reduce = require('apr-reduce');
  *
  * // withObject = { one: 1, two: 2 }
  */
-module.exports = (input) => {
-  return reduce(input, (sum, fn, key) => {
-    return fn().then((res) => {
-      sum[key] = res;
-      return sum;
-    });
-  }, Sum(input), {
-    limit: Infinity
-  });
-};
+module.exports = input =>
+  reduce(
+    input,
+    (sum, fn, key) =>
+      fn().then(res => {
+        sum[key] = res;
+        return sum;
+      }),
+    Sum(input),
+    {
+      limit: Infinity
+    }
+  );

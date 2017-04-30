@@ -24,4 +24,4 @@ const waterfall = require('apr-waterfall');
  *
  * const output = await seq(1); // 7
  */
-module.exports = (...args) => (value) => waterfall([...args], value);
+module.exports = (...args) => value => waterfall([...args], value);

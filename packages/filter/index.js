@@ -28,9 +28,7 @@ const map = require('apr-map');
  *   await access(file)
  * );
  */
-module.exports = (input, fn, opts) => {
-  return run(input, map(input, fn, opts));
-};
+module.exports = (input, fn, opts) => run(input, map(input, fn, opts));
 
 module.exports.series = require('./series');
 module.exports.limit = require('./limit');

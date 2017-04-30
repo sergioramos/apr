@@ -10,8 +10,14 @@ const run = require('./run');
  * @param {Function} iteratee
  * @returns {Promise}
  */
-module.exports = (count, limit, fn, opts) => {
-  return run(count, fn, defaults({
-    limit
-  }, opts));
-};
+module.exports = (count, limit, fn, opts) =>
+  run(
+    count,
+    fn,
+    defaults(
+      {
+        limit
+      },
+      opts
+    )
+  );

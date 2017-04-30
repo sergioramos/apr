@@ -1,5 +1,3 @@
 const console = require('apr-engine-console');
 
-module.exports = (fn, ...args) => {
-  return console('dir', fn, ...args);
-};
+module.exports = (fn, ...args) => console('dir', fn, ...args);

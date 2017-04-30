@@ -5,20 +5,18 @@ const keys = require('lodash.keys');
 
 const until = require('apr-engine-until');
 
-const wrap = (fn) => {
+const wrap = fn => {
   let i = 0;
 
-  const group = (size) => {
+  const group = size => {
     if (isFinite(size)) {
       return buildArray(size).map(next);
     }
 
-    return until(() => {
-      return next();
-    });
+    return until(() => next());
   };
 
-  const next = (size) => {
+  const next = size => {
     if (size) {
       return group(size);
     }
@@ -31,18 +29,15 @@ const wrap = (fn) => {
   };
 };
 
-const arr = (input) => {
-  return wrap((i) => {
-    return {
-      value: input[i],
-      done: input.length === i,
-      key: i
-    };
-  });
-};
+const arr = input =>
+  wrap(i => ({
+    value: input[i],
+    done: input.length === i,
+    key: i
+  }));
 
-const ittr = (input) => {
-  return wrap((i) => {
+const ittr = input =>
+  wrap(i => {
     const item = input.next();
 
     return {
@@ -51,12 +46,11 @@ const ittr = (input) => {
       key: i
     };
   });
-};
 
-const obj = (input) => {
+const obj = input => {
   const okeys = keys(input);
 
-  return wrap((i) => {
+  return wrap(i => {
     const key = okeys[i];
 
     return {
@@ -67,7 +61,7 @@ const obj = (input) => {
   });
 };
 
-module.exports = (input) => {
+module.exports = input => {
   if (isArray(input)) {
     return arr(input);
   }

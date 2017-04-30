@@ -25,9 +25,7 @@ const reverse = require('lodash.reverse');
  *
  * const output = await composed(1); // 7
  */
-module.exports = (...args) => {
-  return (value) => {
-    const input = reverse([...args]);
-    return waterfall(input, value);
-  };
+module.exports = (...args) => value => {
+  const input = reverse([...args]);
+  return waterfall(input, value);
 };

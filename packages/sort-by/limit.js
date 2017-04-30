@@ -10,6 +10,5 @@ const run = require('./run');
  * @param {Function} iteratee
  * @returns {Promise}
  */
-module.exports = (input, limit, fn, opts) => {
-  return run(input, mapLimit(input, limit, fn, opts));
-};
+module.exports = (input, limit, fn, opts) =>
+  run(input, mapLimit(input, limit, fn, opts));

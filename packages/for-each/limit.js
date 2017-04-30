@@ -10,12 +10,14 @@ const each = require('apr-engine-each');
  * @param {Function} iteratee
  * @returns {Promise}
  */
-module.exports = (input, limit, fn, opts) => {
-  return each({
+module.exports = (input, limit, fn, opts) =>
+  each({
     input,
     fn,
-    opts: defaults({
-      limit
-    }, opts)
+    opts: defaults(
+      {
+        limit
+      },
+      opts
+    )
   });
-};

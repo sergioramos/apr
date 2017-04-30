@@ -4,60 +4,70 @@ const seq = require('../packages/seq');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
-test('fulfill seq', schedule(async (t) => {
-  const then = timeout(4);
-  const order = [];
+test(
+  'fulfill seq',
+  schedule(async t => {
+    const then = timeout(4);
+    const order = [];
 
-  const seqd = seq(async (v) => {
-    order.push('before');
-    const res = await then(v + 1);
-    order.push('after');
-    return res;
-  }, async (v) => {
-    order.push('before');
-    const res = await then(v * 2);
-    order.push('after');
-    return res;
-  }, async (v) => {
-    order.push('before');
-    const res = await then(v * 2);
-    order.push('after');
-    return res;
-  }, async (v) => {
-    order.push('before');
-    const res = await then(v * 2);
-    order.push('after');
-    return res;
-  });
+    const seqd = seq(
+      async v => {
+        order.push('before');
+        const res = await then(v + 1);
+        order.push('after');
+        return res;
+      },
+      async v => {
+        order.push('before');
+        const res = await then(v * 2);
+        order.push('after');
+        return res;
+      },
+      async v => {
+        order.push('before');
+        const res = await then(v * 2);
+        order.push('after');
+        return res;
+      },
+      async v => {
+        order.push('before');
+        const res = await then(v * 2);
+        order.push('after');
+        return res;
+      }
+    );
 
-  const output = await seqd(1);
+    const output = await seqd(1);
 
-  t.deepEqual(order, [
-    'before',
-    'after',
-    'before',
-    'after',
-    'before',
-    'after',
-    'before',
-    'after'
-  ]);
+    t.deepEqual(order, [
+      'before',
+      'after',
+      'before',
+      'after',
+      'before',
+      'after',
+      'before',
+      'after'
+    ]);
 
-  t.deepEqual(output, 16);
-}));
+    t.deepEqual(output, 16);
+  })
+);
 
-test('fail seq', schedule(async (t) => {
-  const then = timeout(4);
+test(
+  'fail seq',
+  schedule(async t => {
+    const then = timeout(4);
 
-  const seqd = seq(async (v) => {
-    return await then(v * 2);
-  }, async (v) => {
-    throw new Error('Unexpected Error');
-  }, async (v) => {
-    return await then(v * 2);
-  }, async (v) => {
-    return await then(v * 2);
-  });
+    const seqd = seq(
+      async v => await then(v * 2),
+      async v => {
+        throw new Error('Unexpected Error');
+      },
+      async v => await then(v * 2),
+      async v => await then(v * 2)
+    );
 
-  t.throws(seqd(1));
-}));
+    t.throws(seqd(1));
+  })
+);

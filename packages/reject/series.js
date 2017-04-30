@@ -8,6 +8,4 @@ const limit = require('./limit');
  * @param {Function} iteratee
  * @returns {Promise}
  */
-module.exports = (input, fn, opts) => {
-  return limit(input, 1, fn, opts);
-};
+module.exports = (input, fn, opts) => limit(input, 1, fn, opts);

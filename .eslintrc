@@ -1,14 +1,15 @@
 {
-  "extends": "semistandard",
   "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 7,
-    "sourceType": "module"
-  },
+  "extends": [
+    "semistandard",
+    "eslint:recommended",
+    "prettier",
+  ],
   "plugins": [
-    "babel"
+    "prettier"
   ],
   "rules": {
+    "no-console": 0,
     "generator-star-spacing": 0,
     "space-before-function-paren": [2, "never"],
     "object-curly-newline": [2, {
@@ -19,6 +20,16 @@
     }],
     "sort-vars": [2, {
       "ignoreCase": true
+    }],
+    "prettier/prettier": ["error", {
+      "useTabs": false,
+      "printWidth": 80,
+      "tabWidth": 2,
+      "singleQuote": true,
+      "trailingComma": "none",
+      "bracketSpacing": true,
+      "jsxBracketSameLine": false,
+      "semi": true
     }]
   }
 }

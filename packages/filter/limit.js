@@ -10,6 +10,5 @@ const map = require('apr-map/limit');
  * @param {Function} iteratee
  * @returns {Promise}
  */
-module.exports = (input, limit, fn, opts) => {
-  return run(input, map(input, limit, fn, opts));
-};
+module.exports = (input, limit, fn, opts) =>
+  run(input, map(input, limit, fn, opts));

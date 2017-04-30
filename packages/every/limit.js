@@ -11,12 +11,14 @@ const run = require('./run');
  * @param {Function} iteratee
  * @returns {Promise}
  */
-module.exports = (input, limit, fn, opts) => {
-  return run({
+module.exports = (input, limit, fn, opts) =>
+  run({
     input,
     fn,
-    opts: defaults({
-      limit
-    }, opts)
+    opts: defaults(
+      {
+        limit
+      },
+      opts
+    )
   });
-};

@@ -15,15 +15,10 @@ module.exports = () => {
       running = null;
       run();
 
-      return err
-        ? task.reject(err)
-        : task.resolve(val);
+      return err ? task.reject(err) : task.resolve(val);
     };
 
-    task.fn(...task.args).then(
-      (val) => resolve(null, val),
-      (err) => resolve(err)
-    );
+    task.fn(...task.args).then(val => resolve(null, val), err => resolve(err));
   };
 
   const add = (fn, args) => (resolve, reject) => {
@@ -38,5 +33,5 @@ module.exports = () => {
     run();
   };
 
-  return (fn) => (...args) => new Promise(add(fn, args));
+  return fn => (...args) => new Promise(add(fn, args));
 };

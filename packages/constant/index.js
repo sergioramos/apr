@@ -19,10 +19,4 @@
  *   asyncify(JSON.parse)
  * ]);
  */
-module.exports = (...args) => {
-  return () => {
-    return new Promise((resolve) => {
-      resolve(...args);
-    });
-  };
-};
+module.exports = (...args) => () => new Promise(resolve => resolve(...args));
