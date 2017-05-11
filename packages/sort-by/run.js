@@ -12,12 +12,12 @@ module.exports = (input, p) => {
       item => item.result.value
     ).map(
       item =>
-        (!isObj
+        !isObj
           ? item.input.value
           : {
               key: item.key,
               value: item.input.value
-            })
+            }
     );
 
   return back({

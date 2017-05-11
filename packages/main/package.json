@@ -1,0 +1,31 @@
+{
+  "name": "apr-main",
+  "version": "1.0.0",
+  "description": "Catches a promise error, writes the stacktrace to stderr, and exists",
+  "keywords": [
+    "main",
+    "run",
+    "first",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful",
+    "promises",
+    "async-await",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es6",
+    "es7",
+    "es8"
+  ],
+  "homepage": "https://ramitos.github.io/apr#main",
+  "bugs": "https://github.com/ramitos/apr/issues",
+  "license": "MIT",
+  "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "main": "src/index.js",
+  "repository": "ramitos/apr"
+}

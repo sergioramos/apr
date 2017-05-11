@@ -24,4 +24,5 @@
  *
  * // output = [1, 2, 3]
  */
-module.exports = (fn, ...args) => () => fn(...args);
+module.exports = (fn: () => Promise, ...args: any): Function => (): Promise =>
+  fn(...args);
