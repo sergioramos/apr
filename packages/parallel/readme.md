@@ -9,6 +9,7 @@ Run the tasks collection of functions in parallel, without waiting until the pre
 
 **Parameters**
 
+-   `input`  
 -   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
 
 **Examples**

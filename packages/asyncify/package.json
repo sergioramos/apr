@@ -20,7 +20,7 @@
     "es7",
     "es8"
   ],
-  "homepage": "https://ramitos.github.io/apr#asyncify",
+  "homepage": "https://apr.js.org#asyncify",
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",

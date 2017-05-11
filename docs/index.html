@@ -72,6 +72,7 @@
                   
                   
                   
+                  
                 </div>
                 
                 </li>
@@ -102,6 +103,7 @@
                       </a></li>
                     
                     </ul>
+                  
                   
                   
                   
@@ -138,6 +140,7 @@
                   
                   
                   
+                  
                 </div>
                 
                 </li>
@@ -168,6 +171,7 @@
                       </a></li>
                     
                     </ul>
+                  
                   
                   
                   
@@ -204,6 +208,7 @@
                   
                   
                   
+                  
                 </div>
                 
                 </li>
@@ -234,6 +239,7 @@
                       </a></li>
                     
                     </ul>
+                  
                   
                   
                   
@@ -280,6 +286,7 @@
                   
                   
                   
+                  
                 </div>
                 
                 </li>
@@ -319,6 +326,7 @@
                   
                   
                   
+                  
                 </div>
                 
                 </li>
@@ -343,6 +351,7 @@
                       </a></li>
                     
                     </ul>
+                  
                   
                   
                   
@@ -529,7 +538,18 @@
                   
                   
                   
+                  
                 </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#main'
+                  class="">
+                  main
+                  
+                </a>
                 
                 </li>
               
@@ -587,7 +607,7 @@
           
             <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
-  <h2 id='Collections' class='mt0'>
+  <h2 id='collections' class='mt0'>
     Collections
   </h2>
 
@@ -610,7 +630,7 @@
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/concat/index.js#L30-L36'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/concat/index.js#L30-L35'>
       <span>packages/concat/index.js</span>
       </a>
     
@@ -622,10 +642,11 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
 <p><a href="https://www.npmjs.com/package/apr-concat"><img src="https://img.shields.io/npm/v/apr-concat.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-concat"><img src="https://img.shields.io/npm/l/apr-concat.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>concat(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>concat(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -639,6 +660,22 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -697,7 +734,7 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -707,7 +744,7 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/concat/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/concat/series.js#L11-L11'>
       <span>packages/concat/series.js</span>
       </a>
     
@@ -716,10 +753,11 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -733,6 +771,22 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -779,7 +833,7 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -789,7 +843,7 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/concat/limit.js#L13-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/concat/limit.js#L13-L23'>
       <span>packages/concat/limit.js</span>
       </a>
     
@@ -798,10 +852,11 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -823,6 +878,22 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -887,7 +958,7 @@ Applies <code>iteratee</code> to each item in <code>coll</code>, concatenating t
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/every/index.js#L30-L36'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/every/index.js#L30-L35'>
       <span>packages/every/index.js</span>
       </a>
     
@@ -899,10 +970,11 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
 <p><a href="https://www.npmjs.com/package/apr-every"><img src="https://img.shields.io/npm/v/apr-every.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-every"><img src="https://img.shields.io/npm/l/apr-every.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>every(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>every(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -916,6 +988,22 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -974,7 +1062,7 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -984,7 +1072,7 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/every/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/every/series.js#L11-L11'>
       <span>packages/every/series.js</span>
       </a>
     
@@ -993,10 +1081,11 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1010,6 +1099,22 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1056,7 +1161,7 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1066,7 +1171,7 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/every/limit.js#L14-L22'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/every/limit.js#L14-L24'>
       <span>packages/every/limit.js</span>
       </a>
     
@@ -1075,10 +1180,11 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1100,6 +1206,22 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1164,7 +1286,7 @@ Returns true if every element in <code>coll</code> satisfies an async test.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/filter/index.js#L31-L33'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/filter/index.js#L31-L31'>
       <span>packages/filter/index.js</span>
       </a>
     
@@ -1176,10 +1298,11 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
 <p><a href="https://www.npmjs.com/package/apr-filter"><img src="https://img.shields.io/npm/v/apr-filter.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-filter"><img src="https://img.shields.io/npm/l/apr-filter.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>filter(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>filter(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1193,6 +1316,22 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1251,7 +1390,7 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1261,7 +1400,7 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/filter/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/filter/series.js#L11-L11'>
       <span>packages/filter/series.js</span>
       </a>
     
@@ -1270,10 +1409,11 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1287,6 +1427,22 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1333,7 +1489,7 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1343,7 +1499,7 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/filter/limit.js#L13-L15'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/filter/limit.js#L13-L14'>
       <span>packages/filter/limit.js</span>
       </a>
     
@@ -1352,10 +1508,11 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1377,6 +1534,22 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1441,7 +1614,7 @@ Returns a new array of all the values in <code>coll</code> which pass an async t
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/find/index.js#L30-L36'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/find/index.js#L30-L35'>
       <span>packages/find/index.js</span>
       </a>
     
@@ -1453,10 +1626,11 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
 <p><a href="https://www.npmjs.com/package/apr-find"><img src="https://img.shields.io/npm/v/apr-find.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-find"><img src="https://img.shields.io/npm/l/apr-find.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>find(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>find(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1470,6 +1644,22 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1528,7 +1718,7 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1538,7 +1728,7 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/find/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/find/series.js#L11-L11'>
       <span>packages/find/series.js</span>
       </a>
     
@@ -1547,10 +1737,11 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1564,6 +1755,22 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1610,7 +1817,7 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1620,7 +1827,7 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/find/limit.js#L13-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/find/limit.js#L13-L23'>
       <span>packages/find/limit.js</span>
       </a>
     
@@ -1629,10 +1836,11 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1654,6 +1862,22 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1718,7 +1942,7 @@ Returns the first value in <code>coll</code> that passes an async truth test.</p
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/for-each/index.js#L29-L35'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/for-each/index.js#L29-L34'>
       <span>packages/for-each/index.js</span>
       </a>
     
@@ -1730,10 +1954,11 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
 <p><a href="https://www.npmjs.com/package/apr-for-each"><img src="https://img.shields.io/npm/v/apr-for-each.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-for-each"><img src="https://img.shields.io/npm/l/apr-for-each.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>for-each(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>for-each(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1747,6 +1972,22 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1804,7 +2045,7 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1814,7 +2055,7 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/for-each/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/for-each/series.js#L11-L11'>
       <span>packages/for-each/series.js</span>
       </a>
     
@@ -1823,10 +2064,11 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1840,6 +2082,22 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1886,7 +2144,7 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -1896,7 +2154,7 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/for-each/limit.js#L13-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/for-each/limit.js#L13-L23'>
       <span>packages/for-each/limit.js</span>
       </a>
     
@@ -1905,10 +2163,11 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -1930,6 +2189,22 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -1994,7 +2269,7 @@ Applies the function <code>iteratee</code> to each item in <code>coll</code>, in
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/map/index.js#L30-L36'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/map/index.js#L30-L35'>
       <span>packages/map/index.js</span>
       </a>
     
@@ -2006,10 +2281,11 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
 <p><a href="https://www.npmjs.com/package/apr-map"><img src="https://img.shields.io/npm/v/apr-map.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-map"><img src="https://img.shields.io/npm/l/apr-map.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>map(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>map(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2023,6 +2299,22 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2081,7 +2373,7 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2091,7 +2383,7 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/map/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/map/series.js#L11-L11'>
       <span>packages/map/series.js</span>
       </a>
     
@@ -2100,10 +2392,11 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2117,6 +2410,22 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2163,7 +2472,7 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2173,7 +2482,7 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/map/limit.js#L13-L21'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/map/limit.js#L13-L23'>
       <span>packages/map/limit.js</span>
       </a>
     
@@ -2182,10 +2491,11 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2207,6 +2517,22 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2271,7 +2597,7 @@ Produces a new collection of values by mapping each value in <code>coll</code> t
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reduce/index.js#L23-L38'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reduce/index.js#L23-L33'>
       <span>packages/reduce/index.js</span>
       </a>
     
@@ -2283,10 +2609,11 @@ Reduces <code>coll</code> into a single value using an async <code>iteratee</cod
 <p><a href="https://www.npmjs.com/package/apr-reduce"><img src="https://img.shields.io/npm/v/apr-reduce.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-reduce"><img src="https://img.shields.io/npm/l/apr-reduce.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>reduce(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>reduce(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, sum: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2300,6 +2627,30 @@ Reduces <code>coll</code> into a single value using an async <code>iteratee</cod
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>sum</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2362,7 +2713,7 @@ Reduces <code>coll</code> into a single value using an async <code>iteratee</cod
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reject/index.js#L31-L33'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reject/index.js#L31-L31'>
       <span>packages/reject/index.js</span>
       </a>
     
@@ -2374,10 +2725,11 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
 <p><a href="https://www.npmjs.com/package/apr-reject"><img src="https://img.shields.io/npm/v/apr-reject.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-reject"><img src="https://img.shields.io/npm/l/apr-reject.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>reject(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>reject(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2391,6 +2743,22 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2449,7 +2817,7 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2459,7 +2827,7 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reject/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reject/series.js#L11-L11'>
       <span>packages/reject/series.js</span>
       </a>
     
@@ -2468,10 +2836,11 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2485,6 +2854,22 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2531,7 +2916,7 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2541,7 +2926,7 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reject/limit.js#L13-L15'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reject/limit.js#L13-L14'>
       <span>packages/reject/limit.js</span>
       </a>
     
@@ -2550,10 +2935,11 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2575,6 +2961,22 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2639,7 +3041,7 @@ The opposite of <a href="#filter"><code>filter</code></a>. Removes values that p
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/some/index.js#L31-L33'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/some/index.js#L31-L31'>
       <span>packages/some/index.js</span>
       </a>
     
@@ -2651,10 +3053,11 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
 <p><a href="https://www.npmjs.com/package/apr-some"><img src="https://img.shields.io/npm/v/apr-some.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-some"><img src="https://img.shields.io/npm/l/apr-some.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>some(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>some(args: ...any, input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2664,6 +3067,14 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -2726,7 +3137,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2736,7 +3147,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/some/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/some/series.js#L11-L11'>
       <span>packages/some/series.js</span>
       </a>
     
@@ -2745,10 +3156,11 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2762,6 +3174,22 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2808,7 +3236,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(input, iteratee)</span>
+            <span class='code strong strong truncate'>series(input, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2818,7 +3246,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/sort-by/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/sort-by/series.js#L11-L11'>
       <span>packages/sort-by/series.js</span>
       </a>
     
@@ -2827,10 +3255,11 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
 
   
 
-  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2844,6 +3273,22 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -2890,7 +3335,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(args, input, limit, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -2900,7 +3345,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/some/limit.js#L13-L15'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/some/limit.js#L13-L13'>
       <span>packages/some/limit.js</span>
       </a>
     
@@ -2909,10 +3354,11 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(args: ...any, input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -2922,6 +3368,14 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -2998,7 +3452,7 @@ Returns true if at least one element in the <code>coll</code> satisfies an async
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/sort-by/index.js#L32-L34'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/sort-by/index.js#L32-L32'>
       <span>packages/sort-by/index.js</span>
       </a>
     
@@ -3010,10 +3464,11 @@ Sorts a list by the results of running each <code>coll</code> value through an a
 <p><a href="https://www.npmjs.com/package/apr-sort-by"><img src="https://img.shields.io/npm/v/apr-sort-by.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-sort-by"><img src="https://img.shields.io/npm/l/apr-sort-by.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>sort-by(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>sort-by(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -3027,6 +3482,22 @@ Sorts a list by the results of running each <code>coll</code> value through an a
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>input</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable))</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -3086,7 +3557,7 @@ Sorts a list by the results of running each <code>coll</code> value through an a
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(input, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(input, limit, fn, opts, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -3096,7 +3567,7 @@ Sorts a list by the results of running each <code>coll</code> value through an a
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/sort-by/limit.js#L13-L15'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/sort-by/limit.js#L13-L14'>
       <span>packages/sort-by/limit.js</span>
       </a>
     
@@ -3105,10 +3576,11 @@ Sorts a list by the results of running each <code>coll</code> value through an a
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(input: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | Iterable), limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -3130,6 +3602,22 @@ Sorts a list by the results of running each <code>coll</code> value through an a
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -3186,7 +3674,7 @@ Sorts a list by the results of running each <code>coll</code> value through an a
           
             <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
-  <h2 id='Control Flow' class='mt0'>
+  <h2 id='control-flow' class='mt0'>
     Control Flow
   </h2>
 
@@ -3209,7 +3697,7 @@ Sorts a list by the results of running each <code>coll</code> value through an a
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/compose/index.js#L28-L33'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/compose/index.js#L28-L31'>
       <span>packages/compose/index.js</span>
       </a>
     
@@ -3221,10 +3709,11 @@ Creates a function which is a composition of the passed asynchronous functions. 
 <p><a href="https://www.npmjs.com/package/apr-compose"><img src="https://img.shields.io/npm/v/apr-compose.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-compose"><img src="https://img.shields.io/npm/l/apr-compose.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>compose(function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  <div class='pre p1 fill-light mt0'>compose(args: ...any, function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
+  
   
   
   
@@ -3234,6 +3723,14 @@ Creates a function which is a composition of the passed asynchronous functions. 
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -3298,7 +3795,7 @@ Creates a function which is a composition of the passed asynchronous functions. 
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/parallel/index.js#L34-L43'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/parallel/index.js#L34-L46'>
       <span>packages/parallel/index.js</span>
       </a>
     
@@ -3310,10 +3807,11 @@ Run the tasks collection of functions in parallel, without waiting until the pre
 <p><a href="https://www.npmjs.com/package/apr-parallel"><img src="https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-parallel"><img src="https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>parallel(tasks: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>parallel(input: any, tasks: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -3323,6 +3821,14 @@ Run the tasks collection of functions in parallel, without waiting until the pre
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>input</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -3393,7 +3899,7 @@ Run the tasks collection of functions in parallel, without waiting until the pre
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/seq/index.js#L27-L27'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/seq/index.js#L27-L27'>
       <span>packages/seq/index.js</span>
       </a>
     
@@ -3405,10 +3911,11 @@ Version of the compose function that is more natural to read. Each function cons
 <p><a href="https://www.npmjs.com/package/apr-seq"><img src="https://img.shields.io/npm/v/apr-seq.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-seq"><img src="https://img.shields.io/npm/l/apr-seq.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>seq(tasks: ...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  <div class='pre p1 fill-light mt0'>seq(args: ...any, tasks: ...<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
+  
   
   
   
@@ -3418,6 +3925,14 @@ Version of the compose function that is more natural to read. Each function cons
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -3482,7 +3997,7 @@ Version of the compose function that is more natural to read. Each function cons
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/series/index.js#L34-L43'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/series/index.js#L34-L46'>
       <span>packages/series/index.js</span>
       </a>
     
@@ -3494,10 +4009,11 @@ Run the functions in the <code>tasks</code> in series, each one running once the
 <p><a href="https://www.npmjs.com/package/apr-series"><img src="https://img.shields.io/npm/v/apr-series.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-series"><img src="https://img.shields.io/npm/l/apr-series.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>series(tasks: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(input: any, tasks: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -3507,6 +4023,14 @@ Run the functions in the <code>tasks</code> in series, each one running once the
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>input</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -3577,7 +4101,7 @@ Run the functions in the <code>tasks</code> in series, each one running once the
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/until/index.js#L33-L41'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/until/index.js#L33-L38'>
       <span>packages/until/index.js</span>
       </a>
     
@@ -3593,6 +4117,7 @@ Repeatedly call <code>fn</code> until <code>test</code> returns <code>true</code
   
   
 
+  
   
   
   
@@ -3679,7 +4204,7 @@ Repeatedly call <code>fn</code> until <code>test</code> returns <code>true</code
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/waterfall/index.js#L28-L45'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/waterfall/index.js#L28-L41'>
       <span>packages/waterfall/index.js</span>
       </a>
     
@@ -3691,10 +4216,11 @@ Runs the <code>tasks</code> array of functions in series, each passing their res
 <p><a href="https://www.npmjs.com/package/apr-waterfall"><img src="https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-waterfall"><img src="https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>waterfall(tasks: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>), initial: Any?): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>waterfall(input: any, initial: Any?, tasks: (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -3707,7 +4233,7 @@ Runs the <code>tasks</code> array of functions in series, each passing their res
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>tasks</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
+            <span class='code bold'>input</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -3716,6 +4242,14 @@ Runs the <code>tasks</code> array of functions in series, each passing their res
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>initial</span> <code class='quiet'>(Any?)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>tasks</span> <code class='quiet'>((<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>> | <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>))</code>
 	    
           </div>
           
@@ -3776,7 +4310,7 @@ Runs the <code>tasks</code> array of functions in series, each passing their res
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/whilst/index.js#L32-L40'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/whilst/index.js#L32-L37'>
       <span>packages/whilst/index.js</span>
       </a>
     
@@ -3792,6 +4326,7 @@ Repeatedly call <code>fn</code>, while <code>test</code> returns true.</p>
   
   
 
+  
   
   
   
@@ -3869,7 +4404,7 @@ Repeatedly call <code>fn</code>, while <code>test</code> returns true.</p>
           
             <div class='keyline-top-not py2'><section class='py2 clearfix'>
 
-  <h2 id='Utilities' class='mt0'>
+  <h2 id='utilities' class='mt0'>
     Utilities
   </h2>
 
@@ -3892,7 +4427,7 @@ Repeatedly call <code>fn</code>, while <code>test</code> returns true.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/apply/index.js#L27-L31'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/apply/index.js#L27-L28'>
       <span>packages/apply/index.js</span>
       </a>
     
@@ -3904,10 +4439,11 @@ Creates a continuation function with some arguments already applied.</p>
 <p><a href="https://www.npmjs.com/package/apr-apply"><img src="https://img.shields.io/npm/v/apr-apply.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-apply"><img src="https://img.shields.io/npm/l/apr-apply.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>apply(function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, arguments: ...Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  <div class='pre p1 fill-light mt0'>apply(fn: function (): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>, args: ...any, function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>, arguments: ...Any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
+  
   
   
   
@@ -3917,6 +4453,22 @@ Creates a continuation function with some arguments already applied.</p>
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(function (): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -3990,7 +4542,7 @@ Creates a continuation function with some arguments already applied.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/asyncify/index.js#L26-L36'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/asyncify/index.js#L26-L33'>
       <span>packages/asyncify/index.js</span>
       </a>
     
@@ -4002,10 +4554,11 @@ Take a sync function and make it async. This is useful for plugging sync functio
 <p><a href="https://www.npmjs.com/package/apr-asyncify"><img src="https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-asyncify"><img src="https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>asyncify(function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  <div class='pre p1 fill-light mt0'>asyncify(fn: any, function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
+  
   
   
   
@@ -4015,6 +4568,14 @@ Take a sync function and make it async. This is useful for plugging sync functio
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -4080,7 +4641,7 @@ Take a sync function and make it async. This is useful for plugging sync functio
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/awaitify/index.js#L22-L26'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/awaitify/index.js#L22-L25'>
       <span>packages/awaitify/index.js</span>
       </a>
     
@@ -4092,10 +4653,11 @@ Transform a callback-based function into a promise-based one.</p>
 <p><a href="https://www.npmjs.com/package/apr-awaitify"><img src="https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-awaitify"><img src="https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>awaitify(function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  <div class='pre p1 fill-light mt0'>awaitify(fn: any, function: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
+  
   
   
   
@@ -4105,6 +4667,14 @@ Transform a callback-based function into a promise-based one.</p>
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -4166,7 +4736,7 @@ Transform a callback-based function into a promise-based one.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/constant/index.js#L22-L28'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/constant/index.js#L22-L22'>
       <span>packages/constant/index.js</span>
       </a>
     
@@ -4178,10 +4748,11 @@ Returns a promise that when called, then's with the values provided. Useful as t
 <p><a href="https://www.npmjs.com/package/apr-constant"><img src="https://img.shields.io/npm/v/apr-constant.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-constant"><img src="https://img.shields.io/npm/l/apr-constant.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>constant(arguments: ...any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>constant(args: ...any, arguments: ...any): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -4191,6 +4762,14 @@ Returns a promise that when called, then's with the values provided. Useful as t
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>args</span> <code class='quiet'>(...any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -4252,7 +4831,7 @@ Returns a promise that when called, then's with the values provided. Useful as t
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/intercept/index.js#L19-L22'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/intercept/index.js#L19-L25'>
       <span>packages/intercept/index.js</span>
       </a>
     
@@ -4264,10 +4843,11 @@ Intercepts errors, the Go way!</p>
 <p><a href="https://www.npmjs.com/package/apr-intercept"><img src="https://img.shields.io/npm/v/apr-intercept.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-intercept"><img src="https://img.shields.io/npm/l/apr-intercept.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>intercept(input: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>intercept(p: any, input: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -4277,6 +4857,14 @@ Intercepts errors, the Go way!</p>
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>p</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -4335,7 +4923,7 @@ Intercepts errors, the Go way!</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reflect/index.js#L28-L42'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reflect/index.js#L28-L37'>
       <span>packages/reflect/index.js</span>
       </a>
     
@@ -4348,10 +4936,11 @@ The object returned has either the property error or value.</p>
 <p><a href="https://www.npmjs.com/package/apr-reflect"><img src="https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-reflect"><img src="https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square"></a></p>
 
 
-  <div class='pre p1 fill-light mt0'>reflect(input: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
+  <div class='pre p1 fill-light mt0'>reflect(fn: any, input: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a></div>
   
   
 
+  
   
   
   
@@ -4361,6 +4950,14 @@ The object returned has either the property error or value.</p>
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -4427,7 +5024,7 @@ The object returned has either the property error or value.</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/times/index.js#L24-L24'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/times/index.js#L24-L24'>
       <span>packages/times/index.js</span>
       </a>
     
@@ -4443,6 +5040,7 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
   
   
 
+  
   
   
   
@@ -4510,7 +5108,7 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>series(n, iteratee)</span>
+            <span class='code strong strong truncate'>series(count, fn, opts, n, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -4520,7 +5118,7 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/times/series.js#L11-L13'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/times/series.js#L11-L11'>
       <span>packages/times/series.js</span>
       </a>
     
@@ -4529,10 +5127,11 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
 
   
 
-  <div class='pre p1 fill-light mt0'>series(n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>series(count: any, fn: any, opts: any, n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -4542,6 +5141,30 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
   
     <div class='py1 quiet mt1 prose-big'>Parameters</div>
     <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>count</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
       
         <div class='space-bottom0'>
           <div>
@@ -4592,7 +5215,7 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
       <div class="clearfix small pointer toggle-sibling">
         <div class="py1 contain">
             <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>limit(n, limit, iteratee)</span>
+            <span class='code strong strong truncate'>limit(count, limit, fn, opts, n, iteratee)</span>
         </div>
       </div>
       <div class="clearfix display-none toggle-target">
@@ -4602,7 +5225,7 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/times/limit.js#L13-L17'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/times/limit.js#L13-L23'>
       <span>packages/times/limit.js</span>
       </a>
     
@@ -4611,10 +5234,11 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
 
   
 
-  <div class='pre p1 fill-light mt0'>limit(n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  <div class='pre p1 fill-light mt0'>limit(count: any, limit: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, fn: any, opts: any, n: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, iteratee: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function">Function</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
   
   
 
+  
   
   
   
@@ -4627,7 +5251,7 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>n</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+            <span class='code bold'>count</span> <code class='quiet'>(any)</code>
 	    
           </div>
           
@@ -4636,6 +5260,30 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
         <div class='space-bottom0'>
           <div>
             <span class='code bold'>limit</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>fn</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>opts</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>n</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>)</code>
 	    
           </div>
           
@@ -4679,6 +5327,98 @@ Calls the <code>iteratee</code> function <code>n</code> times, and accumulates r
     </div>
   
 </div>
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+            <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='main'>
+      main
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/main/index.js#L21-L25'>
+      <span>packages/main/index.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p><a id="main"></a>
+Catches a promise error, writes the stacktrace to stderr and exists</p>
+<p><a href="https://www.npmjs.com/package/apr-main"><img src="https://img.shields.io/npm/v/apr-main.svg?style=flat-square"></a> <a href="https://www.npmjs.com/package/apr-main"><img src="https://img.shields.io/npm/l/apr-main.svg?style=flat-square"></a></p>
+
+
+  <div class='pre p1 fill-light mt0'>main(p: any, input: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>): <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>p</span> <code class='quiet'>(any)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>input</span> <code class='quiet'>(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></code>:
+        
+
+      
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> main <span class="hljs-keyword">from</span> <span class="hljs-string">'apr-main'</span>;
+
+main(<span class="hljs-keyword">async</span> () =&gt; <span class="hljs-string">'hello'</span>) <span class="hljs-comment">// writes nothing</span>
+main(<span class="hljs-keyword">async</span> () =&gt; <span class="hljs-literal">undefined</span>) <span class="hljs-comment">// writes nothing</span>
+main(<span class="hljs-keyword">async</span> () =&gt; { <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">'uncaught error'</span>) }) <span class="hljs-comment">// writes the stack trace to stderr and exists</span></pre>
+    
+  
 
   
 

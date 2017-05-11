@@ -9,6 +9,7 @@ Intercepts errors, the Go way!
 
 **Parameters**
 
+-   `p`  
 -   `input` **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 **Examples**

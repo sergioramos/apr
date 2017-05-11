@@ -31,6 +31,7 @@ toc:
   - intercept
   - reflect
   - times
+  - main
   - name: credits
     file: docs/credits.md
   - name: license

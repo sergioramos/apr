@@ -9,6 +9,7 @@ Version of the compose function that is more natural to read. Each function cons
 
 **Parameters**
 
+-   `args` **...any** 
 -   `tasks` **...[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**

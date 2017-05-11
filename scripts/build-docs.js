@@ -1,24 +1,21 @@
 const apr = require('../package.json');
 const forEach = require('../packages/for-each');
-const parallel = require('../packages/parallel');
+const series = require('../packages/series');
 const awaitify = require('../packages/awaitify');
+const main = require('../packages/main');
 const isString = require('lodash.isString');
-const documentation = require('documentation');
+const { build, formats } = require('documentation');
 const readYaml = require('read-yaml');
 const streamArray = require('stream-array');
 const removeMd = require('remove-markdown');
+const { writeFile } = require('mz/fs');
 const vfs = require('vinyl-fs');
 const remark = require('remark');
 const union = require('lodash.union');
 const pump = require('pump');
 const path = require('path');
-const fs = require('fs');
 
 const onFinish = awaitify(pump);
-const build = awaitify(documentation.build);
-const html = awaitify(documentation.formats.html);
-const md = awaitify(documentation.formats.md);
-const writeFile = awaitify(fs.writeFile);
 
 const tocPath = path.join(__dirname, '../documentation.yml');
 const toc = readYaml.sync(tocPath);
@@ -39,7 +36,7 @@ const individual = async () =>
     const ast = await build([path.join(dir, 'index.js')], {});
 
     const dsc = removeMd(remark().stringify(ast[0].description).split(/\n/)[1]);
-    const readme = await md(ast, {});
+    const readme = await formats.md(ast, {});
 
     const pjson = JSON.stringify(
       {
@@ -47,7 +44,7 @@ const individual = async () =>
         version: pkg.version,
         description: dsc,
         keywords: union((pkg.keywords || []).concat(name).concat(apr.keywords)),
-        homepage: `https://ramitos.github.io/apr#${name}`,
+        homepage: `https://apr.js.org#${name}`,
         bugs: apr.bugs,
         license: apr.license,
         people: pkg.people,
@@ -135,7 +132,7 @@ const all = async () => {
     })
   );
 
-  let source = await md(ast, {});
+  let source = await formats.md(ast, {});
   const toc = await _toc();
 
   source = source.replace(/^## apr/, '# apr');
@@ -154,7 +151,7 @@ const website = async () => {
     })
   );
 
-  const source = await html(ast, {
+  const source = await formats.html(ast, {
     name: apr.name
   });
 
@@ -164,13 +161,10 @@ const website = async () => {
   await onFinish(_files, _dest);
 };
 
-parallel({
-  website,
-  individual,
-  all
-}).then(
-  () => console.log('Done'),
-  err => {
-    throw err;
-  }
+main(
+  series({
+    website,
+    individual,
+    all
+  })
 );

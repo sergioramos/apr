@@ -10,6 +10,7 @@ The object returned has either the property error or value.
 
 **Parameters**
 
+-   `fn`  
 -   `input` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**

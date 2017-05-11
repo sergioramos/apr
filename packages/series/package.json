@@ -20,14 +20,14 @@
     "es7",
     "es8"
   ],
-  "homepage": "https://ramitos.github.io/apr#series",
+  "homepage": "https://apr.js.org#series",
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-reduce": "^1.0.3",
-    "apr-engine-sum": "^1.0.1"
+    "apr-engine-sum": "^1.0.1",
+    "apr-reduce": "^1.0.3"
   }
 }

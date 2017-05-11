@@ -1,7 +1,7 @@
 {
   "name": "apr-main",
-  "version": "1.0.0",
-  "description": "Catches a promise error, writes the stacktrace to stderr, and exists",
+  "version": "1.0.5",
+  "description": "Catches a promise error, writes the stacktrace to stderr and exists",
   "keywords": [
     "main",
     "run",
@@ -22,10 +22,13 @@
     "es7",
     "es8"
   ],
-  "homepage": "https://ramitos.github.io/apr#main",
+  "homepage": "https://apr.js.org#main",
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "main": "src/index.js",
-  "repository": "ramitos/apr"
+  "repository": "ramitos/apr",
+  "dependencies": {
+    "lodash.isfunction": "^3.0.8"
+  }
 }

@@ -9,6 +9,7 @@ Transform a callback-based function into a promise-based one.
 
 **Parameters**
 
+-   `fn`  
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**

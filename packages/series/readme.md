@@ -9,6 +9,7 @@ Run the functions in the `tasks` in series, each one running once the previous f
 
 **Parameters**
 
+-   `input`  
 -   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
 
 **Examples**

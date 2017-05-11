@@ -3,22 +3,23 @@
 ## main
 
 <a id="main"></a>
-Intercepts errors, the Go way!
+Catches a promise error, writes the stacktrace to stderr and exists
 
 [![](https://img.shields.io/npm/v/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main) [![](https://img.shields.io/npm/l/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main)
 
 **Parameters**
 
+-   `p`  
 -   `input` **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 **Examples**
 
 ```javascript
-import ctch from 'apr-main';
+import main from 'apr-main';
 
-const [err1, res1] = await ctch(fn(1));
-const [err2, res2] = await ctch(fn(1));
-const [, res3] = await ctch(fn(3));
+main(async () => 'hello') // writes nothing
+main(async () => undefined) // writes nothing
+main(async () => { throw new Error('uncaught error') }) // writes the stack trace to stderr and exists
 ```
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 

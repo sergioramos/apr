@@ -46,6 +46,7 @@ As someone beautifully put it:
   * [intercept](#intercept)
   * [reflect](#reflect)
   * [times](#times)
+  * [main](#main)
     
 * [credits](#credits)
   
@@ -54,13 +55,15 @@ As someone beautifully put it:
   
     
 
+
 ## Collections
 
 Functions for manipulating collections, such as arrays and objects.
 
+
 ## concat
 
-[packages/concat/index.js:30-36](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/concat/index.js#L30-L36 "Source code on GitHub")
+[packages/concat/index.js:30-35](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/concat/index.js#L30-L35 "Source code on GitHub")
 
 <a id="concat"></a>
 Applies `iteratee` to each item in `coll`, concatenating the results. Returns the concatenated list.
@@ -70,6 +73,8 @@ Applies `iteratee` to each item in `coll`, concatenating the results. Returns th
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -94,30 +99,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/concat/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/concat/series.js#L11-L13 "Source code on GitHub")
+[packages/concat/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/concat/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/concat/limit.js:13-21](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/concat/limit.js#L13-L21 "Source code on GitHub")
+[packages/concat/limit.js:13-23](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/concat/limit.js#L13-L23 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## every
 
-[packages/every/index.js:30-36](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/every/index.js#L30-L36 "Source code on GitHub")
+[packages/every/index.js:30-35](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/every/index.js#L30-L35 "Source code on GitHub")
 
 <a id="every"></a>
 Returns true if every element in `coll` satisfies an async test.
@@ -127,6 +136,8 @@ Returns true if every element in `coll` satisfies an async test.
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -151,30 +162,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/every/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/every/series.js#L11-L13 "Source code on GitHub")
+[packages/every/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/every/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/every/limit.js:14-22](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/every/limit.js#L14-L22 "Source code on GitHub")
+[packages/every/limit.js:14-24](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/every/limit.js#L14-L24 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## filter
 
-[packages/filter/index.js:31-33](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/filter/index.js#L31-L33 "Source code on GitHub")
+[packages/filter/index.js:31-31](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/filter/index.js#L31-L31 "Source code on GitHub")
 
 <a id="filter"></a>
 Returns a new array of all the values in `coll` which pass an async truth test.
@@ -184,6 +199,8 @@ Returns a new array of all the values in `coll` which pass an async truth test.
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -208,30 +225,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/filter/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/filter/series.js#L11-L13 "Source code on GitHub")
+[packages/filter/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/filter/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/filter/limit.js:13-15](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/filter/limit.js#L13-L15 "Source code on GitHub")
+[packages/filter/limit.js:13-14](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/filter/limit.js#L13-L14 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## find
 
-[packages/find/index.js:30-36](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/find/index.js#L30-L36 "Source code on GitHub")
+[packages/find/index.js:30-35](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/find/index.js#L30-L35 "Source code on GitHub")
 
 <a id="find"></a>
 Returns the first value in `coll` that passes an async truth test.
@@ -241,6 +262,8 @@ Returns the first value in `coll` that passes an async truth test.
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -265,30 +288,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/find/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/find/series.js#L11-L13 "Source code on GitHub")
+[packages/find/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/find/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/find/limit.js:13-21](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/find/limit.js#L13-L21 "Source code on GitHub")
+[packages/find/limit.js:13-23](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/find/limit.js#L13-L23 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## for-each
 
-[packages/for-each/index.js:29-35](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/for-each/index.js#L29-L35 "Source code on GitHub")
+[packages/for-each/index.js:29-34](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/for-each/index.js#L29-L34 "Source code on GitHub")
 
 <a id="for-each"></a>
 Applies the function `iteratee` to each item in `coll`, in parallel.
@@ -298,6 +325,8 @@ Applies the function `iteratee` to each item in `coll`, in parallel.
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -321,30 +350,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/for-each/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/for-each/series.js#L11-L13 "Source code on GitHub")
+[packages/for-each/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/for-each/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/for-each/limit.js:13-21](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/for-each/limit.js#L13-L21 "Source code on GitHub")
+[packages/for-each/limit.js:13-23](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/for-each/limit.js#L13-L23 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## map
 
-[packages/map/index.js:30-36](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/map/index.js#L30-L36 "Source code on GitHub")
+[packages/map/index.js:30-35](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/map/index.js#L30-L35 "Source code on GitHub")
 
 <a id="map"></a>
 Produces a new collection of values by mapping each value in `coll` through the `iteratee` function.
@@ -354,6 +387,8 @@ Produces a new collection of values by mapping each value in `coll` through the 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -378,30 +413,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/map/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/map/series.js#L11-L13 "Source code on GitHub")
+[packages/map/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/map/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/map/limit.js:13-21](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/map/limit.js#L13-L21 "Source code on GitHub")
+[packages/map/limit.js:13-23](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/map/limit.js#L13-L23 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## reduce
 
-[packages/reduce/index.js:23-38](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reduce/index.js#L23-L38 "Source code on GitHub")
+[packages/reduce/index.js:23-33](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reduce/index.js#L23-L33 "Source code on GitHub")
 
 <a id="reduce"></a>
 Reduces `coll` into a single value using an async `iteratee` to return each successive step.
@@ -411,6 +450,9 @@ Reduces `coll` into a single value using an async `iteratee` to return each succ
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `sum`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -427,7 +469,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## reject
 
-[packages/reject/index.js:31-33](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reject/index.js#L31-L33 "Source code on GitHub")
+[packages/reject/index.js:31-31](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reject/index.js#L31-L31 "Source code on GitHub")
 
 <a id="reject"></a>
 The opposite of [`filter`](#filter). Removes values that pass an async truth test.
@@ -437,6 +479,8 @@ The opposite of [`filter`](#filter). Removes values that pass an async truth tes
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -461,30 +505,34 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/reject/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reject/series.js#L11-L13 "Source code on GitHub")
+[packages/reject/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reject/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/reject/limit.js:13-15](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reject/limit.js#L13-L15 "Source code on GitHub")
+[packages/reject/limit.js:13-14](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reject/limit.js#L13-L14 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ## some
 
-[packages/some/index.js:31-33](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/some/index.js#L31-L33 "Source code on GitHub")
+[packages/some/index.js:31-31](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/some/index.js#L31-L31 "Source code on GitHub")
 
 <a id="some"></a>
 Returns true if at least one element in the `coll` satisfies an async test.
@@ -493,6 +541,7 @@ Returns true if at least one element in the `coll` satisfies an async test.
 
 **Parameters**
 
+-   `args` **...any** 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
@@ -518,32 +567,37 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/some/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/some/series.js#L11-L13 "Source code on GitHub")
+[packages/some/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/some/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### series
 
-[packages/sort-by/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/sort-by/series.js#L11-L13 "Source code on GitHub")
+[packages/sort-by/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/sort-by/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
-[packages/some/limit.js:13-15](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/some/limit.js#L13-L15 "Source code on GitHub")
+[packages/some/limit.js:13-13](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/some/limit.js#L13-L13 "Source code on GitHub")
 
 **Parameters**
 
+-   `args` **...any** 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
@@ -552,7 +606,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## sort-by
 
-[packages/sort-by/index.js:32-34](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/sort-by/index.js#L32-L34 "Source code on GitHub")
+[packages/sort-by/index.js:32-32](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/sort-by/index.js#L32-L32 "Source code on GitHub")
 
 <a id="sort-by"></a>
 Sorts a list by the results of running each `coll` value through an async `iteratee`.
@@ -562,6 +616,8 @@ Sorts a list by the results of running each `coll` value through an async `itera
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -587,12 +643,14 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### limit
 
-[packages/sort-by/limit.js:13-15](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/sort-by/limit.js#L13-L15 "Source code on GitHub")
+[packages/sort-by/limit.js:13-14](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/sort-by/limit.js#L13-L14 "Source code on GitHub")
 
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
@@ -601,9 +659,10 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 A collection of async functions for controlling the flow through a script.
 
+
 ## compose
 
-[packages/compose/index.js:28-33](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/compose/index.js#L28-L33 "Source code on GitHub")
+[packages/compose/index.js:28-31](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/compose/index.js#L28-L31 "Source code on GitHub")
 
 <a id="sompose"></a>
 Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).
@@ -612,6 +671,7 @@ Creates a function which is a composition of the passed asynchronous functions. 
 
 **Parameters**
 
+-   `args` **...any** 
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -634,7 +694,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## parallel
 
-[packages/parallel/index.js:34-43](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/parallel/index.js#L34-L43 "Source code on GitHub")
+[packages/parallel/index.js:34-46](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/parallel/index.js#L34-L46 "Source code on GitHub")
 
 <a id="parallel"></a>
 Run the tasks collection of functions in parallel, without waiting until the previous function has completed.
@@ -643,6 +703,7 @@ Run the tasks collection of functions in parallel, without waiting until the pre
 
 **Parameters**
 
+-   `input`  
 -   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
 
 **Examples**
@@ -671,7 +732,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## seq
 
-[packages/seq/index.js:27-27](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/seq/index.js#L27-L27 "Source code on GitHub")
+[packages/seq/index.js:27-27](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/seq/index.js#L27-L27 "Source code on GitHub")
 
 <a id="seq"></a>
 Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.
@@ -680,6 +741,7 @@ Version of the compose function that is more natural to read. Each function cons
 
 **Parameters**
 
+-   `args` **...any** 
 -   `tasks` **...[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -702,7 +764,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## series
 
-[packages/series/index.js:34-43](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/series/index.js#L34-L43 "Source code on GitHub")
+[packages/series/index.js:34-46](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/series/index.js#L34-L46 "Source code on GitHub")
 
 <a id="series"></a>
 Run the functions in the `tasks` in series, each one running once the previous function has completed.
@@ -711,6 +773,7 @@ Run the functions in the `tasks` in series, each one running once the previous f
 
 **Parameters**
 
+-   `input`  
 -   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
 
 **Examples**
@@ -739,7 +802,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## until
 
-[packages/until/index.js:33-41](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/until/index.js#L33-L41 "Source code on GitHub")
+[packages/until/index.js:33-38](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/until/index.js#L33-L38 "Source code on GitHub")
 
 <a id="until"></a>
 Repeatedly call `fn` until `test` returns `true`.
@@ -776,7 +839,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## waterfall
 
-[packages/waterfall/index.js:28-45](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/waterfall/index.js#L28-L45 "Source code on GitHub")
+[packages/waterfall/index.js:28-41](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/waterfall/index.js#L28-L41 "Source code on GitHub")
 
 <a id="waterfall"></a>
 Runs the `tasks` array of functions in series, each passing their results to the next in the array.
@@ -785,8 +848,9 @@ Runs the `tasks` array of functions in series, each passing their results to the
 
 **Parameters**
 
--   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+-   `input`  
 -   `initial` **Any?** 
+-   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
 
 **Examples**
 
@@ -808,7 +872,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## whilst
 
-[packages/whilst/index.js:32-40](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/whilst/index.js#L32-L40 "Source code on GitHub")
+[packages/whilst/index.js:32-37](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/whilst/index.js#L32-L37 "Source code on GitHub")
 
 <a id="whilst"></a>
 Repeatedly call `fn`, while `test` returns true.
@@ -846,9 +910,10 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 A collection of awaitable utility functions.
 
+
 ## apply
 
-[packages/apply/index.js:27-31](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/apply/index.js#L27-L31 "Source code on GitHub")
+[packages/apply/index.js:27-28](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/apply/index.js#L27-L28 "Source code on GitHub")
 
 <a id="apply"></a>
 Creates a continuation function with some arguments already applied.
@@ -857,6 +922,8 @@ Creates a continuation function with some arguments already applied.
 
 **Parameters**
 
+-   `fn` **function (): [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+-   `args` **...any** 
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `arguments` **...Any** 
 
@@ -881,7 +948,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## asyncify
 
-[packages/asyncify/index.js:26-36](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/asyncify/index.js#L26-L36 "Source code on GitHub")
+[packages/asyncify/index.js:26-33](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/asyncify/index.js#L26-L33 "Source code on GitHub")
 
 <a id="asyncify"></a>
 Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series), or other async functions.
@@ -890,6 +957,7 @@ Take a sync function and make it async. This is useful for plugging sync functio
 
 **Parameters**
 
+-   `fn`  
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -913,7 +981,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## awaitify
 
-[packages/awaitify/index.js:22-26](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/awaitify/index.js#L22-L26 "Source code on GitHub")
+[packages/awaitify/index.js:22-25](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/awaitify/index.js#L22-L25 "Source code on GitHub")
 
 <a id="awaitify"></a>
 Transform a callback-based function into a promise-based one.
@@ -922,6 +990,7 @@ Transform a callback-based function into a promise-based one.
 
 **Parameters**
 
+-   `fn`  
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -941,7 +1010,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## constant
 
-[packages/constant/index.js:22-28](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/constant/index.js#L22-L28 "Source code on GitHub")
+[packages/constant/index.js:22-22](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/constant/index.js#L22-L22 "Source code on GitHub")
 
 <a id="constant"></a>
 Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`](#waterfall).
@@ -950,6 +1019,7 @@ Returns a promise that when called, then's with the values provided. Useful as t
 
 **Parameters**
 
+-   `args` **...any** 
 -   `arguments` **...any** 
 
 **Examples**
@@ -969,7 +1039,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## intercept
 
-[packages/intercept/index.js:19-22](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/intercept/index.js#L19-L22 "Source code on GitHub")
+[packages/intercept/index.js:19-25](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/intercept/index.js#L19-L25 "Source code on GitHub")
 
 <a id="intercept"></a>
 Intercepts errors, the Go way!
@@ -978,6 +1048,7 @@ Intercepts errors, the Go way!
 
 **Parameters**
 
+-   `p`  
 -   `input` **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 **Examples**
@@ -994,7 +1065,7 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ## reflect
 
-[packages/reflect/index.js:28-42](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/reflect/index.js#L28-L42 "Source code on GitHub")
+[packages/reflect/index.js:28-37](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/reflect/index.js#L28-L37 "Source code on GitHub")
 
 <a id="reflect"></a>
 Wraps the function in another function that always returns data even when it errors.
@@ -1004,6 +1075,7 @@ The object returned has either the property error or value.
 
 **Parameters**
 
+-   `fn`  
 -   `input` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
@@ -1028,7 +1100,7 @@ Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Ref
 
 ## times
 
-[packages/times/index.js:24-24](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/times/index.js#L24-L24 "Source code on GitHub")
+[packages/times/index.js:24-24](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/times/index.js#L24-L24 "Source code on GitHub")
 
 <a id="times"></a>
 Calls the `iteratee` function `n` times, and accumulates results in the same manner you would use with [map](#map).
@@ -1058,10 +1130,13 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### series
 
-[packages/times/series.js:11-13](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/times/series.js#L11-L13 "Source code on GitHub")
+[packages/times/series.js:11-11](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/times/series.js#L11-L11 "Source code on GitHub")
 
 **Parameters**
 
+-   `count`  
+-   `fn`  
+-   `opts`  
 -   `n` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
@@ -1069,13 +1144,42 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 ### limit
 
-[packages/times/limit.js:13-17](https://github.com/ramitos/apr/blob/0de45c7708525f5d91d371efbef14f5f8be2c043/packages/times/limit.js#L13-L17 "Source code on GitHub")
+[packages/times/limit.js:13-23](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/times/limit.js#L13-L23 "Source code on GitHub")
 
 **Parameters**
 
--   `n` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `count`  
 -   `limit` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `fn`  
+-   `opts`  
+-   `n` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+
+Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+
+## main
+
+[packages/main/index.js:21-25](https://github.com/ramitos/apr/blob/d26e09aab3b5f25031ae4023f050cf5bba50ce91/packages/main/index.js#L21-L25 "Source code on GitHub")
+
+<a id="main"></a>
+Catches a promise error, writes the stacktrace to stderr and exists
+
+[![](https://img.shields.io/npm/v/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main) [![](https://img.shields.io/npm/l/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main)
+
+**Parameters**
+
+-   `p`  
+-   `input` **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+
+**Examples**
+
+```javascript
+import main from 'apr-main';
+
+main(async () => 'hello') // writes nothing
+main(async () => undefined) // writes nothing
+main(async () => { throw new Error('uncaught error') }) // writes the stack trace to stderr and exists
+```
 
 Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
@@ -1083,6 +1187,8 @@ Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refe
 
 -   both the method signatures and descriptions are copied from [caolan/async](https://github.com/caolan/async/blob/master/LICENSE)
 
+
 ## license
 
 MIT
+

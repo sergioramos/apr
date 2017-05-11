@@ -10,6 +10,9 @@ Reduces `coll` into a single value using an async `iteratee` to return each succ
 **Parameters**
 
 -   `input` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `fn`  
+-   `sum`  
+-   `opts`  
 -   `iteratee` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**

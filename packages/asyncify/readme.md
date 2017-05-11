@@ -9,6 +9,7 @@ Take a sync function and make it async. This is useful for plugging sync functio
 
 **Parameters**
 
+-   `fn`  
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**

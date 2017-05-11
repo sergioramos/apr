@@ -20,15 +20,15 @@
     "es7",
     "es8"
   ],
-  "homepage": "https://ramitos.github.io/apr#reject",
+  "homepage": "https://apr.js.org#reject",
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-sum": "^1.0.1",
     "apr-engine-back": "^1.0.1",
+    "apr-engine-sum": "^1.0.1",
     "apr-map": "^1.0.3"
   }
 }

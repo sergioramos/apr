@@ -9,6 +9,7 @@ Returns a promise that when called, then's with the values provided. Useful as t
 
 **Parameters**
 
+-   `args` **...any** 
 -   `arguments` **...any** 
 
 **Examples**

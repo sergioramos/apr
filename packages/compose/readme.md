@@ -9,6 +9,7 @@ Creates a function which is a composition of the passed asynchronous functions. 
 
 **Parameters**
 
+-   `args` **...any** 
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
