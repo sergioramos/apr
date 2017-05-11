@@ -1,6 +1,6 @@
 {
   "name": "apr-concat",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Applies iteratee to each item in coll, concatenating the results. Returns the concatenated list.",
   "keywords": [
     "concat",
@@ -27,7 +27,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-each": "^1.0.1",
+    "apr-engine-each": "^1.0.2",
     "lodash.defaults": "^4.2.0"
   }
 }

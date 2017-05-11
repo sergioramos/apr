@@ -1,6 +1,6 @@
 {
   "name": "apr-compose",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).",
   "keywords": [
     "compose",
@@ -27,7 +27,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-waterfall": "^1.0.3",
+    "apr-waterfall": "^1.0.4",
     "lodash.reverse": "^4.0.1"
   }
 }

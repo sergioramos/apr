@@ -1,6 +1,6 @@
 {
   "name": "apr-test-timeout",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-timeout",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
