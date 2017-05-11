@@ -12,6 +12,7 @@ const { writeFile } = require('mz/fs');
 const vfs = require('vinyl-fs');
 const remark = require('remark');
 const union = require('lodash.union');
+const paramCase = require('param-case');
 const pump = require('pump');
 const path = require('path');
 
@@ -44,7 +45,7 @@ const individual = async () =>
         version: pkg.version,
         description: dsc,
         keywords: union((pkg.keywords || []).concat(name).concat(apr.keywords)),
-        homepage: `https://apr.js.org#${name}`,
+        homepage: `https://apr.js.org#${paramCase(name)}`,
         bugs: apr.bugs,
         license: apr.license,
         people: pkg.people,
@@ -105,12 +106,12 @@ const _toc = async () => {
   return Object.keys(tree).reduce(
     (toc, name) => {
       const parts = tree[name]
-        .map(name => `* [${name}](#${name})`)
+        .map(name => `* [${name}](#${paramCase(name)})`)
         .join('\n  ')
         .trim();
 
       toc += `
-* [${name}](#${name})
+* [${name}](#${paramCase(name)})
   ${parts}
     `;
 

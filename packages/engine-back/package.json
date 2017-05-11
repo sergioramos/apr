@@ -1,6 +1,6 @@
 {
   "name": "apr-engine-back",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-back",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -8,8 +8,8 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-iterator": "^1.0.1",
-    "apr-engine-sum": "^1.0.1",
+    "apr-engine-iterator": "^1.0.2",
+    "apr-engine-sum": "^1.0.2",
     "lodash.find": "^4.6.0",
     "lodash.isarraylike": "^4.2.0"
   }

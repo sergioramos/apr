@@ -1,6 +1,6 @@
 {
   "name": "apr-intercept",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Intercepts errors, the Go way!",
   "keywords": [
     "intercept",

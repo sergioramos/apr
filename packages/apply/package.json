@@ -1,6 +1,6 @@
 {
   "name": "apr-apply",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Creates a continuation function with some arguments already applied.",
   "keywords": [
     "apply",

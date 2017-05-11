@@ -1,6 +1,6 @@
 {
   "name": "apr-waterfall",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Runs the tasks array of functions in series, each passing their results to the next in the array.",
   "keywords": [
     "waterfall",
@@ -27,6 +27,6 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-each": "^1.0.1"
+    "apr-engine-each": "^1.0.2"
   }
 }

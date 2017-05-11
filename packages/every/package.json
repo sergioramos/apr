@@ -1,6 +1,6 @@
 {
   "name": "apr-every",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Returns true if every element in coll satisfies an async test.",
   "keywords": [
     "every",
@@ -27,7 +27,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-each": "^1.0.1",
+    "apr-engine-each": "^1.0.2",
     "lodash.defaults": "^4.2.0"
   }
 }

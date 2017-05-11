@@ -1,6 +1,6 @@
 {
   "name": "apr-find",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Returns the first value in coll that passes an async truth test.",
   "keywords": [
     "find",
@@ -30,8 +30,8 @@
     "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
   },
   "dependencies": {
-    "apr-engine-each": "^1.0.1",
-    "apr-engine-sum": "^1.0.1",
+    "apr-engine-each": "^1.0.2",
+    "apr-engine-sum": "^1.0.2",
     "lodash.defaults": "^4.2.0",
     "lodash.isarraylike": "^4.2.0"
   }
