@@ -87,7 +87,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       sortBy([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -104,7 +104,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       sortBy(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -121,7 +121,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       sortBy(
         {
           a: 1,
@@ -223,7 +223,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       sortBy.series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -240,7 +240,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       sortBy.series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -257,7 +257,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       sortBy.series(
         {
           a: 1,

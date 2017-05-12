@@ -105,7 +105,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       waterfall([
         async () => await then(1 * 2),
         async prev => await then(prev * 2),
@@ -123,7 +123,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       waterfall({
         a: async () => await then(1 * 2),
         b: async prev => await then(prev * 2),

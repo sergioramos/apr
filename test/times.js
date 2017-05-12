@@ -26,7 +26,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       times(5, async (v, i) => {
         if (i === 3) {
           throw new Error('expected error');
@@ -60,7 +60,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       times.series(5, async i => {
         if (i > 2) {
           throw new Error('expected error');

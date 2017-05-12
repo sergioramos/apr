@@ -72,7 +72,7 @@ test(
 test(
   'fail [] find',
   schedule(async t => {
-    t.throws(
+    await t.throws(
       find([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -87,7 +87,7 @@ test(
 test(
   'fail @@Iterator find',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       find(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -102,7 +102,7 @@ test(
 test(
   'fail {} find',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       find(
         {
           a: 1,
@@ -188,7 +188,7 @@ test(
 test(
   'fail [] findSeries',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       find.series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -203,7 +203,7 @@ test(
 test(
   'fail @@Iterator findSeries',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       find.series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -218,7 +218,7 @@ test(
 test(
   'fail {} findSeries',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       find.series(
         {
           a: 1,

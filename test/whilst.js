@@ -54,7 +54,7 @@ test(
   schedule(async t => {
     const then = timeout(1);
 
-    t.throws(
+    await t.throws(
       whilst(async () => {
         throw new Error('Unexpected Error');
       }, async () => await then())
@@ -67,7 +67,7 @@ test(
   schedule(async t => {
     const then = timeout(1);
 
-    t.throws(
+    await t.throws(
       whilst(
         async () => {
           await then();
@@ -86,7 +86,7 @@ test(
   schedule(async t => {
     const then = timeout(1);
 
-    t.throws(
+    await t.throws(
       whilst(() => {
         throw new Error('Unexpected Error');
       }, async () => await then())
@@ -97,7 +97,7 @@ test(
 test(
   'fail whilst fn',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       whilst(
         () => true,
         async () => {

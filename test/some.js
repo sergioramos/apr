@@ -86,7 +86,7 @@ test(
 test(
   'fail [] some',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       some([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -101,7 +101,7 @@ test(
 test(
   'fail @@Iterator some',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       some(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -116,7 +116,7 @@ test(
 test(
   'fail {} some',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       some(
         {
           a: 1,
@@ -219,7 +219,7 @@ test(
 test(
   'fail [] someSeries',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       some.series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -234,7 +234,7 @@ test(
 test(
   'fail @@Iterator someSeries',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       some.series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -249,7 +249,7 @@ test(
 test(
   'fail {} someSeries',
   schedule(async t =>
-    t.throws(
+    await t.throws(
       some.series(
         {
           a: 1,

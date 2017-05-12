@@ -68,6 +68,6 @@ test(
       async v => await then(v * 2)
     );
 
-    t.throws(composed(1));
+    await t.throws(composed(1));
   })
 );

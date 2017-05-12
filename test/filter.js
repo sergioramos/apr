@@ -73,7 +73,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       filter([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -90,7 +90,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       filter(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -107,7 +107,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       filter(
         {
           a: 1,
@@ -195,7 +195,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       filter.series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -212,7 +212,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       filter.series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -229,7 +229,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       filter.series(
         {
           a: 1,

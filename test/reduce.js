@@ -81,7 +81,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       reduce([1, 2, 3, 4], async (sum, v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -98,7 +98,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       reduce(getIttr(), async (sum, v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -115,7 +115,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       reduce(
         {
           a: 1,

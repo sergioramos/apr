@@ -74,7 +74,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       forEach([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -91,7 +91,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       forEach(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -108,7 +108,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       forEach(
         {
           a: 1,
@@ -197,7 +197,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       forEach.series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -214,7 +214,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       forEach.series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
@@ -231,7 +231,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       forEach.series(
         {
           a: 1,

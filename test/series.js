@@ -110,7 +110,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       series([
         async () => await then(1 * 2),
         async () => await then(2 * 2),
@@ -128,7 +128,7 @@ test(
   schedule(async t => {
     const then = timeout(4);
 
-    t.throws(
+    await t.throws(
       series({
         a: async () => await then(1 * 2),
         b: async () => await then(2 * 2),
