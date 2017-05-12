@@ -4,10 +4,12 @@ const series = require('../packages/series');
 const awaitify = require('../packages/awaitify');
 const main = require('../packages/main');
 const isString = require('lodash.isString');
+// eslint-disable-next-line object-curly-newline
 const { build, formats } = require('documentation');
 const readYaml = require('read-yaml');
 const streamArray = require('stream-array');
 const removeMd = require('remove-markdown');
+// eslint-disable-next-line object-curly-newline
 const { writeFile } = require('mz/fs');
 const vfs = require('vinyl-fs');
 const remark = require('remark');
