@@ -9,7 +9,7 @@ Creates a continuation function with some arguments already applied.
 
 **Parameters**
 
--   `fn` **function (): [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+-   `fn`  
 -   `args` **...any** 
 -   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
 -   `arguments` **...Any** 

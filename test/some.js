@@ -85,54 +85,57 @@ test(
 
 test(
   'fail [] some',
-  schedule(async t =>
-    await t.throws(
-      some([1, 2, 3, 4], async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        some([1, 2, 3, 4], async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail @@Iterator some',
-  schedule(async t =>
-    await t.throws(
-      some(getIttr(), async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        some(getIttr(), async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail {} some',
-  schedule(async t =>
-    await t.throws(
-      some(
-        {
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4
-        },
-        async (v, i) => {
-          if (i === 'c') {
-            throw new Error('expected error');
-          }
+  schedule(
+    async t =>
+      await t.throws(
+        some(
+          {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+          },
+          async (v, i) => {
+            if (i === 'c') {
+              throw new Error('expected error');
+            }
 
-          return false;
-        }
+            return false;
+          }
+        )
       )
-    )
   )
 );
 
@@ -218,53 +221,56 @@ test(
 
 test(
   'fail [] someSeries',
-  schedule(async t =>
-    await t.throws(
-      some.series([1, 2, 3, 4], async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        some.series([1, 2, 3, 4], async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail @@Iterator someSeries',
-  schedule(async t =>
-    await t.throws(
-      some.series(getIttr(), async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        some.series(getIttr(), async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail {} someSeries',
-  schedule(async t =>
-    await t.throws(
-      some.series(
-        {
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4
-        },
-        async (v, i) => {
-          if (i === 'c') {
-            throw new Error('expected error');
-          }
+  schedule(
+    async t =>
+      await t.throws(
+        some.series(
+          {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+          },
+          async (v, i) => {
+            if (i === 'c') {
+              throw new Error('expected error');
+            }
 
-          return false;
-        }
+            return false;
+          }
+        )
       )
-    )
   )
 );

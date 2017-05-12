@@ -96,14 +96,15 @@ test(
 
 test(
   'fail whilst fn',
-  schedule(async t =>
-    await t.throws(
-      whilst(
-        () => true,
-        async () => {
-          throw new Error('Unexpected Error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        whilst(
+          () => true,
+          async () => {
+            throw new Error('Unexpected Error');
+          }
+        )
       )
-    )
   )
 );

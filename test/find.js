@@ -86,39 +86,41 @@ test(
 
 test(
   'fail @@Iterator find',
-  schedule(async t =>
-    await t.throws(
-      find(getIttr(), async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        find(getIttr(), async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail {} find',
-  schedule(async t =>
-    await t.throws(
-      find(
-        {
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4
-        },
-        async (v, i) => {
-          if (i === 'c') {
-            throw new Error('expected error');
-          }
+  schedule(
+    async t =>
+      await t.throws(
+        find(
+          {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+          },
+          async (v, i) => {
+            if (i === 'c') {
+              throw new Error('expected error');
+            }
 
-          return false;
-        }
+            return false;
+          }
+        )
       )
-    )
   )
 );
 
@@ -187,53 +189,56 @@ test(
 
 test(
   'fail [] findSeries',
-  schedule(async t =>
-    await t.throws(
-      find.series([1, 2, 3, 4], async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        find.series([1, 2, 3, 4], async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail @@Iterator findSeries',
-  schedule(async t =>
-    await t.throws(
-      find.series(getIttr(), async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        find.series(getIttr(), async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return false;
-      })
-    )
+          return false;
+        })
+      )
   )
 );
 
 test(
   'fail {} findSeries',
-  schedule(async t =>
-    await t.throws(
-      find.series(
-        {
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4
-        },
-        async (v, i) => {
-          if (i === 'c') {
-            throw new Error('expected error');
-          }
+  schedule(
+    async t =>
+      await t.throws(
+        find.series(
+          {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+          },
+          async (v, i) => {
+            if (i === 'c') {
+              throw new Error('expected error');
+            }
 
-          return false;
-        }
+            return false;
+          }
+        )
       )
-    )
   )
 );

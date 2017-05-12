@@ -85,54 +85,57 @@ test(
 
 test(
   'fail [] every',
-  schedule(async t =>
-    await t.throws(
-      every([1, 2, 3, 4], async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        every([1, 2, 3, 4], async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return true;
-      })
-    )
+          return true;
+        })
+      )
   )
 );
 
 test(
   'fail @@Iterator every',
-  schedule(async t =>
-    await t.throws(
-      every(getIttr(), async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        every(getIttr(), async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return true;
-      })
-    )
+          return true;
+        })
+      )
   )
 );
 
 test(
   'fail {} every',
-  schedule(async t =>
-    await t.throws(
-      every(
-        {
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4
-        },
-        async (v, i) => {
-          if (i === 'c') {
-            throw new Error('expected error');
-          }
+  schedule(
+    async t =>
+      await t.throws(
+        every(
+          {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+          },
+          async (v, i) => {
+            if (i === 'c') {
+              throw new Error('expected error');
+            }
 
-          return true;
-        }
+            return true;
+          }
+        )
       )
-    )
   )
 );
 
@@ -221,53 +224,56 @@ test(
 
 test(
   'fail [] everySeries',
-  schedule(async t =>
-    await t.throws(
-      every.series([1, 2, 3, 4], async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        every.series([1, 2, 3, 4], async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return true;
-      })
-    )
+          return true;
+        })
+      )
   )
 );
 
 test(
   'fail @@Iterator everySeries',
-  schedule(async t =>
-    await t.throws(
-      every.series(getIttr(), async (v, i) => {
-        if (i > 2) {
-          throw new Error('expected error');
-        }
+  schedule(
+    async t =>
+      await t.throws(
+        every.series(getIttr(), async (v, i) => {
+          if (i > 2) {
+            throw new Error('expected error');
+          }
 
-        return true;
-      })
-    )
+          return true;
+        })
+      )
   )
 );
 
 test(
   'fail {} everySeries',
-  schedule(async t =>
-    await t.throws(
-      every.series(
-        {
-          a: 1,
-          b: 2,
-          c: 3,
-          d: 4
-        },
-        async (v, i) => {
-          if (i === 'c') {
-            throw new Error('expected error');
-          }
+  schedule(
+    async t =>
+      await t.throws(
+        every.series(
+          {
+            a: 1,
+            b: 2,
+            c: 3,
+            d: 4
+          },
+          async (v, i) => {
+            if (i === 'c') {
+              throw new Error('expected error');
+            }
 
-          return true;
-        }
+            return true;
+          }
+        )
       )
-    )
   )
 );
