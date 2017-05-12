@@ -1,6 +1,6 @@
 {
   "name": "apr-parallel",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Run the tasks collection of functions in parallel, without waiting until the previous function has completed.",
   "keywords": [
     "parallel",
@@ -27,7 +27,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-sum": "^1.0.2",
-    "apr-reduce": "^1.0.4"
+    "apr-engine-sum": "^1.0.3",
+    "apr-reduce": "^1.0.5"
   }
 }

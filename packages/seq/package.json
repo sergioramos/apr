@@ -1,6 +1,6 @@
 {
   "name": "apr-seq",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.",
   "keywords": [
     "seq",
@@ -27,6 +27,6 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-waterfall": "^1.0.4"
+    "apr-waterfall": "^1.0.5"
   }
 }

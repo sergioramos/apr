@@ -1,6 +1,6 @@
 {
   "name": "apr-whilst",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Repeatedly call fn, while test returns true.",
   "keywords": [
     "whilst",
@@ -27,6 +27,6 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-repeat": "^1.0.2"
+    "apr-engine-repeat": "^1.0.3"
   }
 }

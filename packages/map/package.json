@@ -1,6 +1,6 @@
 {
   "name": "apr-map",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Produces a new collection of values by mapping each value in coll through the iteratee function.",
   "keywords": [
     "map",
@@ -27,8 +27,8 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-each": "^1.0.2",
-    "apr-engine-sum": "^1.0.2",
+    "apr-engine-each": "^1.0.3",
+    "apr-engine-sum": "^1.0.3",
     "lodash.defaults": "^4.2.0"
   }
 }

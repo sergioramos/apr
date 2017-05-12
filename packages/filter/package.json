@@ -1,6 +1,6 @@
 {
   "name": "apr-filter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Returns a new array of all the values in coll which pass an async truth test.",
   "keywords": [
     "filter",
@@ -27,8 +27,8 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-back": "^1.0.2",
-    "apr-engine-sum": "^1.0.2",
-    "apr-map": "^1.0.4"
+    "apr-engine-back": "^1.0.3",
+    "apr-engine-sum": "^1.0.3",
+    "apr-map": "^1.0.5"
   }
 }

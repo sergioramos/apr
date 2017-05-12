@@ -1,6 +1,6 @@
 {
   "name": "apr-engine-each",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-each",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -8,7 +8,7 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "apr-engine-run": "^1.0.2",
+    "apr-engine-run": "^1.0.3",
     "lodash.defaults": "^4.2.0"
   }
 }

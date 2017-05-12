@@ -1,6 +1,6 @@
 {
   "name": "apr-main",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Catches a promise error, writes the stacktrace to stderr and exists",
   "keywords": [
     "main",

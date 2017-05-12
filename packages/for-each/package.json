@@ -1,6 +1,6 @@
 {
   "name": "apr-for-each",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Applies the function iteratee to each item in coll, in parallel.",
   "keywords": [
     "for-each",
@@ -30,7 +30,7 @@
     "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
   },
   "dependencies": {
-    "apr-engine-each": "^1.0.2",
+    "apr-engine-each": "^1.0.3",
     "lodash.defaults": "^4.2.0"
   }
 }
