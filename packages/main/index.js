@@ -1,4 +1,3 @@
-const isFunction = require('lodash.isfunction');
 const isPromise = require('is-promise');
 
 const handle = p =>
