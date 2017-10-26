@@ -1,4 +1,11 @@
 const isFunction = require('lodash.isfunction');
+const isPromise = require('is-promise');
+
+const handle = p =>
+  p.catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
 
 /**
  * <a id="main"></a>
@@ -18,9 +25,4 @@ const isFunction = require('lodash.isfunction');
  * main(async () => undefined) // writes nothing
  * main(async () => { throw new Error('uncaught error') }) // writes the stack trace to stderr and exists
  */
-module.exports = p => {
-  return (isFunction(p) ? p() : p).catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
-};
+module.exports = p => (isPromise(p) ? handle(p) : handle(p()));

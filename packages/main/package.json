@@ -1,6 +1,6 @@
 {
   "name": "apr-main",
-  "version": "1.0.7",
+  "version": "2.0.0",
   "description": "Catches a promise error, writes the stacktrace to stderr and exists",
   "keywords": [
     "main",
@@ -29,6 +29,6 @@
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "dependencies": {
-    "lodash.isfunction": "^3.0.8"
+    "is-promise": "^2.1.0"
   }
 }
