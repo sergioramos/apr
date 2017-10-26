@@ -2,15 +2,17 @@
 
 ## whilst
 
-<a id="whilst"></a>
-Repeatedly call `fn`, while `test` returns true.
+<a id="whilst"></a> Repeatedly call `fn`, while `test` returns true.
 
-[![](https://img.shields.io/npm/v/apr-whilst.svg?style=flat-square)](https://www.npmjs.com/package/apr-whilst) [![](https://img.shields.io/npm/l/apr-whilst.svg?style=flat-square)](https://www.npmjs.com/package/apr-whilst)
+[![](https://img.shields.io/npm/v/apr-whilst.svg?style=flat-square)](https://www.npmjs.com/package/apr-whilst)
+[![](https://img.shields.io/npm/l/apr-whilst.svg?style=flat-square)](https://www.npmjs.com/package/apr-whilst)
 
 **Parameters**
 
--   `test` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
--   `fn` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+* `test`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+* `fn`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
 
 **Examples**
 
@@ -32,4 +34,5 @@ const output = await whilst(async () => {
 // output = 10
 ```
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns
+**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**

@@ -2,15 +2,19 @@
 
 ## series
 
-<a id="series"></a>
-Run the functions in the `tasks` in series, each one running once the previous function has completed.
+<a id="series"></a> Run the functions in the `tasks` in series, each one running
+once the previous function has completed.
 
-[![](https://img.shields.io/npm/v/apr-series.svg?style=flat-square)](https://www.npmjs.com/package/apr-series) [![](https://img.shields.io/npm/l/apr-series.svg?style=flat-square)](https://www.npmjs.com/package/apr-series)
+[![](https://img.shields.io/npm/v/apr-series.svg?style=flat-square)](https://www.npmjs.com/package/apr-series)
+[![](https://img.shields.io/npm/l/apr-series.svg?style=flat-square)](https://www.npmjs.com/package/apr-series)
 
 **Parameters**
 
--   `input`  
--   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+* `input`
+* `tasks`
+  **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)>
+  |
+  [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))**
 
 **Examples**
 
@@ -34,4 +38,5 @@ const withObject = await series({
 // withObject = { one: 1, two: 2 }
 ```
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns
+**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**

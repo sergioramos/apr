@@ -2,15 +2,16 @@
 
 ## constant
 
-<a id="constant"></a>
-Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`](#waterfall).
+<a id="constant"></a> Returns a promise that when called, then's with the values
+provided. Useful as the first function in a [`waterfall`](#waterfall).
 
-[![](https://img.shields.io/npm/v/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant) [![](https://img.shields.io/npm/l/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant)
+[![](https://img.shields.io/npm/v/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant)
+[![](https://img.shields.io/npm/l/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant)
 
 **Parameters**
 
--   `args` **...any** 
--   `arguments` **...any** 
+* `args` **...any**
+* `arguments` **...any**
 
 **Examples**
 
@@ -25,4 +26,5 @@ const pkg = await waterfall([
 ]);
 ```
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns
+**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**

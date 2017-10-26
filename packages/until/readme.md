@@ -2,15 +2,17 @@
 
 ## until
 
-<a id="until"></a>
-Repeatedly call `fn` until `test` returns `true`.
+<a id="until"></a> Repeatedly call `fn` until `test` returns `true`.
 
-[![](https://img.shields.io/npm/v/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until) [![](https://img.shields.io/npm/l/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until)
+[![](https://img.shields.io/npm/v/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until)
+[![](https://img.shields.io/npm/l/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until)
 
 **Parameters**
 
--   `test` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
--   `fn` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+* `test`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+* `fn`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
 
 **Examples**
 
@@ -33,4 +35,5 @@ const output = await until(async () => {
 // output = 10
 ```
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns
+**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**

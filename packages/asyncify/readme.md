@@ -2,15 +2,18 @@
 
 ## asyncify
 
-<a id="asyncify"></a>
-Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series), or other async functions.
+<a id="asyncify"></a> Take a sync function and make it async. This is useful for
+plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series),
+or other async functions.
 
-[![](https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify) [![](https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify)
+[![](https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify)
+[![](https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify)
 
 **Parameters**
 
--   `fn`  
--   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+* `fn`
+* `function`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
 
 **Examples**
 
@@ -29,4 +32,5 @@ const pkg = await waterfall([
 ]);
 ```
 
-Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns
+**[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**

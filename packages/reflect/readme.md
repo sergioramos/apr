@@ -2,16 +2,18 @@
 
 ## reflect
 
-<a id="reflect"></a>
-Wraps the function in another function that always returns data even when it errors.
-The object returned has either the property error or value.
+<a id="reflect"></a> Wraps the function in another function that always returns
+data even when it errors. The object returned has either the property error or
+value.
 
-[![](https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect) [![](https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect)
+[![](https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect)
+[![](https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect)
 
 **Parameters**
 
--   `fn`  
--   `input` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+* `fn`
+* `input`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
 
 **Examples**
 
@@ -31,4 +33,5 @@ const res = await parallel([
 // res = [{ error: Error('heyo'), value: null }, { error: null, value: 2 }]
 ```
 
-Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns
+**[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**

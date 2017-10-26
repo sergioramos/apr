@@ -2,17 +2,19 @@
 
 ## apply
 
-<a id="apply"></a>
-Creates a continuation function with some arguments already applied.
+<a id="apply"></a> Creates a continuation function with some arguments already
+applied.
 
-[![](https://img.shields.io/npm/v/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply) [![](https://img.shields.io/npm/l/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply)
+[![](https://img.shields.io/npm/v/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply)
+[![](https://img.shields.io/npm/l/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply)
 
 **Parameters**
 
--   `fn`  
--   `args` **...any** 
--   `function` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
--   `arguments` **...Any** 
+* `fn`
+* `args` **...any**
+* `function`
+  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+* `arguments` **...Any**
 
 **Examples**
 
@@ -31,4 +33,5 @@ const output = await parallel([
 // output = [1, 2, 3]
 ```
 
-Returns **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns
+**[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**

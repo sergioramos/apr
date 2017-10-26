@@ -2,15 +2,19 @@
 
 ## parallel
 
-<a id="parallel"></a>
-Run the tasks collection of functions in parallel, without waiting until the previous function has completed.
+<a id="parallel"></a> Run the tasks collection of functions in parallel, without
+waiting until the previous function has completed.
 
-[![](https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel) [![](https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel)
+[![](https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel)
+[![](https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel)
 
 **Parameters**
 
--   `input`  
--   `tasks` **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)> | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+* `input`
+* `tasks`
+  **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)>
+  |
+  [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))**
 
 **Examples**
 
@@ -34,4 +38,5 @@ const withObject = await parallel({
 // withObject = { one: 1, two: 2 }
 ```
 
-Returns **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns
+**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
