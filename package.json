@@ -1,7 +1,8 @@
 {
   "name": "apr",
   "private": true,
-  "description": "this is like caolan/async which is like lodash but async, but awaitful",
+  "description":
+    "this is like caolan/async which is like lodash but async, but awaitful",
   "homepage": "https://ramitos.github.io/apr",
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
@@ -25,7 +26,8 @@
     "es8"
   ],
   "scripts": {
-    "test": "NODE_ENV=test nyc --reporter=html ava test/*.js -c 2 --fail-fast -v",
+    "test":
+      "NODE_ENV=test nyc --reporter=html ava test/*.js -c 2 --fail-fast -v",
     "fmt": "prettier --write --single-quote {packages,scripts,test}/**/*.js",
     "lint": "eslint --fix .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
@@ -83,9 +85,7 @@
     "vinyl-fs": "^2.4.4"
   },
   "ava": {
-    "require": [
-      "babel-register"
-    ],
+    "require": ["babel-register"],
     "babel": "inherit"
   },
   "config": {
@@ -126,10 +126,6 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write --single-quote",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "prettier --write --single-quote", "git add"]
   }
 }
