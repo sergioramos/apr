@@ -71,7 +71,7 @@ test(
 
 test(
   'fail [] find',
-  schedule(async t => {
+  schedule(async t =>
     t.throws(
       find([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
@@ -80,8 +80,8 @@ test(
 
         return false;
       })
-    );
-  })
+    )
+  )
 );
 
 test(
