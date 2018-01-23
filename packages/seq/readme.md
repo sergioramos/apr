@@ -2,18 +2,14 @@
 
 ## seq
 
-<a id="seq"></a> Version of the compose function that is more natural to read.
-Each function consumes the return value of the previous function. It is the
-equivalent of compose with the arguments reversed.
+<a id="seq"></a>
+Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.
 
-[![](https://img.shields.io/npm/v/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq)
-[![](https://img.shields.io/npm/l/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq)
+[![](https://img.shields.io/npm/v/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq) [![](https://img.shields.io/npm/l/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq)
 
 **Parameters**
 
-* `args` **...any**
-* `tasks`
-  **...[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+-   `tasks` **...[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
 
@@ -31,5 +27,4 @@ const seq = seq(
 const output = await seq(1); // 7
 ```
 
-Returns
-**[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 

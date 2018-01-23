@@ -1,6 +1,6 @@
 {
   "name": "apr-main",
-  "version": "2.0.2",
+  "version": "4.0.0",
   "description": "Catches a promise error, writes the stacktrace to stderr and exists",
   "keywords": [
     "main",
@@ -26,9 +26,18 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "files": [
+    "dist"
+  ],
   "main": "src/index.js",
   "repository": "ramitos/apr",
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
   "dependencies": {
     "is-promise": "^2.1.0"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
   }
 }

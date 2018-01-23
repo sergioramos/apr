@@ -1,15 +1,26 @@
 {
   "name": "apr-test-timeout",
-  "version": "1.0.6",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-timeout",
+  "version": "3.0.0",
   "license": "MIT",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-timeout",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "main": "dist/apr-apply.umd.js",
+  "jsnext:main": "dist/apr-apply.es.js",
+  "module": "dist/apr-apply.es.js",
+  "entry": "index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
   "dependencies": {
     "array-shuffle": "^1.0.1",
     "build-array": "^1.0.0",
     "timeout-then": "^1.1.0"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
   }
 }

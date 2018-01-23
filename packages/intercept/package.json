@@ -1,6 +1,6 @@
 {
   "name": "apr-intercept",
-  "version": "1.0.4",
+  "version": "3.0.0",
   "description": "Intercepts errors, the Go way!",
   "keywords": [
     "intercept",
@@ -24,6 +24,15 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "files": [
+    "dist"
+  ],
   "main": "src/index.js",
-  "repository": "ramitos/apr"
+  "repository": "ramitos/apr",
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
+  }
 }

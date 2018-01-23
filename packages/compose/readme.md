@@ -2,19 +2,14 @@
 
 ## compose
 
-<a id="sompose"></a> Creates a function which is a composition of the passed
-asynchronous functions. Each function consumes the return value of the function
-that follows. Composing functions f(), g(), and h() would produce the result of
-f(g(h())).
+<a id="sompose"></a>
+Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).
 
-[![](https://img.shields.io/npm/v/apr-compose.svg?style=flat-square)](https://www.npmjs.com/package/apr-compose)
-[![](https://img.shields.io/npm/l/apr-compose.svg?style=flat-square)](https://www.npmjs.com/package/apr-compose)
+[![](https://img.shields.io/npm/v/apr-compose.svg?style=flat-square)](https://www.npmjs.com/package/apr-compose) [![](https://img.shields.io/npm/l/apr-compose.svg?style=flat-square)](https://www.npmjs.com/package/apr-compose)
 
 **Parameters**
 
-* `args` **...any**
-* `function`
-  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+-   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
 
@@ -32,5 +27,4 @@ const composed = compose(
 const output = await composed(1); // 7
 ```
 
-Returns
-**[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 

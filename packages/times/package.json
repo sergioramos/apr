@@ -1,6 +1,6 @@
 {
   "name": "apr-times",
-  "version": "1.0.5",
+  "version": "3.0.0",
   "description": "Calls the iteratee function n times, and accumulates results in the same manner you would use with map.",
   "keywords": [
     "times",
@@ -24,11 +24,20 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "files": [
+    "dist"
+  ],
   "main": "src/index.js",
   "repository": "ramitos/apr",
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
   "dependencies": {
-    "apr-map": "^1.0.5",
+    "apr-map": "^3.0.0",
     "build-array": "^1.0.0",
     "lodash.defaults": "^4.2.0"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
   }
 }

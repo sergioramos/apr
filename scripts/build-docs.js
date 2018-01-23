@@ -38,7 +38,11 @@ const individual = async () =>
 
     const ast = await build([path.join(dir, 'index.js')], {});
 
-    const dsc = removeMd(remark().stringify(ast[0].description).split(/\n/)[1]);
+    const dsc = removeMd(
+      remark()
+        .stringify(ast[0].description)
+        .split(/\n/)[1]
+    );
     const readme = await formats.md(ast, {});
 
     const pjson = JSON.stringify(

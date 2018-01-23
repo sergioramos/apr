@@ -2,16 +2,14 @@
 
 ## intercept
 
-<a id="intercept"></a> Intercepts errors, the Go way!
+<a id="intercept"></a>
+Intercepts errors, the Go way!
 
-[![](https://img.shields.io/npm/v/apr-intercept.svg?style=flat-square)](https://www.npmjs.com/package/apr-intercept)
-[![](https://img.shields.io/npm/l/apr-intercept.svg?style=flat-square)](https://www.npmjs.com/package/apr-intercept)
+[![](https://img.shields.io/npm/v/apr-intercept.svg?style=flat-square)](https://www.npmjs.com/package/apr-intercept) [![](https://img.shields.io/npm/l/apr-intercept.svg?style=flat-square)](https://www.npmjs.com/package/apr-intercept)
 
 **Parameters**
 
-* `p`
-* `input`
-  **[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
+-   `input` **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 **Examples**
 
@@ -23,5 +21,4 @@ const [err2, res2] = await ctch(fn(1));
 const [, res3] = await ctch(fn(3));
 ```
 
-Returns
-**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 

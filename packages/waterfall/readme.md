@@ -2,20 +2,15 @@
 
 ## waterfall
 
-<a id="waterfall"></a> Runs the `tasks` array of functions in series, each
-passing their results to the next in the array.
+<a id="waterfall"></a>
+Runs the `tasks` array of functions in series, each passing their results to the next in the array.
 
-[![](https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall)
-[![](https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall)
+[![](https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall) [![](https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall)
 
 **Parameters**
 
-* `input`
-* `initial` **Any?**
-* `tasks`
-  **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)>
-  |
-  [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object))**
+-   `tasks` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+-   `initial` **Any?** 
 
 **Examples**
 
@@ -33,5 +28,4 @@ const output = await waterfall([
 // output = 6
 ```
 
-Returns
-**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 

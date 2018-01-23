@@ -1,6 +1,6 @@
 {
   "name": "apr-find",
-  "version": "1.0.5",
+  "version": "3.0.0",
   "description": "Returns the first value in coll that passes an async truth test.",
   "keywords": [
     "find",
@@ -24,15 +24,21 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "files": [
+    "dist"
+  ],
   "main": "src/index.js",
   "repository": "ramitos/apr",
   "scripts": {
-    "test": "NODE_ENV=test ava test/*.js --fail-fast -v"
+    "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^1.0.3",
-    "apr-engine-sum": "^1.0.3",
+    "apr-engine-each": "^3.0.0",
+    "apr-engine-sum": "^3.0.0",
     "lodash.defaults": "^4.2.0",
     "lodash.isarraylike": "^4.2.0"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
   }
 }

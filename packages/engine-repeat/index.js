@@ -18,7 +18,8 @@ module.exports = ctx => {
     opts: defaults(ctx.opts, {
       limit: 1
     }),
-    call: ctx.call ||
+    call:
+      ctx.call ||
       (() =>
         ctx.fn().then(value => {
           last = value;

@@ -120,3 +120,5 @@ Session.vim
 .netrwhist
 *~
 .nyc_output
+
+packages/*/dist

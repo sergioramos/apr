@@ -2,17 +2,14 @@
 
 ## awaitify
 
-<a id="awaitify"></a> Transform a callback-based function into a promise-based
-one.
+<a id="awaitify"></a>
+Transform a callback-based function into a promise-based one.
 
-[![](https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify)
-[![](https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify)
+[![](https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify) [![](https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify)
 
 **Parameters**
 
-* `fn`
-* `function`
-  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+-   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
 
@@ -27,5 +24,4 @@ const pkgPath = path.join(__dirname, './package.json');
 const pkg = await readFile(pkgPath, 'utf-8');
 ```
 
-Returns
-**[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 

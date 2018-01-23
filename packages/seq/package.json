@@ -1,6 +1,6 @@
 {
   "name": "apr-seq",
-  "version": "1.0.5",
+  "version": "3.0.0",
   "description": "Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.",
   "keywords": [
     "seq",
@@ -24,9 +24,18 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
+  "files": [
+    "dist"
+  ],
   "main": "src/index.js",
   "repository": "ramitos/apr",
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
   "dependencies": {
-    "apr-waterfall": "^1.0.5"
+    "apr-waterfall": "^3.0.0"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
   }
 }

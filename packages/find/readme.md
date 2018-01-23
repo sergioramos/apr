@@ -2,23 +2,15 @@
 
 ## find
 
-<a id="find"></a> Returns the first value in `coll` that passes an async truth
-test.
+<a id="find"></a>
+Returns the first value in `coll` that passes an async truth test.
 
-[![](https://img.shields.io/npm/v/apr-find.svg?style=flat-square)](https://www.npmjs.com/package/apr-find)
-[![](https://img.shields.io/npm/l/apr-find.svg?style=flat-square)](https://www.npmjs.com/package/apr-find)
+[![](https://img.shields.io/npm/v/apr-find.svg?style=flat-square)](https://www.npmjs.com/package/apr-find) [![](https://img.shields.io/npm/l/apr-find.svg?style=flat-square)](https://www.npmjs.com/package/apr-find)
 
 **Parameters**
 
-* `input`
-  **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-  \|
-  [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  | Iterable)**
-* `fn`
-* `opts`
-* `iteratee`
-  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+-   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
 
 **Examples**
 
@@ -38,41 +30,23 @@ const first = await find(files, async (file) =>
 );
 ```
 
-Returns
-**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### series
 
 **Parameters**
 
-* `input`
-  **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-  \|
-  [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  | Iterable)**
-* `fn`
-* `opts`
-* `iteratee`
-  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+-   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
 
-Returns
-**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
 
 ### limit
 
 **Parameters**
 
-* `input`
-  **([Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-  \|
-  [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-  | Iterable)**
-* `limit`
-  **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)**
-* `fn`
-* `opts`
-* `iteratee`
-  **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)**
+-   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
+-   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
+-   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
 
-Returns
-**[Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)**
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
