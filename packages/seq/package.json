@@ -1,6 +1,7 @@
 {
   "name": "apr-seq",
-  "version": "1.0.5",
+  "license": "MIT",
+  "version": "2.0.0",
   "description": "Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.",
   "keywords": [
     "seq",
@@ -22,11 +23,20 @@
   ],
   "homepage": "https://apr.js.org#seq",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "main": "dist/apr-apply.umd.js",
+  "jsnext:main": "dist/apr-apply.es.js",
+  "module": "dist/apr-apply.es.js",
+  "entry": "index.js",
+  "files": "dist",
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
   "dependencies": {
-    "apr-waterfall": "^1.0.5"
+    "apr-waterfall": "^2.0.0"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
   }
 }

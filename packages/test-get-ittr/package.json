@@ -1,10 +1,19 @@
 {
   "name": "apr-test-get-ittr",
-  "version": "1.0.3",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-get-ittr",
   "license": "MIT",
+  "version": "2.0.0",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-get-ittr",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "contributors": [],
-  "main": "src/index.js",
-  "repository": "ramitos/apr"
+  "repository": "ramitos/apr",
+  "main": "dist/apr-apply.umd.js",
+  "jsnext:main": "dist/apr-apply.es.js",
+  "module": "dist/apr-apply.es.js",
+  "entry": "index.js",
+  "files": "dist",
+  "scripts": {
+    "prepublish": "NODE_ENV=production bup"
+  },
+  "devDependencies": {
+    "bup": "^4.1.3"
+  }
 }
