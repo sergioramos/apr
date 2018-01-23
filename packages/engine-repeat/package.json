@@ -1,6 +1,6 @@
 {
   "name": "apr-engine-repeat",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-repeat",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -16,7 +16,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.0",
+    "apr-engine-each": "^3.0.1",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

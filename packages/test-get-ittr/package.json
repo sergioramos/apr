@@ -1,7 +1,7 @@
 {
   "name": "apr-test-get-ittr",
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-get-ittr",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",

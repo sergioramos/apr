@@ -1,6 +1,7 @@
 {
   "name": "apr-compose",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).",
   "keywords": [
     "compose",
@@ -22,18 +23,20 @@
   ],
   "homepage": "https://apr.js.org#compose",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-compose.umd.js",
+  "jsnext:main": "dist/apr-compose.es.js",
+  "module": "dist/apr-compose.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-waterfall": "^3.0.0",
+    "apr-waterfall": "^3.0.1",
     "lodash.reverse": "^4.0.1"
   },
   "devDependencies": {

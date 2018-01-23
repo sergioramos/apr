@@ -1,6 +1,7 @@
 {
   "name": "apr-apply",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Creates a continuation function with some arguments already applied.",
   "keywords": [
     "apply",
@@ -22,13 +23,15 @@
   ],
   "homepage": "https://apr.js.org#apply",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-apply.umd.js",
+  "jsnext:main": "dist/apr-apply.es.js",
+  "module": "dist/apr-apply.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

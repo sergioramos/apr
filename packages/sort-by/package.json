@@ -1,6 +1,7 @@
 {
   "name": "apr-sort-by",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Sorts a list by the results of running each coll value through an async iteratee.",
   "keywords": [
     "sort-by",
@@ -22,20 +23,22 @@
   ],
   "homepage": "https://apr.js.org#sort-by",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-sort-by.umd.js",
+  "jsnext:main": "dist/apr-sort-by.es.js",
+  "module": "dist/apr-sort-by.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-back": "^3.0.0",
-    "apr-engine-sum": "^3.0.0",
-    "apr-map": "^3.0.0",
+    "apr-engine-back": "^3.0.1",
+    "apr-engine-sum": "^3.0.1",
+    "apr-map": "^3.0.1",
     "lodash.isarraylike": "^4.2.0",
     "lodash.sortby": "^4.7.0"
   },

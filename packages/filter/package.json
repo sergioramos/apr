@@ -1,6 +1,7 @@
 {
   "name": "apr-filter",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Returns a new array of all the values in coll which pass an async truth test.",
   "keywords": [
     "filter",
@@ -22,20 +23,22 @@
   ],
   "homepage": "https://apr.js.org#filter",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-filter.umd.js",
+  "jsnext:main": "dist/apr-filter.es.js",
+  "module": "dist/apr-filter.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-back": "^3.0.0",
-    "apr-engine-sum": "^3.0.0",
-    "apr-map": "^3.0.0"
+    "apr-engine-back": "^3.0.1",
+    "apr-engine-sum": "^3.0.1",
+    "apr-map": "^3.0.1"
   },
   "devDependencies": {
     "bup": "^4.1.3"

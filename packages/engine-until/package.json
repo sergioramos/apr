@@ -1,6 +1,6 @@
 {
   "name": "apr-engine-until",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-until",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",

@@ -1,6 +1,7 @@
 {
   "name": "apr-reflect",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Wraps the function in another function that always returns data even when it errors.",
   "keywords": [
     "reflect",
@@ -22,13 +23,15 @@
   ],
   "homepage": "https://apr.js.org#reflect",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-reflect.umd.js",
+  "jsnext:main": "dist/apr-reflect.es.js",
+  "module": "dist/apr-reflect.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
