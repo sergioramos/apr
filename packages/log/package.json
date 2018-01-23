@@ -9,9 +9,7 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

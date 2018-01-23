@@ -152,17 +152,11 @@ test(
       return cnd(v, i);
     };
 
-    const always = await series(
-      input.map(Number),
-      fn((v, i) => v > 0, order)
-    );
+    const always = await series(input.map(Number), fn((v, i) => v > 0, order));
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 
-    const notAlways = await series(
-      input.map(Number),
-      fn((v, i) => v > 1)
-    );
+    const notAlways = await series(input.map(Number), fn((v, i) => v > 1));
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);

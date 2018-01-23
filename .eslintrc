@@ -1,35 +1,3 @@
 {
-  "parser": "babel-eslint",
-  "extends": [
-    "semistandard",
-    "eslint:recommended",
-    "prettier",
-  ],
-  "plugins": [
-    "prettier"
-  ],
-  "rules": {
-    "no-console": 0,
-    "generator-star-spacing": 0,
-    "space-before-function-paren": [2, "never"],
-    "object-curly-newline": [2, {
-      "minProperties": 1
-    }],
-    "sort-imports": [2, {
-      "ignoreCase": false
-    }],
-    "sort-vars": [2, {
-      "ignoreCase": true
-    }],
-    "prettier/prettier": ["error", {
-      "useTabs": false,
-      "printWidth": 80,
-      "tabWidth": 2,
-      "singleQuote": true,
-      "trailingComma": "none",
-      "bracketSpacing": true,
-      "jsxBracketSameLine": false,
-      "semi": true
-    }]
-  }
+  "presets": "joyent-portal"
 }

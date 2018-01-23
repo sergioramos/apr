@@ -152,10 +152,7 @@ test(
       return cnd(v, i);
     };
 
-    const found = await series(
-      input.map(Number),
-      fn((v, i) => v === 2, order)
-    );
+    const found = await series(input.map(Number), fn((v, i) => v === 2, order));
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 

@@ -2,16 +2,15 @@
   "name": "apr-engine-repeat",
   "version": "3.0.1",
   "license": "MIT",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-repeat",
+  "homepage":
+    "https://github.com/ramitos/apr/tree/master/packages/engine-repeat",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "main": "dist/apr-apply.umd.js",
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
