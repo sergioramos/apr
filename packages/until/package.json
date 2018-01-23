@@ -1,7 +1,7 @@
 {
   "name": "apr-until",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Repeatedly call fn until test returns true.",
   "keywords": [
     "until",
@@ -29,12 +29,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-repeat": "^2.0.0"
+    "apr-engine-repeat": "^3.0.0"
   },
   "devDependencies": {
     "bup": "^4.1.3"

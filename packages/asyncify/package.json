@@ -1,6 +1,6 @@
 {
   "name": "apr-asyncify",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Take a sync function and make it async. This is useful for plugging sync functions into a waterfall, series, or other async functions.",
   "keywords": [
@@ -29,7 +29,9 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

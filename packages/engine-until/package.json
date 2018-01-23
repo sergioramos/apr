@@ -1,6 +1,6 @@
 {
   "name": "apr-engine-until",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-until",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -9,7 +9,9 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

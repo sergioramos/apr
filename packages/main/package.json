@@ -1,7 +1,7 @@
 {
   "name": "apr-main",
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Catches a promise error, writes the stacktrace to stderr and exists",
   "keywords": [
     "main",
@@ -31,7 +31,9 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

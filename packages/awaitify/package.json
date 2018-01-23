@@ -1,6 +1,6 @@
 {
   "name": "apr-awaitify",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Transform a callback-based function into a promise-based one.",
   "keywords": [
@@ -29,7 +29,9 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

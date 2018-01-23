@@ -1,6 +1,6 @@
 {
   "name": "apr-constant",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Returns a promise that when called, then's with the values provided. Useful as the first function in a waterfall.",
   "keywords": [
@@ -29,7 +29,9 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

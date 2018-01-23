@@ -1,7 +1,7 @@
 {
   "name": "apr-map",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Produces a new collection of values by mapping each value in coll through the iteratee function.",
   "keywords": [
     "map",
@@ -29,13 +29,15 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^2.0.0",
-    "apr-engine-sum": "^2.0.0",
+    "apr-engine-each": "^3.0.0",
+    "apr-engine-sum": "^3.0.0",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

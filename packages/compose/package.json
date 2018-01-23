@@ -1,6 +1,6 @@
 {
   "name": "apr-compose",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).",
   "keywords": [
@@ -29,12 +29,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-waterfall": "^2.0.0",
+    "apr-waterfall": "^3.0.0",
     "lodash.reverse": "^4.0.1"
   },
   "devDependencies": {

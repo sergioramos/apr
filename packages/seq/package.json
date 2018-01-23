@@ -1,7 +1,7 @@
 {
   "name": "apr-seq",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.",
   "keywords": [
     "seq",
@@ -29,12 +29,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-waterfall": "^2.0.0"
+    "apr-waterfall": "^3.0.0"
   },
   "devDependencies": {
     "bup": "^4.1.3"

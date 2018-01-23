@@ -1,7 +1,7 @@
 {
   "name": "apr-sort-by",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Sorts a list by the results of running each coll value through an async iteratee.",
   "keywords": [
     "sort-by",
@@ -29,14 +29,16 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-back": "^2.0.0",
-    "apr-engine-sum": "^2.0.0",
-    "apr-map": "^2.0.0",
+    "apr-engine-back": "^3.0.0",
+    "apr-engine-sum": "^3.0.0",
+    "apr-map": "^3.0.0",
     "lodash.isarraylike": "^4.2.0",
     "lodash.sortby": "^4.7.0"
   },

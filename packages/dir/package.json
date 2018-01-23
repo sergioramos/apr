@@ -1,6 +1,6 @@
 {
   "name": "apr-dir",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/dir",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -9,12 +9,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-console": "^2.0.0"
+    "apr-engine-console": "^3.0.0"
   },
   "devDependencies": {
     "bup": "^4.1.3"

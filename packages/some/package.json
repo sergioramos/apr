@@ -1,7 +1,7 @@
 {
   "name": "apr-some",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Returns true if at least one element in the coll satisfies an async test.",
   "keywords": [
     "some",
@@ -29,12 +29,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-find": "^2.0.0"
+    "apr-find": "^3.0.0"
   },
   "devDependencies": {
     "bup": "^4.1.3"

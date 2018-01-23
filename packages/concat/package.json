@@ -1,6 +1,6 @@
 {
   "name": "apr-concat",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "license": "MIT",
   "description": "Applies iteratee to each item in coll, concatenating the results. Returns the concatenated list.",
   "keywords": [
@@ -29,12 +29,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^2.0.0",
+    "apr-engine-each": "^3.0.0",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

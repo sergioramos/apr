@@ -1,7 +1,7 @@
 {
   "name": "apr-apply",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Creates a continuation function with some arguments already applied.",
   "keywords": [
     "apply",
@@ -29,7 +29,9 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

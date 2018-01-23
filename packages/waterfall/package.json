@@ -1,7 +1,7 @@
 {
   "name": "apr-waterfall",
   "license": "MIT",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Runs the tasks array of functions in series, each passing their results to the next in the array.",
   "keywords": [
     "waterfall",
@@ -29,12 +29,14 @@
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": "dist",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^2.0.0"
+    "apr-engine-each": "^3.0.0"
   },
   "devDependencies": {
     "bup": "^4.1.3"
