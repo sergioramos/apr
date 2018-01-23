@@ -1,6 +1,6 @@
 const test = require('ava');
 
-const times = require('../packages/times');
+const { default: times, series } = require('../packages/times');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
 
@@ -44,7 +44,7 @@ test(
     const then = timeout(5);
     const order = [];
 
-    const output = await times.series(5, async i => {
+    const output = await series(5, async i => {
       const res = await then(i * 2);
       order.push(i);
       return res;
@@ -61,7 +61,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      times.series(5, async i => {
+      series(5, async i => {
         if (i > 2) {
           throw new Error('expected error');
         }

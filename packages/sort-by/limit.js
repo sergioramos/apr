@@ -1,4 +1,4 @@
-const mapLimit = require('apr-map/limit');
+const { limit: mapLimit } = require('apr-map');
 const run = require('./run');
 
 /**

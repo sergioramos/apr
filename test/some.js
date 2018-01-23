@@ -1,7 +1,7 @@
 const buildArray = require('build-array');
 const test = require('ava');
 
-const some = require('../packages/some');
+const { default: some, series } = require('../packages/some');
 const getIttr = require('../packages/test-get-ittr');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
@@ -152,7 +152,7 @@ test(
       return cnd(v, i);
     };
 
-    const found = await some.series(
+    const found = await series(
       input.map(Number),
       fn((v, i) => v === 2, order)
     );
@@ -178,7 +178,7 @@ test(
       return cnd(v, i);
     };
 
-    const found = await some.series(getIttr(), fn((v, i) => i === 2, order));
+    const found = await series(getIttr(), fn((v, i) => i === 2, order));
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 
@@ -208,7 +208,7 @@ test(
       return cnd(v, i);
     };
 
-    const found = await some.series(input, fn((v, i) => v === 2, order));
+    const found = await series(input, fn((v, i) => v === 2, order));
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i + 1));
 
@@ -224,7 +224,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        some.series([1, 2, 3, 4], async (v, i) => {
+        series([1, 2, 3, 4], async (v, i) => {
           if (i > 2) {
             throw new Error('expected error');
           }
@@ -240,7 +240,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        some.series(getIttr(), async (v, i) => {
+        series(getIttr(), async (v, i) => {
           if (i > 2) {
             throw new Error('expected error');
           }
@@ -256,7 +256,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        some.series(
+        series(
           {
             a: 1,
             b: 2,

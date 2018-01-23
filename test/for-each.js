@@ -1,6 +1,6 @@
 const test = require('ava');
 
-const forEach = require('../packages/for-each');
+const { default: forEach, series } = require('../packages/for-each');
 const getIttr = require('../packages/test-get-ittr');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
@@ -135,7 +135,7 @@ test(
     const input = [1, 2, 3, 4];
     const order = [];
 
-    await forEach.series(input.map(Number), async (v, i) => {
+    await series(input.map(Number), async (v, i) => {
       input[i] = await then(v * 2);
       order.push(i);
     });
@@ -152,7 +152,7 @@ test(
     const output = [];
     const order = [];
 
-    await forEach.series(getIttr(), async (v, i) => {
+    await series(getIttr(), async (v, i) => {
       output[i] = await then(`${v}${v}`);
       order.push(i);
     });
@@ -169,7 +169,7 @@ test(
     const output = {};
     const order = [];
 
-    await forEach.series(
+    await series(
       {
         a: 1,
         b: 2,
@@ -198,7 +198,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      forEach.series([1, 2, 3, 4], async (v, i) => {
+      series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
         }
@@ -215,7 +215,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      forEach.series(getIttr(), async (v, i) => {
+      series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
         }
@@ -232,7 +232,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      forEach.series(
+      series(
         {
           a: 1,
           b: 2,

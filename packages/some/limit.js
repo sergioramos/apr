@@ -1,4 +1,4 @@
-const findLimit = require('apr-find/limit');
+const { limit: findLimit } = require('apr-find');
 const then = require('./then');
 
 /**

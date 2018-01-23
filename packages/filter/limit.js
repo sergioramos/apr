@@ -1,5 +1,5 @@
 const run = require('./run');
-const map = require('apr-map/limit');
+const { limit: map } = require('apr-map');
 
 /**
  * @kind function

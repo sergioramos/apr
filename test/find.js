@@ -1,7 +1,7 @@
 const buildArray = require('build-array');
 const test = require('ava');
 
-const find = require('../packages/find');
+const { default: find, series } = require('../packages/find');
 const getIttr = require('../packages/test-get-ittr');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
@@ -131,7 +131,7 @@ test(
     const input = [1, 2, 3, 4];
     const order = [];
 
-    const output = await find.series(input.map(Number), async (v, i) => {
+    const output = await series(input.map(Number), async (v, i) => {
       await then(v);
       order.push(i);
       return v === 2;
@@ -148,7 +148,7 @@ test(
     const then = timeout(4);
     const order = [];
 
-    const output = await find.series(getIttr(), async (v, i) => {
+    const output = await series(getIttr(), async (v, i) => {
       await then(`${v}${v}`);
       order.push(i);
       return i === 2;
@@ -165,7 +165,7 @@ test(
     const then = timeout(4);
     const order = [];
 
-    const output = await find.series(
+    const output = await series(
       {
         a: 1,
         b: 2,
@@ -192,7 +192,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        find.series([1, 2, 3, 4], async (v, i) => {
+        series([1, 2, 3, 4], async (v, i) => {
           if (i > 2) {
             throw new Error('expected error');
           }
@@ -208,7 +208,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        find.series(getIttr(), async (v, i) => {
+        series(getIttr(), async (v, i) => {
           if (i > 2) {
             throw new Error('expected error');
           }
@@ -224,7 +224,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        find.series(
+        series(
           {
             a: 1,
             b: 2,

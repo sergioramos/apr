@@ -1,6 +1,6 @@
 const test = require('ava');
 
-const filter = require('../packages/filter');
+const { default: filter, series } = require('../packages/filter');
 const getIttr = require('../packages/test-get-ittr');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
@@ -134,7 +134,7 @@ test(
     const input = [1, 2, 3, 4];
     const order = [];
 
-    const output = await filter.series(input.map(Number), async (v, i) => {
+    const output = await series(input.map(Number), async (v, i) => {
       const res = await then(v);
       order.push(i);
       return res % 2;
@@ -151,7 +151,7 @@ test(
     const then = timeout(4);
     const order = [];
 
-    const output = await filter.series(getIttr(), async (v, i) => {
+    const output = await series(getIttr(), async (v, i) => {
       await then(`${v}${v}`);
       order.push(i);
       return i % 2;
@@ -196,7 +196,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      filter.series([1, 2, 3, 4], async (v, i) => {
+      series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
         }
@@ -213,7 +213,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      filter.series(getIttr(), async (v, i) => {
+      series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
         }
@@ -230,7 +230,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      filter.series(
+      series(
         {
           a: 1,
           b: 2,

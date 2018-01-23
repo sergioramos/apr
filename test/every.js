@@ -1,7 +1,7 @@
 const buildArray = require('build-array');
 const test = require('ava');
 
-const every = require('../packages/every');
+const { default: every, series } = require('../packages/every');
 const getIttr = require('../packages/test-get-ittr');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
@@ -152,14 +152,14 @@ test(
       return cnd(v, i);
     };
 
-    const always = await every.series(
+    const always = await series(
       input.map(Number),
       fn((v, i) => v > 0, order)
     );
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 
-    const notAlways = await every.series(
+    const notAlways = await series(
       input.map(Number),
       fn((v, i) => v > 1)
     );
@@ -181,11 +181,11 @@ test(
       return cnd(v, i);
     };
 
-    const always = await every.series(getIttr(), fn((v, i) => i >= 0, order));
+    const always = await series(getIttr(), fn((v, i) => i >= 0, order));
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
 
-    const notAlways = await every.series(getIttr(), fn((v, i) => i > 0));
+    const notAlways = await series(getIttr(), fn((v, i) => i > 0));
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
@@ -211,11 +211,11 @@ test(
       return cnd(v, i);
     };
 
-    const always = await every.series(input, fn((v, i) => v > 0, order));
+    const always = await series(input, fn((v, i) => v > 0, order));
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i + 1));
 
-    const notAlways = await every.series(input, fn((v, i) => v > 1));
+    const notAlways = await series(input, fn((v, i) => v > 1));
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
@@ -227,7 +227,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        every.series([1, 2, 3, 4], async (v, i) => {
+        series([1, 2, 3, 4], async (v, i) => {
           if (i > 2) {
             throw new Error('expected error');
           }
@@ -243,7 +243,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        every.series(getIttr(), async (v, i) => {
+        series(getIttr(), async (v, i) => {
           if (i > 2) {
             throw new Error('expected error');
           }
@@ -259,7 +259,7 @@ test(
   schedule(
     async t =>
       await t.throws(
-        every.series(
+        series(
           {
             a: 1,
             b: 2,

@@ -1,6 +1,6 @@
 const test = require('ava');
 
-const sortBy = require('../packages/sort-by');
+const { default: sortBy, series } = require('../packages/sort-by');
 const getIttr = require('../packages/test-get-ittr');
 const schedule = require('../packages/test-scheduler')();
 const timeout = require('../packages/test-timeout');
@@ -148,7 +148,7 @@ test(
     const input = [1, 2, 3, 4];
     const order = [];
 
-    const output = await sortBy.series(input.map(Number), async (v, i) => {
+    const output = await series(input.map(Number), async (v, i) => {
       await then(v);
       order.push(i);
       return -i;
@@ -165,7 +165,7 @@ test(
     const then = timeout(4);
     const order = [];
 
-    const output = await sortBy.series(getIttr(), async (v, i) => {
+    const output = await series(getIttr(), async (v, i) => {
       await then(`${v}${v}`);
       order.push(i);
       return -i;
@@ -182,7 +182,7 @@ test(
     const then = timeout(4);
     const order = [];
 
-    const output = await sortBy.series(
+    const output = await series(
       {
         a: 1,
         b: 2,
@@ -224,7 +224,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      sortBy.series([1, 2, 3, 4], async (v, i) => {
+      series([1, 2, 3, 4], async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
         }
@@ -241,7 +241,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      sortBy.series(getIttr(), async (v, i) => {
+      series(getIttr(), async (v, i) => {
         if (i > 2) {
           throw new Error('expected error');
         }
@@ -258,7 +258,7 @@ test(
     const then = timeout(4);
 
     await t.throws(
-      sortBy.series(
+      series(
         {
           a: 1,
           b: 2,
