@@ -1,6 +1,7 @@
 {
   "name": "apr-concat",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Applies iteratee to each item in coll, concatenating the results. Returns the concatenated list.",
   "keywords": [
     "concat",
@@ -22,18 +23,20 @@
   ],
   "homepage": "https://apr.js.org#concat",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-concat.umd.js",
+  "jsnext:main": "dist/apr-concat.es.js",
+  "module": "dist/apr-concat.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.0",
+    "apr-engine-each": "^3.0.1",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

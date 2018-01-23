@@ -1,6 +1,7 @@
 {
   "name": "apr-until",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Repeatedly call fn until test returns true.",
   "keywords": [
     "until",
@@ -22,18 +23,20 @@
   ],
   "homepage": "https://apr.js.org#until",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-until.umd.js",
+  "jsnext:main": "dist/apr-until.es.js",
+  "module": "dist/apr-until.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-repeat": "^3.0.0"
+    "apr-engine-repeat": "^3.0.1"
   },
   "devDependencies": {
     "bup": "^4.1.3"

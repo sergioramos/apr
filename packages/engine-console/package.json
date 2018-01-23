@@ -1,7 +1,7 @@
 {
   "name": "apr-engine-console",
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-console",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",

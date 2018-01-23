@@ -33,8 +33,7 @@
     "publish": "lerna publish",
     "clean": "lerna clean --yes",
     "bootstrap": "lerna bootstrap",
-    "prepublish": "lerna run prepublish",
-    "postinstall": "lerna run prepublish",
+    "prepublish": "lerna run prepublish --parallel --stream",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {

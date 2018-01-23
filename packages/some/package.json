@@ -1,6 +1,7 @@
 {
   "name": "apr-some",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Returns true if at least one element in the coll satisfies an async test.",
   "keywords": [
     "some",
@@ -22,18 +23,20 @@
   ],
   "homepage": "https://apr.js.org#some",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-some.umd.js",
+  "jsnext:main": "dist/apr-some.es.js",
+  "module": "dist/apr-some.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-find": "^3.0.0"
+    "apr-find": "^3.0.1"
   },
   "devDependencies": {
     "bup": "^4.1.3"

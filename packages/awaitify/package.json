@@ -1,6 +1,7 @@
 {
   "name": "apr-awaitify",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Transform a callback-based function into a promise-based one.",
   "keywords": [
     "awaitify",
@@ -22,13 +23,15 @@
   ],
   "homepage": "https://apr.js.org#awaitify",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-awaitify.umd.js",
+  "jsnext:main": "dist/apr-awaitify.es.js",
+  "module": "dist/apr-awaitify.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

@@ -1,6 +1,7 @@
 {
   "name": "apr-reduce",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Reduces coll into a single value using an async iteratee to return each successive step.",
   "keywords": [
     "reduce",
@@ -22,18 +23,20 @@
   ],
   "homepage": "https://apr.js.org#reduce",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-reduce.umd.js",
+  "jsnext:main": "dist/apr-reduce.es.js",
+  "module": "dist/apr-reduce.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.0",
+    "apr-engine-each": "^3.0.1",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

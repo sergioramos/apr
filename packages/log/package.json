@@ -1,7 +1,7 @@
 {
   "name": "apr-log",
   "license": "MIT",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/log",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
@@ -16,7 +16,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-console": "^3.0.0"
+    "apr-engine-console": "^3.0.1"
   },
   "devDependencies": {
     "bup": "^4.1.3"

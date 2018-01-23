@@ -1,5 +1,5 @@
 const apr = require('../package.json');
-const forEach = require('../packages/for-each');
+const { default: forEach } = require('../packages/for-each');
 const series = require('../packages/series');
 const awaitify = require('../packages/awaitify');
 const main = require('../packages/main');
@@ -48,21 +48,24 @@ const individual = async () =>
     const pjson = JSON.stringify(
       {
         name: `apr-${name}`,
+        license: apr.license,
         version: pkg.version,
         description: dsc,
         keywords: union((pkg.keywords || []).concat(name).concat(apr.keywords)),
         homepage: `https://apr.js.org#${paramCase(name)}`,
         bugs: apr.bugs,
-        license: apr.license,
-        people: pkg.people,
+        people: apr.people,
         author: apr.author,
         contributors: apr.contributors,
-        files: pkg.files,
-        main: 'src/index.js',
+        repository: 'ramitos/apr',
+        directories: pkg.directories,
+        files: ['files'],
         bin: pkg.bin,
         man: pkg.man,
-        directories: pkg.directories,
-        repository: 'ramitos/apr',
+        main: `dist/apr-${name}.umd.js`,
+        'jsnext:main': `dist/apr-${name}.es.js`,
+        module: `dist/apr-${name}.es.js`,
+        entry: 'index.js',
         scripts: pkg.scripts,
         config: pkg.config,
         dependencies: pkg.dependencies,

@@ -1,7 +1,7 @@
 {
   "name": "apr-test-scheduler",
   "license": "MIT",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-scheduler",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",

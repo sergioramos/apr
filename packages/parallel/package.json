@@ -1,6 +1,7 @@
 {
   "name": "apr-parallel",
-  "version": "3.0.0",
+  "license": "MIT",
+  "version": "3.0.1",
   "description": "Run the tasks collection of functions in parallel, without waiting until the previous function has completed.",
   "keywords": [
     "parallel",
@@ -22,19 +23,21 @@
   ],
   "homepage": "https://apr.js.org#parallel",
   "bugs": "https://github.com/ramitos/apr/issues",
-  "license": "MIT",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
-  "files": [
-    "dist"
-  ],
-  "main": "src/index.js",
   "repository": "ramitos/apr",
+  "files": [
+    "files"
+  ],
+  "main": "dist/apr-parallel.umd.js",
+  "jsnext:main": "dist/apr-parallel.es.js",
+  "module": "dist/apr-parallel.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-sum": "^3.0.0",
-    "apr-reduce": "^3.0.0"
+    "apr-engine-sum": "^3.0.1",
+    "apr-reduce": "^3.0.1"
   },
   "devDependencies": {
     "bup": "^4.1.3"

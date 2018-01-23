@@ -1,6 +1,6 @@
 {
   "name": "apr-engine-iterator",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "license": "MIT",
   "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-iterator",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
@@ -16,7 +16,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-until": "^3.0.0",
+    "apr-engine-until": "^3.0.1",
     "build-array": "^1.0.0",
     "lodash.isarraylike": "^4.2.0",
     "lodash.isfinite": "^3.3.2",
