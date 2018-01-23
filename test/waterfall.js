@@ -107,12 +107,12 @@ test(
 
     await t.throws(
       waterfall([
-        async () => await then(1 * 2),
-        async prev => await then(prev * 2),
+        async () => then(1 * 2),
+        async prev => then(prev * 2),
         async prev => {
           throw new Error('expected error');
         },
-        async prev => await then(prev * 2)
+        async prev => then(prev * 2)
       ])
     );
   })
@@ -125,12 +125,12 @@ test(
 
     await t.throws(
       waterfall({
-        a: async () => await then(1 * 2),
-        b: async prev => await then(prev * 2),
+        a: async () => then(1 * 2),
+        b: async prev => then(prev * 2),
         c: async prev => {
           throw new Error('expected error');
         },
-        d: async prev => await then(prev * 2)
+        d: async prev => then(prev * 2)
       })
     );
   })

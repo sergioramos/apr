@@ -32,7 +32,7 @@ test(
           throw new Error('expected error');
         }
 
-        return await then(i * 2);
+        return then(i * 2);
       })
     );
   })
@@ -66,7 +66,7 @@ test(
           throw new Error('expected error');
         }
 
-        return await then(i * 2);
+        return then(i * 2);
       })
     );
   })

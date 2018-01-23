@@ -17,7 +17,7 @@ test(
       t.deepEqual(y, '2');
 
       called = true;
-      return await then(1 * 2);
+      return then(1 * 2);
     };
 
     const output = await parallel([apply(fn, 2, '2')]);

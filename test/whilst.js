@@ -18,8 +18,9 @@ test(
 
     const output = await whilst(async () => {
       await then();
-      return (calls += 1) < maxCalls;
-    }, async () => await then(maxCalls));
+      calls += 1;
+      return calls < maxCalls;
+    }, async () => then(maxCalls));
 
     t.deepEqual(calls, maxCalls);
     t.deepEqual(output, maxCalls);
@@ -39,8 +40,11 @@ test(
     let calls = 0;
 
     const output = await whilst(
-      () => (calls += 1) < maxCalls,
-      async () => await then(maxCalls)
+      () => {
+        calls += 1;
+        return calls < maxCalls;
+      },
+      async () => then(maxCalls)
     );
 
     t.deepEqual(calls, maxCalls);
@@ -57,7 +61,7 @@ test(
     await t.throws(
       whilst(async () => {
         throw new Error('Unexpected Error');
-      }, async () => await then())
+      }, () => then())
     );
   })
 );
@@ -89,7 +93,7 @@ test(
     await t.throws(
       whilst(() => {
         throw new Error('Unexpected Error');
-      }, async () => await then())
+      }, () => then())
     );
   })
 );
@@ -98,7 +102,7 @@ test(
   'fail whilst fn',
   schedule(
     async t =>
-      await t.throws(
+      t.throws(
         whilst(
           () => true,
           async () => {

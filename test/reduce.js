@@ -87,7 +87,7 @@ test(
           throw new Error('expected error');
         }
 
-        return await then(v * 2);
+        return then(v * 2);
       })
     );
   })
@@ -104,7 +104,7 @@ test(
           throw new Error('expected error');
         }
 
-        return await then(`${v}${v}`);
+        return then(`${v}${v}`);
       })
     );
   })
@@ -128,7 +128,7 @@ test(
             throw new Error('expected error');
           }
 
-          return await then(v * 2);
+          return then(v * 2);
         }
       )
     );

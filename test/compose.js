@@ -60,12 +60,12 @@ test(
     const then = timeout(4);
 
     const composed = compose(
-      async v => await then(v * 2),
+      async v => then(v * 2),
       async v => {
         throw new Error('Unexpected Error');
       },
-      async v => await then(v * 2),
-      async v => await then(v * 2)
+      async v => then(v * 2),
+      async v => then(v * 2)
     );
 
     await t.throws(composed(1));

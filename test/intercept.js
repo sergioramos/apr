@@ -13,7 +13,7 @@ test(
         throw new Error(v);
       }
 
-      return await then(v);
+      return then(v);
     };
 
     const [err1, res1] = await ctch(fn(1));

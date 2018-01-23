@@ -4,7 +4,7 @@ module.exports = () => {
   return {
     [Symbol.iterator]: () => ({
       i: -1,
-      next: function() {
+      next() {
         this.i += 1;
 
         return {

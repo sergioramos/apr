@@ -112,12 +112,12 @@ test(
 
     await t.throws(
       parallel([
-        async () => await then(1 * 2),
-        async () => await then(2 * 2),
+        async () => then(1 * 2),
+        async () => then(2 * 2),
         async () => {
           throw new Error('expected error');
         },
-        async () => await then(4 * 2)
+        async () => then(4 * 2)
       ])
     );
   })
@@ -130,12 +130,12 @@ test(
 
     await t.throws(
       parallel({
-        a: async () => await then(1 * 2),
-        b: async () => await then(2 * 2),
+        a: async () => then(1 * 2),
+        b: async () => then(2 * 2),
         c: async () => {
           throw new Error('expected error');
         },
-        d: async () => await then(4 * 2)
+        d: async () => then(4 * 2)
       })
     );
   })

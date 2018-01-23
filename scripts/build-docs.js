@@ -32,7 +32,7 @@ const options = {
 };
 
 const individual = async () =>
-  await forEach(packages, async name => {
+  forEach(packages, async name => {
     const dir = path.join(__dirname, `../packages/${name}`);
     const pkg = require(path.join(dir, 'package.json'));
 
@@ -75,7 +75,7 @@ const individual = async () =>
         optionalDependencies: pkg.optionalDependencies,
         engines: pkg.engines,
         preferGlobal: pkg.preferGlobal,
-        private: pkg['private'],
+        private: pkg.private,
         publishConfig: pkg.publishConfig
       },
       null,
