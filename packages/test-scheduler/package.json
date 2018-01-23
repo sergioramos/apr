@@ -1,16 +1,17 @@
 {
   "name": "apr-test-scheduler",
   "license": "MIT",
-  "version": "4.0.1",
-  "homepage":
-    "https://github.com/ramitos/apr/tree/master/packages/test-scheduler",
+  "version": "4.0.2",
+  "homepage": "https://github.com/ramitos/apr/tree/master/packages/test-scheduler",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "main": "dist/apr-apply.umd.js",
   "jsnext:main": "dist/apr-apply.es.js",
   "module": "dist/apr-apply.es.js",
   "entry": "index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

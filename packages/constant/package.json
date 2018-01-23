@@ -1,7 +1,7 @@
 {
   "name": "apr-constant",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Returns a promise that when called, then's with the values provided. Useful as the first function in a waterfall.",
   "keywords": [
     "constant",

@@ -1,7 +1,7 @@
 {
   "name": "apr-compose",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).",
   "keywords": [
     "compose",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-waterfall": "^3.0.1",
+    "apr-waterfall": "^3.0.2",
     "lodash.reverse": "^4.0.1"
   },
   "devDependencies": {

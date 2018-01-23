@@ -1,7 +1,7 @@
 {
   "name": "apr-seq",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.",
   "keywords": [
     "seq",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-waterfall": "^3.0.1"
+    "apr-waterfall": "^3.0.2"
   },
   "devDependencies": {
     "bup": "^4.1.3"

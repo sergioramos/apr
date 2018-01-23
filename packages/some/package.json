@@ -1,7 +1,7 @@
 {
   "name": "apr-some",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Returns true if at least one element in the coll satisfies an async test.",
   "keywords": [
     "some",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-find": "^3.0.1"
+    "apr-find": "^3.0.2"
   },
   "devDependencies": {
     "bup": "^4.1.3"

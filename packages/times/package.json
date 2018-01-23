@@ -1,7 +1,7 @@
 {
   "name": "apr-times",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Calls the iteratee function n times, and accumulates results in the same manner you would use with map.",
   "keywords": [
     "times",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-map": "^3.0.1",
+    "apr-map": "^3.0.2",
     "build-array": "^1.0.0",
     "lodash.defaults": "^4.2.0"
   },

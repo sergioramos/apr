@@ -1,7 +1,7 @@
 {
   "name": "apr-whilst",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Repeatedly call fn, while test returns true.",
   "keywords": [
     "whilst",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-repeat": "^3.0.1"
+    "apr-engine-repeat": "^3.0.2"
   },
   "devDependencies": {
     "bup": "^4.1.3"

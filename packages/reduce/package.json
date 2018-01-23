@@ -1,7 +1,7 @@
 {
   "name": "apr-reduce",
   "license": "MIT",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Reduces coll into a single value using an async iteratee to return each successive step.",
   "keywords": [
     "reduce",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.1",
+    "apr-engine-each": "^3.0.2",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {
