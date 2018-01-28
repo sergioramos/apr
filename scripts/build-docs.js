@@ -15,15 +15,22 @@ const vfs = require('vinyl-fs');
 const remark = require('remark');
 const union = require('lodash.union');
 const paramCase = require('param-case');
+const globby = require('globby');
 const pump = require('pump');
 const path = require('path');
 
 const onFinish = awaitify(pump);
 
+const packages = globby
+  .sync('packages/*/package.json', {
+    cwd: path.join(__dirname, '..')
+  })
+  .map(name => name.replace(/^packages\//, '').replace(/\/package.json$/, ''));
+
 const tocPath = path.join(__dirname, '../documentation.yml');
 const toc = readYaml.sync(tocPath);
-const packages = toc.toc.filter(isString);
-const files = packages.map(pkg =>
+const tocPackages = toc.toc.filter(isString);
+const files = tocPackages.map(pkg =>
   path.join(__dirname, `../packages/${pkg}/index.js`)
 );
 
@@ -38,11 +45,15 @@ const individual = async () =>
 
     const ast = await build([path.join(dir, 'index.js')], {});
 
-    const dsc = removeMd(
-      remark()
-        .stringify(ast[0].description)
-        .split(/\n/)[1]
-    );
+    const dsc =
+      ast.length && ast[0] && ast[0].description
+        ? removeMd(
+            remark()
+              .stringify(ast[0].description)
+              .split(/\n/)[1]
+          )
+        : pkg.dsc;
+
     const readme = await formats.md(ast, {});
 
     const pjson = JSON.stringify(

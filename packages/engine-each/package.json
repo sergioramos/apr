@@ -1,17 +1,36 @@
 {
   "name": "apr-engine-each",
-  "version": "3.0.2",
   "license": "MIT",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-each",
+  "version": "3.0.2",
+  "keywords": [
+    "engine-each",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful",
+    "promises",
+    "async-await",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es6",
+    "es7",
+    "es8"
+  ],
+  "homepage": "https://apr.js.org#engine-each",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
-  "main": "dist/apr-apply.umd.js",
-  "jsnext:main": "dist/apr-apply.es.js",
-  "module": "dist/apr-apply.es.js",
-  "entry": "index.js",
   "files": [
-    "dist"
+    "files"
   ],
+  "main": "dist/apr-engine-each.umd.js",
+  "jsnext:main": "dist/apr-engine-each.es.js",
+  "module": "dist/apr-engine-each.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },

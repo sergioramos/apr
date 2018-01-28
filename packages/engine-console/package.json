@@ -2,16 +2,35 @@
   "name": "apr-engine-console",
   "license": "MIT",
   "version": "3.0.2",
-  "homepage": "https://github.com/ramitos/apr/tree/master/packages/engine-console",
+  "keywords": [
+    "engine-console",
+    "async",
+    "await",
+    "promise",
+    "control",
+    "flow",
+    "control-flow",
+    "awaitful",
+    "promises",
+    "async-await",
+    "es2015",
+    "es2016",
+    "es2017",
+    "es6",
+    "es7",
+    "es8"
+  ],
+  "homepage": "https://apr.js.org#engine-console",
+  "bugs": "https://github.com/ramitos/apr/issues",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
-  "main": "dist/apr-apply.umd.js",
-  "jsnext:main": "dist/apr-apply.es.js",
-  "module": "dist/apr-apply.es.js",
-  "entry": "index.js",
   "files": [
-    "dist"
+    "files"
   ],
+  "main": "dist/apr-engine-console.umd.js",
+  "jsnext:main": "dist/apr-engine-console.es.js",
+  "module": "dist/apr-engine-console.es.js",
+  "entry": "index.js",
   "scripts": {
     "prepublish": "NODE_ENV=production bup"
   },
