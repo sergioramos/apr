@@ -1,7 +1,7 @@
 {
   "name": "apr-until",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Repeatedly call fn until test returns true.",
   "keywords": [
     "until",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-repeat": "^3.0.2"
+    "apr-engine-repeat": "^3.0.3"
   },
   "devDependencies": {
     "bup": "^4.1.3"

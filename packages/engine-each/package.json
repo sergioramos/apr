@@ -1,7 +1,7 @@
 {
   "name": "apr-engine-each",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "keywords": [
     "engine-each",
     "async",
@@ -35,7 +35,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-run": "^3.0.2",
+    "apr-engine-run": "^3.0.3",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

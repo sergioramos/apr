@@ -1,7 +1,7 @@
 {
   "name": "apr-reject",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "The opposite of filter. Removes values that pass an async truth test.",
   "keywords": [
     "reject",
@@ -36,9 +36,9 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-back": "^3.0.2",
-    "apr-engine-sum": "^3.0.2",
-    "apr-map": "^3.0.2"
+    "apr-engine-back": "^3.0.3",
+    "apr-engine-sum": "^3.0.3",
+    "apr-map": "^3.0.3"
   },
   "devDependencies": {
     "bup": "^4.1.3"

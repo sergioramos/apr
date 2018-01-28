@@ -1,7 +1,7 @@
 {
   "name": "apr-find",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Returns the first value in coll that passes an async truth test.",
   "keywords": [
     "find",
@@ -36,8 +36,8 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.2",
-    "apr-engine-sum": "^3.0.2",
+    "apr-engine-each": "^3.0.3",
+    "apr-engine-sum": "^3.0.3",
     "lodash.defaults": "^4.2.0",
     "lodash.isarraylike": "^4.2.0"
   },

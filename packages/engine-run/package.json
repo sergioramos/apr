@@ -1,7 +1,7 @@
 {
   "name": "apr-engine-run",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "keywords": [
     "engine-run",
     "async",
@@ -35,7 +35,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-iterator": "^3.0.2"
+    "apr-engine-iterator": "^3.0.3"
   },
   "devDependencies": {
     "bup": "^4.1.3"

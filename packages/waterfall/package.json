@@ -1,7 +1,7 @@
 {
   "name": "apr-waterfall",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Runs the tasks array of functions in series, each passing their results to the next in the array.",
   "keywords": [
     "waterfall",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.2"
+    "apr-engine-each": "^3.0.3"
   },
   "devDependencies": {
     "bup": "^4.1.3"

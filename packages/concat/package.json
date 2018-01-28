@@ -1,7 +1,7 @@
 {
   "name": "apr-concat",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Applies iteratee to each item in coll, concatenating the results. Returns the concatenated list.",
   "keywords": [
     "concat",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.2",
+    "apr-engine-each": "^3.0.3",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {

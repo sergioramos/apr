@@ -1,7 +1,7 @@
 {
   "name": "apr-asyncify",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Take a sync function and make it async. This is useful for plugging sync functions into a waterfall, series, or other async functions.",
   "keywords": [
     "asyncify",

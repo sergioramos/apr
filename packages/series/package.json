@@ -1,7 +1,7 @@
 {
   "name": "apr-series",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Run the functions in the tasks in series, each one running once the previous function has completed.",
   "keywords": [
     "series",
@@ -36,8 +36,8 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-sum": "^3.0.2",
-    "apr-reduce": "^3.0.2"
+    "apr-engine-sum": "^3.0.3",
+    "apr-reduce": "^3.0.3"
   },
   "devDependencies": {
     "bup": "^4.1.3"

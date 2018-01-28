@@ -1,7 +1,7 @@
 {
   "name": "apr-intercept",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Intercepts errors, the Go way!",
   "keywords": [
     "intercept",

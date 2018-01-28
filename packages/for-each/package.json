@@ -1,7 +1,7 @@
 {
   "name": "apr-for-each",
   "license": "MIT",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Applies the function iteratee to each item in coll, in parallel.",
   "keywords": [
     "for-each",
@@ -36,7 +36,7 @@
     "prepublish": "NODE_ENV=production bup"
   },
   "dependencies": {
-    "apr-engine-each": "^3.0.2",
+    "apr-engine-each": "^3.0.3",
     "lodash.defaults": "^4.2.0"
   },
   "devDependencies": {
