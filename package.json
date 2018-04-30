@@ -30,10 +30,9 @@
     "lint": "eslint --fix .",
     "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
     "commit": "git-cz",
-    "publish": "lerna publish",
+    "publish": "lerna run prepublish --parallel --stream && lerna publish",
     "clean": "lerna clean --yes",
     "bootstrap": "lerna bootstrap",
-    "prepublish": "lerna run prepublish --parallel --stream",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
