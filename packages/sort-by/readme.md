@@ -5,14 +5,14 @@
 <a id="sort-by"></a>
 Sorts a list by the results of running each `coll` value through an async `iteratee`.
 
-[![](https://img.shields.io/npm/v/apr-sort-by.svg?style=flat-square)](https://www.npmjs.com/package/apr-sort-by) [![](https://img.shields.io/npm/l/apr-sort-by.svg?style=flat-square)](https://www.npmjs.com/package/apr-sort-by)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][4] \| [Object][5] | Iterable)**
+- `iteratee` **[Function][6]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
@@ -31,23 +31,32 @@ const sorted = await sortBy(files, await (file) => {
 });
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
 
 ### limit
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][4] \| [Object][5] | Iterable)**
+- `limit` **[Number][8]**
+- `iteratee` **[Function][6]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
 
 ## series
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][4] \| [Object][5] | Iterable)**
+- `iteratee` **[Function][6]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
+
+[1]: https://www.npmjs.com/package/apr-sort-by
+[2]: https://img.shields.io/npm/v/apr-sort-by.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-sort-by.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

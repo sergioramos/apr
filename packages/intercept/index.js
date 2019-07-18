@@ -16,10 +16,11 @@
  * const [err2, res2] = await ctch(fn(1));
  * const [, res3] = await ctch(fn(3));
  */
-module.exports = p =>
-  new Promise(resolve =>
-    p.then(
+export default p => {
+  return new Promise(resolve => {
+    return p.then(
       (...res) => resolve([null, ...res]),
-      err => resolve([err, undefined])
-    )
-  );
+      err => resolve([err, undefined]),
+    );
+  });
+};

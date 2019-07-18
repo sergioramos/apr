@@ -5,48 +5,51 @@
 <a id="concat"></a>
 Applies `iteratee` to each item in `coll`, concatenating the results. Returns the concatenated list.
 
-[![](https://img.shields.io/npm/v/apr-concat.svg?style=flat-square)](https://www.npmjs.com/package/apr-concat) [![](https://img.shields.io/npm/l/apr-concat.svg?style=flat-square)](https://www.npmjs.com/package/apr-concat)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][4] \| [Object][5] | Iterable)**
+- `iteratee` **[Function][6]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import concat from 'apr-concat';
 
 const readdir = awaitify(fs.readdir);
-const dirs = [
-  'dir1',
-  'dir2',
-  'dir3'
-];
+const dirs = ['dir1', 'dir2', 'dir3'];
 
-const files = await concat(dirs, async (dir) =>
-  await readdir(dir)
-);
+const files = await concat(dirs, async dir => await readdir(dir));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
-
-### series
-
-**Parameters**
-
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
-
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
 
 ### limit
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][4] \| [Object][5] | Iterable)**
+- `limit` **[Number][8]**
+- `iteratee` **[Function][6]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
+
+### series
+
+#### Parameters
+
+- `input` **([Array][4] \| [Object][5] | Iterable)**
+- `iteratee` **[Function][6]**
+
+Returns **[Promise][7]**
+
+[1]: https://www.npmjs.com/package/apr-concat
+[2]: https://img.shields.io/npm/v/apr-concat.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-concat.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

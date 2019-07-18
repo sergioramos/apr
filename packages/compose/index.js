@@ -1,5 +1,5 @@
-const waterfall = require('apr-waterfall');
-const reverse = require('lodash.reverse');
+import Waterfall from 'apr-waterfall';
+import Reverse from 'lodash.reverse';
 
 /**
  * <a id="sompose"></a>
@@ -25,7 +25,6 @@ const reverse = require('lodash.reverse');
  *
  * const output = await composed(1); // 7
  */
-module.exports = (...args) => value => {
-  const input = reverse([...args]);
-  return waterfall(input, value);
+export default (...args) => value => {
+  return Waterfall(Reverse([...args]), value);
 };

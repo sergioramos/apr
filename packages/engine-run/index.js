@@ -1,6 +1,6 @@
-const Iterator = require('apr-engine-iterator');
+import Iterator from 'apr-engine-iterator';
 
-module.exports = (input, fn, opts) => {
+export default (input, fn, opts) => {
   const ittr = Iterator(input);
 
   let done = false;
@@ -9,10 +9,12 @@ module.exports = (input, fn, opts) => {
 
   const after = (items, end) => v => {
     brk =
-      brk || items.some((item, y) => opts.after && opts.after(v[y], item, i++));
+      brk ||
+      items.some((item, y) => {
+        return opts.after && opts.after(v[y], item, i++);
+      });
 
     done = done || brk;
-
     return done ? end() : next(end);
   };
 
@@ -23,11 +25,12 @@ module.exports = (input, fn, opts) => {
     });
 
     const call = opts.call || (item => fn(item.value, item.key, input));
-
     Promise.all(items.map(call)).then(after(items, end), end);
   };
 
-  return new Promise((resolve, reject) =>
-    next((err, res) => (err ? reject(err) : resolve(res)))
-  );
+  return new Promise((resolve, reject) => {
+    return next((err, res) => {
+      return err ? reject(err) : resolve(res);
+    });
+  });
 };

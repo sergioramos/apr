@@ -1,28 +1,20 @@
-const isArray = require('lodash.isarraylike');
-const find = require('lodash.find');
+import IsArray from 'lodash.isarraylike';
+import Find from 'lodash.find';
+import Iterator from 'apr-engine-iterator';
+import Sum from 'apr-engine-sum';
 
-const Iterator = require('apr-engine-iterator');
-const Sum = require('apr-engine-sum');
-
-module.exports = ctx => {
+export default ctx => {
   const after = res => {
     const rItems = Iterator(res).next(Infinity);
     const iItems = Iterator(ctx.input).next(Infinity);
-    const isObj = !isArray(Sum(ctx.input));
+    const isObj = !IsArray(Sum(ctx.input));
 
     return rItems.map((result, y) => {
       const input = !isObj
         ? iItems[result.key]
-        : find(iItems, {
-            key: result.key
-          });
+        : Find(iItems, { key: result.key });
 
-      return {
-        input,
-        result,
-        key: result.key,
-        isObj
-      };
+      return { input, result, key: result.key, isObj };
     });
   };
 

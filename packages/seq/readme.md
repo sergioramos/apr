@@ -5,26 +5,31 @@
 <a id="seq"></a>
 Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.
 
-[![](https://img.shields.io/npm/v/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq) [![](https://img.shields.io/npm/l/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `tasks` **...[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `tasks` **...[Function][4]**
 
-**Examples**
+### Examples
 
 ```javascript
 import seq from 'apr-seq';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const seq = seq(
-  async (v) => await then(v + 1),
-  async (v) => await then(v + 2),
-  async (v) => await then(v + 3)
+  async v => await then(v + 1),
+  async v => await then(v + 2),
+  async v => await then(v + 3),
 );
 
 const output = await seq(1); // 7
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][4]**
+
+[1]: https://www.npmjs.com/package/apr-seq
+[2]: https://img.shields.io/npm/v/apr-seq.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-seq.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

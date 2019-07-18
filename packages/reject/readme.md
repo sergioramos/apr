@@ -3,50 +3,54 @@
 ## reject
 
 <a id="reject"></a>
-The opposite of [`filter`](#filter). Removes values that pass an async truth test.
+The opposite of [`filter`][1]. Removes values that pass an async truth test.
 
-[![](https://img.shields.io/npm/v/apr-reject.svg?style=flat-square)](https://www.npmjs.com/package/apr-reject) [![](https://img.shields.io/npm/l/apr-reject.svg?style=flat-square)](https://www.npmjs.com/package/apr-reject)
+[![][3]][2] [![][4]][2]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][5] \| [Object][6] | Iterable)**
+- `iteratee` **[Function][7]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import reject from 'apr-reject';
 
 const access = awaitify(fs.access);
-const files = [
-  'file1',
-  'file2',
-  'file3'
-];
+const files = ['file1', 'file2', 'file3'];
 
-var missing = await reject(files, async (file) =>
-  await access(file)
-);
+var missing = await reject(files, async file => await access(file));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][8]**
 
 ### series
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][5] \| [Object][6] | Iterable)**
+- `iteratee` **[Function][7]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][8]**
 
 ### limit
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][5] \| [Object][6] | Iterable)**
+- `limit` **[Number][9]**
+- `iteratee` **[Function][7]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][8]**
+
+[1]: #filter
+[2]: https://www.npmjs.com/package/apr-reject
+[3]: https://img.shields.io/npm/v/apr-reject.svg?style=flat-square
+[4]: https://img.shields.io/npm/l/apr-reject.svg?style=flat-square
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[8]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[9]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number

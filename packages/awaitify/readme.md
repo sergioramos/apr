@@ -5,13 +5,13 @@
 <a id="awaitify"></a>
 Transform a callback-based function into a promise-based one.
 
-[![](https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify) [![](https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `function` **[Function][4]**
 
-**Examples**
+### Examples
 
 ```javascript
 import { readFile as readFileCb } from 'fs';
@@ -24,4 +24,9 @@ const pkgPath = path.join(__dirname, './package.json');
 const pkg = await readFile(pkgPath, 'utf-8');
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][4]**
+
+[1]: https://www.npmjs.com/package/apr-awaitify
+[2]: https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

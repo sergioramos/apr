@@ -1,5 +1,5 @@
-const Sum = require('apr-engine-sum');
-const reduce = require('apr-reduce');
+import Sum from 'apr-engine-sum';
+import Reduce from 'apr-reduce';
 
 /**
  * <a id="parallel"></a>
@@ -31,16 +31,16 @@ const reduce = require('apr-reduce');
  *
  * // withObject = { one: 1, two: 2 }
  */
-module.exports = input =>
-  reduce(
+export default input => {
+  return Reduce(
     input,
-    (sum, fn, key) =>
-      fn().then(res => {
+    (sum, fn, key) => {
+      return fn().then(res => {
         sum[key] = res;
         return sum;
-      }),
+      });
+    },
     Sum(input),
-    {
-      limit: Infinity
-    }
+    { limit: Infinity },
   );
+};

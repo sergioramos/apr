@@ -1,4 +1,4 @@
-module.exports = () => {
+export default () => {
   const queue = [];
   let running = null;
 
@@ -27,11 +27,13 @@ module.exports = () => {
       args,
       fn,
       resolve,
-      reject
+      reject,
     });
 
     run();
   };
 
-  return fn => (...args) => new Promise(add(fn, args));
+  return fn => (...args) => {
+    return new Promise(add(fn, args));
+  };
 };

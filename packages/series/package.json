@@ -26,20 +26,13 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "files": [
-    "files"
+    "dist"
   ],
   "main": "dist/apr-series.umd.js",
-  "jsnext:main": "dist/apr-series.es.js",
-  "module": "dist/apr-series.es.js",
-  "entry": "index.js",
-  "scripts": {
-    "prepublish": "NODE_ENV=production bup"
-  },
+  "module": "dist/apr-series.modern.mjs",
+  "source": "index.js",
   "dependencies": {
     "apr-engine-sum": "^3.0.3",
     "apr-reduce": "^3.0.3"
-  },
-  "devDependencies": {
-    "bup": "^4.1.3"
   }
 }

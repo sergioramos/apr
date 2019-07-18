@@ -5,32 +5,39 @@
 <a id="parallel"></a>
 Run the tasks collection of functions in parallel, without waiting until the previous function has completed.
 
-[![](https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel) [![](https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `tasks` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)> | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+- `tasks` **([Array][4]&lt;[Promise][5]> | [Object][6])**
 
-**Examples**
+### Examples
 
 ```javascript
 import parallel from 'apr-parallel';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const withArray = await parallel([
   async () => await then(1),
-  async () => await then(2)
+  async () => await then(2),
 ]);
 
 // withArray = [1, 2]
 
 const withObject = await parallel({
   one: async () => await then(1),
-  two: async () => await then(2)
+  two: async () => await then(2),
 });
 
 // withObject = { one: 1, two: 2 }
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][5]**
+
+[1]: https://www.npmjs.com/package/apr-parallel
+[2]: https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object

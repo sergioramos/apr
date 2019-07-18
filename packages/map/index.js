@@ -1,4 +1,19 @@
-const run = require('./run');
+import Defaults from 'lodash.defaults';
+import Each from 'apr-engine-each';
+import Sum from 'apr-engine-sum';
+
+const Run = ctx => {
+  const sum = Sum(ctx.input);
+
+  return Each(
+    Defaults(
+      {
+        after: (value, item) => (sum[item.key] = value),
+      },
+      ctx,
+    ),
+  ).then(() => sum);
+};
 
 /**
  * <a id="map"></a>
@@ -27,12 +42,31 @@ const run = require('./run');
  *   await stat(file);
  * );
  */
-module.exports = (input, fn, opts) =>
-  run({
-    input,
-    fn,
-    opts
-  });
+export default (input, fn, opts) => {
+  return Run({ input, fn, opts });
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof map
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (input, limit, fn, opts) => {
+  return Run({ input, fn, opts: Defaults({ limit }, opts) });
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof map
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

@@ -1,14 +1,14 @@
-const test = require('ava');
+import Test from 'ava';
 
-const parallel = require('../packages/parallel');
-const schedule = require('../packages/test-scheduler')();
-const timeout = require('../packages/test-timeout');
-const apply = require('../packages/apply');
+import Parallel from '../packages/parallel/index';
+import Schedule from '../packages/test-scheduler/index';
+import Timeout from '../packages/test-timeout/index';
+import Apply from '../packages/apply/index';
 
-test(
+Test(
   'does apply',
-  schedule(async t => {
-    const then = timeout(1);
+  Schedule(async t => {
+    const then = Timeout(1);
 
     let called = false;
 
@@ -20,9 +20,9 @@ test(
       return then(1 * 2);
     };
 
-    const output = await parallel([apply(fn, 2, '2')]);
+    const output = await Parallel([Apply(fn, 2, '2')]);
 
     t.deepEqual(called, true);
     t.deepEqual(output, [2]);
-  })
+  })(),
 );

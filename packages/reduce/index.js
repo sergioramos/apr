@@ -1,5 +1,5 @@
-const defaults = require('lodash.defaults');
-const each = require('apr-engine-each');
+import Defaults from 'lodash.defaults';
+import Each from 'apr-engine-each';
 
 /**
  * <a id="reduce"></a>
@@ -20,14 +20,13 @@ const each = require('apr-engine-each');
  *   new Promise((resolve) => resolve(sum + item))
  * );
  */
-module.exports = (input, fn, sum, opts) =>
-  each({
+export default (input, fn, sum, opts) => {
+  return Each({
     input,
-    opts: defaults(opts, {
-      limit: 1
-    }),
+    opts: Defaults(opts, { limit: 1 }),
     after: (value, item) => {
       sum = value;
     },
-    call: item => fn(sum, item.value, item.key, input)
+    call: item => fn(sum, item.value, item.key, input),
   }).then(() => sum);
+};

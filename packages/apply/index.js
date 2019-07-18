@@ -24,4 +24,6 @@
  *
  * // output = [1, 2, 3]
  */
-module.exports = (fn, ...args) => () => fn(...args);
+export default (fn, ...args) => () => {
+  return fn(...args);
+};

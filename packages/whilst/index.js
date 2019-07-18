@@ -1,4 +1,4 @@
-const repeat = require('apr-engine-repeat');
+import Repeat from 'apr-engine-repeat';
 
 /**
  * <a id="whilst"></a>
@@ -29,9 +29,6 @@ const repeat = require('apr-engine-repeat');
  *
  * // output = 10
  */
-module.exports = (test, fn) =>
-  repeat({
-    test,
-    fn,
-    after: tested => !tested
-  });
+export default (test, fn) => {
+  return Eepeat({ test, fn, after: tested => !tested });
+};

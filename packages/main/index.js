@@ -1,10 +1,11 @@
-const isPromise = require('is-promise');
+import IsPromise from 'is-promise';
 
-const handle = p =>
-  p.catch(err => {
+const Handle = p => {
+  return p.catch(err => {
     console.error(err);
     process.exit(1);
   });
+};
 
 /**
  * <a id="main"></a>
@@ -24,4 +25,6 @@ const handle = p =>
  * main(async () => undefined) // writes nothing
  * main(async () => { throw new Error('uncaught error') }) // writes the stack trace to stderr and exists
  */
-module.exports = p => (isPromise(p) ? handle(p) : handle(p()));
+export default p => {
+  return IsPromise(p) ? Handle(p) : Handle(p());
+};

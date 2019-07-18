@@ -26,23 +26,16 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "files": [
-    "files"
+    "dist"
   ],
   "main": "dist/apr-sort-by.umd.js",
-  "jsnext:main": "dist/apr-sort-by.es.js",
-  "module": "dist/apr-sort-by.es.js",
-  "entry": "index.js",
-  "scripts": {
-    "prepublish": "NODE_ENV=production bup"
-  },
+  "module": "dist/apr-sort-by.modern.mjs",
+  "source": "index.js",
   "dependencies": {
     "apr-engine-back": "^3.0.3",
     "apr-engine-sum": "^3.0.3",
     "apr-map": "^3.0.3",
     "lodash.isarraylike": "^4.2.0",
     "lodash.sortby": "^4.7.0"
-  },
-  "devDependencies": {
-    "bup": "^4.1.3"
   }
 }

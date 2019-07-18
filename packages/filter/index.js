@@ -1,5 +1,20 @@
-const run = require('./run');
-const map = require('apr-map');
+import Sum from 'apr-engine-sum';
+import Back from 'apr-engine-back';
+import Map, { limit as MapLimit } from 'apr-map';
+
+const Run = (input, p) => {
+  const after = items => {
+    return items
+      .filter(item => Boolean(item.result.value) && !item.result.done)
+      .reduce((sum, item, i) => {
+        const key = item.isObj ? item.key : i;
+        sum[key] = item.input.value;
+        return sum;
+      }, Sum(input));
+  };
+
+  return Back({ p, input }).then(after);
+};
 
 /**
  * <a id="filter"></a>
@@ -28,7 +43,31 @@ const map = require('apr-map');
  *   await access(file)
  * );
  */
-module.exports = (input, fn, opts) => run(input, map(input, fn, opts));
+export default (input, fn, opts) => {
+  return Run(input, Map(input, fn, opts));
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof filter
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (input, limit, fn, opts) => {
+  return Run(input, MapLimit(input, limit, fn, opts));
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof filter
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

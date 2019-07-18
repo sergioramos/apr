@@ -5,14 +5,14 @@
 <a id="until"></a>
 Repeatedly call `fn` until `test` returns `true`.
 
-[![](https://img.shields.io/npm/v/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until) [![](https://img.shields.io/npm/l/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `test` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
--   `fn` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `test` **[Function][4]**
+- `fn` **[Function][4]**
 
-**Examples**
+### Examples
 
 ```javascript
 import until from 'apr-until';
@@ -33,4 +33,10 @@ const output = await until(async () => {
 // output = 10
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][5]**
+
+[1]: https://www.npmjs.com/package/apr-until
+[2]: https://img.shields.io/npm/v/apr-until.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-until.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

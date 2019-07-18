@@ -2,364 +2,325 @@
 
 ## apr
 
-[![Travis](https://img.shields.io/travis/ramitos/apr.svg?style=flat-square)](https://travis-ci.org/ramitos/apr) [![](https://img.shields.io/codeclimate/coverage/github/ramitos/apr.svg?style=flat-square)](https://codeclimate.com/github/ramitos/apr/coverage)
+[![Travis][2]][1] [![][4]][3]
 
-Collection of tools to manage control flow of/with Promises - inspired by [caolan/async](https://github.com/caolan/async).
+Collection of tools to manage control flow of/with Promises - inspired by [caolan/async][5].
 
 Works with and without async/await. The lib itself only uses promises.
 
 As someone beautifully put it:
 
-> this is like [caolan/async](https://github.com/caolan/async) which is like [lodash](https://github.com/lodash/lodash) but async, but awaitful
-
+> this is like [caolan/async][5] which is like [lodash][6] but async, but awaitful
 
 <a id="contents"></a>
+
 ## contents
 
-
-* [Collections](#collections)
-  * [concat](#concat)
-  * [every](#every)
-  * [filter](#filter)
-  * [find](#find)
-  * [for-each](#for-each)
-  * [map](#map)
-  * [reduce](#reduce)
-  * [reject](#reject)
-  * [some](#some)
-  * [sort-by](#sort-by)
-    
-* [Control Flow](#control-flow)
-  * [compose](#compose)
-  * [parallel](#parallel)
-  * [seq](#seq)
-  * [series](#series)
-  * [until](#until)
-  * [waterfall](#waterfall)
-  * [whilst](#whilst)
-    
-* [Utilities](#utilities)
-  * [apply](#apply)
-  * [asyncify](#asyncify)
-  * [awaitify](#awaitify)
-  * [constant](#constant)
-  * [intercept](#intercept)
-  * [reflect](#reflect)
-  * [times](#times)
-  * [main](#main)
-    
-* [credits](#credits)
-  
-    
-* [license](#license)
-  
-    
-
+- [Collections](#collections)
+  - [concat](#concat)
+  - [every](#every)
+  - [filter](#filter)
+  - [find](#find)
+  - [for-each](#for-each)
+  - [map](#map)
+  - [reduce](#reduce)
+  - [reject](#reject)
+  - [some](#some)
+  - [sort-by](#sort-by)
+- [Control Flow](#control-flow)
+  - [compose](#compose)
+  - [parallel](#parallel)
+  - [seq](#seq)
+  - [series](#series)
+  - [until](#until)
+  - [waterfall](#waterfall)
+  - [whilst](#whilst)
+- [Utilities](#utilities)
+  - [apply](#apply)
+  - [asyncify](#asyncify)
+  - [awaitify](#awaitify)
+  - [constant](#constant)
+  - [intercept](#intercept)
+  - [reflect](#reflect)
+  - [times](#times)
+  - [main](#main)
+- [credits](#credits)
+- [license](#license)
 
 ## Collections
 
 Functions for manipulating collections, such as arrays and objects.
 
-
 ## concat
 
-[packages/concat/index.js:30-35](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/concat/index.js#L30-L35 "Source code on GitHub")
+[packages/concat/index.js:46-48][7]
 
 <a id="concat"></a>
 Applies `iteratee` to each item in `coll`, concatenating the results. Returns the concatenated list.
 
-[![](https://img.shields.io/npm/v/apr-concat.svg?style=flat-square)](https://www.npmjs.com/package/apr-concat) [![](https://img.shields.io/npm/l/apr-concat.svg?style=flat-square)](https://www.npmjs.com/package/apr-concat)
+[![][9]][8] [![][10]][8]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import concat from 'apr-concat';
 
 const readdir = awaitify(fs.readdir);
-const dirs = [
-  'dir1',
-  'dir2',
-  'dir3'
-];
+const dirs = ['dir1', 'dir2', 'dir3'];
 
-const files = await concat(dirs, async (dir) =>
-  await readdir(dir)
-);
+const files = await concat(dirs, async dir => await readdir(dir));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
-
-### series
-
-[packages/concat/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/concat/series.js#L11-L11 "Source code on GitHub")
-
-**Parameters**
-
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
-
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/concat/limit.js:13-23](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/concat/limit.js#L13-L23 "Source code on GitHub")
+[packages/concat/index.js:59-61][15]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
+
+### series
+
+[packages/concat/index.js:71-71][17]
+
+#### Parameters
+
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
+
+Returns **[Promise][14]**
 
 ## every
 
-[packages/every/index.js:30-35](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/every/index.js#L30-L35 "Source code on GitHub")
+[packages/every/index.js:30-35][18]
 
 <a id="every"></a>
 Returns true if every element in `coll` satisfies an async test.
 
-[![](https://img.shields.io/npm/v/apr-every.svg?style=flat-square)](https://www.npmjs.com/package/apr-every) [![](https://img.shields.io/npm/l/apr-every.svg?style=flat-square)](https://www.npmjs.com/package/apr-every)
+[![][20]][19] [![][21]][19]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import every from 'apr-every';
 
 const access = awaitify(fs.access);
-const files = [
-  'file1',
-  'file2',
-  'file3'
-];
+const files = ['file1', 'file2', 'file3'];
 
-const allExist = await every(files, async (file) =>
-  await access(file)
-);
+const allExist = await every(files, async file => await access(file));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/every/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/every/series.js#L11-L11 "Source code on GitHub")
+[packages/every/series.js:11-11][22]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/every/limit.js:14-24](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/every/limit.js#L14-L24 "Source code on GitHub")
+[packages/every/limit.js:14-24][23]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## filter
 
-[packages/filter/index.js:31-31](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/filter/index.js#L31-L31 "Source code on GitHub")
+[packages/filter/index.js:31-31][24]
 
 <a id="filter"></a>
 Returns a new array of all the values in `coll` which pass an async truth test.
 
-[![](https://img.shields.io/npm/v/apr-filter.svg?style=flat-square)](https://www.npmjs.com/package/apr-filter) [![](https://img.shields.io/npm/l/apr-filter.svg?style=flat-square)](https://www.npmjs.com/package/apr-filter)
+[![][26]][25] [![][27]][25]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import filter from 'apr-filter';
 
 const access = awaitify(fs.access);
-const files = [
-  'file1',
-  'file2',
-  'file3'
-];
+const files = ['file1', 'file2', 'file3'];
 
-var existent = await filter(files, async (file) =>
-  await access(file)
-);
+var existent = await filter(files, async file => await access(file));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/filter/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/filter/series.js#L11-L11 "Source code on GitHub")
+[packages/filter/series.js:11-11][28]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/filter/limit.js:13-14](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/filter/limit.js#L13-L14 "Source code on GitHub")
+[packages/filter/limit.js:13-14][29]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## find
 
-[packages/find/index.js:30-35](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/find/index.js#L30-L35 "Source code on GitHub")
+[packages/find/index.js:30-35][30]
 
 <a id="find"></a>
 Returns the first value in `coll` that passes an async truth test.
 
-[![](https://img.shields.io/npm/v/apr-find.svg?style=flat-square)](https://www.npmjs.com/package/apr-find) [![](https://img.shields.io/npm/l/apr-find.svg?style=flat-square)](https://www.npmjs.com/package/apr-find)
+[![][32]][31] [![][33]][31]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import find from 'apr-find';
 
 const access = awaitify(fs.access);
-const files = [
-  'file1',
-  'file2',
-  'file3'
-];
+const files = ['file1', 'file2', 'file3'];
 
-const first = await find(files, async (file) =>
-  await access(file)
-);
+const first = await find(files, async file => await access(file));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/find/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/find/series.js#L11-L11 "Source code on GitHub")
+[packages/find/series.js:11-11][34]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/find/limit.js:13-23](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/find/limit.js#L13-L23 "Source code on GitHub")
+[packages/find/limit.js:13-23][35]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## for-each
 
-[packages/for-each/index.js:29-34](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/for-each/index.js#L29-L34 "Source code on GitHub")
+[packages/for-each/index.js:30-32][36]
 
 <a id="for-each"></a>
 Applies the function `iteratee` to each item in `coll`, in parallel.
 
-[![](https://img.shields.io/npm/v/apr-for-each.svg?style=flat-square)](https://www.npmjs.com/package/apr-for-each) [![](https://img.shields.io/npm/l/apr-for-each.svg?style=flat-square)](https://www.npmjs.com/package/apr-for-each)
+[![][38]][37] [![][39]][37]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import forEach from 'apr-for-each';
 
 const writeFile = awaitify(fs.writeFile);
-const files = [
-  '/home/.vimrc',
-  '/home/.zshrc'
-];
+const files = ['/home/.vimrc', '/home/.zshrc'];
 
-await forEach(files, async (file) =>
-  await writeFile(file, 'boom')
-);
+await forEach(files, async file => await writeFile(file, 'boom'));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
-
-### series
-
-[packages/for-each/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/for-each/series.js#L11-L11 "Source code on GitHub")
-
-**Parameters**
-
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
-
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/for-each/limit.js:13-23](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/for-each/limit.js#L13-L23 "Source code on GitHub")
+[packages/for-each/index.js:43-45][40]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
+
+### series
+
+[packages/for-each/index.js:55-57][41]
+
+#### Parameters
+
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
+
+Returns **[Promise][14]**
 
 ## map
 
-[packages/map/index.js:30-35](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/map/index.js#L30-L35 "Source code on GitHub")
+[packages/map/index.js:30-35][42]
 
 <a id="map"></a>
 Produces a new collection of values by mapping each value in `coll` through the `iteratee` function.
 
-[![](https://img.shields.io/npm/v/apr-map.svg?style=flat-square)](https://www.npmjs.com/package/apr-map) [![](https://img.shields.io/npm/l/apr-map.svg?style=flat-square)](https://www.npmjs.com/package/apr-map)
+[![][44]][43] [![][45]][43]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
@@ -377,197 +338,186 @@ const stats = await map(files, async (file) =>
 );
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/map/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/map/series.js#L11-L11 "Source code on GitHub")
+[packages/map/series.js:11-11][46]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/map/limit.js:13-23](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/map/limit.js#L13-L23 "Source code on GitHub")
+[packages/map/limit.js:13-23][47]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## reduce
 
-[packages/reduce/index.js:23-33](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/reduce/index.js#L23-L33 "Source code on GitHub")
+[packages/reduce/index.js:23-33][48]
 
 <a id="reduce"></a>
 Reduces `coll` into a single value using an async `iteratee` to return each successive step.
 
-[![](https://img.shields.io/npm/v/apr-reduce.svg?style=flat-square)](https://www.npmjs.com/package/apr-reduce) [![](https://img.shields.io/npm/l/apr-reduce.svg?style=flat-square)](https://www.npmjs.com/package/apr-reduce)
+[![][50]][49] [![][51]][49]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import reduce from 'apr-reduce';
 
-const sum = await reduce([1, 2, 3], async (sum, item) =>
-  new Promise((resolve) => resolve(sum + item))
+const sum = await reduce(
+  [1, 2, 3],
+  async (sum, item) => new Promise(resolve => resolve(sum + item)),
 );
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## reject
 
-[packages/reject/index.js:31-31](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/reject/index.js#L31-L31 "Source code on GitHub")
+[packages/reject/index.js:31-31][52]
 
 <a id="reject"></a>
-The opposite of [`filter`](#filter). Removes values that pass an async truth test.
+The opposite of [`filter`][53]. Removes values that pass an async truth test.
 
-[![](https://img.shields.io/npm/v/apr-reject.svg?style=flat-square)](https://www.npmjs.com/package/apr-reject) [![](https://img.shields.io/npm/l/apr-reject.svg?style=flat-square)](https://www.npmjs.com/package/apr-reject)
+[![][55]][54] [![][56]][54]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import reject from 'apr-reject';
 
 const access = awaitify(fs.access);
-const files = [
-  'file1',
-  'file2',
-  'file3'
-];
+const files = ['file1', 'file2', 'file3'];
 
-var missing = await reject(files, async (file) =>
-  await access(file)
-);
+var missing = await reject(files, async file => await access(file));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/reject/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/reject/series.js#L11-L11 "Source code on GitHub")
+[packages/reject/series.js:11-11][57]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/reject/limit.js:13-14](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/reject/limit.js#L13-L14 "Source code on GitHub")
+[packages/reject/limit.js:13-14][58]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## some
 
-[packages/some/index.js:31-31](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/some/index.js#L31-L31 "Source code on GitHub")
+[packages/some/index.js:31-31][59]
 
 <a id="some"></a>
 Returns true if at least one element in the `coll` satisfies an async test.
 
-[![](https://img.shields.io/npm/v/apr-some.svg?style=flat-square)](https://www.npmjs.com/package/apr-some) [![](https://img.shields.io/npm/l/apr-some.svg?style=flat-square)](https://www.npmjs.com/package/apr-some)
+[![][61]][60] [![][62]][60]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import some from 'apr-some';
 
 const access = awaitify(fs.access);
-const files = [
-  'file1',
-  'file2',
-  'file3'
-];
+const files = ['file1', 'file2', 'file3'];
 
-const oneExist = await some(files, async (file) =>
-  await access(file)
-);
+const oneExist = await some(files, async file => await access(file));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/some/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/some/series.js#L11-L11 "Source code on GitHub")
+[packages/some/series.js:11-11][63]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/sort-by/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/sort-by/series.js#L11-L11 "Source code on GitHub")
+[packages/sort-by/series.js:11-11][64]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/some/limit.js:13-13](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/some/limit.js#L13-L13 "Source code on GitHub")
+[packages/some/limit.js:13-13][65]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## sort-by
 
-[packages/sort-by/index.js:32-32](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/sort-by/index.js#L32-L32 "Source code on GitHub")
+[packages/sort-by/index.js:32-32][66]
 
 <a id="sort-by"></a>
 Sorts a list by the results of running each `coll` value through an async `iteratee`.
 
-[![](https://img.shields.io/npm/v/apr-sort-by.svg?style=flat-square)](https://www.npmjs.com/package/apr-sort-by) [![](https://img.shields.io/npm/l/apr-sort-by.svg?style=flat-square)](https://www.npmjs.com/package/apr-sort-by)
+[![][68]][67] [![][69]][67]
 
-**Parameters**
+### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
@@ -586,176 +536,175 @@ const sorted = await sortBy(files, await (file) => {
 });
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/sort-by/limit.js:13-14](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/sort-by/limit.js#L13-L14 "Source code on GitHub")
+[packages/sort-by/limit.js:13-14][70]
 
-**Parameters**
+#### Parameters
 
--   `input` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | Iterable)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **([Array][11] \| [Object][12] | Iterable)**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## Control Flow
 
 A collection of async functions for controlling the flow through a script.
 
-
 ## compose
 
-[packages/compose/index.js:28-31](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/compose/index.js#L28-L31 "Source code on GitHub")
+[packages/compose/index.js:28-31][71]
 
 <a id="sompose"></a>
 Creates a function which is a composition of the passed asynchronous functions. Each function consumes the return value of the function that follows. Composing functions f(), g(), and h() would produce the result of f(g(h())).
 
-[![](https://img.shields.io/npm/v/apr-compose.svg?style=flat-square)](https://www.npmjs.com/package/apr-compose) [![](https://img.shields.io/npm/l/apr-compose.svg?style=flat-square)](https://www.npmjs.com/package/apr-compose)
+[![][73]][72] [![][74]][72]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `function` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import compose from 'apr-compose';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const composed = compose(
-  async (v) => await then(v + 1),
-  async (v) => await then(v + 2),
-  async (v) => await then(v + 3)
+  async v => await then(v + 1),
+  async v => await then(v + 2),
+  async v => await then(v + 3),
 );
 
 const output = await composed(1); // 7
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][13]**
 
 ## parallel
 
-[packages/parallel/index.js:34-46](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/parallel/index.js#L34-L46 "Source code on GitHub")
+[packages/parallel/index.js:34-46][75]
 
 <a id="parallel"></a>
 Run the tasks collection of functions in parallel, without waiting until the previous function has completed.
 
-[![](https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel) [![](https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square)](https://www.npmjs.com/package/apr-parallel)
+[![][77]][76] [![][78]][76]
 
-**Parameters**
+### Parameters
 
--   `tasks` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)> | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+- `tasks` **([Array][11]&lt;[Promise][14]> | [Object][12])**
 
-**Examples**
+### Examples
 
 ```javascript
 import parallel from 'apr-parallel';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const withArray = await parallel([
   async () => await then(1),
-  async () => await then(2)
+  async () => await then(2),
 ]);
 
 // withArray = [1, 2]
 
 const withObject = await parallel({
   one: async () => await then(1),
-  two: async () => await then(2)
+  two: async () => await then(2),
 });
 
 // withObject = { one: 1, two: 2 }
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## seq
 
-[packages/seq/index.js:27-27](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/seq/index.js#L27-L27 "Source code on GitHub")
+[packages/seq/index.js:27-27][79]
 
 <a id="seq"></a>
 Version of the compose function that is more natural to read. Each function consumes the return value of the previous function. It is the equivalent of compose with the arguments reversed.
 
-[![](https://img.shields.io/npm/v/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq) [![](https://img.shields.io/npm/l/apr-seq.svg?style=flat-square)](https://www.npmjs.com/package/apr-seq)
+[![][81]][80] [![][82]][80]
 
-**Parameters**
+### Parameters
 
--   `tasks` **...[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `tasks` **...[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import seq from 'apr-seq';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const seq = seq(
-  async (v) => await then(v + 1),
-  async (v) => await then(v + 2),
-  async (v) => await then(v + 3)
+  async v => await then(v + 1),
+  async v => await then(v + 2),
+  async v => await then(v + 3),
 );
 
 const output = await seq(1); // 7
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][13]**
 
 ## series
 
-[packages/series/index.js:34-46](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/series/index.js#L34-L46 "Source code on GitHub")
+[packages/series/index.js:34-47][83]
 
 <a id="series"></a>
 Run the functions in the `tasks` in series, each one running once the previous function has completed.
 
-[![](https://img.shields.io/npm/v/apr-series.svg?style=flat-square)](https://www.npmjs.com/package/apr-series) [![](https://img.shields.io/npm/l/apr-series.svg?style=flat-square)](https://www.npmjs.com/package/apr-series)
+[![][85]][84] [![][86]][84]
 
-**Parameters**
+### Parameters
 
--   `tasks` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+- `tasks` **([Array][11]&lt;[Function][13]> | [Object][12])**
 
-**Examples**
+### Examples
 
 ```javascript
 import series from 'apr-series';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const withArray = await series([
   async () => await then(1),
-  async () => await then(2)
+  async () => await then(2),
 ]);
 
 // withArray = [1, 2]
 
 const withObject = await series({
   one: async () => await then(1),
-  two: async () => await then(2)
+  two: async () => await then(2),
 });
 
 // withObject = { one: 1, two: 2 }
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## until
 
-[packages/until/index.js:33-38](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/until/index.js#L33-L38 "Source code on GitHub")
+[packages/until/index.js:33-38][87]
 
 <a id="until"></a>
 Repeatedly call `fn` until `test` returns `true`.
 
-[![](https://img.shields.io/npm/v/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until) [![](https://img.shields.io/npm/l/apr-until.svg?style=flat-square)](https://www.npmjs.com/package/apr-until)
+[![][89]][88] [![][90]][88]
 
-**Parameters**
+### Parameters
 
--   `test` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
--   `fn` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `test` **[Function][13]**
+- `fn` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import until from 'apr-until';
@@ -776,55 +725,55 @@ const output = await until(async () => {
 // output = 10
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## waterfall
 
-[packages/waterfall/index.js:28-41](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/waterfall/index.js#L28-L41 "Source code on GitHub")
+[packages/waterfall/index.js:28-41][91]
 
 <a id="waterfall"></a>
 Runs the `tasks` array of functions in series, each passing their results to the next in the array.
 
-[![](https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall) [![](https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall)
+[![][93]][92] [![][94]][92]
 
-**Parameters**
+### Parameters
 
--   `tasks` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
--   `initial` **Any?** 
+- `tasks` **([Array][11]&lt;[Function][13]> | [Object][12])**
+- `initial` **Any?**
 
-**Examples**
+### Examples
 
 ```javascript
 import waterfall from 'apr-waterfall';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const output = await waterfall([
   async () => await then(1),
-  async (v) => await then(v + 2),
-  async (v) => await then(v + 3)
+  async v => await then(v + 2),
+  async v => await then(v + 3),
 ]);
 
 // output = 6
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## whilst
 
-[packages/whilst/index.js:32-37](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/whilst/index.js#L32-L37 "Source code on GitHub")
+[packages/whilst/index.js:32-37][95]
 
 <a id="whilst"></a>
 Repeatedly call `fn`, while `test` returns true.
 
-[![](https://img.shields.io/npm/v/apr-whilst.svg?style=flat-square)](https://www.npmjs.com/package/apr-whilst) [![](https://img.shields.io/npm/l/apr-whilst.svg?style=flat-square)](https://www.npmjs.com/package/apr-whilst)
+[![][97]][96] [![][98]][96]
 
-**Parameters**
+### Parameters
 
--   `test` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
--   `fn` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `test` **[Function][13]**
+- `fn` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import whilst from 'apr-whilst';
@@ -844,28 +793,27 @@ const output = await whilst(async () => {
 // output = 10
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## Utilities
 
 A collection of awaitable utility functions.
 
-
 ## apply
 
-[packages/apply/index.js:27-27](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/apply/index.js#L27-L27 "Source code on GitHub")
+[packages/apply/index.js:27-27][99]
 
 <a id="apply"></a>
 Creates a continuation function with some arguments already applied.
 
-[![](https://img.shields.io/npm/v/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply) [![](https://img.shields.io/npm/l/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply)
+[![][101]][100] [![][102]][100]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
--   `arguments` **...Any** 
+- `function` **[Function][13]**
+- `arguments` **...Any**
 
-**Examples**
+### Examples
 
 ```javascript
 import parallel from 'apr-parallel';
@@ -882,22 +830,22 @@ const output = await parallel([
 // output = [1, 2, 3]
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][13]**
 
 ## asyncify
 
-[packages/asyncify/index.js:26-33](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/asyncify/index.js#L26-L33 "Source code on GitHub")
+[packages/asyncify/index.js:26-34][103]
 
 <a id="asyncify"></a>
-Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series), or other async functions.
+Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`][104], [`series`][105], or other async functions.
 
-[![](https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify) [![](https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify)
+[![][107]][106] [![][108]][106]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `function` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
@@ -910,26 +858,26 @@ const pkgPath = path.join(__dirname, './package.json');
 
 const pkg = await waterfall([
   apply(readFile, pkgPath, 'utf8'),
-  asyncify(JSON.parse)
+  asyncify(JSON.parse),
 ]);
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][13]**
 
 ## awaitify
 
-[packages/awaitify/index.js:22-25](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/awaitify/index.js#L22-L25 "Source code on GitHub")
+[packages/awaitify/index.js:22-28][109]
 
 <a id="awaitify"></a>
 Transform a callback-based function into a promise-based one.
 
-[![](https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify) [![](https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square)](https://www.npmjs.com/package/apr-awaitify)
+[![][111]][110] [![][112]][110]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `function` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import { readFile as readFileCb } from 'fs';
@@ -942,22 +890,22 @@ const pkgPath = path.join(__dirname, './package.json');
 const pkg = await readFile(pkgPath, 'utf-8');
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][13]**
 
 ## constant
 
-[packages/constant/index.js:22-22](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/constant/index.js#L22-L22 "Source code on GitHub")
+[packages/constant/index.js:22-22][113]
 
 <a id="constant"></a>
-Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`](#waterfall).
+Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`][104].
 
-[![](https://img.shields.io/npm/v/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant) [![](https://img.shields.io/npm/l/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant)
+[![][115]][114] [![][116]][114]
 
-**Parameters**
+### Parameters
 
--   `arguments` **...any** 
+- `arguments` **...any**
 
-**Examples**
+### Examples
 
 ```javascript
 import asyncify from 'apr-asyncify';
@@ -966,26 +914,26 @@ import constant from 'apr-constant';
 
 const pkg = await waterfall([
   constant('{"name": "apr"}'),
-  asyncify(JSON.parse)
+  asyncify(JSON.parse),
 ]);
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## intercept
 
-[packages/intercept/index.js:19-25](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/intercept/index.js#L19-L25 "Source code on GitHub")
+[packages/intercept/index.js:19-25][117]
 
 <a id="intercept"></a>
 Intercepts errors, the Go way!
 
-[![](https://img.shields.io/npm/v/apr-intercept.svg?style=flat-square)](https://www.npmjs.com/package/apr-intercept) [![](https://img.shields.io/npm/l/apr-intercept.svg?style=flat-square)](https://www.npmjs.com/package/apr-intercept)
+[![][119]][118] [![][120]][118]
 
-**Parameters**
+### Parameters
 
--   `input` **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+- `input` **[Promise][14]**
 
-**Examples**
+### Examples
 
 ```javascript
 import ctch from 'apr-intercept';
@@ -995,57 +943,57 @@ const [err2, res2] = await ctch(fn(1));
 const [, res3] = await ctch(fn(3));
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## reflect
 
-[packages/reflect/index.js:28-37](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/reflect/index.js#L28-L37 "Source code on GitHub")
+[packages/reflect/index.js:28-37][121]
 
 <a id="reflect"></a>
 Wraps the function in another function that always returns data even when it errors.
 The object returned has either the property error or value.
 
-[![](https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect) [![](https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect)
+[![][123]][122] [![][124]][122]
 
-**Parameters**
+### Parameters
 
--   `input` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import parallel from 'apr-parallel';
 import reflect from 'apr-reflect';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const res = await parallel([
   async () => {
-    throw new Error('heyo')
+    throw new Error('heyo');
   },
-  async () => await then(2)
+  async () => await then(2),
 ]);
 
 // res = [{ error: Error('heyo'), value: null }, { error: null, value: 2 }]
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][13]**
 
 ## times
 
-[packages/times/index.js:24-24](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/times/index.js#L24-L24 "Source code on GitHub")
+[packages/times/index.js:24-24][125]
 
 <a id="times"></a>
-Calls the `iteratee` function `n` times, and accumulates results in the same manner you would use with [map](#map).
+Calls the `iteratee` function `n` times, and accumulates results in the same manner you would use with [map][126].
 
-[![](https://img.shields.io/npm/v/apr-times.svg?style=flat-square)](https://www.npmjs.com/package/apr-times) [![](https://img.shields.io/npm/l/apr-times.svg?style=flat-square)](https://www.npmjs.com/package/apr-times)
+[![][128]][127] [![][129]][127]
 
-**Parameters**
+### Parameters
 
--   `n` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `n` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-**Examples**
+### Examples
 
 ```javascript
 import times from 'apr-times';
@@ -1059,62 +1007,199 @@ const res = await times(6, async (i) =>
 // res = [0, 1, 2, 3, 4, 5]
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### series
 
-[packages/times/series.js:11-11](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/times/series.js#L11-L11 "Source code on GitHub")
+[packages/times/series.js:11-11][130]
 
-**Parameters**
+#### Parameters
 
--   `n` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `n` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ### limit
 
-[packages/times/limit.js:13-23](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/times/limit.js#L13-L23 "Source code on GitHub")
+[packages/times/limit.js:13-23][131]
 
-**Parameters**
+#### Parameters
 
--   `n` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `n` **[Number][16]**
+- `limit` **[Number][16]**
+- `iteratee` **[Function][13]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## main
 
-[packages/main/index.js:27-27](https://github.com/ramitos/apr/blob/f07fd61f41a1053a0efb60ed54f393b83b73a7f5/packages/main/index.js#L27-L27 "Source code on GitHub")
+[packages/main/index.js:27-27][132]
 
 <a id="main"></a>
 Catches a promise error, writes the stacktrace to stderr and exists
 
-[![](https://img.shields.io/npm/v/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main) [![](https://img.shields.io/npm/l/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main)
+[![][134]][133] [![][135]][133]
 
-**Parameters**
+### Parameters
 
--   `input` **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+- `input` **[Promise][14]**
 
-**Examples**
+### Examples
 
 ```javascript
 import main from 'apr-main';
 
-main(async () => 'hello') // writes nothing
-main(async () => undefined) // writes nothing
-main(async () => { throw new Error('uncaught error') }) // writes the stack trace to stderr and exists
+main(async () => 'hello'); // writes nothing
+main(async () => undefined); // writes nothing
+main(async () => {
+  throw new Error('uncaught error');
+}); // writes the stack trace to stderr and exists
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][14]**
 
 ## credits
 
--   both the method signatures and descriptions are copied from [caolan/async](https://github.com/caolan/async/blob/master/LICENSE)
-
+- both the method signatures and descriptions are copied from [caolan/async][136]
 
 ## license
 
 MIT
 
+[1]: https://travis-ci.org/ramitos/apr
+[2]: https://img.shields.io/travis/ramitos/apr.svg?style=flat-square
+[3]: https://codeclimate.com/github/ramitos/apr/coverage
+[4]: https://img.shields.io/codeclimate/coverage/github/ramitos/apr.svg?style=flat-square
+[5]: https://github.com/caolan/async
+[6]: https://github.com/lodash/lodash
+[7]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/concat/index.js#L46-L48 'Source code on GitHub'
+[8]: https://www.npmjs.com/package/apr-concat
+[9]: https://img.shields.io/npm/v/apr-concat.svg?style=flat-square
+[10]: https://img.shields.io/npm/l/apr-concat.svg?style=flat-square
+[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[14]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[15]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/concat/index.js#L59-L61 'Source code on GitHub'
+[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[17]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/concat/index.js#L71-L71 'Source code on GitHub'
+[18]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/every/index.js#L30-L35 'Source code on GitHub'
+[19]: https://www.npmjs.com/package/apr-every
+[20]: https://img.shields.io/npm/v/apr-every.svg?style=flat-square
+[21]: https://img.shields.io/npm/l/apr-every.svg?style=flat-square
+[22]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/every/series.js#L11-L11 'Source code on GitHub'
+[23]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/every/limit.js#L14-L24 'Source code on GitHub'
+[24]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/filter/index.js#L31-L31 'Source code on GitHub'
+[25]: https://www.npmjs.com/package/apr-filter
+[26]: https://img.shields.io/npm/v/apr-filter.svg?style=flat-square
+[27]: https://img.shields.io/npm/l/apr-filter.svg?style=flat-square
+[28]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/filter/series.js#L11-L11 'Source code on GitHub'
+[29]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/filter/limit.js#L13-L14 'Source code on GitHub'
+[30]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/find/index.js#L30-L35 'Source code on GitHub'
+[31]: https://www.npmjs.com/package/apr-find
+[32]: https://img.shields.io/npm/v/apr-find.svg?style=flat-square
+[33]: https://img.shields.io/npm/l/apr-find.svg?style=flat-square
+[34]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/find/series.js#L11-L11 'Source code on GitHub'
+[35]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/find/limit.js#L13-L23 'Source code on GitHub'
+[36]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/for-each/index.js#L30-L32 'Source code on GitHub'
+[37]: https://www.npmjs.com/package/apr-for-each
+[38]: https://img.shields.io/npm/v/apr-for-each.svg?style=flat-square
+[39]: https://img.shields.io/npm/l/apr-for-each.svg?style=flat-square
+[40]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/for-each/index.js#L43-L45 'Source code on GitHub'
+[41]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/for-each/index.js#L55-L57 'Source code on GitHub'
+[42]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/map/index.js#L30-L35 'Source code on GitHub'
+[43]: https://www.npmjs.com/package/apr-map
+[44]: https://img.shields.io/npm/v/apr-map.svg?style=flat-square
+[45]: https://img.shields.io/npm/l/apr-map.svg?style=flat-square
+[46]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/map/series.js#L11-L11 'Source code on GitHub'
+[47]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/map/limit.js#L13-L23 'Source code on GitHub'
+[48]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/reduce/index.js#L23-L33 'Source code on GitHub'
+[49]: https://www.npmjs.com/package/apr-reduce
+[50]: https://img.shields.io/npm/v/apr-reduce.svg?style=flat-square
+[51]: https://img.shields.io/npm/l/apr-reduce.svg?style=flat-square
+[52]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/reject/index.js#L31-L31 'Source code on GitHub'
+[53]: #filter
+[54]: https://www.npmjs.com/package/apr-reject
+[55]: https://img.shields.io/npm/v/apr-reject.svg?style=flat-square
+[56]: https://img.shields.io/npm/l/apr-reject.svg?style=flat-square
+[57]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/reject/series.js#L11-L11 'Source code on GitHub'
+[58]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/reject/limit.js#L13-L14 'Source code on GitHub'
+[59]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/some/index.js#L31-L31 'Source code on GitHub'
+[60]: https://www.npmjs.com/package/apr-some
+[61]: https://img.shields.io/npm/v/apr-some.svg?style=flat-square
+[62]: https://img.shields.io/npm/l/apr-some.svg?style=flat-square
+[63]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/some/series.js#L11-L11 'Source code on GitHub'
+[64]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/sort-by/series.js#L11-L11 'Source code on GitHub'
+[65]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/some/limit.js#L13-L13 'Source code on GitHub'
+[66]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/sort-by/index.js#L32-L32 'Source code on GitHub'
+[67]: https://www.npmjs.com/package/apr-sort-by
+[68]: https://img.shields.io/npm/v/apr-sort-by.svg?style=flat-square
+[69]: https://img.shields.io/npm/l/apr-sort-by.svg?style=flat-square
+[70]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/sort-by/limit.js#L13-L14 'Source code on GitHub'
+[71]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/compose/index.js#L28-L31 'Source code on GitHub'
+[72]: https://www.npmjs.com/package/apr-compose
+[73]: https://img.shields.io/npm/v/apr-compose.svg?style=flat-square
+[74]: https://img.shields.io/npm/l/apr-compose.svg?style=flat-square
+[75]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/parallel/index.js#L34-L46 'Source code on GitHub'
+[76]: https://www.npmjs.com/package/apr-parallel
+[77]: https://img.shields.io/npm/v/apr-parallel.svg?style=flat-square
+[78]: https://img.shields.io/npm/l/apr-parallel.svg?style=flat-square
+[79]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/seq/index.js#L27-L27 'Source code on GitHub'
+[80]: https://www.npmjs.com/package/apr-seq
+[81]: https://img.shields.io/npm/v/apr-seq.svg?style=flat-square
+[82]: https://img.shields.io/npm/l/apr-seq.svg?style=flat-square
+[83]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/series/index.js#L34-L47 'Source code on GitHub'
+[84]: https://www.npmjs.com/package/apr-series
+[85]: https://img.shields.io/npm/v/apr-series.svg?style=flat-square
+[86]: https://img.shields.io/npm/l/apr-series.svg?style=flat-square
+[87]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/until/index.js#L33-L38 'Source code on GitHub'
+[88]: https://www.npmjs.com/package/apr-until
+[89]: https://img.shields.io/npm/v/apr-until.svg?style=flat-square
+[90]: https://img.shields.io/npm/l/apr-until.svg?style=flat-square
+[91]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/waterfall/index.js#L28-L41 'Source code on GitHub'
+[92]: https://www.npmjs.com/package/apr-waterfall
+[93]: https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square
+[94]: https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square
+[95]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/whilst/index.js#L32-L37 'Source code on GitHub'
+[96]: https://www.npmjs.com/package/apr-whilst
+[97]: https://img.shields.io/npm/v/apr-whilst.svg?style=flat-square
+[98]: https://img.shields.io/npm/l/apr-whilst.svg?style=flat-square
+[99]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/apply/index.js#L27-L27 'Source code on GitHub'
+[100]: https://www.npmjs.com/package/apr-apply
+[101]: https://img.shields.io/npm/v/apr-apply.svg?style=flat-square
+[102]: https://img.shields.io/npm/l/apr-apply.svg?style=flat-square
+[103]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/asyncify/index.js#L26-L34 'Source code on GitHub'
+[104]: #waterfall
+[105]: #series
+[106]: https://www.npmjs.com/package/apr-asyncify
+[107]: https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square
+[108]: https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square
+[109]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/awaitify/index.js#L22-L28 'Source code on GitHub'
+[110]: https://www.npmjs.com/package/apr-awaitify
+[111]: https://img.shields.io/npm/v/apr-awaitify.svg?style=flat-square
+[112]: https://img.shields.io/npm/l/apr-awaitify.svg?style=flat-square
+[113]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/constant/index.js#L22-L22 'Source code on GitHub'
+[114]: https://www.npmjs.com/package/apr-constant
+[115]: https://img.shields.io/npm/v/apr-constant.svg?style=flat-square
+[116]: https://img.shields.io/npm/l/apr-constant.svg?style=flat-square
+[117]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/intercept/index.js#L19-L25 'Source code on GitHub'
+[118]: https://www.npmjs.com/package/apr-intercept
+[119]: https://img.shields.io/npm/v/apr-intercept.svg?style=flat-square
+[120]: https://img.shields.io/npm/l/apr-intercept.svg?style=flat-square
+[121]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/reflect/index.js#L28-L37 'Source code on GitHub'
+[122]: https://www.npmjs.com/package/apr-reflect
+[123]: https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square
+[124]: https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square
+[125]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/times/index.js#L24-L24 'Source code on GitHub'
+[126]: #map
+[127]: https://www.npmjs.com/package/apr-times
+[128]: https://img.shields.io/npm/v/apr-times.svg?style=flat-square
+[129]: https://img.shields.io/npm/l/apr-times.svg?style=flat-square
+[130]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/times/series.js#L11-L11 'Source code on GitHub'
+[131]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/times/limit.js#L13-L23 'Source code on GitHub'
+[132]: https://github.com/sergioramos/apr/blob/8da18b4cb65af8ea646ac5a7ed135302ad046595/packages/main/index.js#L27-L27 'Source code on GitHub'
+[133]: https://www.npmjs.com/package/apr-main
+[134]: https://img.shields.io/npm/v/apr-main.svg?style=flat-square
+[135]: https://img.shields.io/npm/l/apr-main.svg?style=flat-square
+[136]: https://github.com/caolan/async/blob/master/LICENSE

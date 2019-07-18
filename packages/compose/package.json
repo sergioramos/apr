@@ -26,20 +26,13 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "files": [
-    "files"
+    "dist"
   ],
   "main": "dist/apr-compose.umd.js",
-  "jsnext:main": "dist/apr-compose.es.js",
-  "module": "dist/apr-compose.es.js",
-  "entry": "index.js",
-  "scripts": {
-    "prepublish": "NODE_ENV=production bup"
-  },
+  "module": "dist/apr-compose.modern.mjs",
+  "source": "index.js",
   "dependencies": {
     "apr-waterfall": "^3.0.3",
     "lodash.reverse": "^4.0.1"
-  },
-  "devDependencies": {
-    "bup": "^4.1.3"
   }
 }

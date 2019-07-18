@@ -25,19 +25,12 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "files": [
-    "files"
+    "dist"
   ],
   "main": "dist/apr-dir.umd.js",
-  "jsnext:main": "dist/apr-dir.es.js",
-  "module": "dist/apr-dir.es.js",
-  "entry": "index.js",
-  "scripts": {
-    "prepublish": "NODE_ENV=production bup"
-  },
+  "module": "dist/apr-dir.modern.mjs",
+  "source": "index.js",
   "dependencies": {
     "apr-engine-console": "^3.0.3"
-  },
-  "devDependencies": {
-    "bup": "^4.1.3"
   }
 }

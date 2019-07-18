@@ -19,7 +19,10 @@
  *
  * const pkg = await readFile(pkgPath, 'utf-8');
  */
-module.exports = fn => (...args) =>
-  new Promise((resolve, reject) =>
-    fn(...args, (err, ...args) => (err ? reject(err) : resolve(...args)))
-  );
+export default fn => (...args) => {
+  return new Promise((resolve, reject) => {
+    return fn(...args, (err, ...args) => {
+      return err ? reject(err) : resolve(...args);
+    });
+  });
+};

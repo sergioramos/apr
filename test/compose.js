@@ -34,7 +34,7 @@ test(
         const res = await then(v * 2);
         order.push('after');
         return res;
-      }
+      },
     );
 
     const output = await composed(1);
@@ -47,11 +47,11 @@ test(
       'before',
       'after',
       'before',
-      'after'
+      'after',
     ]);
 
     t.deepEqual(output, 9);
-  })
+  }),
 );
 
 test(
@@ -65,9 +65,9 @@ test(
         throw new Error('Unexpected Error');
       },
       async v => then(v * 2),
-      async v => then(v * 2)
+      async v => then(v * 2),
     );
 
     await t.throws(composed(1));
-  })
+  }),
 );

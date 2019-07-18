@@ -5,20 +5,27 @@
 <a id="main"></a>
 Catches a promise error, writes the stacktrace to stderr and exists
 
-[![](https://img.shields.io/npm/v/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main) [![](https://img.shields.io/npm/l/apr-main.svg?style=flat-square)](https://www.npmjs.com/package/apr-main)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `input` **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+- `input` **[Promise][4]**
 
-**Examples**
+### Examples
 
 ```javascript
 import main from 'apr-main';
 
-main(async () => 'hello') // writes nothing
-main(async () => undefined) // writes nothing
-main(async () => { throw new Error('uncaught error') }) // writes the stack trace to stderr and exists
+main(async () => 'hello'); // writes nothing
+main(async () => undefined); // writes nothing
+main(async () => {
+  throw new Error('uncaught error');
+}); // writes the stack trace to stderr and exists
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][4]**
+
+[1]: https://www.npmjs.com/package/apr-main
+[2]: https://img.shields.io/npm/v/apr-main.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-main.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

@@ -1,5 +1,4 @@
-const find = require('apr-find');
-const then = require('./then');
+import Find, { limit as FindLimit } from 'apr-find';
 
 /**
  * <a id="some"></a>
@@ -28,7 +27,31 @@ const then = require('./then');
  *   await access(file)
  * );
  */
-module.exports = (...args) => find(...args).then(then);
+export default (...args) => {
+  return Find(...args).then(first => Boolean(first));
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof some
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (...args) => {
+  return FindLimit(...args).then(first => Boolean(first));
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof some
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

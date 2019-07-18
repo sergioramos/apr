@@ -1,12 +1,9 @@
 const until = (sum, next) => {
   const curr = next();
   const items = sum.concat([curr]);
-
-  if (curr.done) {
-    return items;
-  }
-
-  return until(items, next);
+  return curr.done ? items : until(items, next);
 };
 
-module.exports = next => until([], next);
+export default next => {
+  return until([], next);
+};

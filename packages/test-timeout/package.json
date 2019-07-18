@@ -25,21 +25,14 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "files": [
-    "files"
+    "dist"
   ],
   "main": "dist/apr-test-timeout.umd.js",
-  "jsnext:main": "dist/apr-test-timeout.es.js",
-  "module": "dist/apr-test-timeout.es.js",
-  "entry": "index.js",
-  "scripts": {
-    "prepublish": "NODE_ENV=production bup"
-  },
+  "module": "dist/apr-test-timeout.modern.mjs",
+  "source": "index.js",
   "dependencies": {
     "array-shuffle": "^1.0.1",
     "build-array": "^1.0.0",
     "timeout-then": "^1.1.0"
-  },
-  "devDependencies": {
-    "bup": "^4.1.3"
   }
 }

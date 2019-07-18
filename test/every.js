@@ -27,7 +27,7 @@ test(
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
-  })
+  }),
 );
 
 test(
@@ -50,7 +50,7 @@ test(
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
-  })
+  }),
 );
 
 test(
@@ -63,7 +63,7 @@ test(
       a: 1,
       b: 2,
       c: 3,
-      d: 4
+      d: 4,
     };
 
     const fn = (cnd, order) => async (v, i) => {
@@ -80,63 +80,60 @@ test(
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
-  })
+  }),
 );
 
 test(
   'fail [] every',
-  schedule(
-    async t =>
-      t.throws(
-        every([1, 2, 3, 4], async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      every([1, 2, 3, 4], async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return true;
-        })
-      )
-  )
+        return true;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail @@Iterator every',
-  schedule(
-    async t =>
-      t.throws(
-        every(getIttr(), async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      every(getIttr(), async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return true;
-        })
-      )
-  )
+        return true;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail {} every',
-  schedule(
-    async t =>
-      t.throws(
-        every(
-          {
-            a: 1,
-            b: 2,
-            c: 3,
-            d: 4
-          },
-          async (v, i) => {
-            if (i === 'c') {
-              throw new Error('expected error');
-            }
-
-            return true;
+  schedule(async t =>
+    t.throws(
+      every(
+        {
+          a: 1,
+          b: 2,
+          c: 3,
+          d: 4,
+        },
+        async (v, i) => {
+          if (i === 'c') {
+            throw new Error('expected error');
           }
-        )
-      )
-  )
+
+          return true;
+        },
+      ),
+    ),
+  ),
 );
 
 test(
@@ -160,7 +157,7 @@ test(
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
-  })
+  }),
 );
 
 test(
@@ -183,7 +180,7 @@ test(
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
-  })
+  }),
 );
 
 test(
@@ -196,7 +193,7 @@ test(
       a: 1,
       b: 2,
       c: 3,
-      d: 4
+      d: 4,
     };
 
     const fn = (cnd, order) => async (v, i) => {
@@ -213,61 +210,58 @@ test(
 
     t.deepEqual(notAlways, false);
     t.deepEqual(always, true);
-  })
+  }),
 );
 
 test(
   'fail [] everySeries',
-  schedule(
-    async t =>
-      t.throws(
-        series([1, 2, 3, 4], async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      series([1, 2, 3, 4], async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return true;
-        })
-      )
-  )
+        return true;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail @@Iterator everySeries',
-  schedule(
-    async t =>
-      t.throws(
-        series(getIttr(), async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      series(getIttr(), async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return true;
-        })
-      )
-  )
+        return true;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail {} everySeries',
-  schedule(
-    async t =>
-      t.throws(
-        series(
-          {
-            a: 1,
-            b: 2,
-            c: 3,
-            d: 4
-          },
-          async (v, i) => {
-            if (i === 'c') {
-              throw new Error('expected error');
-            }
-
-            return true;
+  schedule(async t =>
+    t.throws(
+      series(
+        {
+          a: 1,
+          b: 2,
+          c: 3,
+          d: 4,
+        },
+        async (v, i) => {
+          if (i === 'c') {
+            throw new Error('expected error');
           }
-        )
-      )
-  )
+
+          return true;
+        },
+      ),
+    ),
+  ),
 );

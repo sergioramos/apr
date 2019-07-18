@@ -21,7 +21,7 @@ test(
 
     t.deepEqual(output, 2);
     t.notDeepEqual(order, buildArray(order.length).map((v, i) => i));
-  })
+  }),
 );
 
 test(
@@ -38,7 +38,7 @@ test(
 
     t.deepEqual(output, 'c');
     t.notDeepEqual(order, buildArray(order.length).map((v, i) => i));
-  })
+  }),
 );
 
 test(
@@ -52,21 +52,21 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (v, i) => {
         await then(v);
         order.push(v);
         return v === 2;
-      }
+      },
     );
 
     t.notDeepEqual(order, buildArray(order.length).map((v, i) => i + 1));
     t.deepEqual(output, {
       key: 'b',
-      value: 2
+      value: 2,
     });
-  })
+  }),
 );
 
 test(
@@ -79,49 +79,47 @@ test(
         }
 
         return false;
-      })
-    )
-  )
+      }),
+    ),
+  ),
 );
 
 test(
   'fail @@Iterator find',
-  schedule(
-    async t =>
-      t.throws(
-        find(getIttr(), async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      find(getIttr(), async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return false;
-        })
-      )
-  )
+        return false;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail {} find',
-  schedule(
-    async t =>
-      t.throws(
-        find(
-          {
-            a: 1,
-            b: 2,
-            c: 3,
-            d: 4
-          },
-          async (v, i) => {
-            if (i === 'c') {
-              throw new Error('expected error');
-            }
-
-            return false;
+  schedule(async t =>
+    t.throws(
+      find(
+        {
+          a: 1,
+          b: 2,
+          c: 3,
+          d: 4,
+        },
+        async (v, i) => {
+          if (i === 'c') {
+            throw new Error('expected error');
           }
-        )
-      )
-  )
+
+          return false;
+        },
+      ),
+    ),
+  ),
 );
 
 test(
@@ -139,7 +137,7 @@ test(
 
     t.deepEqual(output, 2);
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
-  })
+  }),
 );
 
 test(
@@ -156,7 +154,7 @@ test(
 
     t.deepEqual(output, 'c');
     t.deepEqual(order, buildArray(order.length).map((v, i) => i));
-  })
+  }),
 );
 
 test(
@@ -170,75 +168,72 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (v, i) => {
         await then(v);
         order.push(v);
         return v === 2;
-      }
+      },
     );
 
     t.deepEqual(order, buildArray(order.length).map((v, i) => i + 1));
     t.deepEqual(output, {
       key: 'b',
-      value: 2
+      value: 2,
     });
-  })
+  }),
 );
 
 test(
   'fail [] findSeries',
-  schedule(
-    async t =>
-      t.throws(
-        series([1, 2, 3, 4], async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      series([1, 2, 3, 4], async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return false;
-        })
-      )
-  )
+        return false;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail @@Iterator findSeries',
-  schedule(
-    async t =>
-      t.throws(
-        series(getIttr(), async (v, i) => {
-          if (i > 2) {
-            throw new Error('expected error');
-          }
+  schedule(async t =>
+    t.throws(
+      series(getIttr(), async (v, i) => {
+        if (i > 2) {
+          throw new Error('expected error');
+        }
 
-          return false;
-        })
-      )
-  )
+        return false;
+      }),
+    ),
+  ),
 );
 
 test(
   'fail {} findSeries',
-  schedule(
-    async t =>
-      t.throws(
-        series(
-          {
-            a: 1,
-            b: 2,
-            c: 3,
-            d: 4
-          },
-          async (v, i) => {
-            if (i === 'c') {
-              throw new Error('expected error');
-            }
-
-            return false;
+  schedule(async t =>
+    t.throws(
+      series(
+        {
+          a: 1,
+          b: 2,
+          c: 3,
+          d: 4,
+        },
+        async (v, i) => {
+          if (i === 'c') {
+            throw new Error('expected error');
           }
-        )
-      )
-  )
+
+          return false;
+        },
+      ),
+    ),
+  ),
 );

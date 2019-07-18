@@ -1,4 +1,20 @@
-const run = require('./run');
+import Defaults from 'lodash.defaults';
+import each from 'apr-engine-each';
+
+const Run = ctx => {
+  let total;
+
+  return each(
+    Defaults(
+      {
+        after: (value, item, i) => {
+          total = i === 0 ? value : total + value;
+        },
+      },
+      ctx,
+    ),
+  ).then(() => total);
+};
 
 /**
  * <a id="concat"></a>
@@ -27,12 +43,29 @@ const run = require('./run');
  *   await readdir(dir)
  * );
  */
-module.exports = (input, fn, opts) =>
-  run({
-    input,
-    fn,
-    opts
-  });
+export default (input, fn, opts) => {
+  return Run({ input, fn, opts });
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof concat
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (input, limit, fn, opts) => {
+  return Run({ input, fn, opts: Defaults({ limit }, opts) });
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof concat
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => limit(input, 1, fn, opts);

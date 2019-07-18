@@ -20,7 +20,7 @@ test(
 
     t.deepEqual(output, [4, 3, 2, 1]);
     t.notDeepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -37,7 +37,7 @@ test(
 
     t.deepEqual(output, ['d', 'c', 'b', 'a']);
     t.notDeepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -51,35 +51,35 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (v, i) => {
         await then(v);
         order.push(i);
         return -i;
-      }
+      },
     );
 
     t.notDeepEqual(order, ['a', 'b', 'c', 'd']);
     t.deepEqual(output, [
       {
         key: 'd',
-        value: 4
+        value: 4,
       },
       {
         key: 'c',
-        value: 3
+        value: 3,
       },
       {
         key: 'b',
-        value: 2
+        value: 2,
       },
       {
         key: 'a',
-        value: 1
-      }
+        value: 1,
+      },
     ]);
-  })
+  }),
 );
 
 test(
@@ -94,9 +94,9 @@ test(
         }
 
         return then(v * 2);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -111,9 +111,9 @@ test(
         }
 
         return then(`${v}${v}`);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -127,7 +127,7 @@ test(
           a: 1,
           b: 2,
           c: 3,
-          d: 4
+          d: 4,
         },
         async (v, i) => {
           if (i === 'c') {
@@ -135,10 +135,10 @@ test(
           }
 
           return then(v * 2);
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );
 
 test(
@@ -156,7 +156,7 @@ test(
 
     t.deepEqual(output, [4, 3, 2, 1]);
     t.deepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -173,7 +173,7 @@ test(
 
     t.deepEqual(output, ['d', 'c', 'b', 'a']);
     t.deepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -187,35 +187,35 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (v, i) => {
         await then(v);
         order.push(i);
         return -i;
-      }
+      },
     );
 
     t.deepEqual(order, ['a', 'b', 'c', 'd']);
     t.deepEqual(output, [
       {
         key: 'd',
-        value: 4
+        value: 4,
       },
       {
         key: 'c',
-        value: 3
+        value: 3,
       },
       {
         key: 'b',
-        value: 2
+        value: 2,
       },
       {
         key: 'a',
-        value: 1
-      }
+        value: 1,
+      },
     ]);
-  })
+  }),
 );
 
 test(
@@ -230,9 +230,9 @@ test(
         }
 
         return then(v * 2);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -247,9 +247,9 @@ test(
         }
 
         return then(`${v}${v}`);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -263,7 +263,7 @@ test(
           a: 1,
           b: 2,
           c: 3,
-          d: 4
+          d: 4,
         },
         async (v, i) => {
           if (i === 'c') {
@@ -271,8 +271,8 @@ test(
           }
 
           return then(v * 2);
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );

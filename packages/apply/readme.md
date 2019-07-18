@@ -5,14 +5,14 @@
 <a id="apply"></a>
 Creates a continuation function with some arguments already applied.
 
-[![](https://img.shields.io/npm/v/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply) [![](https://img.shields.io/npm/l/apr-apply.svg?style=flat-square)](https://www.npmjs.com/package/apr-apply)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
--   `arguments` **...Any** 
+- `function` **[Function][4]**
+- `arguments` **...Any**
 
-**Examples**
+### Examples
 
 ```javascript
 import parallel from 'apr-parallel';
@@ -29,4 +29,9 @@ const output = await parallel([
 // output = [1, 2, 3]
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][4]**
+
+[1]: https://www.npmjs.com/package/apr-apply
+[2]: https://img.shields.io/npm/v/apr-apply.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-apply.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

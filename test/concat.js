@@ -21,7 +21,7 @@ test(
 
     t.deepEqual(output, 20);
     t.notDeepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -38,7 +38,7 @@ test(
 
     t.deepEqual(output, 'aabbccdd');
     t.notDeepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -52,18 +52,18 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (v, i) => {
         const res = await then(v * 2);
         order.push(i);
         return res;
-      }
+      },
     );
 
     t.notDeepEqual(order, ['a', 'b', 'c', 'd']);
     t.deepEqual(output, 20);
-  })
+  }),
 );
 
 test(
@@ -78,9 +78,9 @@ test(
         }
 
         return then(v * 2);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -95,9 +95,9 @@ test(
         }
 
         return then(`${v}${v}`);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -111,7 +111,7 @@ test(
           a: 1,
           b: 2,
           c: 3,
-          d: 4
+          d: 4,
         },
         async (v, i) => {
           if (i === 'c') {
@@ -119,10 +119,10 @@ test(
           }
 
           return then(v * 2);
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );
 
 test(
@@ -140,7 +140,7 @@ test(
 
     t.deepEqual(output, 20);
     t.deepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -157,7 +157,7 @@ test(
 
     t.deepEqual(output, 'aabbccdd');
     t.deepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -171,18 +171,18 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (v, i) => {
         const res = await then(v * 2);
         order.push(i);
         return res;
-      }
+      },
     );
 
     t.deepEqual(order, ['a', 'b', 'c', 'd']);
     t.deepEqual(output, 20);
-  })
+  }),
 );
 
 test(
@@ -197,9 +197,9 @@ test(
         }
 
         return then(v * 2);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -214,9 +214,9 @@ test(
         }
 
         return then(`${v}${v}`);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -230,7 +230,7 @@ test(
           a: 1,
           b: 2,
           c: 3,
-          d: 4
+          d: 4,
         },
         async (v, i) => {
           if (i === 'c') {
@@ -238,8 +238,8 @@ test(
           }
 
           return then(v * 2);
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );

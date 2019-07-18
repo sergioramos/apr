@@ -3,16 +3,16 @@
 ## times
 
 <a id="times"></a>
-Calls the `iteratee` function `n` times, and accumulates results in the same manner you would use with [map](#map).
+Calls the `iteratee` function `n` times, and accumulates results in the same manner you would use with [map][1].
 
-[![](https://img.shields.io/npm/v/apr-times.svg?style=flat-square)](https://www.npmjs.com/package/apr-times) [![](https://img.shields.io/npm/l/apr-times.svg?style=flat-square)](https://www.npmjs.com/package/apr-times)
+[![][3]][2] [![][4]][2]
 
-**Parameters**
+### Parameters
 
--   `n` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `n` **[Number][5]**
+- `iteratee` **[Function][6]**
 
-**Examples**
+### Examples
 
 ```javascript
 import times from 'apr-times';
@@ -26,23 +26,31 @@ const res = await times(6, async (i) =>
 // res = [0, 1, 2, 3, 4, 5]
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
 
 ### series
 
-**Parameters**
+#### Parameters
 
--   `n` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `n` **[Number][5]**
+- `iteratee` **[Function][6]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
 
 ### limit
 
-**Parameters**
+#### Parameters
 
--   `n` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `limit` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** 
--   `iteratee` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `n` **[Number][5]**
+- `limit` **[Number][5]**
+- `iteratee` **[Function][6]**
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
+
+[1]: #map
+[2]: https://www.npmjs.com/package/apr-times
+[3]: https://img.shields.io/npm/v/apr-times.svg?style=flat-square
+[4]: https://img.shields.io/npm/l/apr-times.svg?style=flat-square
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

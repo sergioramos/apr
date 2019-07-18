@@ -1,4 +1,4 @@
-const waterfall = require('apr-waterfall');
+import Waterfall from 'apr-waterfall';
 
 /**
  * <a id="seq"></a>
@@ -24,4 +24,6 @@ const waterfall = require('apr-waterfall');
  *
  * const output = await seq(1); // 7
  */
-module.exports = (...args) => value => waterfall([...args], value);
+export default (...args) => value => {
+  return Waterfall([...args], value);
+};

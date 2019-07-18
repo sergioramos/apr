@@ -1,4 +1,5 @@
-const each = require('apr-engine-each');
+import Defaults from 'lodash.defaults';
+import Each from 'apr-engine-each';
 
 /**
  * <a id="for-each"></a>
@@ -26,12 +27,31 @@ const each = require('apr-engine-each');
  *   await writeFile(file, 'boom')
  * );
  */
-module.exports = (input, fn, opts) =>
-  each({
-    input,
-    fn,
-    opts
-  });
+export default (input, fn, opts) => {
+  return Each({ input, fn, opts });
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof for-each
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (input, limit, fn, opts) => {
+  return Each({ input, fn, opts: Defaults({ limit }, opts) });
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof for-each
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

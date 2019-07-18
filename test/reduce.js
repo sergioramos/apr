@@ -19,12 +19,12 @@ test(
         order.push(i);
         return sum + res;
       },
-      0
+      0,
     );
 
     t.deepEqual(output, 20);
     t.deepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -40,12 +40,12 @@ test(
         order.push(i);
         return sum + res;
       },
-      ''
+      '',
     );
 
     t.deepEqual(output, 'aabbccdd');
     t.deepEqual(order, [0, 1, 2, 3]);
-  })
+  }),
 );
 
 test(
@@ -59,21 +59,21 @@ test(
         a: 1,
         b: 2,
         c: 3,
-        d: 4
+        d: 4,
       },
       async (sum, v, i) => {
         sum.a = await then(v * 2);
         order.push(i);
         return sum;
       },
-      {}
+      {},
     );
 
     t.deepEqual(order, ['a', 'b', 'c', 'd']);
     t.deepEqual(output, {
-      a: 8
+      a: 8,
     });
-  })
+  }),
 );
 
 test(
@@ -88,9 +88,9 @@ test(
         }
 
         return then(v * 2);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -105,9 +105,9 @@ test(
         }
 
         return then(`${v}${v}`);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -121,7 +121,7 @@ test(
           a: 1,
           b: 2,
           c: 3,
-          d: 4
+          d: 4,
         },
         async (sum, v, i) => {
           if (i === 'c') {
@@ -129,8 +129,8 @@ test(
           }
 
           return then(v * 2);
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );

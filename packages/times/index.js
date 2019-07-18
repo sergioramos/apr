@@ -1,3 +1,11 @@
+import Defaults from 'lodash.defaults';
+import BuildArray from 'build-array';
+import Map from 'apr-map';
+
+const Run = (count, fn, opts) => {
+  return Map(BuildArray(count).map((n, i) => i), fn, opts);
+};
+
 /**
  * <a id="times"></a>
  * Calls the `iteratee` function `n` times, and accumulates results in the same manner you would use with [map](#map).
@@ -21,6 +29,29 @@
  *
  * // res = [0, 1, 2, 3, 4, 5]
  */
-module.exports = require('./run');
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+export default Run;
+
+/**
+ * @kind function
+ * @name limit
+ * @memberof times
+ * @param {Number} n
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (count, limit, fn, opts) => {
+  return Run(count, fn, Defaults({ limit }, opts));
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof times
+ * @param {Number} n
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (count, fn, opts) => {
+  return limit(count, 1, fn, opts);
+};

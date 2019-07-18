@@ -1,3 +1,5 @@
-const isArray = require('lodash.isarraylike');
+import IsArray from 'lodash.isarraylike';
 
-module.exports = input => (isArray(input) || input[Symbol.iterator] ? [] : {});
+export default input => {
+  return IsArray(input) || input[Symbol.iterator] ? [] : {};
+};

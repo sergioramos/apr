@@ -18,7 +18,7 @@ test(
 
     t.deepEqual(output, [0, 2, 4, 6, 8]);
     t.notDeepEqual(order, [0, 1, 2, 3, 4]);
-  })
+  }),
 );
 
 test(
@@ -33,9 +33,9 @@ test(
         }
 
         return then(i * 2);
-      })
+      }),
     );
-  })
+  }),
 );
 
 test(
@@ -52,7 +52,7 @@ test(
 
     t.deepEqual(output, [0, 2, 4, 6, 8]);
     t.deepEqual(order, [0, 1, 2, 3, 4]);
-  })
+  }),
 );
 
 test(
@@ -67,7 +67,7 @@ test(
         }
 
         return then(i * 2);
-      })
+      }),
     );
-  })
+  }),
 );

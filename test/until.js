@@ -10,22 +10,25 @@ test(
   schedule(async t => {
     const maxCalls = random({
       min: 2,
-      max: 5
+      max: 5,
     });
 
     const then = timeout(maxCalls * 2);
     let calls = 0;
 
-    const output = await until(async () => {
-      await then();
-      calls += 1;
-      return calls >= maxCalls;
-    }, async () => then(maxCalls));
+    const output = await until(
+      async () => {
+        await then();
+        calls += 1;
+        return calls >= maxCalls;
+      },
+      async () => then(maxCalls),
+    );
 
     t.deepEqual(calls, maxCalls);
     t.deepEqual(output, maxCalls);
     t.deepEqual(output, calls);
-  })
+  }),
 );
 
 test(
@@ -33,7 +36,7 @@ test(
   schedule(async t => {
     const maxCalls = random({
       min: 3,
-      max: 5
+      max: 5,
     });
 
     const then = timeout(maxCalls);
@@ -44,13 +47,13 @@ test(
         calls += 1;
         return calls >= maxCalls;
       },
-      async () => then(maxCalls)
+      async () => then(maxCalls),
     );
 
     t.deepEqual(calls, maxCalls);
     t.deepEqual(output, maxCalls);
     t.deepEqual(output, calls);
-  })
+  }),
 );
 
 test(
@@ -59,11 +62,14 @@ test(
     const then = timeout(1);
 
     await t.throws(
-      until(async () => {
-        throw new Error('Unexpected Error');
-      }, async () => then())
+      until(
+        async () => {
+          throw new Error('Unexpected Error');
+        },
+        async () => then(),
+      ),
     );
-  })
+  }),
 );
 
 test(
@@ -79,10 +85,10 @@ test(
         },
         async () => {
           throw new Error('Unexpected Error');
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );
 
 test(
@@ -91,11 +97,14 @@ test(
     const then = timeout(1);
 
     await t.throws(
-      until(() => {
-        throw new Error('Unexpected Error');
-      }, async () => then())
+      until(
+        () => {
+          throw new Error('Unexpected Error');
+        },
+        async () => then(),
+      ),
     );
-  })
+  }),
 );
 
 test(
@@ -106,8 +115,8 @@ test(
         () => true,
         async () => {
           throw new Error('Unexpected Error');
-        }
-      )
+        },
+      ),
     );
-  })
+  }),
 );

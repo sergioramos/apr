@@ -3,29 +3,37 @@
 ## asyncify
 
 <a id="asyncify"></a>
-Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`](#waterfall), [`series`](#series), or other async functions.
+Take a sync function and make it async. This is useful for plugging sync functions into a [`waterfall`][1], [`series`][2], or other async functions.
 
-[![](https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify) [![](https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square)](https://www.npmjs.com/package/apr-asyncify)
+[![][4]][3] [![][5]][3]
 
-**Parameters**
+### Parameters
 
--   `function` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `function` **[Function][6]**
 
-**Examples**
+### Examples
 
 ```javascript
 import awaitify from 'apr-awaitify';
 import asyncify from 'apr-asyncify';
 import waterfall from 'apr-waterfall';
 import apply from 'apr-apply';
+import { readFile as rfa } from 'fs';
 
-const readFile = awaitify(require('fs').readFile);
+const readFile = awaitify(rfa);
 const pkgPath = path.join(__dirname, './package.json');
 
 const pkg = await waterfall([
   apply(readFile, pkgPath, 'utf8'),
-  asyncify(JSON.parse)
+  asyncify(JSON.parse),
 ]);
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][6]**
+
+[1]: #waterfall
+[2]: #series
+[3]: https://www.npmjs.com/package/apr-asyncify
+[4]: https://img.shields.io/npm/v/apr-asyncify.svg?style=flat-square
+[5]: https://img.shields.io/npm/l/apr-asyncify.svg?style=flat-square
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

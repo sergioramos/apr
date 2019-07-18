@@ -1,4 +1,34 @@
-const run = require('./run');
+import defaults from 'lodash.defaults';
+import isArray from 'lodash.isarraylike';
+
+import each from 'apr-engine-each';
+import Sum from 'apr-engine-sum';
+
+const run = ctx => {
+  let first = null;
+
+  return each(
+    defaults(
+      {
+        after: (value, item) => {
+          first = Boolean(value) && item;
+          return first;
+        },
+      },
+      ctx,
+    ),
+  ).then(() => {
+    return (
+      first &&
+      (isArray(Sum(ctx.input))
+        ? first.value
+        : {
+            key: first.key,
+            value: first.value,
+          })
+    );
+  });
+};
 
 /**
  * <a id="find"></a>
@@ -27,12 +57,31 @@ const run = require('./run');
  *   await access(file)
  * );
  */
-module.exports = (input, fn, opts) =>
-  run({
-    input,
-    fn,
-    opts
-  });
+export default (input, fn, opts) => {
+  return run({ input, fn, opts });
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof find
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (input, limit, fn, opts) => {
+  return run({ input, fn, opts: defaults({ limit }, opts) });
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof find
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

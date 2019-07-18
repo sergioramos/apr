@@ -1,29 +1,28 @@
-const defaults = require('lodash.defaults');
-const each = require('apr-engine-each');
+import Defaults from 'lodash.defaults';
+import Each from 'apr-engine-each';
 
 const Iterator = () => ({
   [Symbol.iterator]: () => ({
     next: () => ({
-      done: false
-    })
-  })
+      done: false,
+    }),
+  }),
 });
 
-module.exports = ctx => {
+export default ctx => {
   let last;
 
-  return each({
+  const fallbackCall = () => {
+    ctx.fn().then(value => {
+      last = value;
+      return ctx.test ? ctx.test() : value;
+    });
+  };
+
+  return Each({
     after: ctx.after,
     input: Iterator(),
-    opts: defaults(ctx.opts, {
-      limit: 1
-    }),
-    call:
-      ctx.call ||
-      (() =>
-        ctx.fn().then(value => {
-          last = value;
-          return ctx.test ? ctx.test() : value;
-        }))
+    opts: Defaults(ctx.opts, { limit: 1 }),
+    call: ctx.call || fallbackCall,
   }).then(() => last);
 };

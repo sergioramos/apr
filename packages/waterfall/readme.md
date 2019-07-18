@@ -5,27 +5,35 @@
 <a id="waterfall"></a>
 Runs the `tasks` array of functions in series, each passing their results to the next in the array.
 
-[![](https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall) [![](https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square)](https://www.npmjs.com/package/apr-waterfall)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `tasks` **([Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)> | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
--   `initial` **Any?** 
+- `tasks` **([Array][4]&lt;[Function][5]> | [Object][6])**
+- `initial` **Any?**
 
-**Examples**
+### Examples
 
 ```javascript
 import waterfall from 'apr-waterfall';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const output = await waterfall([
   async () => await then(1),
-  async (v) => await then(v + 2),
-  async (v) => await then(v + 3)
+  async v => await then(v + 2),
+  async v => await then(v + 3),
 ]);
 
 // output = 6
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][7]**
+
+[1]: https://www.npmjs.com/package/apr-waterfall
+[2]: https://img.shields.io/npm/v/apr-waterfall.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-waterfall.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function
+[6]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+[7]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

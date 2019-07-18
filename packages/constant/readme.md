@@ -3,15 +3,15 @@
 ## constant
 
 <a id="constant"></a>
-Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`](#waterfall).
+Returns a promise that when called, then's with the values provided. Useful as the first function in a [`waterfall`][1].
 
-[![](https://img.shields.io/npm/v/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant) [![](https://img.shields.io/npm/l/apr-constant.svg?style=flat-square)](https://www.npmjs.com/package/apr-constant)
+[![][3]][2] [![][4]][2]
 
-**Parameters**
+### Parameters
 
--   `arguments` **...any** 
+- `arguments` **...any**
 
-**Examples**
+### Examples
 
 ```javascript
 import asyncify from 'apr-asyncify';
@@ -20,8 +20,14 @@ import constant from 'apr-constant';
 
 const pkg = await waterfall([
   constant('{"name": "apr"}'),
-  asyncify(JSON.parse)
+  asyncify(JSON.parse),
 ]);
 ```
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** 
+Returns **[Promise][5]**
+
+[1]: #waterfall
+[2]: https://www.npmjs.com/package/apr-constant
+[3]: https://img.shields.io/npm/v/apr-constant.svg?style=flat-square
+[4]: https://img.shields.io/npm/l/apr-constant.svg?style=flat-square
+[5]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise

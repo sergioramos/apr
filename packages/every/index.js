@@ -1,4 +1,21 @@
-const run = require('./run');
+import Defaults from 'lodash.defaults';
+import Rach from 'apr-engine-each';
+
+const Run = ctx => {
+  let found = true;
+
+  return Each(
+    Defaults(
+      {
+        after: (value, item) => {
+          found = Boolean(value);
+          return !found;
+        },
+      },
+      ctx,
+    ),
+  ).then(() => found);
+};
 
 /**
  * <a id="every"></a>
@@ -27,12 +44,31 @@ const run = require('./run');
  *   await access(file)
  * );
  */
-module.exports = (input, fn, opts) =>
-  run({
-    input,
-    fn,
-    opts
-  });
+export default (input, fn, opts) => {
+  return Run({ input, fn, opts });
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof every
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limit = (input, limit, fn, opts) => {
+  return Run({ input, fn, opts: defaults({ limit }, opts) });
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof every
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

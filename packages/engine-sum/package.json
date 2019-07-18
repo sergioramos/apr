@@ -25,19 +25,12 @@
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
   "files": [
-    "files"
+    "dist"
   ],
   "main": "dist/apr-engine-sum.umd.js",
-  "jsnext:main": "dist/apr-engine-sum.es.js",
-  "module": "dist/apr-engine-sum.es.js",
-  "entry": "index.js",
-  "scripts": {
-    "prepublish": "NODE_ENV=production bup"
-  },
+  "module": "dist/apr-engine-sum.modern.mjs",
+  "source": "index.js",
   "dependencies": {
     "lodash.isarraylike": "^4.2.0"
-  },
-  "devDependencies": {
-    "bup": "^4.1.3"
   }
 }

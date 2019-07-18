@@ -6,28 +6,33 @@
 Wraps the function in another function that always returns data even when it errors.
 The object returned has either the property error or value.
 
-[![](https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect) [![](https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square)](https://www.npmjs.com/package/apr-reflect)
+[![][2]][1] [![][3]][1]
 
-**Parameters**
+### Parameters
 
--   `input` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+- `input` **[Function][4]**
 
-**Examples**
+### Examples
 
 ```javascript
 import parallel from 'apr-parallel';
 import reflect from 'apr-reflect';
 
-const then = (v) => new Promise((resolve) => resolve(v));
+const then = v => new Promise(resolve => resolve(v));
 
 const res = await parallel([
   async () => {
-    throw new Error('heyo')
+    throw new Error('heyo');
   },
-  async () => await then(2)
+  async () => await then(2),
 ]);
 
 // res = [{ error: Error('heyo'), value: null }, { error: null, value: 2 }]
 ```
 
-Returns **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** 
+Returns **[Function][4]**
+
+[1]: https://www.npmjs.com/package/apr-reflect
+[2]: https://img.shields.io/npm/v/apr-reflect.svg?style=flat-square
+[3]: https://img.shields.io/npm/l/apr-reflect.svg?style=flat-square
+[4]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function

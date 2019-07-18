@@ -34,7 +34,7 @@ test(
         const res = await then(4 * 2);
         order.push('after');
         return res;
-      }
+      },
     ]);
 
     t.deepEqual(order, [
@@ -45,11 +45,11 @@ test(
       'after',
       'after',
       'after',
-      'after'
+      'after',
     ]);
 
     t.deepEqual(output, [2, 4, 6, 8]);
-  })
+  }),
 );
 
 test(
@@ -82,7 +82,7 @@ test(
         const res = await then(4 * 2);
         order.push('after');
         return res;
-      }
+      },
     });
 
     t.deepEqual(order, [
@@ -93,16 +93,16 @@ test(
       'after',
       'after',
       'after',
-      'after'
+      'after',
     ]);
 
     t.deepEqual(output, {
       a: 2,
       b: 4,
       c: 6,
-      d: 8
+      d: 8,
     });
-  })
+  }),
 );
 
 test(
@@ -117,10 +117,10 @@ test(
         async () => {
           throw new Error('expected error');
         },
-        async () => then(4 * 2)
-      ])
+        async () => then(4 * 2),
+      ]),
     );
-  })
+  }),
 );
 
 test(
@@ -135,8 +135,8 @@ test(
         c: async () => {
           throw new Error('expected error');
         },
-        d: async () => then(4 * 2)
-      })
+        d: async () => then(4 * 2),
+      }),
     );
-  })
+  }),
 );

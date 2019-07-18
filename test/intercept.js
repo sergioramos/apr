@@ -25,5 +25,5 @@ test(
     t.truthy(err2);
     t.falsy(res2);
     t.falsy(res3);
-  })
+  }),
 );

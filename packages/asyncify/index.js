@@ -14,8 +14,9 @@
  * import asyncify from 'apr-asyncify';
  * import waterfall from 'apr-waterfall';
  * import apply from 'apr-apply';
+ * import { readFile as rfa } from 'fs';
  *
- * const readFile = awaitify(require('fs').readFile);
+ * const readFile = awaitify(rfa);
  * const pkgPath = path.join(__dirname, './package.json');
  *
  * const pkg = await waterfall([
@@ -23,11 +24,12 @@
  *   asyncify(JSON.parse)
  * ]);
  */
-module.exports = fn => (...args) =>
-  new Promise((resolve, reject) => {
+export default fn => (...args) => {
+  return new Promise((resolve, reject) => {
     try {
       resolve(fn(...args));
     } catch (err) {
       reject(err);
     }
   });
+};

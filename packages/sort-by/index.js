@@ -1,5 +1,25 @@
-const map = require('apr-map');
-const run = require('./run');
+import IsArray from 'lodash.isarraylike';
+import SortBy from 'lodash.sortby';
+import Sum from 'apr-engine-sum';
+import Back from 'apr-engine-back';
+import Map, { limit as MapLimit } from 'apr-map';
+
+const Run = (input, p) => {
+  const isObj = !IsArray(Sum(input));
+
+  const after = items => {
+    return SortBy(
+      items.filter(item => !item.result.done),
+      item => item.result.value,
+    ).map(item => {
+      return !isObj
+        ? item.input.value
+        : { key: item.key, value: item.input.value };
+    });
+  };
+
+  return Back({ p, input }).then(after);
+};
 
 /**
  * <a id="sort-by"></a>
@@ -15,7 +35,7 @@ const run = require('./run');
  *
  * @example
  * import awaitify from 'apr-awaitify';
- * import sortBy from 'apr-sort-by';
+ * import SortBy from 'apr-sort-by';
  *
  * const stat = awaitify(fs.stat);
  * const files = [
@@ -24,12 +44,36 @@ const run = require('./run');
  *   'file3'
  * ];
  *
- * const sorted = await sortBy(files, await (file) => {
+ * const sorted = await SortBy(files, await (file) => {
  *   const { mtime } = await stat(file);
  *   return mtime;
  * });
  */
-module.exports = (input, fn, opts) => run(input, map(input, fn, opts));
+export default (input, fn, opts) => {
+  return Run(input, Map(input, fn, opts));
+};
 
-module.exports.series = require('./series');
-module.exports.limit = require('./limit');
+/**
+ * @kind function
+ * @name limit
+ * @memberof sort-by
+ * @param {Array|Object|Iterable} input
+ * @param {Number} limit
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const limt = (input, limit, fn, opts) => {
+  return Run(input, MapLimit(input, limit, fn, opts));
+};
+
+/**
+ * @kind function
+ * @name series
+ * @memberof some
+ * @param {Array|Object|Iterable} input
+ * @param {Function} iteratee
+ * @returns {Promise}
+ */
+export const series = (input, fn, opts) => {
+  return limit(input, 1, fn, opts);
+};

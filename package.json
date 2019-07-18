@@ -26,113 +26,72 @@
   ],
   "scripts": {
     "test": "NODE_ENV=test nyc --reporter=html ava test/*.js -c 2 --fail-fast -v",
-    "fmt": "prettier --write --single-quote {packages,scripts,test}/**/*.js",
-    "lint": "eslint --fix .",
-    "coverage": "nyc report --reporter=text-lcov | codeclimate-test-reporter",
-    "commit": "git-cz",
+    "fmt": "prettier --config .prettierrc --write '**/*'",
+    "lint": "eslint . --ext .js",
     "publish": "lerna publish",
     "clean": "lerna clean --yes",
-    "bootstrap": "lerna bootstrap",
-    "prepublish": "lerna run prepublish --parallel --stream",
+    "prepublish": "lerna exec --stream -- microbundle -f modern,umd",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {
     "array-shuffle": "^1.0.1",
-    "ava": "^0.24.0",
-    "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-preset-joyent-portal": "^6.0.1",
+    "ava": "^2.2.0",
+    "babel-eslint": "^10.0.2",
     "build-array": "^1.0.0",
     "bulk-require": "^1.0.1",
-    "codeclimate-test-reporter": "^0.5.0",
-    "commitizen": "^2.9.6",
-    "cz-emoji": "^1.1.0",
-    "delay": "^2.0.0",
-    "documentation": "^5.3.5",
-    "eslint": "^4.16.0",
-    "eslint-config-joyent-portal": "^3.2.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-react-app": "^2.1.0",
-    "eslint-config-xo-space": "^0.17.0",
-    "eslint-plugin-flowtype": "^2.41.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-markdown": "^1.0.0-beta.6",
-    "eslint-plugin-react": "^7.5.1",
-    "globby": "^7.1.1",
-    "husky": "^0.14.3",
-    "lerna": "2.8.0",
-    "lerna-changelog": "^0.7.0",
-    "lint-staged": "^6.0.1",
+    "delay": "^4.3.0",
+    "documentation": "^12.0.2",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-config-xo-space": "^0.21.0",
+    "eslint-tap": "^2.0.1",
+    "esm": "^3.2.25",
+    "globby": "^10.0.1",
+    "husky": "^3.0.0",
+    "lerna": "^3.15.0",
+    "lerna-changelog": "^0.8.2",
+    "lint-staged": "^9.2.0",
     "lodash.flatten": "^4.4.0",
     "lodash.isstring": "^4.0.1",
     "lodash.union": "^4.6.0",
+    "microbundle": "^0.12.0-next.3",
     "mz": "^2.7.0",
-    "npm-check-updates": "^2.14.0",
-    "nyc": "^11.4.1",
+    "npm-check-updates": "^3.1.20",
+    "nyc": "^14.1.1",
     "param-case": "^2.1.1",
-    "prettier": "^1.10.2",
-    "pump": "^2.0.1",
+    "prettier": "^1.18.2",
+    "pump": "^3.0.0",
     "random-natural": "^1.0.3",
     "read-yaml": "^1.1.0",
-    "remark": "^9.0.0",
-    "remove-markdown": "^0.2.2",
+    "remark": "^10.0.1",
+    "remove-markdown": "^0.3.0",
     "stream-array": "^1.1.2",
-    "tap-mocha-reporter": "3.0.6",
+    "tap-mocha-reporter": "4.0.1",
     "timeout-then": "^1.1.0",
-    "vinyl-fs": "^3.0.1"
+    "vinyl-fs": "^3.0.3"
   },
+  "workspaces": [
+    "packages/*"
+  ],
   "ava": {
     "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
+      "esm"
+    ]
   },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-emoji"
-    },
-    "cz-emoji": {
-      "types": [
-        {
-          "name": "feature \t🌟  A new feature",
-          "value": ":star2:"
-        },
-        {
-          "name": "fix \t\t🐞  A bug fix",
-          "value": ":beetle:"
-        },
-        {
-          "name": "docs \t\t📚  Documentation change",
-          "value": ":books:"
-        },
-        {
-          "name": "refactor \t🎨  A code refactoring change",
-          "value": ":art:"
-        },
-        {
-          "name": "chore \t🔩  A chore change",
-          "value": ":nut_and_bolt:"
-        },
-        {
-          "name": "lint \t\t💅  A code lint fix",
-          "value": ":nail_care:"
-        },
-        {
-          "name": "test \t\t☔️  A test related change",
-          "value": ":umbrella:"
-        }
-      ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
       "eslint --fix",
-      "prettier --write --single-quote",
+      "prettier --config .prettierrc --write",
+      "git add"
+    ],
+    "*.*": [
+      "prettier --config .prettierrc --write",
       "git add"
     ]
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }

@@ -1,14 +1,14 @@
-const defaults = require('lodash.defaults');
+import Defaults from 'lodash.defaults';
+import Run from 'apr-engine-run';
 
-const run = require('apr-engine-run');
-
-module.exports = ctx =>
-  run(
+export default ctx => {
+  return Run(
     ctx.input,
     ctx.fn,
-    defaults(ctx.opts, {
+    Defaults(ctx.opts, {
       limit: Infinity,
       after: ctx.after,
-      call: ctx.call
-    })
+      call: ctx.call,
+    }),
   );
+};

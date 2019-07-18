@@ -23,7 +23,7 @@ const onFinish = awaitify(pump);
 
 const packages = globby
   .sync('packages/*/package.json', {
-    cwd: path.join(__dirname, '..')
+    cwd: path.join(__dirname, '..'),
   })
   .map(name => name.replace(/^packages\//, '').replace(/\/package.json$/, ''));
 
@@ -31,11 +31,11 @@ const tocPath = path.join(__dirname, '../documentation.yml');
 const toc = readYaml.sync(tocPath);
 const tocPackages = toc.toc.filter(isString);
 const files = tocPackages.map(pkg =>
-  path.join(__dirname, `../packages/${pkg}/index.js`)
+  path.join(__dirname, `../packages/${pkg}/index.js`),
 );
 
 const options = {
-  github: true
+  github: true,
 };
 
 const individual = async () =>
@@ -50,7 +50,7 @@ const individual = async () =>
         ? removeMd(
             remark()
               .stringify(ast[0].description)
-              .split(/\n/)[1]
+              .split(/\n/)[1],
           )
         : pkg.dsc;
 
@@ -70,13 +70,12 @@ const individual = async () =>
         contributors: apr.contributors,
         repository: 'ramitos/apr',
         directories: pkg.directories,
-        files: ['files'],
+        files: ['dist'],
         bin: pkg.bin,
         man: pkg.man,
         main: `dist/apr-${name}.umd.js`,
-        'jsnext:main': `dist/apr-${name}.es.js`,
-        module: `dist/apr-${name}.es.js`,
-        entry: 'index.js',
+        module: `dist/apr-${name}.modern.mjs`,
+        source: 'index.js',
         scripts: pkg.scripts,
         config: pkg.config,
         dependencies: pkg.dependencies,
@@ -87,18 +86,18 @@ const individual = async () =>
         engines: pkg.engines,
         preferGlobal: pkg.preferGlobal,
         private: pkg.private,
-        publishConfig: pkg.publishConfig
+        publishConfig: pkg.publishConfig,
       },
       null,
-      2
+      2,
     );
 
     await writeFile(path.join(dir, 'readme.md'), readme, {
-      encoding: 'utf-8'
+      encoding: 'utf-8',
     });
 
     await writeFile(path.join(dir, 'package.json'), pjson, {
-      encoding: 'utf-8'
+      encoding: 'utf-8',
     });
   });
 
@@ -108,7 +107,7 @@ const _toc = async () => {
   const tree = toc.toc.reduce((tree, item) => {
     if (isString(item)) {
       return Object.assign(tree, {
-        [last]: (tree[last] || []).concat([item])
+        [last]: (tree[last] || []).concat([item]),
       });
     }
 
@@ -119,7 +118,7 @@ const _toc = async () => {
     last = item.name;
 
     return Object.assign(tree, {
-      [item.name]: []
+      [item.name]: [],
     });
   }, {});
 
@@ -141,7 +140,7 @@ const _toc = async () => {
 <a id="contents"></a>
 ## contents
 
-`
+`,
   );
 };
 
@@ -149,8 +148,8 @@ const all = async () => {
   const ast = await build(
     files,
     Object.assign(options, {
-      config: tocPath
-    })
+      config: tocPath,
+    }),
   );
 
   let source = await formats.md(ast, {});
@@ -160,7 +159,7 @@ const all = async () => {
   source = source.replace(/<!-- \{\{TOC\}\} -->/, toc);
 
   await writeFile(path.join(__dirname, '../readme.md'), source, {
-    encoding: 'utf-8'
+    encoding: 'utf-8',
   });
 };
 
@@ -168,12 +167,12 @@ const website = async () => {
   const ast = await build(
     files,
     Object.assign(options, {
-      config: tocPath
-    })
+      config: tocPath,
+    }),
   );
 
   const source = await formats.html(ast, {
-    name: apr.name
+    name: apr.name,
   });
 
   const _files = streamArray(source);
@@ -186,6 +185,6 @@ main(
   series({
     website,
     individual,
-    all
-  })
+    all,
+  }),
 );

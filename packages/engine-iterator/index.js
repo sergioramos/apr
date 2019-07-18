@@ -1,16 +1,16 @@
-const buildArray = require('build-array');
-const isArray = require('lodash.isarraylike');
-const isFinite = require('lodash.isfinite');
-const keys = require('lodash.keys');
+import BuildArray from 'build-array';
+import IsArray from 'lodash.isarraylike';
+import isFinite from 'lodash.isfinite';
+import Keys from 'lodash.keys';
 
-const until = require('apr-engine-until');
+import until from 'apr-engine-until';
 
 const wrap = fn => {
   let i = 0;
 
   const group = size => {
     if (isFinite(size)) {
-      return buildArray(size).map(next);
+      return BuildArray(size).map(next);
     }
 
     return until(() => next());
@@ -25,7 +25,7 @@ const wrap = fn => {
   };
 
   return {
-    next
+    next,
   };
 };
 
@@ -33,7 +33,7 @@ const arr = input =>
   wrap(i => ({
     value: input[i],
     done: input.length === i,
-    key: i
+    key: i,
   }));
 
 const ittr = input =>
@@ -43,12 +43,12 @@ const ittr = input =>
     return {
       done: item.done,
       value: item.value,
-      key: i
+      key: i,
     };
   });
 
 const obj = input => {
-  const okeys = keys(input);
+  const okeys = Keys(input);
 
   return wrap(i => {
     const key = okeys[i];
@@ -56,13 +56,13 @@ const obj = input => {
     return {
       value: input[key],
       done: okeys.length === i,
-      key
+      key,
     };
   });
 };
 
-module.exports = input => {
-  if (isArray(input)) {
+export default input => {
+  if (IsArray(input)) {
     return arr(input);
   }
 

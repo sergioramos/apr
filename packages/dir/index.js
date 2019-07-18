@@ -1,3 +1,5 @@
-const console = require('apr-engine-console');
+import Console from 'apr-engine-console';
 
-module.exports = (fn, ...args) => console('dir', fn, ...args);
+export default (fn, ...args) => {
+  return Console('dir', fn, ...args);
+};

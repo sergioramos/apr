@@ -1,4 +1,4 @@
-const each = require('apr-engine-each');
+import Each from 'apr-engine-each';
 
 /**
  * <a id="waterfall"></a>
@@ -25,17 +25,15 @@ const each = require('apr-engine-each');
  *
  * // output = 6
  */
-module.exports = (input, initial) => {
+export default (input, initial) => {
   let last = initial;
 
-  return each({
+  return Each({
     input,
-    opts: {
-      limit: 1
-    },
+    opts: { limit: 1 },
     after: (value, item) => {
       last = value;
     },
-    call: item => item.value(last)
+    call: item => item.value(last),
   }).then(() => last);
 };
