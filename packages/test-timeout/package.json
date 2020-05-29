@@ -24,9 +24,7 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
-  "files": [
-    "files"
-  ],
+  "files": ["dist"],
   "main": "dist/apr-test-timeout.umd.js",
   "jsnext:main": "dist/apr-test-timeout.es.js",
   "module": "dist/apr-test-timeout.es.js",

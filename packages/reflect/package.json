@@ -25,9 +25,7 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
-  "files": [
-    "files"
-  ],
+  "files": ["dist"],
   "main": "dist/apr-reflect.umd.js",
   "jsnext:main": "dist/apr-reflect.es.js",
   "module": "dist/apr-reflect.es.js",
