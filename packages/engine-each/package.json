@@ -24,9 +24,7 @@
   "bugs": "https://github.com/ramitos/apr/issues",
   "author": "Sérgio Ramos <mail@sergioramos.me> (http://sergioramos.me)",
   "repository": "ramitos/apr",
-  "files": [
-    "files"
-  ],
+  "files": ["dist"],
   "main": "dist/apr-engine-each.umd.js",
   "jsnext:main": "dist/apr-engine-each.es.js",
   "module": "dist/apr-engine-each.es.js",
