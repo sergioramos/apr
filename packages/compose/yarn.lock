@@ -47,11 +47,28 @@ apr-engine-each@^1.0.3:
     apr-engine-run "^1.0.3"
     lodash.defaults "^4.2.0"
 
+apr-engine-each@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-each/-/apr-engine-each-3.0.3.tgz#1d678537c89380b6987c5c1f0aac7a7dca3e63c8"
+  dependencies:
+    apr-engine-run "^3.0.3"
+    lodash.defaults "^4.2.0"
+
 apr-engine-iterator@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-iterator/-/apr-engine-iterator-1.0.3.tgz#5699d77066bba0796ec057f62361ef549ec2b1e5"
   dependencies:
     apr-engine-until "^1.0.3"
+    build-array "^1.0.0"
+    lodash.isarraylike "^4.2.0"
+    lodash.isfinite "^3.3.2"
+    lodash.keys "^4.2.0"
+
+apr-engine-iterator@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-iterator/-/apr-engine-iterator-3.0.3.tgz#013415eae0acebb569daa6cfb7e25698101d4f5d"
+  dependencies:
+    apr-engine-until "^3.0.3"
     build-array "^1.0.0"
     lodash.isarraylike "^4.2.0"
     lodash.isfinite "^3.3.2"
@@ -63,6 +80,12 @@ apr-engine-run@^1.0.3:
   dependencies:
     apr-engine-iterator "^1.0.3"
 
+apr-engine-run@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-run/-/apr-engine-run-3.0.3.tgz#c7f3e6e31f12de636d00e84be22160fe82569990"
+  dependencies:
+    apr-engine-iterator "^3.0.3"
+
 apr-engine-sum@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-sum/-/apr-engine-sum-1.0.3.tgz#60c38b615ed549c2e636aaf232ee7bd292ca5b57"
@@ -72,6 +95,10 @@ apr-engine-sum@^1.0.3:
 apr-engine-until@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-until/-/apr-engine-until-1.0.3.tgz#f3f73a2f4e24729b4b272337db60c7d05fcce876"
+
+apr-engine-until@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-until/-/apr-engine-until-3.0.3.tgz#0168a429e1f6ad054cc8fbe2edff65663f92e9cb"
 
 apr-for-each@^1.0.6:
   version "1.0.6"
@@ -99,6 +126,12 @@ apr-reduce@^1.0.5:
   dependencies:
     apr-engine-each "^1.0.3"
     lodash.defaults "^4.2.0"
+
+apr-waterfall@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-waterfall/-/apr-waterfall-3.0.3.tgz#6785375d051f04a01329d2dda5e87ae0c2b13385"
+  dependencies:
+    apr-engine-each "^3.0.3"
 
 aproba@^1.0.3:
   version "1.2.0"
@@ -1278,8 +1311,8 @@ lodash.reverse@^4.0.1:
   resolved "https://registry.yarnpkg.com/lodash.reverse/-/lodash.reverse-4.0.1.tgz#1f2afedace2e16e660f3aa7c59d3300a6f25d13c"
 
 lodash@^4.17.4:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
 
 loose-envify@^1.0.0:
   version "1.3.1"
