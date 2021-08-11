@@ -47,11 +47,28 @@ apr-engine-each@^1.0.3:
     apr-engine-run "^1.0.3"
     lodash.defaults "^4.2.0"
 
+apr-engine-each@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-each/-/apr-engine-each-3.0.3.tgz#1d678537c89380b6987c5c1f0aac7a7dca3e63c8"
+  dependencies:
+    apr-engine-run "^3.0.3"
+    lodash.defaults "^4.2.0"
+
 apr-engine-iterator@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-iterator/-/apr-engine-iterator-1.0.3.tgz#5699d77066bba0796ec057f62361ef549ec2b1e5"
   dependencies:
     apr-engine-until "^1.0.3"
+    build-array "^1.0.0"
+    lodash.isarraylike "^4.2.0"
+    lodash.isfinite "^3.3.2"
+    lodash.keys "^4.2.0"
+
+apr-engine-iterator@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-iterator/-/apr-engine-iterator-3.0.3.tgz#013415eae0acebb569daa6cfb7e25698101d4f5d"
+  dependencies:
+    apr-engine-until "^3.0.3"
     build-array "^1.0.0"
     lodash.isarraylike "^4.2.0"
     lodash.isfinite "^3.3.2"
@@ -63,15 +80,31 @@ apr-engine-run@^1.0.3:
   dependencies:
     apr-engine-iterator "^1.0.3"
 
+apr-engine-run@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-run/-/apr-engine-run-3.0.3.tgz#c7f3e6e31f12de636d00e84be22160fe82569990"
+  dependencies:
+    apr-engine-iterator "^3.0.3"
+
 apr-engine-sum@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-sum/-/apr-engine-sum-1.0.3.tgz#60c38b615ed549c2e636aaf232ee7bd292ca5b57"
   dependencies:
     lodash.isarraylike "^4.2.0"
 
+apr-engine-sum@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-sum/-/apr-engine-sum-3.0.3.tgz#48af1a89d3a7fb60745d32118a51bd225a26732b"
+  dependencies:
+    lodash.isarraylike "^4.2.0"
+
 apr-engine-until@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/apr-engine-until/-/apr-engine-until-1.0.3.tgz#f3f73a2f4e24729b4b272337db60c7d05fcce876"
+
+apr-engine-until@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-engine-until/-/apr-engine-until-3.0.3.tgz#0168a429e1f6ad054cc8fbe2edff65663f92e9cb"
 
 apr-for-each@^1.0.6:
   version "1.0.6"
@@ -85,6 +118,14 @@ apr-main@^2.0.2:
   resolved "https://registry.yarnpkg.com/apr-main/-/apr-main-2.0.2.tgz#89bd28aaac10d44a7c81142c79d9966b394d9576"
   dependencies:
     is-promise "^2.1.0"
+
+apr-map@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/apr-map/-/apr-map-3.0.3.tgz#2bf91e9aeb18794bc95631311d6e94741ef16dc2"
+  dependencies:
+    apr-engine-each "^3.0.3"
+    apr-engine-sum "^3.0.3"
+    lodash.defaults "^4.2.0"
 
 apr-parallel@^1.0.5:
   version "1.0.5"
@@ -1621,8 +1662,8 @@ path-key@^2.0.0:
   resolved "https://registry.yarnpkg.com/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
 path-parse@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.5.tgz#3c1adf871ea9cd6c9431b6ea2bd74a0ff055c4c1"
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
 
 path-type@^3.0.0:
   version "3.0.0"
